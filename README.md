@@ -1,4 +1,4 @@
-# **IneqMath**: A Benchmark for Informal, Verifiable Reasoning in Olympiad-Level Inequality Proofs
+# **IneqMath**: Solving Inequality Proofs with Large Language Models
 
 Code for the Paper [Solving Inequality Proofs with Large Language Models (TODO)](https://www.google.com)
 
@@ -11,6 +11,7 @@ Code for the Paper [Solving Inequality Proofs with Large Language Models (TODO)]
 
 ## 🏆 Leaderboard
 The leaderboard of chat and reasoning LLMs on the **IneqMath** benchmark (the test set) is shown below. 
+
 
 The interactive leaderboard for the **IneqMath** is available [here](https://huggingface.co/spaces/AI4Math/IneqMath-Leaderboard).
 
@@ -53,9 +54,11 @@ The interactive leaderboard for the **IneqMath** is available [here](https://hug
 | 35 | **Gemma-2-9B (6K)** | 9B | 📝 | 🌐 | 2024-06-25 | **0.0** | 15.5 | 83.5 | 0.5 | 100.0 | 99.0 |
 | 36 | **Llama-3.2-3B** | 3B | 📝 | 🌐 | 2024-09-25 | **0.0** | 11.0 | 82.0 | 0.0 | 98.5 | 88.5 |
 
-Icons Explanation:
-**Type:** 🧠 = Reasoning Model, 📝 = Chat Model, 🔧 = Tool-augmented Model
-Source: 🔒 = Proprietary Model, 🌐 = Open-source Model
+The content in parentheses next to model's name represents reasoning effort and the max tokens respectively, with the default value for max tokens being 10K.
+
+**Icons Explanation**:
+**Type**: 🧠 = Reasoning Model, 📝 = Chat Model, 🔧 = Tool-augmented Model
+**Source**: 🔒 = Proprietary Model, 🌐 = Open-source Model
 
 **Step Accuracy Abbreviations:**
 **NTC**: No Toy Case - Step accuracy excluding using toy-case for general conclusions
@@ -65,8 +68,12 @@ Source: 🔒 = Proprietary Model, 🌐 = Open-source Model
 
 
 
-## About IneqMath
-IneqMath is a benchmark for evaluating large language models (LLMs) on informal but verifiable inequality proving. Centered on Olympiad-level algebraic inequalities, it challenges models to not only produce correct final answers but also construct step-by-step solutions that apply theorems appropriately, justify symbolic transformations, and estimate tight bounds. Problems are framed in natural language and decomposed into two automatically checkable subtasks—bound estimation and relation prediction—allowing fine-grained assessment of reasoning accuracy beyond surface-level correctness.
+## Introduction
+Mathematical inequalities are fundamental to diverse fields such as analysis, optimization, and probability theory, with applications spanning scientific modeling, economics, and competitive mathematics. A major bottleneck in advancing LLM capabilities for inequality proving is the scarcity of suitable benchmarks. While formal mathematical reasoning offers correctness guarantees and is a vital research direction, LLMs, trained on vast corpora of natural language, often exhibit strong informal reasoning capabilities.
+
+To bridge this gap between formal rigor and intuitive problem-solving, We introduce **IneqMath**, **a benchmark for evaluating large language models (LLMs) on informal but verifiable inequality proving.** Centered on Olympiad-level algebraic inequalities, we develop a modular LLM-as-judge framework that rigorously evaluates both final answers and proof step soundness to challenges models to not only produce correct final answers but also construct step-by-step solutions that apply theorems appropriately, justify symbolic transformations, and estimate tight bounds. Problems are framed in natural language and decomposed into two automatically checkable subtasks—**bound estimation** and **relation prediction**—allowing fine-grained assessment of reasoning accuracy beyond surface-level correctness.
+
+In addition, we also conduct a **systematic empirical study** that exposes a pronounced gap between LLM performance and mathematical rigor, highlighting avenues for future research.
 
 ### Dataset Overview
 The table below provides the statistics of **IneqMath**, along with the bound and relation subtasks.
@@ -284,6 +291,20 @@ The following two figures show how <em>final-answer accuracy</em> (which evaluat
   <img src="./assets/scaling_law_model_size_answer_acc_log_all.png" alt="scaling_curve_answer_acc" width="650"/>
   <img src="./assets/scaling_law_model_size_overall_acc_log_all.png" alt="scaling_curve_overall_acc" width="650"/>
 
+</div>
+
+# Retrieving relevant theorems as hints
+As shown in the figure, providing one or two such theorems decreases overall accuracy for weaker models (e.g., Grok 3 mini, o3-mini, o4-mini), likely due to misapplication or distraction by potentially irrelevant information. Conversely, stronger models like Gemini 2.5 Pro benefit from these hints, suggesting advanced reasoning is crucial to effectively use such guidance. These results underscore the potential of theorem-guided reasoning but also highlight the critical need for more sophisticated theorem retrieval mechanisms (e.g., RAG) to reliably enhance LLM performance in inequality proving.
+
+<div align="center">
+<img src="assets/theorem_as_hints.png" width="65%">
+</div>
+
+# Self-improvement via critic as feedback
+As the figure shows, self-critique consistently improves performance—e.g., Gemini 2.5 Pro's overall accuracy rises from 43% to 48%. This upward trend underscores self-critique as a promising, supervision-free method to enhance logical rigor and solution quality of LLMs in inequality reasoning.
+
+<div align="center">
+<img src="assets/self_critic.png" width="65%">
 </div>
 
 # License
