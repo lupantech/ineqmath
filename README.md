@@ -14,7 +14,7 @@ The leaderboard of chat and reasoning LLMs on the **IneqMath** benchmark (the te
 
 The interactive leaderboard for the **IneqMath** is available [here](https://huggingface.co/spaces/AI4Math/IneqMath-Leaderboard).
 
-| **Rank** | **Model** | **Size** | **Type** | **Source** | **Date** | **Overall Acc ↓** | **Answer Acc** | **Step Acc (NTC)** | **Step Acc (NLG)** | **Step Acc (NAE)** | **Step Acc (NCE)** |
+| **Rank** | &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;**Model**&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; | &nbsp;&nbsp;&nbsp;**Size**&nbsp;&nbsp;&nbsp; | **Type** | **Source** | &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;**Date**&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; | **Overall Acc ↓** | **Answer Acc** | **Step Acc (NTC)** | **Step Acc (NLG)** | **Step Acc (NAE)** | **Step Acc (NCE)** |
 |------|-------|------|------|--------|------|-------------|------------|----------------|----------------|----------------|----------------|
 | 1 | **Gemini 2.5 Pro🥇** | UNK | 🧠 | 🔒 | 2025-03-25 | **43.5** | 68.0 | 87.5 | 63.0 | 91.0 | 98.0 |
 | 2 | **o3🥈** | UNK | 🧠 | 🔒 | 2025-04-16 | **37.0** | 72.0 | 96.5 | 56.0 | 86.5 | 94.0 |
