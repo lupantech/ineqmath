@@ -248,7 +248,7 @@ If you run the model on your own, please check your data format before your subm
 
 ```
 {
-    "data_id": [integer] The ID of the data of each split,
+    "data_id": [integer or string] The ID of the data of each split,
     "problem": [string] The question text,
     "type": [string] The type of question: 'relation' or 'bound',
     "prompt": [string] The prompt used for the problem,
@@ -321,6 +321,11 @@ The copyright of the images and the questions belongs to the original authors. A
 If you use the **IneqMath** dataset in your work, please kindly cite the paper using this BibTeX:
 
 ```
-TODO
+@article{jiayi2025solving,
+    author = {Jiayi, Sheng and Luna, Lyu and Jikai, Jin and Tony, Xia and Alex, Gu and James, Zou and Pan, Lu},
+    title = {Solving Inequality Proofs with Large Language Models},
+    journal = {arXiv preprint arXiv:2506.TODO},
+    year = {2025}
+}
 ```
 
