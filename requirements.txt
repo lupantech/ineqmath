@@ -1,0 +1,15 @@
+openai
+tenacity
+python-dotenv
+platformdirs
+diskcache
+anthropic
+together
+pandas
+matplotlib
+seaborn
+flask
+google
+google-generativeai
+sympy
+datasets
