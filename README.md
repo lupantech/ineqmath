@@ -6,7 +6,8 @@ Code for the Paper [Solving Inequality Proofs with Large Language Models (TODO)]
     <a href="https://ineqmath.github.io/">🌐 Project</a> |
     <a href="https://www.google.com">📖 Paper (TODO)</a> |
     <a href="https://huggingface.co/datasets/AI4Math/IneqMath">🤗 Dataset</a> |
-    <a href="https://huggingface.co/spaces/AI4Math/IneqMath-Leaderboard">🏆 Leaderboard</a>
+    <a href="https://huggingface.co/spaces/AI4Math/IneqMath-Leaderboard">🏆 Leaderboard</a> |
+    <a href="https://ineqmath.github.io/#visualization">🔮 Visualization</a>
   </p>
 
 ## 🏆 Leaderboard
