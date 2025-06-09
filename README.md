@@ -58,14 +58,14 @@ The interactive leaderboard for the **IneqMath** is available [here](https://hug
 The content in parentheses next to model's name represents reasoning effort and the max tokens respectively, with the default value for max tokens being 10K.
 
 **Icons Explanation**:
-**Type**: 🧠 = Reasoning Model, 📝 = Chat Model, 🔧 = Tool-augmented Model
-**Source**: 🔒 = Proprietary Model, 🌐 = Open-source Model
+- **Type**: 🧠 = Reasoning Model, 📝 = Chat Model, 🔧 = Tool-augmented Model
+- **Source**: 🔒 = Proprietary Model, 🌐 = Open-source Model
 
 **Step Accuracy Abbreviations:**
-**NTC**: No Toy Case - Step accuracy excluding using toy-case for general conclusions
-**NLG**: No Logical Gap - Step accuracy without logical reasoning gaps
-**NAE**: No Approximation Error - Step accuracy excluding approximation errors
-**NCE**: No Calculation Error - Step accuracy excluding all calculation errors
+- **NTC**: No Toy Case - Step accuracy excluding using toy-case for general conclusions
+- **NLG**: No Logical Gap - Step accuracy without logical reasoning gaps
+- **NAE**: No Approximation Error - Step accuracy excluding approximation errors
+- **NCE**: No Calculation Error - Step accuracy excluding all calculation errors
 
 
 
