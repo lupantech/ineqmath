@@ -90,103 +90,6 @@ The content in parentheses next to model's name represents reasoning effort and 
 - **NAE**: No Approximation Error - Step accuracy excluding approximation errors
 - **NCE**: No Calculation Error - Step accuracy excluding all calculation errors
 
-## Dataset Overview
-The table below provides the statistics of **IneqMath**, along with the bound and relation subtasks.
-<center>
-<small>
-  <table 
-    align="center" 
-    width="60%" 
-    border="1" 
-    cellspacing="0" 
-    cellpadding="6"
-    style="width:60%; table-layout: fixed; border-collapse: collapse; text-align: center; font-size: 0.6em;">
-    <colgroup>
-      <col width="64%">
-      <col width="12%">
-      <col width="12%">
-      <col width="12%">
-    </colgroup>
-    <thead>
-      <tr>
-        <th style="text-align:left;">Statistic</th>
-        <th>Number</th>
-        <th>Bnd.</th>
-        <th>Rel.</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td style="text-align:left;"><b>Theorem categories</b></td>
-        <td>29</td>
-        <td>–</td>
-        <td>–</td>
-      </tr>
-      <tr style="border-bottom:2px solid #000;">
-        <td style="text-align:left;"><b>Named theorems</b></td>
-        <td>83</td>
-        <td>–</td>
-        <td>–</td>
-      </tr>
-      <tr>
-        <td style="text-align:left;"><b>Training problems (for training)</b></td>
-        <td>1252</td>
-        <td>626</td>
-        <td>626</td>
-      </tr>
-      <tr>
-        <td style="text-align:left;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;- With theorem annotations</td>
-        <td>962</td>
-        <td>482</td>
-        <td>480</td>
-      </tr>
-      <tr>
-        <td style="text-align:left;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;- With solution annotations</td>
-        <td>1252</td>
-        <td>626</td>
-        <td>626</td>
-      </tr>
-      <tr>
-        <td style="text-align:left;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;- Avg. solutions per problem</td>
-        <td>1.05</td>
-        <td>1.06</td>
-        <td>1.05</td>
-      </tr>
-      <tr style="border-bottom:2px solid #000;">
-        <td style="text-align:left;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;- Max solutions per problem</td>
-        <td>4</td>
-        <td>4</td>
-        <td>4</td>
-      </tr>
-      <tr>
-        <td style="text-align:left;"><b>Dev problems (for development)</b></td>
-        <td>100</td>
-        <td>50</td>
-        <td>50</td>
-      </tr>
-      <tr>
-        <td style="text-align:left;"><b>Test problems (for benchmarking)</b></td>
-        <td>200</td>
-        <td>96</td>
-        <td>104</td>
-      </tr>
-    </tbody>
-  </table>
-  </small>
-</center>
-
-<br><br>
-
-The chart below shows the distribution of theorem categories.
-
-<br><br>
-
-<div align="center">
-
-  <img src="./assets/theorem_category_pie_chart.png" alt="IneqMath Logo" width="650"/>
-
-</div>
-
 ## Environment Setup
 
 Set up conda environment:
@@ -270,24 +173,136 @@ If you run the model on your own, please check your data format before your subm
     "response": [string] The response of the model
 }
 ```
-
-## LLM Judge Performance
-
-Confusion matrices and performance metrics of our 5 LLM-as-Judges are shown below, which exhibit strong agreement with human labels.
+# Dataset Overview
+The IneqMath dataset comprises 200 test problems for benchmarking, 100 development problems with public ground truth, and 1,252 training problems split evenly between **bound estimation** and **relation prediction** tasks as shown in the table below. The dataset also features 83 named theorems across 29 categories, with their distribution illustrated in the figure below.
+<center>
+  <table 
+    align="center" 
+    width="60%" 
+    border="1" 
+    cellspacing="0" 
+    cellpadding="6"
+    style="width:60%; table-layout: fixed; border-collapse: collapse; text-align: center;">
+    <colgroup>
+      <col width="64%">
+      <col width="12%">
+      <col width="12%">
+      <col width="12%">
+    </colgroup>
+    <thead>
+      <tr>
+        <th style="text-align:left;">Statistic</th>
+        <th>Number</th>
+        <th>Bnd.</th>
+        <th>Rel.</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td style="text-align:left;"><b>Theorem categories</b></td>
+        <td>29</td>
+        <td>–</td>
+        <td>–</td>
+      </tr>
+      <tr style="border-bottom:2px solid #000;">
+        <td style="text-align:left;"><b>Named theorems</b></td>
+        <td>83</td>
+        <td>–</td>
+        <td>–</td>
+      </tr>
+      <tr>
+        <td style="text-align:left;"><b>Training problems (for training)</b></td>
+        <td>1252</td>
+        <td>626</td>
+        <td>626</td>
+      </tr>
+      <tr>
+        <td style="text-align:left;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;- With theorem annotations</td>
+        <td>962</td>
+        <td>482</td>
+        <td>480</td>
+      </tr>
+      <tr>
+        <td style="text-align:left;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;- With solution annotations</td>
+        <td>1252</td>
+        <td>626</td>
+        <td>626</td>
+      </tr>
+      <tr>
+        <td style="text-align:left;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;- Avg. solutions per problem</td>
+        <td>1.05</td>
+        <td>1.06</td>
+        <td>1.05</td>
+      </tr>
+      <tr style="border-bottom:2px solid #000;">
+        <td style="text-align:left;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;- Max solutions per problem</td>
+        <td>4</td>
+        <td>4</td>
+        <td>4</td>
+      </tr>
+      <tr>
+        <td style="text-align:left;"><b>Dev problems (for development)</b></td>
+        <td>100</td>
+        <td>50</td>
+        <td>50</td>
+      </tr>
+      <tr>
+        <td style="text-align:left;"><b>Test problems (for benchmarking)</b></td>
+        <td>200</td>
+        <td>96</td>
+        <td>104</td>
+      </tr>
+    </tbody>
+  </table>
+</center>
+<br>
 
 <div align="center">
+
+  <img src="./assets/theorem_category_pie_chart.png" alt="IneqMath Logo" width="520"/>
+
+</div>
+
+The table below compares datasets for inequalities and theorem proving. **IneqMath** provides expert-annotated training and test/dev sets, featuring high-quality named theorems and step-wise solutions for model development. Unlike prior datasets that use synthesis or autoformalization, **IneqMath** presents problems in informal language across both multiple-choice (MC) and open-ended (Open) formats, and employs LLM-as-judge for evaluation.
+
+<div align="center">
+<img src="assets/dataset_comparison.png" width="90%">
+</div>
+
+# Fine-grained Informal Judges
+
+Traditional evaluation methods fall short in this setting: expert annotation is accurate but prohibitively labor-intensive, while automated techniques such as string matching or value equivalence fail to capture step-by-step correctness—an essential aspect of inequality problem solving. To evaluate the correctness of **IneqMath** solutions, we propose a fine-grained **LLM-as-judge** framework, consisting of a **final-answer judge** for verifying the predicted answer and four specialized **step-wise judges** targeting common reasoning flaws. A solution is deemed correct **overall** only if it passes all five judges. As shown in the following table and confusion matrix, these judges achieve strong alignment with human annotations (F1 = 0.93), providing a scalable yet reliable alternative to manual evaluation.
+
+<div align="center">
+
   <img src="./assets/confusion_matrix_judge_metrix.png" alt="judge_confusion_matrix" width="800"/>
   <img src="./assets/table_judge_metrics.png" alt="table_judge_matrix" width="650"/>
 
 </div>
 
-## Scaling law in model size
-The following two figures show how <em>final-answer accuracy</em> (which evaluates only the correctness of the final predicted answer) and <em>overall accuracy</em> (which requires both a correct answer and valid intermediate reasoning steps) scales with model size for LLMs.
+# Results of leading LLMs
+This table shows the **Final-answer accuracy** versus **overall accuracy** for leading LLMs across different categories on the IneqMath benchmark of Olympiad-level inequality problems. Overall accuracy, measuring both answer correctness and step soundness, is substantially lower than final-answer accuracy for all model types. This highlights a critical gap: while LLMs may find correct final answers to these inequality problems, their reasoning is often unsound. Each model used its optimal maximal tokens.
 
 <div align="center">
 
-  <img src="./assets/scaling_law_model_size_answer_acc_log_all.png" alt="scaling_curve_answer_acc" width="650"/>
-  <img src="./assets/scaling_law_model_size_overall_acc_log_all.png" alt="scaling_curve_overall_acc" width="650"/>
+  <img src="./assets/key_results_figure.png" alt="judge_confusion_matrix" width="800"/>
+
+</div>
+
+# Scaling law in model size
+The following two figures show how <em>final-answer accuracy</em> (which evaluates only the correctness of the final predicted answer) and <em>overall accuracy</em> (which requires both a correct answer and valid intermediate reasoning steps) scales with model size for LLMs.
+
+The figure below shows how final-answer accuracy (which evaluates only the correctness of the final predicted answer) scales with model size for LLMs. As model size increases, we observe a steady improvement in answer accuracy, reflecting an empirical scaling law that larger models are better at inferring correct bounds and inequality relationships.
+<div align="center">
+
+  <img src="./assets/scaling_law_model_size_answer_acc_log_all.png" alt="scaling_curve_answer_acc" width="700"/>
+
+</div>
+
+ However, the trend for answer accuracy does not hold well when considering overall accuracy—which requires both a correct answer and valid intermediate reasoning steps—as shown in the figure below. In this case, the scaling curve flattens, indicating that increased model size alone is insufficient to eliminate step-by-step reasoning errors.
+
+<div align="center">
+  <img src="./assets/scaling_law_model_size_overall_acc_log_all.png" alt="scaling_curve_overall_acc" width="700"/>
 
 </div>
 
