@@ -173,7 +173,7 @@ If you run the model on your own, please check your data format before your subm
     "response": [string] The response of the model
 }
 ```
-# Dataset Overview
+## Dataset Overview
 The IneqMath dataset comprises 200 test problems for benchmarking, 100 development problems with public ground truth, and 1,252 training problems split evenly between **bound estimation** and **relation prediction** tasks as shown in the table below. The dataset also features 83 named theorems across 29 categories, with their distribution illustrated in the figure below.
 <center>
   <table 
@@ -269,7 +269,7 @@ The table below compares datasets for inequalities and theorem proving. **IneqMa
 <img src="assets/dataset_comparison.png" width="90%">
 </div>
 
-# Fine-grained Informal Judges
+## Fine-grained Informal Judges
 
 Traditional evaluation methods fall short in this setting: expert annotation is accurate but prohibitively labor-intensive, while automated techniques such as string matching or value equivalence fail to capture step-by-step correctness—an essential aspect of inequality problem solving. To evaluate the correctness of **IneqMath** solutions, we propose a fine-grained **LLM-as-judge** framework, consisting of a **final-answer judge** for verifying the predicted answer and four specialized **step-wise judges** targeting common reasoning flaws. A solution is deemed correct **overall** only if it passes all five judges. As shown in the following table and confusion matrix, these judges achieve strong alignment with human annotations (F1 = 0.93), providing a scalable yet reliable alternative to manual evaluation.
 
@@ -280,7 +280,7 @@ Traditional evaluation methods fall short in this setting: expert annotation is 
 
 </div>
 
-# Results of leading LLMs
+## Results of leading LLMs
 This table shows the **Final-answer accuracy** versus **overall accuracy** for leading LLMs across different categories on the IneqMath benchmark of Olympiad-level inequality problems. Overall accuracy, measuring both answer correctness and step soundness, is substantially lower than final-answer accuracy for all model types. This highlights a critical gap: while LLMs may find correct final answers to these inequality problems, their reasoning is often unsound. Each model used its optimal maximal tokens.
 
 <div align="center">
@@ -289,7 +289,7 @@ This table shows the **Final-answer accuracy** versus **overall accuracy** for l
 
 </div>
 
-# Scaling law in model size
+## Scaling law in model size
 The following two figures show how <em>final-answer accuracy</em> (which evaluates only the correctness of the final predicted answer) and <em>overall accuracy</em> (which requires both a correct answer and valid intermediate reasoning steps) scales with model size for LLMs.
 
 The figure below shows how final-answer accuracy (which evaluates only the correctness of the final predicted answer) scales with model size for LLMs. As model size increases, we observe a steady improvement in answer accuracy, reflecting an empirical scaling law that larger models are better at inferring correct bounds and inequality relationships.
