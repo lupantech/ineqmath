@@ -10,6 +10,29 @@ Code for the Paper [Solving Inequality Proofs with Large Language Models (TODO)]
     <a href="https://ineqmath.github.io/#visualization">🔮 Visualization</a>
   </p>
 
+## Introduction
+We propose **IneqMath**, an expert-curated dataset of Olympiad-level inequalities, including a test set and training corpus enriched with **step-wise solutions and theorem annotations**. The dataset follows an **informal yet verifiable** task formulation, recasting inequality proving into two automatically checkable subtasks: **bound estimation** and **relation prediction**. We also develop a novel **LLM-as-judge evaluation framework**, combining a ***final-answer** judge with four **step-wise** judges designed to detect common reasoning flaws. 
+
+A systematic evaluation of 29 leading LLMs on **IneqMath** reveals a surprising reality: even top models like o1 achieve less than 10% overall accuracy under step-wise scrutiny; this is a drop of up to 65.5% from their accuracy considering only final answer equivalence. This discrepancy exposes **fragile deductive chains and a critical gap for current LLMs between merely finding an answer and constructing a rigorous proof**. **Scaling model size and increasing test-time computation** yield limited gains in overall proof correctness. Instead, our findings highlight promising research directions such as **theorem-guided reasoning and self-refinement**.
+
+## Dataset Examples
+Below are training and testing examples from **IneqMath**. Each problem belongs to one of two automatically checkable subtasks: **bound estimation** or **relation prediction**.Each training problem includes **step-wise solutions**, with up to four solutions per problem, and 76.8% (962 problems) are annotated with **relevant theorems**. The test problems are each crafted and reviewed by **IMO-level medalists** to ensure both originality and difficulty.
+
+Training examples of **IneqMath**:
+<div align="center">
+    <img src="assets/train_bound_example.png" width="650" alt="Train Bound Example">
+    <img src="assets/train_relation_example.png" width="650" alt="Train Relation Example">
+</div>
+
+
+Testing examples of **IneqMath**:
+
+
+<div align="center">
+    <img src="assets/test_bound_example.png" width="650" alt="Test Bound Example">
+    <img src="assets/test_relation_example.png" width="650" alt="Test Relation Example">
+</div>
+
 ## 🏆 Leaderboard
 The leaderboard of chat and reasoning LLMs on the **IneqMath** benchmark (the test set) is shown below. 
 
@@ -67,16 +90,7 @@ The content in parentheses next to model's name represents reasoning effort and 
 - **NAE**: No Approximation Error - Step accuracy excluding approximation errors
 - **NCE**: No Calculation Error - Step accuracy excluding all calculation errors
 
-
-
-## Introduction
-Mathematical inequalities are fundamental to diverse fields such as analysis, optimization, and probability theory, with applications spanning scientific modeling, economics, and competitive mathematics. A major bottleneck in advancing LLM capabilities for inequality proving is the scarcity of suitable benchmarks. While formal mathematical reasoning offers correctness guarantees and is a vital research direction, LLMs, trained on vast corpora of natural language, often exhibit strong informal reasoning capabilities.
-
-To bridge this gap between formal rigor and intuitive problem-solving, We introduce **IneqMath**, **a benchmark for evaluating large language models (LLMs) on informal but verifiable inequality proving.** Centered on Olympiad-level algebraic inequalities, we develop a modular LLM-as-judge framework that rigorously evaluates both final answers and proof step soundness to challenges models to not only produce correct final answers but also construct step-by-step solutions that apply theorems appropriately, justify symbolic transformations, and estimate tight bounds. Problems are framed in natural language and decomposed into two automatically checkable subtasks—**bound estimation** and **relation prediction**—allowing fine-grained assessment of reasoning accuracy beyond surface-level correctness.
-
-In addition, we also conduct a **systematic empirical study** that exposes a pronounced gap between LLM performance and mathematical rigor, highlighting avenues for future research.
-
-### Dataset Overview
+## Dataset Overview
 The table below provides the statistics of **IneqMath**, along with the bound and relation subtasks.
 <center>
 <small>
@@ -256,25 +270,8 @@ If you run the model on your own, please check your data format before your subm
     "response": [string] The response of the model
 }
 ```
-# Dataset Examples
-Training examples of **IneqMath**:
-<div align="center">
-    <img src="assets/train_bound_example.png" width="650" alt="Train Bound Example">
-    <img src="assets/train_relation_example.png" width="650" alt="Train Relation Example">
-</div>
 
-<br><br>
-
-Testing examples of **IneqMath**:
-
-<br><br>
-
-<div align="center">
-    <img src="assets/test_bound_example.png" width="650" alt="Test Bound Example">
-    <img src="assets/test_relation_example.png" width="650" alt="Test Relation Example">
-</div>
-
-# LLM Judge Performance
+## LLM Judge Performance
 
 Confusion matrices and performance metrics of our 5 LLM-as-Judges are shown below, which exhibit strong agreement with human labels.
 
@@ -284,7 +281,7 @@ Confusion matrices and performance metrics of our 5 LLM-as-Judges are shown belo
 
 </div>
 
-# Scaling law in model size
+## Scaling law in model size
 The following two figures show how <em>final-answer accuracy</em> (which evaluates only the correctness of the final predicted answer) and <em>overall accuracy</em> (which requires both a correct answer and valid intermediate reasoning steps) scales with model size for LLMs.
 
 <div align="center">
@@ -294,21 +291,21 @@ The following two figures show how <em>final-answer accuracy</em> (which evaluat
 
 </div>
 
-# Retrieving relevant theorems as hints
+## Retrieving relevant theorems as hints
 As shown in the figure, providing one or two such theorems decreases overall accuracy for weaker models (e.g., Grok 3 mini, o3-mini, o4-mini), likely due to misapplication or distraction by potentially irrelevant information. Conversely, stronger models like Gemini 2.5 Pro benefit from these hints, suggesting advanced reasoning is crucial to effectively use such guidance. These results underscore the potential of theorem-guided reasoning but also highlight the critical need for more sophisticated theorem retrieval mechanisms (e.g., RAG) to reliably enhance LLM performance in inequality proving.
 
 <div align="center">
 <img src="assets/theorem_as_hints.png" width="65%">
 </div>
 
-# Self-improvement via critic as feedback
+## Self-improvement via critic as feedback
 As the figure shows, self-critique consistently improves performance—e.g., Gemini 2.5 Pro's overall accuracy rises from 43% to 48%. This upward trend underscores self-critique as a promising, supervision-free method to enhance logical rigor and solution quality of LLMs in inequality reasoning.
 
 <div align="center">
 <img src="assets/self_critic.png" width="65%">
 </div>
 
-# License
+## License
 
 The new contributions to our dataset are distributed under the [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/) license.
 
@@ -317,7 +314,7 @@ The copyright of the images and the questions belongs to the original authors. A
 - **Purpose:** The test split was primarily designed for use as a test set.
 - **Commercial Use:** The test split can be used commercially as a test set, but using it as a training set is prohibited. By accessing or using this dataset, you acknowledge and agree to abide by these terms in conjunction with the [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/) license.
 
-# Citation
+## Citation
 
 If you use the **IneqMath** dataset in your work, please kindly cite the paper using this BibTeX:
 
