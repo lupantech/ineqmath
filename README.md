@@ -1,14 +1,28 @@
-# **IneqMath**: Solving Inequality Proofs with Large Language Models
+<div align="center">
 
-Code for the Paper [Solving Inequality Proofs with Large Language Models](https://arxiv.org/abs/2506.07927).
+  <img src="./assets/ineqmath.jpg" alt="IneqMath Logo" width="300"/>
 
-<p>
+  <!-- <h1 style="font-size: 40px; margin-bottom: 0;"><strong>IneqMath</strong></h1> -->
+
+  <h2 style="font-weight: bold; margin-top: 11px;">
+    Solving Inequality Proofs with Large Language Models
+  </h2>
+
+  <p>
     <a href="https://ineqmath.github.io/">🌐 Project</a> |
     <a href="https://arxiv.org/abs/2506.07927">📖 Paper</a> |
-    <a href="https://huggingface.co/datasets/AI4Math/IneqMath">🤗 Dataset</a> |
+    <a href="https://github.com/lupantech/ineqmath">💻 Github</a> |
     <a href="https://huggingface.co/spaces/AI4Math/IneqMath-Leaderboard">🏆 Leaderboard</a> |
     <a href="https://ineqmath.github.io/#visualization">🔮 Visualization</a>
+    
   </p>
+
+
+</div>
+
+This is the code repository for the paper [Solving Inequality Proofs with Large Language Models](https://arxiv.org/abs/2506.07927).
+
+
 
 ## Introduction
 We propose **IneqMath**, an expert-curated dataset of Olympiad-level inequalities, including a test set and training corpus enriched with **step-wise solutions and theorem annotations**. The dataset follows an **informal yet verifiable** task formulation, recasting inequality proving into two automatically checkable subtasks: **bound estimation** and **relation prediction**. We also develop a novel **LLM-as-judge evaluation framework**, combining a ***final-answer** judge with four **step-wise** judges designed to detect common reasoning flaws. 
