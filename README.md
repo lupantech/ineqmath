@@ -1,10 +1,10 @@
 # **IneqMath**: Solving Inequality Proofs with Large Language Models
 
-Code for the Paper [Solving Inequality Proofs with Large Language Models (TODO)](https://www.google.com)
+Code for the Paper [Solving Inequality Proofs with Large Language Models](https://arxiv.org/abs/2506.07927).
 
 <p>
     <a href="https://ineqmath.github.io/">🌐 Project</a> |
-    <a href="https://www.google.com">📖 Paper (TODO)</a> |
+    <a href="https://arxiv.org/abs/2506.07927">📖 Paper</a> |
     <a href="https://huggingface.co/datasets/AI4Math/IneqMath">🤗 Dataset</a> |
     <a href="https://huggingface.co/spaces/AI4Math/IneqMath-Leaderboard">🏆 Leaderboard</a> |
     <a href="https://ineqmath.github.io/#visualization">🔮 Visualization</a>
@@ -322,7 +322,7 @@ If you use the **IneqMath** dataset in your work, please kindly cite the paper u
 @article{jiayi2025solving,
     author = {Jiayi, Sheng and Luna, Lyu and Jikai, Jin and Tony, Xia and Alex, Gu and James, Zou and Pan, Lu},
     title = {Solving Inequality Proofs with Large Language Models},
-    journal = {arXiv preprint arXiv:2506.TODO},
+    journal = {arXiv preprint arXiv:2506.07927},
     year = {2025}
 }
 ```
