@@ -140,10 +140,6 @@ DEEPSEEk_API_KEY=your-DeepSeek-api-key-here
 ANTHROPIC_API_KEY=your-Anthropic-api-key-here
 ```
 
-Finally, please remove all .DS_Store files:
-```bash
-find . -name ".DS_Store" -delete
-```
 
 ## Evaluate models on <b><span style="color:#103756;">Ineq</span><span style="color:#D03C36;">Math</span></b> test set
 Change the directory to `models/scripts`:
