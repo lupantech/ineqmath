@@ -10,8 +10,9 @@
 
   <p>
     <a href="https://ineqmath.github.io/">🌐 Project</a> |
-    <a href="https://arxiv.org/abs/2506.07927">📖 Paper</a> |
-    <a href="https://github.com/lupantech/ineqmath">💻 Github</a> |
+    <a href="https://arxiv.org/abs/2506.07927"><img src="assets/arxiv.svg" alt="arXiv" style="height:1em; vertical-align:middle;"/> arXiv</a> |
+    <a href="https://arxiv.org/abs/2506.07927"><img src="assets/huggingface.svg" alt="arXiv" style="height:1.35em; vertical-align:middle;"/> HF Paper</a> |
+    <a href="https://huggingface.co/datasets/AI4Math/IneqMath"><img src="assets/huggingface.svg" alt="arXiv" style="height:1.35em; vertical-align:middle;"/> Dataset</a> |
     <a href="https://huggingface.co/spaces/AI4Math/IneqMath-Leaderboard">🏆 Leaderboard</a> |
     <a href="https://ineqmath.github.io/#visualization">🔮 Visualization</a>
     
