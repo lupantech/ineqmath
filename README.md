@@ -18,19 +18,36 @@
     
   </p>
 
-
 </div>
 
 <!-- This is the code repository for the paper [Solving Inequality Proofs with Large Language Models](https://arxiv.org/abs/2506.07927). -->
 
+## Table of Contents
 
+- [📖 Introduction](#introduction)
+- [📊 Dataset Examples](#dataset-examples)
+- [🏆 Leaderboard](#-leaderboard)
+- [📝 Evaluations on IneqMath](#evaluations-on-ineqmath)
+  - [Environment Setup](#environment-setup)
+  - [Evaluate Models on IneqMath Test Set](#evaluate-models-on-ineqmath-test-set)
+  - [Submit the Results to the Leaderboard](#submit-the-results-to-the-leaderboard)
+  - [Dataset Overview](#dataset-overview)
+- [🧐 Fine-grained Informal Judges](#fine-grained-informal-judges)
+- [📈 Evaluation Results](#evaluation-results)
+  - [Results of Leading LLMs](#results-of-leading-llms)
+  - [Scaling Law in Model Size](#scaling-law-in-model-size)
+- [🔍 In-depth Study](#in-depth-study)
+  - [Retrieving Relevant Theorems as Hints](#retrieving-relevant-theorems-as-hints)
+  - [Self-improvement via Critic as Feedback](#self-improvement-via-critic-as-feedback)
+- [📜 License](#license)
+- [📚 Citation](#citation)
 
-## Introduction
+## 📖 Introduction
 We propose <b><span style="color:#103756;">Ineq</span><span style="color:#D03C36;">Math</span></b>, an expert-curated dataset of Olympiad-level inequalities, including a test set and a training corpus enriched with **step-wise solutions and theorem annotations**. The dataset follows an **informal yet verifiable** task formulation, recasting inequality proving into two automatically checkable subtasks: **bound estimation** and **relation prediction**. We also develop a novel **LLM-as-judge evaluation framework**, combining a ***final-answer** judge with four **step-wise** judges designed to detect common reasoning flaws.
 
 A systematic evaluation of 29 leading LLMs on <b><span style="color:#103756;">Ineq</span><span style="color:#D03C36;">Math</span></b> reveals a surprising reality: even top models like o1 achieve less than 10% overall accuracy under step-wise scrutiny; this is a drop of up to 65.5% from their accuracy when considering only final answer equivalence. This discrepancy exposes **fragile deductive chains and a critical gap for current LLMs between merely finding an answer and constructing a rigorous proof**. **Scaling model size and increasing test-time computation** yield limited gains in overall proof correctness. Instead, our findings highlight promising research directions such as **theorem-guided reasoning and self-refinement**.
 
-## Dataset Examples
+## 📊 Dataset Examples
 Below are training and testing examples from <b><span style="color:#103756;">Ineq</span><span style="color:#D03C36;">Math</span></b>. Each problem belongs to one of two automatically checkable subtasks: **bound estimation** or **relation prediction**. Each training problem includes **step-wise solutions**, with up to four solutions per problem, and 76.8% (962 problems) are annotated with **relevant theorems**. The test problems are each crafted and reviewed by **IMO-level medalists** to ensure both originality and difficulty.
 
 Training examples of <b><span style="color:#103756;">Ineq</span><span style="color:#D03C36;">Math</span></b>:
@@ -106,7 +123,8 @@ The content in parentheses next to the model's name represents reasoning effort 
 - **NAE**: No Approximation Error - Step accuracy excluding approximation errors
 - **NCE**: No Calculation Error - Step accuracy excluding all calculation errors
 
-## Environment Setup
+## 📝 Evaluations on IneqMath
+### Environment Setup
 
 Set up conda environment:
 
@@ -141,7 +159,7 @@ ANTHROPIC_API_KEY=your-Anthropic-api-key-here
 ```
 
 
-## Evaluate models on <b><span style="color:#103756;">Ineq</span><span style="color:#D03C36;">Math</span></b> test set
+### Evaluate Models on <b><span style="color:#103756;">Ineq</span><span style="color:#D03C36;">Math</span></b> Test Set
 Change the directory to `models/scripts`:
 ```bash
 cd models/scripts
@@ -169,7 +187,7 @@ If you want to run other models on our test set, you could subtitute the model e
 
 
 
-## Submit the results to the leaderboard
+### Submit the Results to the Leaderboard
 🏆 The leaderboard for the <b><span style="color:#103756;">Ineq</span><span style="color:#D03C36;">Math</span></b> is available [here](https://huggingface.co/spaces/AI4Math/IneqMath-Leaderboard).
 
 If you run the model by our scripts, you can find the results in `results models_results_test_data/` and upload the `results.json` of the model to the leaderboard.
@@ -185,7 +203,7 @@ If you run the model on your own, please check your data format before your subm
     "response": [string] The response of the model
 }
 ```
-## Dataset Overview
+### Dataset Overview
 The <b><span style="color:#103756;">Ineq</span><span style="color:#D03C36;">Math</span></b> dataset comprises 200 test problems for benchmarking, 100 development problems with public ground truth, and 1,252 training problems split evenly between **bound estimation** and **relation prediction** tasks as shown in the table below. The dataset also features 83 named theorems across 29 categories, with their distribution illustrated in the figure below.
 <center>
   <table 
@@ -281,7 +299,7 @@ The table below compares datasets for inequalities and theorem proving. <b><span
 <img src="assets/dataset_comparison.png" width="90%">
 </div>
 
-## Fine-grained Informal Judges
+## 🧐 Fine-grained Informal Judges
 
 Traditional evaluation methods fall short in this setting: expert annotation is accurate but prohibitively labor-intensive, while automated techniques such as string matching or value equivalence fail to capture step-by-step correctness—an essential aspect of inequality problem solving. To evaluate the correctness of <b><span style="color:#103756;">Ineq</span><span style="color:#D03C36;">Math</span></b> solutions, we propose a fine-grained **LLM-as-judge** framework, consisting of a **final-answer judge** for verifying the predicted answer and four specialized **step-wise judges** targeting common reasoning flaws. A solution is deemed correct **overall** only if it passes all five judges. As shown in the following table and confusion matrix, these judges achieve strong alignment with human annotations (F1 = 0.93), providing a scalable yet reliable alternative to manual evaluation.
 
@@ -292,7 +310,9 @@ Traditional evaluation methods fall short in this setting: expert annotation is 
 
 </div>
 
-## Results of leading LLMs
+
+## 📈 Evaluation Results
+### Results of Leading LLMs
 This table shows the **Final-answer accuracy** versus **overall accuracy** for leading LLMs across different categories on the <b><span style="color:#103756;">Ineq</span><span style="color:#D03C36;">Math</span></b> benchmark of Olympiad-level inequality problems. Overall accuracy, measuring both answer correctness and step soundness, is substantially lower than final-answer accuracy for all model types. This highlights a critical gap: while LLMs may find correct final answers to these inequality problems, their reasoning is often unsound. Each model used its optimal maximal tokens.
 
 <div align="center">
@@ -301,7 +321,7 @@ This table shows the **Final-answer accuracy** versus **overall accuracy** for l
 
 </div>
 
-## Scaling law in model size
+### Scaling Law in Model Size
 The following two figures show how <em>final-answer accuracy</em> (which evaluates only the correctness of the final predicted answer) and <em>overall accuracy</em> (which requires both a correct answer and valid intermediate reasoning steps) scales with model size for LLMs.
 
 The figure below shows how final-answer accuracy (which evaluates only the correctness of the final predicted answer) scales with model size for LLMs. As model size increases, we observe a steady improvement in answer accuracy, reflecting an empirical scaling law that larger models are better at inferring correct bounds and inequality relationships.
@@ -318,21 +338,23 @@ The figure below shows how final-answer accuracy (which evaluates only the corre
 
 </div>
 
-## Retrieving relevant theorems as hints
+## 🔍 In-depth Study
+### Retrieving Relevant Theorems as Hints
 As shown in the figure, providing one or two such theorems decreases overall accuracy for weaker models (e.g., Grok 3 mini, o3-mini, o4-mini), likely due to misapplication or distraction by potentially irrelevant information. Conversely, stronger models like Gemini 2.5 Pro benefit from these hints, suggesting advanced reasoning is crucial to effectively use such guidance. These results underscore the potential of theorem-guided reasoning but also highlight the critical need for more sophisticated theorem retrieval mechanisms (e.g., RAG) to reliably enhance LLM performance in inequality proving.
 
 <div align="center">
 <img src="assets/theorem_as_hints.png" width="65%">
 </div>
 
-## Self-improvement via critic as feedback
+
+### Self-improvement via Critic as Feedback
 As the figure shows, self-critique consistently improves performance—e.g., Gemini 2.5 Pro's overall accuracy rises from 43% to 48%. This upward trend underscores self-critique as a promising, supervision-free method to enhance logical rigor and solution quality of LLMs in inequality reasoning.
 
 <div align="center">
 <img src="assets/self_critic.png" width="65%">
 </div>
 
-## License
+## 📜 License
 
 The new contributions to our dataset are distributed under the [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/) license.
 
@@ -341,7 +363,7 @@ The copyright of the images and the questions belongs to the original authors. A
 - **Purpose:** The test split was primarily designed for use as a test set.
 - **Commercial Use:** The test split can be used commercially as a test set, but using it as a training set is prohibited. By accessing or using this dataset, you acknowledge and agree to abide by these terms in conjunction with the [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/) license.
 
-## Citation
+## 📚 Citation
 
 If you use the <b><span style="color:#103756;">Ineq</span><span style="color:#D03C36;">Math</span></b> dataset in your work, please kindly cite the paper using this BibTeX:
 
