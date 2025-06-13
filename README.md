@@ -31,7 +31,7 @@
   - [Environment Setup](#environment-setup)
   - [Evaluate Models on IneqMath Test Set](#evaluate-models-on-ineqmath-test-set)
   - [Submit the Results to the Leaderboard](#submit-the-results-to-the-leaderboard)
-  - [Dataset Overview](#dataset-overview)
+- [🤗 Dataset Overview](#dataset-overview)
 - [🧐 Fine-grained Informal Judges](#fine-grained-informal-judges)
 - [📈 Evaluation Results](#evaluation-results)
   - [Results of Leading LLMs](#results-of-leading-llms)
@@ -207,7 +207,8 @@ If you run the model on your own, please check your data format before your subm
     "response": [string] The response of the model
 }
 ```
-### Dataset Overview
+<a id="dataset-overview"></a>
+## 🤗 Dataset Overview
 The <b><span style="color:#103756;">Ineq</span><span style="color:#D03C36;">Math</span></b> dataset comprises 200 test problems for benchmarking, 100 development problems with public ground truth, and 1,252 training problems split evenly between **bound estimation** and **relation prediction** tasks as shown in the table below. The dataset also features 83 named theorems across 29 categories, with their distribution illustrated in the figure below.
 <center>
   <table 
