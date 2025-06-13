@@ -24,6 +24,7 @@
 
 ## 📑 Table of Contents
 
+- [💥 News ](#news)
 - [📖 Introduction](#introduction)
 - [📊 Dataset Examples](#dataset-examples)
 - [🏆 Leaderboard](#leaderboard)
@@ -41,6 +42,12 @@
   - [Self-improvement via Critic as Feedback](#self-improvement-via-critic-as-feedback)
 - [📜 License](#license)
 - [📚 Citation](#citation)
+
+<a id="news"></a>
+## 💥 News 
+- [2025.06.11] Our work was featured by [Pan Lu](https://x.com/lupantech) on [Twitter](https://x.com/lupantech/status/1932866286427779586)!
+- [2025.06.09] Our paper is now accessible at https://arxiv.org/abs/2506.07927.
+
 
 <a id="introduction"></a>
 ## 📖 Introduction
