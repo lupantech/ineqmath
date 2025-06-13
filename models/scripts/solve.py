@@ -83,11 +83,15 @@ class ProblemSolver:
                 query = self.build_query(problem, prob_type, task_prompt, shot_num)
             response = self.llm_engine(query, **kwargs)
             if not response:
-                print('response', response)
-            result = {**data, "prompt": query, "response": response, "success": True, "error": None}
+                print('response is empty')
+            if type(response) == str:
+                result = {**data, "prompt": query, "response": response, "success": True, "error": None}
+            else:
+                print(f"Response of problem {data_id} is not a string. Response: {response}")
+                result = {**data, "prompt": query, "response": "", "success": False, "error": f"Response is not a string. Response: {response}"}
         except Exception as e:
             print(f"Error processing problem {data_id}: {str(e)}")
-            result = {**data, "query": query, "response": None, "success": False, "error": str(e)}
+            result = {**data, "query": query, "response": "", "success": False, "error": str(e)}
 
         # print(f"Saving results for {data_id}...")
         self._save_results(result, output_dir, problem, query)
