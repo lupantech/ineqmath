@@ -45,8 +45,8 @@
 
 <a id="news"></a>
 ## 💥 News 
-- [2025.06.11] Our work was featured by [Pan Lu](https://x.com/lupantech) on [Twitter](https://x.com/lupantech/status/1932866286427779586)!
-- [2025.06.09] Our paper is now accessible at https://arxiv.org/abs/2506.07927.
+- **[2025.06.11]** Our work was featured by [Pan Lu](https://x.com/lupantech) on [Twitter](https://x.com/lupantech/status/1932866286427779586)!
+- **[2025.06.09]** Our paper is now accessible at https://arxiv.org/abs/2506.07927.
 
 
 <a id="introduction"></a>
