@@ -85,7 +85,10 @@ class ChatGemini(EngineLM, CachedEngine):
         )
         
         response = client.generate_content(messages, generation_config=generation_config)
-        response_text = response.text
+        if hasattr(response, "text"):
+            response_text = response.text
+        else:
+            response_text = ""
 
         if self.use_cache:
             self._save_cache(cache_key, response_text)
@@ -132,7 +135,10 @@ class ChatGemini(EngineLM, CachedEngine):
         )
 
         response = client.generate_content(formatted_content, generation_config=generation_config)
-        response_text = response.text
+        if hasattr(response, "text"):
+            response_text = response.text
+        else:
+            response_text = ""
 
         if self.use_cache:
             self._save_cache(cache_key, response_text)
