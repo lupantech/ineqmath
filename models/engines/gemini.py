@@ -8,10 +8,13 @@ except ImportError:
 
 import os
 import platformdirs
+import logging
 from tenacity import (
     retry,
     stop_after_attempt,
     wait_random_exponential,
+    before_sleep_log,
+    retry_if_exception_type,
 )
 import base64
 import json
@@ -49,17 +52,26 @@ class ChatGemini(EngineLM, CachedEngine):
     def __call__(self, prompt, **kwargs):
         return self.generate(prompt, **kwargs)
 
-    @retry(wait=wait_random_exponential(min=1, max=5), stop=stop_after_attempt(5))
+    @retry(
+        wait=wait_random_exponential(min=1, max=5), 
+        stop=stop_after_attempt(5), 
+        before_sleep=before_sleep_log(logging.getLogger(__name__), logging.INFO),
+        reraise=True  # This ensures the original exception is raised, not the retry exception
+    )
     def generate(self, content: Union[str, List[Union[str, bytes]]], system_prompt=None, **kwargs):
-        if isinstance(content, str):
-            return self._generate_from_single_prompt(content, system_prompt=system_prompt, **kwargs)
-        
-        elif isinstance(content, list):
-            has_multimodal_input = any(isinstance(item, bytes) for item in content)
-            if (has_multimodal_input) and (not self.is_multimodal):
-                raise NotImplementedError("Multimodal generation is only supported for Gemini Pro Vision.")
+        try:
+            if isinstance(content, str):
+                return self._generate_from_single_prompt(content, system_prompt=system_prompt, **kwargs)
             
-            return self._generate_from_multiple_input(content, system_prompt=system_prompt, **kwargs)
+            elif isinstance(content, list):
+                has_multimodal_input = any(isinstance(item, bytes) for item in content)
+                if (has_multimodal_input) and (not self.is_multimodal):
+                    raise NotImplementedError("Multimodal generation is only supported for Gemini Pro Vision.")
+                
+                return self._generate_from_multiple_input(content, system_prompt=system_prompt, **kwargs)
+        except Exception as e:
+            logging.getLogger(__name__).error(f"Error in Gemini API call: {type(e).__name__}: {str(e)}")
+            raise  # Re-raise for retry mechanism
 
     def _generate_from_single_prompt(
         self, prompt: str, system_prompt=None, temperature=0, max_tokens=2000, top_p=0.99, **kwargs
@@ -84,10 +96,11 @@ class ChatGemini(EngineLM, CachedEngine):
             candidate_count=1
         )
         
+
         response = client.generate_content(messages, generation_config=generation_config)
-        if hasattr(response, "text"):
+        try:
             response_text = response.text
-        else:
+        except:
             response_text = ""
 
         if self.use_cache:
@@ -135,10 +148,7 @@ class ChatGemini(EngineLM, CachedEngine):
         )
 
         response = client.generate_content(formatted_content, generation_config=generation_config)
-        if hasattr(response, "text"):
-            response_text = response.text
-        else:
-            response_text = ""
+        response_text = response.text
 
         if self.use_cache:
             self._save_cache(cache_key, response_text)
