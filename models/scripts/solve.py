@@ -138,7 +138,7 @@ if __name__ == "__main__":
         print(f"File {args.test_data_path} not found, loading from HuggingFace dataset")
         # Login using e.g. `huggingface-cli login` to access this dataset
         ds = load_dataset("AI4Math/IneqMath")
-        test_data = ds['test']
+        test_data = [dict(item) for item in ds['test']]  # Convert Dataset to list of dicts
 
     # Initialize solver
     solver = ProblemSolver(args.llm_engine_name, args.use_cache)
