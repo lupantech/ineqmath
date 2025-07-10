@@ -22,7 +22,7 @@ from .base import EngineLM, CachedEngine
 from .engine_utils import get_image_type_from_bytes
 from .openai import ChatOpenAI
 
-def validate_reasoning_model(model_string: str):
+def validate_grok_3_mini(model_string: str):
     # Ref: https://docs.x.ai/docs/guides/reasoning
     return any(x in model_string for x in ["grok-3-mini"])
 
@@ -47,7 +47,7 @@ class ChatGrok(ChatOpenAI):
         self.model_string = model_string
         self.system_prompt = system_prompt
         self.is_multimodal = is_multimodal
-        self.is_reasoning_model = validate_reasoning_model(model_string)
+        self.grok_3_mini = validate_grok_3_mini(model_string)
 
         if self.use_cache:
             root = platformdirs.user_cache_dir("octotools")
@@ -103,7 +103,7 @@ class ChatGrok(ChatOpenAI):
                 return cache_or_none
 
         # Chat with reasoning model
-        if self.is_reasoning_model:
+        if self.grok_3_mini:
             response = self.client.chat.completions.create(
                 messages=[
                     {"role": "system", "content": sys_prompt_arg},
@@ -170,7 +170,7 @@ class ChatGrok(ChatOpenAI):
                 return cache_or_none
 
         # Chat with reasoning model
-        if self.is_reasoning_model:
+        if self.grok_3_mini:
             response = self.client.chat.completions.create(
                 messages=[
                     {"role": "system", "content": sys_prompt_arg},
