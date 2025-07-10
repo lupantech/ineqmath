@@ -23,7 +23,7 @@ for LLM in "${ENGINES[@]}"; do
     --use_cache \
     --max_workers 3 \
     --max_tokens $TOKENS \
-    --test_num 3
+    --test_num -1
 
     python generate_results.py \
     --result_dir ../../results/models_results_test_data/\
