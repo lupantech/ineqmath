@@ -1,6 +1,6 @@
 <div align="center">
 
-  <img src="./assets/ineqmath.jpg" alt="IneqMath Logo" width="300"/>
+  <img src="./assets/ineqmath.svg" alt="IneqMath Logo" width="300"/>
 
   <!-- <h1 style="font-size: 40px; margin-bottom: 0;"><strong>IneqMath</strong></h1> -->
 
