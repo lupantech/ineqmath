@@ -208,7 +208,7 @@ If you want to run other models on our test set, you could subtitute the model e
 
 ### Supported LLM Engines
 
-We support a broad range of LLM engines, including GPT-4o, Claude 3.5 Sonnet, Gemini 1.5 Pro, and more.
+We support a broad range of LLM engines, including GPT-4.1, o4-mini, Claude Sonnet 4, Gemini 2.5 Pro, and more.
 
 | Model Family   | Engines | Official Model List |
 |----------------|----------------------|--------------------|
