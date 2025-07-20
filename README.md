@@ -32,6 +32,7 @@
   - [Environment Setup](#environment-setup)
   - [Evaluate Models on IneqMath Test Set](#evaluate-models-on-ineqmath-test-set)
   - [Submit the Results to the Leaderboard](#submit-the-results-to-the-leaderboard)
+  - [Supported LLM Engines](#supported-llm-engines)
 - [🤗 Dataset Overview](#dataset-overview)
 - [🧐 Fine-grained Informal Judges](#fine-grained-informal-judges)
 - [📈 Evaluation Results](#evaluation-results)
@@ -45,6 +46,7 @@
 
 <a id="news"></a>
 ## 💥 News 
+- **[2025.07.19]** 📄 Added support for vLLM LLM. Now you can use any vLLM-supported models and your local checkpoint models. Check out the [example script](https://github.com/lupantech/ineqmath/blob/main/models/scripts/run_test_data_vllm_qwen3_4b.sh) for more details.
 - **[2025.06.16]** 💥 o3-pro (40K) 🥇 Sets New SOTA on IneqMath with overall accuracy 46.0%! Read more on the [OpenAI Platform](https://platform.openai.com/docs/models/o3-pro?ref=blog.roboflow.com).
 - **[2025.06.11]** Our work is featured by [Pan Lu](https://x.com/lupantech) on [Twitter](https://x.com/lupantech/status/1932866286427779586)!
 - **[2025.06.09]** Our paper is now accessible at https://arxiv.org/abs/2506.07927.
@@ -204,7 +206,22 @@ tar -zxvf all.tar.gz
 If you want to run other models on our test set, you could subtitute the model engine name in `ENGINES` of the `.sh` file, and then run it.
 
 
+### Supported LLM Engines
 
+We support a broad range of LLM engines, including GPT-4o, Claude 3.5 Sonnet, Gemini 1.5 Pro, and more.
+
+| Model Family   | Engines | Official Model List |
+|----------------|----------------------|--------------------|
+| OpenAI         | `o4-mini`, `o3`, `o3-mini`, `o3-pro`, `o1`, `o1-pro`, `gpt-4.1`, `gpt-4.1-mini`, `gpt-4o`, `gpt-4o-mini`, `gpt-4-turbo` etc. | [OpenAI Models](https://platform.openai.com/docs/models) |
+| Anthropic      | `claude-opus-4-20250514`,`claude-sonnet-4-20250514`, `claude-3-7-sonnet-20250219`, `claude-3-5-sonnet-20240620`, `claude-3-5-sonnet-20241022`, `claude-3-5-haiku-20241022`, `claude-3-opus-20240229`, `claude-3-haiku-20240307` | [Anthropic Models](https://docs.anthropic.com/en/docs/about-claude/models/all-models) |
+| TogetherAI     | `meta-llama/Llama-4-Scout-17B-16E-Instruct`, `Qwen/QwQ-32B`, `Qwen/Qwen2-VL-72B-Instruct` etc. | [TogetherAI Models](https://api.together.ai/models) |
+| DeepSeek       | `deepseek-chat`, `deepseek-reasoner`| [DeepSeek Models](https://api-docs.deepseek.com/quick_start/pricing) |
+| Gemini         | `gemini-2.5-pro`, `gemini-2.5-pro-preview-06-05`, `gemini-2.5-pro-preview-05-06`, `gemini-2.5-flash`, `gemini-2.5-flash-preview-05-20`, `gemini-2.5-flash-lite-preview-06-17` etc. | [Gemini Models](https://ai.google.dev/gemini-api/docs/models) |
+| Grok           | `grok-4-0709`, `grok-3`, `grok-3-mini` etc. | [Grok Models](https://docs.x.ai/docs/models#models-and-pricing) |
+| vLLM           | Various vLLM-supported models, for example, `Qwen3-4B` and `QwQ-32B`. You can also use local checkpoint models for customization and local inference. Please see the [example script](https://github.com/lupantech/ineqmath/blob/main/models/scripts/run_test_data_vllm_qwen3_4b.sh). | [vLLM Models](https://docs.vllm.ai/en/latest/models/supported_models.html) |
+
+
+> Note: If you are using TogetherAI models, please ensure have the prefix 'together-' in the model string, for example, `together-meta-llama/Llama-4-Scout-17B-16E-Instruct`. For VLLM models, please see the [example script](https://github.com/lupantech/ineqmath/blob/main/models/scripts/run_test_data_vllm_qwen3_4b.sh) for usage. For other custom engines, you can edit the [factory.py](https://github.com/lupantech/ineqmath/blob/main/models/engines/factory.py) file and add its interface file to add support for your engine. Your pull request will be warmly welcomed!
 
 
 

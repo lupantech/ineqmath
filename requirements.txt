@@ -13,3 +13,5 @@ google
 google-generativeai
 sympy
 datasets
+huggingface_hub
+vllm
