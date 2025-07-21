@@ -17,8 +17,6 @@
     <a href="https://ineqmath.github.io/#visualization">🔮 Visualization</a>
     
   </p> -->
-</div>
-
   <!--- BADGES: START --->
 [![GitHub license](https://img.shields.io/badge/License-MIT-green.svg?logo=github)](https://lbesson.mit-license.org/)
 [![Arxiv](https://img.shields.io/badge/arXiv-2506.07927-B31B1B.svg?logo=arxiv)](https://arxiv.org/abs/2506.07927)
@@ -31,6 +29,8 @@
 
 
 <!--- BADGES: END --->
+
+</div>
 
 <!-- This is the code repository for the paper [Solving Inequality Proofs with Large Language Models](https://arxiv.org/abs/2506.07927). -->
 
