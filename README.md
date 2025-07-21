@@ -8,7 +8,7 @@
     Solving Inequality Proofs with Large Language Models
   </h2>
 
-  <p>
+  <!-- <p>
     <a href="https://ineqmath.github.io/">🌐 Project</a> |
     <a href="https://arxiv.org/abs/2506.07927"><img src="assets/arxiv.svg" alt="arXiv" style="height:1em; vertical-align:middle;"/> arXiv</a> |
     <a href="https://huggingface.co/papers/2506.07927"><img src="assets/huggingface.png" alt="hf" style="height:1em; vertical-align:middle;"/> HF Paper</a> |
@@ -16,7 +16,19 @@
     <a href="https://huggingface.co/spaces/AI4Math/IneqMath-Leaderboard">🏆 Leaderboard</a> |
     <a href="https://ineqmath.github.io/#visualization">🔮 Visualization</a>
     
-  </p>
+  </p> -->
+  <!--- BADGES: START --->
+[![GitHub license](https://img.shields.io/badge/License-MIT-green.svg?logo=github)](https://lbesson.mit-license.org/)
+[![Arxiv](https://img.shields.io/badge/arXiv-2506.07927-B31B1B.svg?logo=arxiv)](https://arxiv.org/abs/2506.07927)
+[![HF Paper](https://img.shields.io/badge/Huggingface-Paper-FFD21E.svg?logo=huggingface)](https://huggingface.co/papers/2506.07927)
+[![Huggingface Dataset](https://img.shields.io/badge/Huggingface-Dataset-FFD21E.svg?logo=huggingface)](https://huggingface.co/datasets/AI4Math/IneqMath)
+[![Website](https://img.shields.io/badge/Website-IneqMath-D03C36?logo=github)](https://ineqmath.github.io/)
+[![Leaderboard](https://img.shields.io/badge/Leaderboard-IneqMath-FFD21E?logo=Hoppscotch)](https://huggingface.co/spaces/AI4Math/IneqMath-Leaderboard)
+[![Visualization](https://img.shields.io/badge/Visualization-IneqMath-2176BC?logo=Vega)](https://ineqmath.github.io/#visualization)
+[![Coverage](https://img.shields.io/badge/Coverage-IneqMath-2176BC.svg?logo=x)](https://x.com/lupantech/status/1932866286427779586)
+
+<!-- [![Discord](https://img.shields.io/badge/Discord-OctoTools-D41544?logo=discord)](https://discord.gg/kgUXdZHgNG) -->
+<!--- BADGES: END --->
 
 </div>
 
