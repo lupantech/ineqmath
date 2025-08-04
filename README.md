@@ -213,8 +213,7 @@ If the dataset can't be loaded automatically, please download the json form data
 ```shell
 mkdir ../../data
 cd ../../data
-wget https://huggingface.co/datasets/AI4Math/IneqMath/resolve/main/json/all.tar.gz
-tar -zxvf all.tar.gz
+wget https://huggingface.co/datasets/AI4Math/IneqMath/resolve/main/json/test.json
 ```
 
 If you want to run other models on our test set, you could subtitute the model engine name in `ENGINES` of the `.sh` file, and then run it.
