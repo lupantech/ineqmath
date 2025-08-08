@@ -35,11 +35,14 @@ def validate_structured_output_model(model_string: str):
     return any(x in model_string for x in ["gpt-4o", "gpt-4o-mini", "gpt-4.1", "o3", "o4", "o1"])
 
 def validate_chat_model(model_string: str):
+    # If the model's name has 'gpt-5' in it, it is not a chat model
+    if "gpt-5" in model_string.lower():
+        return False
     return any(x in model_string for x in ["gpt", "GPT"])
 
 def validate_reasoning_model(model_string: str):
     # Ref: https://platform.openai.com/docs/guides/reasoning
-    return any(x in model_string for x in ["o1", "o3", "o4"]) and not validate_pro_reasoning_model(model_string)
+    return any(x in model_string for x in ["o1", "o3", "o4", "gpt-5"]) and not validate_pro_reasoning_model(model_string)
 
 def validate_pro_reasoning_model(model_string: str):
     # Ref: https://platform.openai.com/docs/guides/reasoning
