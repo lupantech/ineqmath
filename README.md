@@ -20,9 +20,9 @@
   <!--- BADGES: START --->
 [![GitHub license](https://img.shields.io/badge/License-MIT-green.svg?logo=github)](https://lbesson.mit-license.org/)
 [![GitHub license](https://img.shields.io/badge/License-CC--BY--SA--4.0-green.svg?logo=github)](https://creativecommons.org/licenses/by-sa/4.0/)
-[![Arxiv](https://img.shields.io/badge/arXiv-2506.07927-B31B1B.svg?logo=arxiv)](https://arxiv.org/abs/2506.07927)
+[![arXiv](https://img.shields.io/badge/arXiv-2506.07927-B31B1B.svg?logo=arxiv)](https://arxiv.org/abs/2506.07927)
 [![HF Paper](https://img.shields.io/badge/Huggingface-Paper-FFD21E.svg?logo=huggingface)](https://huggingface.co/papers/2506.07927)
-[![Huggingface Dataset](https://img.shields.io/badge/Huggingface-Dataset-FFD21E.svg?logo=huggingface)](https://huggingface.co/datasets/AI4Math/IneqMath)
+[![Hugging Face Dataset](https://img.shields.io/badge/Huggingface-Dataset-FFD21E.svg?logo=huggingface)](https://huggingface.co/datasets/AI4Math/IneqMath)
 </br>
 [![Website](https://img.shields.io/badge/Website-IneqMath-2176BC?logo=GoogleChrome)](https://ineqmath.github.io/)
 [![Leaderboard](https://img.shields.io/badge/Leaderboard-IneqMath-FFD21E?logo=Hoppscotch)](https://huggingface.co/spaces/AI4Math/IneqMath-Leaderboard)
@@ -63,7 +63,7 @@
 <a id="news"></a>
 ## 💥 News 
 - **[2025.08.08]** 💥 GPT-5 (medium, 30K) 🥇 Sets New SOTA on IneqMath with overall accuracy 47.0%! Read more on the [OpenAI Platform](https://openai.com/index/introducing-gpt-5/).
-- **[2025.07.19]** 📄 Added support for vLLM LLM. Now you can use any vLLM-supported models and your local checkpoint models. Check out the [example script](https://github.com/lupantech/ineqmath/blob/main/models/scripts/run_test_data_vllm_qwen3_4b.sh) for more details.
+- **[2025.07.19]** 📄 Added support for vLLM. You can now use any vLLM-supported models and your local checkpoint models. Check out the [example script](https://github.com/lupantech/ineqmath/blob/main/models/scripts/run_test_data_vllm_qwen3_4b.sh) for more details.
 - **[2025.06.16]** 💥 o3-pro (40K) 🥇 Sets New SOTA on IneqMath with overall accuracy 46.0%! Read more on the [OpenAI Platform](https://platform.openai.com/docs/models/o3-pro?ref=blog.roboflow.com).
 - **[2025.06.11]** Our work is featured by [Pan Lu](https://x.com/lupantech) on [Twitter](https://x.com/lupantech/status/1932866286427779586)!
 - **[2025.06.09]** Our paper is now accessible at https://arxiv.org/abs/2506.07927.
@@ -71,13 +71,13 @@
 
 <a id="introduction"></a>
 ## 📖 Introduction
-We propose <b><span style="color:#103756;">Ineq</span><span style="color:#D03C36;">Math</span></b>, an expert-curated dataset of Olympiad-level inequalities, including a test set and a training corpus enriched with **step-wise solutions and theorem annotations**. The dataset follows an **informal yet verifiable** task formulation, recasting inequality proving into two automatically checkable subtasks: **bound estimation** and **relation prediction**. We also develop a novel **LLM-as-judge evaluation framework**, combining a **final-answer** judge with four **step-wise** judges designed to detect common reasoning flaws.
+We propose <b><span style="color:#103756;">Ineq</span><span style="color:#D03C36;">Math</span></b>, an expert-curated dataset of Olympiad-level inequalities, including a test set and a training corpus enriched with **stepwise solutions and theorem annotations**. The dataset follows an **informal yet verifiable** task formulation, recasting inequality proving into two automatically checkable subtasks: **bound estimation** and **relation prediction**. We also develop a novel **LLM-as-judge evaluation framework**, combining a **final-answer** judge with four **stepwise** judges designed to detect common reasoning flaws.
 
-A systematic evaluation of 29 leading LLMs on <b><span style="color:#103756;">Ineq</span><span style="color:#D03C36;">Math</span></b> reveals a surprising reality: even top models like o1 achieve less than 10% overall accuracy under step-wise scrutiny; this is a drop of up to 65.5% from their accuracy when considering only final answer equivalence. This discrepancy exposes **fragile deductive chains and a critical gap for current LLMs between merely finding an answer and constructing a rigorous proof**. **Scaling model size and increasing test-time computation** yield limited gains in overall proof correctness. Instead, our findings highlight promising research directions such as **theorem-guided reasoning and self-refinement**.
+A systematic evaluation of 29 leading LLMs on <b><span style="color:#103756;">Ineq</span><span style="color:#D03C36;">Math</span></b> reveals a surprising reality: even top models like o1 achieve less than 10% overall accuracy under stepwise scrutiny; this is a drop of up to 65.5% from their accuracy when considering only final answer equivalence. This discrepancy exposes **fragile deductive chains and a critical gap for current LLMs between merely finding an answer and constructing a rigorous proof**. **Scaling model size and increasing test-time computation** yield limited gains in overall proof correctness. Instead, our findings highlight promising research directions such as **theorem-guided reasoning and self-refinement**.
 
 <a id="dataset-examples"></a>
 ## 📊 Dataset Examples
-Below are training and testing examples from <b><span style="color:#103756;">Ineq</span><span style="color:#D03C36;">Math</span></b>. Each problem belongs to one of two automatically checkable subtasks: **bound estimation** or **relation prediction**. Each training problem includes **step-wise solutions**, with up to four solutions per problem, and 76.8% (962 problems) are annotated with **relevant theorems**. The test problems are each crafted and reviewed by **IMO-level medalists** to ensure both originality and difficulty.
+Below are training and testing examples from <b><span style="color:#103756;">Ineq</span><span style="color:#D03C36;">Math</span></b>. Each problem belongs to one of two automatically checkable subtasks: **bound estimation** or **relation prediction**. Each training problem includes **stepwise solutions**, with up to four solutions per problem, and 76.8% (962 problems) are annotated with **relevant theorems**. The test problems are each crafted and reviewed by **IMO-level medalists** to ensure both originality and difficulty.
 
 Training examples of <b><span style="color:#103756;">Ineq</span><span style="color:#D03C36;">Math</span></b>:
 <div align="center">
@@ -163,7 +163,7 @@ The content in parentheses next to the model's name represents reasoning effort 
 - **Source**: 🔒 = Proprietary Model, 🌐 = Open-source Model
 
 **Step Accuracy Abbreviations:**
-- **NTC**: No Toy Case - Step accuracy excluding using toy-case for general conclusions
+- **NTC**: No Toy Case - Step accuracy excluding the use of toy cases for general conclusions
 - **NLG**: No Logical Gap - Step accuracy without logical reasoning gaps
 - **NAE**: No Approximation Error - Step accuracy excluding approximation errors
 - **NCE**: No Calculation Error - Step accuracy excluding all calculation errors
@@ -200,7 +200,7 @@ Set your API keys in the `.env` file. For example:
 
 ```sh
 OPENAI_API_KEY=your-OpenAI-api-key-here
-DEEPSEEk_API_KEY=your-DeepSeek-api-key-here
+DEEPSEEK_API_KEY=your-DeepSeek-api-key-here
 ANTHROPIC_API_KEY=your-Anthropic-api-key-here
 ```
 
@@ -218,14 +218,14 @@ Run `run_test_data_proprietary_all.sh`, `run_test_data_open_source_all.sh`, and 
 ./run_test_data_gemma.sh
 ```
 
-If the dataset can't be loaded automatically, please download the json form dataset manually by:
+If the dataset can't be loaded automatically, please download the JSON-formatted dataset manually by:
 ```shell
 mkdir ../../data
 cd ../../data
 wget https://huggingface.co/datasets/AI4Math/IneqMath/resolve/main/json/test.json
 ```
 
-If you want to run other models on our test set, you could subtitute the model engine name in `ENGINES` of the `.sh` file, and then run it.
+If you want to run other models on our test set, you could substitute the model engine name in `ENGINES` of the `.sh` file, and then run it.
 
 
 ### Evaluate Models on <b><span style="color:#103756;">Ineq</span><span style="color:#D03C36;">Math</span></b> Dev Set
@@ -240,7 +240,7 @@ cd models/scripts
 ```
 You can then find the answer accuracy in `results/models_results_dev_data/gpt-4o-mini_tokens_10000/scores.json` and `results/models_results_dev_data/Qwen3-4B_tokens_10000/scores.json`. 
 
-If you want to run other models on our dev set, you could subtitute the model engine name in `ENGINES` of the `.sh` file, and then run it.
+If you want to run other models on our dev set, you could substitute the model engine name in `ENGINES` of the `.sh` file, and then run it.
 
 ### Evaluate with the Final Answer Judge
 
@@ -270,7 +270,7 @@ The score will be saved in the same directory as `results.json`.
 
 If you run the model by our scripts, you can find the results in `results/models_results_test_data/` and upload the `results.json` of the model to the leaderboard.
 
-If you run the model on your own, please check your data format before your submission. The submitted data should be compiled in a single `json` file with at least five keys listed below:
+If you run the model on your own, please check your data format before your submission. The submitted data should be compiled in a single `JSON` file with at least five keys listed below:
 
 ```
 {
@@ -297,7 +297,7 @@ We support a broad range of LLM engines, including GPT-4.1, o4-mini, Claude Sonn
 | vLLM           | Various vLLM-supported models, for example, `Qwen3-4B` and `QwQ-32B`. You can also use local checkpoint models for customization and local inference. Please see the [example script](https://github.com/lupantech/ineqmath/blob/main/models/scripts/run_test_data_vllm_qwen3_4b.sh). | [vLLM Models](https://docs.vllm.ai/en/latest/models/supported_models.html) |
 
 
-> Note: If you are using TogetherAI models, please ensure have the prefix 'together-' in the model string, for example, `together-meta-llama/Llama-4-Scout-17B-16E-Instruct`. For VLLM models, please see the [example script](https://github.com/lupantech/ineqmath/blob/main/models/scripts/run_test_data_vllm_qwen3_4b.sh) for usage. For other custom engines, you can edit the [factory.py](https://github.com/lupantech/ineqmath/blob/main/models/engines/factory.py) file and add its interface file to add support for your engine. Your pull request will be warmly welcomed!
+> Note: If you are using TogetherAI models, please ensure you have the prefix 'together-' in the model string, for example, `together-meta-llama/Llama-4-Scout-17B-16E-Instruct`. For vLLM models, please see the [example script](https://github.com/lupantech/ineqmath/blob/main/models/scripts/run_test_data_vllm_qwen3_4b.sh) for usage. For other custom engines, you can edit the [factory.py](https://github.com/lupantech/ineqmath/blob/main/models/engines/factory.py) file and add its interface file to add support for your engine. Your pull request will be warmly welcomed!
 
 
 <a id="dataset-overview"></a>
@@ -391,7 +391,7 @@ The <b><span style="color:#103756;">Ineq</span><span style="color:#D03C36;">Math
 
 </div>
 
-The table below compares datasets for inequalities and theorem proving. <b><span style="color:#103756;">Ineq</span><span style="color:#D03C36;">Math</span></b> provides expert-annotated training and test/dev sets, featuring high-quality named theorems and step-wise solutions for model development. Unlike prior datasets that use synthesis or autoformalization, <b><span style="color:#103756;">Ineq</span><span style="color:#D03C36;">Math</span></b> presents problems in informal language across both multiple-choice (MC) and open-ended (Open) formats, and employs LLM-as-judge for evaluation.
+The table below compares datasets for inequalities and theorem proving. <b><span style="color:#103756;">Ineq</span><span style="color:#D03C36;">Math</span></b> provides expert-annotated training and test/dev sets, featuring high-quality named theorems and stepwise solutions for model development. Unlike prior datasets that use synthesis or autoformalization, <b><span style="color:#103756;">Ineq</span><span style="color:#D03C36;">Math</span></b> presents problems in informal language across both multiple-choice (MC) and open-ended (Open) formats, and employs LLM-as-judge for evaluation.
 
 <div align="center">
 <img src="assets/dataset_comparison.png" width="90%">
@@ -422,7 +422,7 @@ This table shows the **Final-answer accuracy** versus **overall accuracy** for l
 </div>
 
 ### Scaling Law in Model Size
-The following two figures show how <em>final-answer accuracy</em> (which evaluates only the correctness of the final predicted answer) and <em>overall accuracy</em> (which requires both a correct answer and valid intermediate reasoning steps) scales with model size for LLMs.
+The following two figures show how <em>final-answer accuracy</em> (which evaluates only the correctness of the final predicted answer) and <em>overall accuracy</em> (which requires both a correct answer and valid intermediate reasoning steps) scale with model size for LLMs.
 
 The figure below shows how final-answer accuracy (which evaluates only the correctness of the final predicted answer) scales with model size for LLMs. As model size increases, we observe a steady improvement in answer accuracy, reflecting an empirical scaling law that larger models are better at inferring correct bounds and inequality relationships.
 <div align="center">
