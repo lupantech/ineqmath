@@ -45,6 +45,7 @@
 - [📝 Evaluations on IneqMath](#evaluations-on-ineqmath)
   - [Environment Setup](#environment-setup)
   - [Evaluate Models on IneqMath Test Set](#evaluate-models-on-ineqmath-test-set)
+  - [Evaluate Models on IneqMath Dev Set](#evaluate-models-on-ineqmath-test-set)
   - [Submit the Results to the Leaderboard](#submit-the-results-to-the-leaderboard)
   - [Supported LLM Engines](#supported-llm-engines)
 - [🤗 Dataset Overview](#dataset-overview)
@@ -224,6 +225,38 @@ wget https://huggingface.co/datasets/AI4Math/IneqMath/resolve/main/json/test.jso
 ```
 
 If you want to run other models on our test set, you could subtitute the model engine name in `ENGINES` of the `.sh` file, and then run it.
+
+### Evaluate Models on <b><span style="color:#103756;">Ineq</span><span style="color:#D03C36;">Math</span></b> Dev Set
+
+We also provide scripts to evaluate on the dev set. In addition, we include our *Final Answer Judge* to compute answer accuracy, helping you tune your models more effectively.
+
+To run both the evaluation and the *Final Answer Judge* together, run:
+```bash
+cd models/scripts
+./run_dev_data_gpt_4o_mini.sh
+./run_dev_data_vllm_qwen3_4b.sh
+```
+You can then find the answer accuracy in `results/models_results_dev_data/gpt-4o-mini_tokens_10000/scores.json` and `results/models_results_dev_data/Qwen3-4B_tokens_10000/scores.json`. 
+
+To run the *Final Answer Judge* on its own for a generated results file, run the following in the same `models/scripts` directory:
+```sh
+python compute_score.py \
+  --direct_input \
+  --results_file YOUR_RESULTS_FILE \
+  --use_cache \
+```
+
+For example, to evaluate the results file `../../results/models_results_dev_data/gpt-4o-mini_tokens_10000/results.json`, run:
+
+```sh
+python compute_score.py \
+  --direct_input \
+  --results_file ../../results/models_results_dev_data/gpt-4o-mini_tokens_10000/results.json\
+  --use_cache 
+```
+
+The score will be saved in the same directory as `results.json`. 
+
 
 
 ### Supported LLM Engines

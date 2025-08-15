@@ -6,7 +6,7 @@ ENGINES=(
      "Qwen/Qwen3-4B"
 )
 TOKENS=10000
-SPLIT=test
+SPLIT=dev
 OUTPUT_PATH="../../results/models_results_${SPLIT}_data/"
 MAX_WORKERS=32
 
@@ -65,6 +65,12 @@ for HF_MODEL_NAME in "${ENGINES[@]}"; do
 
     python generate_results.py \
     --result_dir $OUTPUT_PATH\
+    --run_label $LABEL \
+    --use_cache \
+    --max_workers $MAX_WORKERS
+
+    python compute_score.py \
+    --result_dir $OUTPUT_PATH \
     --run_label $LABEL \
     --use_cache \
     --max_workers $MAX_WORKERS

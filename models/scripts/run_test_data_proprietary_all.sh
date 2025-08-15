@@ -1,8 +1,4 @@
-# https://platform.openai.com/docs/models
-
-# cd /root/Projects/inequality_dev_2025/models/baselines
-
-# Define array of LLM engines to test
+############## Configurations ###############
 ENGINES=(
     "gemini-2.0-flash"
     "gemini-2.0-flash-lite"
@@ -19,9 +15,12 @@ ENGINES=(
     "o3-mini-2025-01-31"
     "o4-mini-2025-04-16"   
 )
-
 TOKENS=10000
+SPLIT=test
+OUTPUT_PATH="../../results/models_results_${SPLIT}_data/"
+MAX_WORKERS=32
 
+############## Run the model ###############
 # Loop through each engine
 for LLM in "${ENGINES[@]}"; do
     echo "Running tests for engine: $LLM"
@@ -29,20 +28,21 @@ for LLM in "${ENGINES[@]}"; do
     LABEL=${LLM}_tokens_${TOKENS}
 
     python solve.py \
-    --test_data_path ../../data/json/test.json\
-    --output_path ../../results/models_results_test_data/\
+    --data_path ../../data/json/${SPLIT}.json\
+    --split $SPLIT\
+    --output_path $OUTPUT_PATH\
     --llm_engine_name $LLM \
     --run_label $LABEL \
     --use_cache \
-    --max_workers 20 \
+    --max_workers $MAX_WORKERS \
     --max_tokens $TOKENS \
     --test_num -1
 
     python generate_results.py \
-    --result_dir ../../results/models_results_test_data/\
+    --result_dir $OUTPUT_PATH\
     --run_label $LABEL \
     --use_cache \
-    --max_workers 32
+    --max_workers $MAX_WORKERS
 
     echo "Completed tests for engine: $LLM"
     echo "----------------------------------------"

@@ -1,9 +1,9 @@
 ############## Configurations ###############
 ENGINES=(
-    "deepseek-ai/together-DeepSeek-R1" 
+    "gpt-4o-mini"
 )
 TOKENS=10000
-SPLIT=test
+SPLIT=dev
 OUTPUT_PATH="../../results/models_results_${SPLIT}_data/"
 MAX_WORKERS=32
 
@@ -27,6 +27,12 @@ for LLM in "${ENGINES[@]}"; do
 
     python generate_results.py \
     --result_dir $OUTPUT_PATH\
+    --run_label $LABEL \
+    --use_cache \
+    --max_workers $MAX_WORKERS
+
+    python compute_score.py \
+    --result_dir $OUTPUT_PATH \
     --run_label $LABEL \
     --use_cache \
     --max_workers $MAX_WORKERS

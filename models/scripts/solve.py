@@ -204,7 +204,7 @@ class ProblemSolver:
                 query = self.build_query(problem, prob_type, task_prompt, shot_num)
             response = self.llm_engine(query, **kwargs)
             if not response:
-                print('response is empty')
+                print(f'response is empty for problem {data_id}')
             if type(response) == str:
                 result = {**data, "prompt": query, "response": response, "success": True, "error": None}
             else:
@@ -234,7 +234,8 @@ class ProblemSolver:
             f.write(md_text)
 def parse_arguments():
     parser = argparse.ArgumentParser()
-    parser.add_argument("--test_data_path", type=str, default="../../data/final_data_250320/data/test_data_241127.json")
+    parser.add_argument("--data_path", type=str, default="../../data/json/test.json")
+    parser.add_argument("--split", type=str, default="test", help="Dataset split to evaluate on when loading from HuggingFace (e.g., 'train', 'dev', 'test', 'train_expanded').")
     parser.add_argument("--llm_engine_name", type=str, default="gpt-4o-mini")
     parser.add_argument("--max_tokens", type=int, default=3000)
     parser.add_argument("--use_cache", action="store_true", default=False)
@@ -245,7 +246,6 @@ def parse_arguments():
     parser.add_argument("--run_label", type=str, default="exp1")
     parser.add_argument("--output_path", type=str, default="../../results/baselines_test_data_250320")
     parser.add_argument("--max_workers", type=int, default=1)
-    parser.add_argument("--dev", action="store_true", default=False, help="Use full dataset. If not set, start from index 100.")
     parser.add_argument("--vllm_config_path", type=str, default=None, help="Path to VLLM config file.")
     return parser.parse_args()
 
@@ -253,14 +253,16 @@ if __name__ == "__main__":
     args = parse_arguments()
     
     # Load test data
-    if os.path.exists(args.test_data_path):
-        with open(args.test_data_path, "r") as f:
-            test_data: List[Dict[str, Any]] = json.load(f)
+    if os.path.exists(args.data_path):
+        with open(args.data_path, "r") as f:
+            split_data: List[Dict[str, Any]] = json.load(f)
     else:
-        print(f"File {args.test_data_path} not found, loading from HuggingFace dataset")
+        print(f"File {args.data_path} not found, loading from HuggingFace dataset split '{args.split}'")
         # Login using e.g. `huggingface-cli login` to access this dataset
         ds = load_dataset("AI4Math/IneqMath")
-        test_data = [dict(item) for item in ds['test']]  # Convert Dataset to list of dicts
+        if args.split not in ds:
+            raise ValueError(f"Split '{args.split}' not found in dataset. Available splits: {list(ds.keys())}")
+        split_data = [dict(item) for item in ds[args.split]]  # Convert Dataset to list of dicts
 
     # Initialize solver
     solver = ProblemSolver(args.llm_engine_name, args.use_cache, args.vllm_config_path)
@@ -268,12 +270,12 @@ if __name__ == "__main__":
     try:    
         if args.test_num > 0:
             random.seed(42)  # Set seed for reproducibility
-            test_data = random.sample(test_data, min(args.test_num, len(test_data)))
-        print(f"We have {len(test_data)} test cases in total.")
+            split_data = random.sample(split_data, min(args.test_num, len(split_data)))
+        print(f"We have {len(split_data)} test cases in total.")
         output_dir = os.path.join(args.output_path, args.run_label, "raw")
         # Skip if already processed successfully
         test_data_to_process = []
-        for data in test_data:
+        for data in split_data:
             data_id = data["annot_id"] if "annot_id" in data else data["data_id"] # NOTE
             if os.path.exists(os.path.join(output_dir, f"{data_id}.json")):
                 # print(output_dir)
