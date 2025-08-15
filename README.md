@@ -45,7 +45,7 @@
 - [📝 Evaluations on IneqMath](#evaluations-on-ineqmath)
   - [Environment Setup](#environment-setup)
   - [Evaluate Models on IneqMath Test Set](#evaluate-models-on-ineqmath-test-set)
-  - [Evaluate Models on IneqMath Dev Set](#evaluate-models-on-ineqmath-test-set)
+  - [Evaluate Models on IneqMath Dev Set](#evaluate-models-on-ineqmath-dev-set)
   - [Submit the Results to the Leaderboard](#submit-the-results-to-the-leaderboard)
   - [Supported LLM Engines](#supported-llm-engines)
 - [🤗 Dataset Overview](#dataset-overview)
@@ -226,11 +226,12 @@ wget https://huggingface.co/datasets/AI4Math/IneqMath/resolve/main/json/test.jso
 
 If you want to run other models on our test set, you could subtitute the model engine name in `ENGINES` of the `.sh` file, and then run it.
 
+
 ### Evaluate Models on <b><span style="color:#103756;">Ineq</span><span style="color:#D03C36;">Math</span></b> Dev Set
 
-We also provide scripts to evaluate on the dev set. In addition, we include our *Final Answer Judge* to compute answer accuracy, helping you tune your models more effectively.
+We also provide scripts to evaluate on the **dev set.** In addition, we include our **Final Answer Judge** to compute answer accuracy, helping you tune your models more effectively.
 
-To run both the evaluation and the *Final Answer Judge* together, run:
+To run both the evaluation and the **Final Answer Judge** together, run:
 ```bash
 cd models/scripts
 ./run_dev_data_gpt_4o_mini.sh
@@ -258,6 +259,22 @@ python compute_score.py \
 The score will be saved in the same directory as `results.json`. 
 
 
+### Submit the Results to the Leaderboard
+🏆 The leaderboard for the <b><span style="color:#103756;">Ineq</span><span style="color:#D03C36;">Math</span></b> is available [here](https://huggingface.co/spaces/AI4Math/IneqMath-Leaderboard).
+
+If you run the model by our scripts, you can find the results in `results/models_results_test_data/` and upload the `results.json` of the model to the leaderboard.
+
+If you run the model on your own, please check your data format before your submission. The submitted data should be compiled in a single `json` file with at least five keys listed below:
+
+```
+{
+    "data_id": [integer or string] The ID of the data of each split,
+    "problem": [string] The question text,
+    "type": [string] The type of question: 'relation' or 'bound',
+    "prompt": [string] The prompt used for the problem,
+    "response": [string] The response of the model
+}
+```
 
 ### Supported LLM Engines
 
@@ -277,23 +294,6 @@ We support a broad range of LLM engines, including GPT-4.1, o4-mini, Claude Sonn
 > Note: If you are using TogetherAI models, please ensure have the prefix 'together-' in the model string, for example, `together-meta-llama/Llama-4-Scout-17B-16E-Instruct`. For VLLM models, please see the [example script](https://github.com/lupantech/ineqmath/blob/main/models/scripts/run_test_data_vllm_qwen3_4b.sh) for usage. For other custom engines, you can edit the [factory.py](https://github.com/lupantech/ineqmath/blob/main/models/engines/factory.py) file and add its interface file to add support for your engine. Your pull request will be warmly welcomed!
 
 
-
-### Submit the Results to the Leaderboard
-🏆 The leaderboard for the <b><span style="color:#103756;">Ineq</span><span style="color:#D03C36;">Math</span></b> is available [here](https://huggingface.co/spaces/AI4Math/IneqMath-Leaderboard).
-
-If you run the model by our scripts, you can find the results in `results/models_results_test_data/` and upload the `results.json` of the model to the leaderboard.
-
-If you run the model on your own, please check your data format before your submission. The submitted data should be compiled in a single `json` file with at least five keys listed below:
-
-```
-{
-    "data_id": [integer or string] The ID of the data of each split,
-    "problem": [string] The question text,
-    "type": [string] The type of question: 'relation' or 'bound',
-    "prompt": [string] The prompt used for the problem,
-    "response": [string] The response of the model
-}
-```
 <a id="dataset-overview"></a>
 ## 🤗 Dataset Overview
 The <b><span style="color:#103756;">Ineq</span><span style="color:#D03C36;">Math</span></b> dataset comprises 200 test problems for benchmarking, 100 development problems with public ground truth, and 1,252 training problems split evenly between **bound estimation** and **relation prediction** tasks as shown in the table below. The dataset also features 83 named theorems across 29 categories, with their distribution illustrated in the figure below.
