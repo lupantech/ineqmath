@@ -229,9 +229,9 @@ If you want to run other models on our test set, you could subtitute the model e
 
 ### Evaluate Models on <b><span style="color:#103756;">Ineq</span><span style="color:#D03C36;">Math</span></b> Dev Set
 
-We also provide scripts to evaluate on the **dev set.** In addition, we include our **Final Answer Judge** to compute answer accuracy, helping you tune your models more effectively.
+We also provide scripts to evaluate models on the **dev set.** In addition, we include our **Final Answer Judge** to compute answer accuracy, helping you tune your models more effectively.
 
-To run both the evaluation and the **Final Answer Judge** together, run:
+To run both the evaluation and the **Final Answer Judge** together for the example models `GPT-4o mini` and `Qwen/Qwen3-4B`, run:
 ```bash
 cd models/scripts
 ./run_dev_data_gpt_4o_mini.sh
@@ -246,6 +246,7 @@ python compute_score.py \
   --results_file YOUR_RESULTS_FILE \
   --use_cache \
 ```
+Replace `YOUR_RESULTS_FILE` with the path to the `results.json` file for which you want to compute answer accuracy.
 
 For example, to evaluate the results file `../../results/models_results_dev_data/gpt-4o-mini_tokens_10000/results.json`, run:
 
