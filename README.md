@@ -239,6 +239,8 @@ cd models/scripts
 ```
 You can then find the answer accuracy in `results/models_results_dev_data/gpt-4o-mini_tokens_10000/scores.json` and `results/models_results_dev_data/Qwen3-4B_tokens_10000/scores.json`. 
 
+If you want to run other models on our dev set, you could subtitute the model engine name in `ENGINES` of the `.sh` file, and then run it.
+
 To run the *Final Answer Judge* on its own for a generated results file, run the following in the same `models/scripts` directory:
 ```sh
 python compute_score.py \
