@@ -92,8 +92,8 @@ Testing examples of <b><span style="color:#103756;">Ineq</span><span style="colo
 
 
 <div align="center">
-    <img src="assets/test_bound_example.png" width="650" alt="Test Bound Example">
-    <img src="assets/test_relation_example.png" width="650" alt="Test Relation Example">
+    <img src="assets/examples/test_bound_example.png" width="650" alt="Test Bound Example">
+    <img src="assets/examples/test_relation_example.png" width="650" alt="Test Relation Example">
 </div>
 
 <a id="leaderboard"></a>
@@ -397,14 +397,14 @@ The <b><span style="color:#103756;">Ineq</span><span style="color:#D03C36;">Math
 
 <div align="center">
 
-  <img src="./assets/theorem_category_pie_chart.png" alt="IneqMath Logo" width="520"/>
+  <img src="./assets/dataset/theorem_category_pie_chart.png" alt="IneqMath Logo" width="520"/>
 
 </div>
 
 The table below compares datasets for inequalities and theorem proving. <b><span style="color:#103756;">Ineq</span><span style="color:#D03C36;">Math</span></b> provides expert-annotated training and test/dev sets, featuring high-quality named theorems and stepwise solutions for model development. Unlike prior datasets that use synthesis or autoformalization, <b><span style="color:#103756;">Ineq</span><span style="color:#D03C36;">Math</span></b> presents problems in informal language across both multiple-choice (MC) and open-ended (Open) formats, and employs LLM-as-judge for evaluation.
 
 <div align="center">
-<img src="assets/dataset_comparison.png" width="90%">
+<img src="assets/dataset/dataset_comparison.png" width="90%">
 </div>
 
 <a id="fine-grained-informal-judges"></a>
@@ -414,8 +414,8 @@ Traditional evaluation methods fall short in this setting: expert annotation is 
 
 <div align="center">
 
-  <img src="./assets/confusion_matrix_judge_metrix.png" alt="judge_confusion_matrix" width="800"/>
-  <img src="./assets/table_judge_metrics.png" alt="table_judge_matrix" width="650"/>
+  <img src="./assets/results/confusion_matrix_judge_metrix.png" alt="judge_confusion_matrix" width="800"/>
+  <img src="./assets/results/table_judge_metrics.png" alt="table_judge_matrix" width="650"/>
 
 </div>
 
@@ -427,7 +427,7 @@ This table shows the **Final-answer accuracy** versus **overall accuracy** for l
 
 <div align="center">
 
-  <img src="./assets/key_results_figure.png" alt="judge_confusion_matrix" width="800"/>
+  <img src="./assets/results/key_results_figure.png" alt="judge_confusion_matrix" width="800"/>
 
 </div>
 
@@ -437,14 +437,14 @@ The following two figures show how <em>final-answer accuracy</em> (which evaluat
 The figure below shows how final-answer accuracy (which evaluates only the correctness of the final predicted answer) scales with model size for LLMs. As model size increases, we observe a steady improvement in answer accuracy, reflecting an empirical scaling law that larger models are better at inferring correct bounds and inequality relationships.
 <div align="center">
 
-  <img src="./assets/scaling_law_model_size_answer_acc_log_all.png" alt="scaling_curve_answer_acc" width="700"/>
+  <img src="./assets/results/scaling_law_model_size_answer_acc_log_all.png" alt="scaling_curve_answer_acc" width="700"/>
 
 </div>
 
  However, the trend for answer accuracy does not hold well when considering overall accuracy—which requires both a correct answer and valid intermediate reasoning steps—as shown in the figure below. In this case, the scaling curve flattens, indicating that increased model size alone is insufficient to eliminate step-by-step reasoning errors.
 
 <div align="center">
-  <img src="./assets/scaling_law_model_size_overall_acc_log_all.png" alt="scaling_curve_overall_acc" width="700"/>
+  <img src="./assets/results/scaling_law_model_size_overall_acc_log_all.png" alt="scaling_curve_overall_acc" width="700"/>
 
 </div>
 
@@ -454,7 +454,7 @@ The figure below shows how final-answer accuracy (which evaluates only the corre
 As shown in the figure, providing one or two such theorems decreases overall accuracy for weaker models (e.g., Grok 3 mini, o3-mini, o4-mini), likely due to misapplication or distraction by potentially irrelevant information. Conversely, stronger models like Gemini 2.5 Pro benefit from these hints, suggesting advanced reasoning is crucial to effectively use such guidance. These results underscore the potential of theorem-guided reasoning but also highlight the critical need for more sophisticated theorem retrieval mechanisms (e.g., RAG) to reliably enhance LLM performance in inequality proving.
 
 <div align="center">
-<img src="assets/theorem_as_hints.png" width="65%">
+<img src="assets/results/theorem_as_hints.png" width="65%">
 </div>
 
 
@@ -462,7 +462,7 @@ As shown in the figure, providing one or two such theorems decreases overall acc
 As the figure shows, self-critique consistently improves performance—e.g., Gemini 2.5 Pro's overall accuracy rises from 43% to 48%. This upward trend underscores self-critique as a promising, supervision-free method to enhance logical rigor and solution quality of LLMs in inequality reasoning.
 
 <div align="center">
-<img src="assets/self_critic.png" width="65%">
+<img src="assets/results/self_critic.png" width="65%">
 </div>
 
 <a id="license"></a>
