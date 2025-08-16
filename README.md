@@ -1,6 +1,6 @@
 <div align="center">
 
-  <img src="./assets/ineqmath.svg" alt="IneqMath Logo" width="300"/>
+  <img src="./assets/logos/ineqmath.svg" alt="IneqMath Logo" width="300"/>
 
   <!-- <h1 style="font-size: 40px; margin-bottom: 0;"><strong>IneqMath</strong></h1> -->
 
@@ -83,8 +83,8 @@ Below are training and testing examples from <b><span style="color:#103756;">Ine
 
 Training examples of <b><span style="color:#103756;">Ineq</span><span style="color:#D03C36;">Math</span></b>:
 <div align="center">
-    <img src="assets/train_bound_example.png" width="650" alt="Train Bound Example">
-    <img src="assets/train_relation_example.png" width="650" alt="Train Relation Example">
+    <img src="assets/examples/train_bound_example.png" width="650" alt="Train Bound Example">
+    <img src="assets/examples/train_relation_example.png" width="650" alt="Train Relation Example">
 </div>
 
 
@@ -213,7 +213,7 @@ Change the directory to `models/scripts`:
 cd models/scripts
 ```
 
-Run `run_test_data_proprietary_all.sh`, `run_test_data_open_source_all.sh`, and `run_test_data_gemma.sh` to evaluate all the models used in our paper's experiments on the test set.
+Run `run_test_data_proprietary_all.sh`, `run_test_data_open_source_all.sh`, and `run_test_data_gemma.sh` to generate the outputs of all the models used in our paper's experiments on the test set.
 ```bash
 ./run_test_data_proprietary_all.sh
 ./run_test_data_open_source_all.sh
@@ -227,7 +227,11 @@ cd ../../data
 wget https://huggingface.co/datasets/AI4Math/IneqMath/resolve/main/json/test.json
 ```
 
+Then, you can then find the model's output in `results/models_results_test_data`.
+
 If you want to run other models on our test set, you could substitute the model engine name in `ENGINES` of the `.sh` file, and then run it.
+
+To evaluate your model's output and obtain the answer accuracy and step-wise accuracy reported in our paper, please submit your outputs to the [leaderboard](https://huggingface.co/spaces/AI4Math/IneqMath-Leaderboard). See [the leaderboard submission instruction](#submit-the-results-to-the-leaderboard) for details.
 
 
 ### Evaluate Models on <b><span style="color:#103756;">Ineq</span><span style="color:#D03C36;">Math</span></b> Dev Set
@@ -243,6 +247,8 @@ cd models/scripts
 You can then find the answer accuracy in `results/models_results_dev_data/gpt-4o-mini_tokens_10000/scores.json` and `results/models_results_dev_data/Qwen3-4B_tokens_10000/scores.json`. 
 
 If you want to run other models on our dev set, you could substitute the model engine name in `ENGINES` of the `.sh` file, and then run it.
+
+To further evaluate your model's output and obtain the step-wise accuracy reported in our paper, please submit your generated `*.json` file (e.g. `results/models_results_dev_data/gpt-4o-mini_tokens_10000/results.json`) to the [Dev set evaluation platform](https://huggingface.co/spaces/AI4Math/IneqMath-Dev-Evaluation). 
 
 ### Evaluate with the Final Answer Judge
 
@@ -270,9 +276,11 @@ The score will be saved in the same directory as `results.json`.
 ### Submit the Results to the Leaderboard
 🏆 The leaderboard for the <b><span style="color:#103756;">Ineq</span><span style="color:#D03C36;">Math</span></b> is available [here](https://huggingface.co/spaces/AI4Math/IneqMath-Leaderboard).
 
-If you run the model by our scripts, you can find the results in `results/models_results_test_data/` and upload the `results.json` of the model to the leaderboard.
+To submit the results to the leaderboard, please follow the follwing instructions: 
 
-If you run the model on your own, please check your data format before your submission. The submitted data should be compiled in a single `JSON` file with at least five keys listed below:
+- If you run the model by our scripts, you can find the results in `results/models_results_test_data/` or `results/models_results_dev_data/` and upload the `results.json` of the model to the corresponding section (test/dev) of the leaderboard.
+
+- If you run the model on your own, please check your data format before your submission. The submitted data should be compiled in a single `JSON` file with at least five keys listed below:
 
 ```
 {
