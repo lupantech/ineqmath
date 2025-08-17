@@ -4,6 +4,7 @@
 # ==============================================
 ENGINES=(
      "Qwen/Qwen3-4B"
+     # You can add more models here
 )
 TOKENS=10000
 SPLIT=test

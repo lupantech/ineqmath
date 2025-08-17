@@ -63,8 +63,11 @@
 <a id="news"></a>
 ## 💥 News 
 
+- **[2025.08.16]** 🚀 Updated example scripts across all supported model families—explore them [here](#supported-llm-engines).
+- **[2025.08.14]** ✨ Released the dev set evaluation scripts and our **Final Answer Judge**—try them now: [Dev set evaluation](#evaluate-models-on-ineqmath-dev-set) | [Final Answer Judge](#evaluate-with-the-final-answer-judge).
 - **[2025.08.08]** 💥 GPT-5 (medium, 30K) 🥇 Sets New SOTA on IneqMath with overall accuracy 47.0%! Read more on the [OpenAI Platform](https://openai.com/index/introducing-gpt-5/).
-- **[2025.07.19]** 📄 Added support for vLLM. You can now use any vLLM-supported models and your local checkpoint models. Check out the [example script](https://github.com/lupantech/ineqmath/blob/main/models/scripts/run_test_data_vllm_qwen3_4b.sh) for more details.
+- **[2025.07.25]** ✨ Released our dev set evaluation platform to help you fine-tune models more effectively! Get started: [Dev set evaluation platform](https://huggingface.co/spaces/AI4Math/IneqMath-Dev-Evaluation).
+- **[2025.07.19]** 📄 Added support for vLLM. You can now use any vLLM-supported models and your local checkpoint models. Check out the [example scripts](#supported-llm-engines) for more details.
 - **[2025.07.18]** 🎉 Our paper has been accepted to the [2nd AI for Math Workshop](https://sites.google.com/view/ai4mathworkshopicml2025/accepted-papers?authuser=0) at ICML 2025—read the [paper](https://openreview.net/forum?id=cB9eZUINSh#discussion) and view the [poster](assets/icml_poster.pdf)!
 - **[2025.06.16]** 💥 o3-pro (40K) 🥇 Sets New SOTA on IneqMath with overall accuracy 46.0%! Read more on the [OpenAI Platform](https://platform.openai.com/docs/models/o3-pro?ref=blog.roboflow.com).
 - **[2025.06.11]** Our work is featured by [Pan Lu](https://x.com/lupantech) on [Twitter](https://x.com/lupantech/status/1932866286427779586)!
@@ -220,9 +223,9 @@ Run `run_test_data_proprietary_all.sh`, `run_test_data_open_source_all.sh`, and 
 ./run_test_data_gemma.sh
 ```
 
-To run vLLM models, use the following example script:
+To run other supported models, see the [Supported LLM Engines](#supported-llm-engines) section for details and example scripts. For example, to run an OpenAI‑family model, run:
 ```bash
-./run_test_data_vllm_qwen3_4b.sh
+./run_test_data_openai.sh
 ```
 
 If the dataset can't be loaded automatically, please download the JSON-formatted dataset manually by:
@@ -232,9 +235,8 @@ cd ../../data
 wget https://huggingface.co/datasets/AI4Math/IneqMath/resolve/main/json/test.json
 ```
 
-Then, you can then find the model's output in `results/models_results_test_data`.
+Then, you can then find the model's output in `results/models_results_test_data/MODEL-LABEL/scores.json`, where `MODEL-LABEL` is the label of the model consisting of the model name and the max tokens budget.
 
-If you want to run other models on our test set, you could substitute the model engine name in `ENGINES` of the `.sh` file, and then run it. (For )
 
 To evaluate your model's output and obtain the answer accuracy and step-wise accuracy reported in our paper, please submit your outputs to the [leaderboard](https://huggingface.co/spaces/AI4Math/IneqMath-Leaderboard). See [the leaderboard submission instruction](#submit-the-results-to-the-leaderboard) for details.
 
@@ -243,17 +245,14 @@ To evaluate your model's output and obtain the answer accuracy and step-wise acc
 
 We also provide scripts to evaluate models on the **dev set.** In addition, we include our **Final Answer Judge** to compute answer accuracy, helping you tune your models more effectively.
 
-To run both the evaluation and the **Final Answer Judge** together for the example models `GPT-4o mini` and `Qwen/Qwen3-4B`, run:
+To run other supported models, see the [Supported LLM Engines](#supported-llm-engines) section for details and example scripts. For example, to run an OpenAI‑family model on the dev set, run:
 ```bash
-cd models/scripts
-./run_dev_data_gpt_4o_mini.sh
-./run_dev_data_vllm_qwen3_4b.sh
+./run_dev_data_openai.sh
 ```
-You can then find the answer accuracy in `results/models_results_dev_data/gpt-4o-mini_tokens_10000/scores.json` and `results/models_results_dev_data/Qwen3-4B_tokens_10000/scores.json`. 
 
-If you want to run other models on our dev set, you could substitute the model engine name in `ENGINES` of the `.sh` file, and then run it.
+You can then find the answer accuracy in `results/models_results_dev_data/MODEL-LABEL/scores.json`, where `MODEL-LABEL` is the label of the model consisting of the model name and the max tokens budget.
 
-To further evaluate your model's output and obtain the step-wise accuracy reported in our paper, please submit your generated `*.json` file (e.g. `results/models_results_dev_data/gpt-4o-mini_tokens_10000/results.json`) to the [Dev set evaluation platform](https://huggingface.co/spaces/AI4Math/IneqMath-Dev-Evaluation). 
+To further evaluate your model's output and obtain the step-wise accuracy reported in our paper, please submit your generated `*.json` file (e.g. `results/models_results_dev_data/MODEL-LABEL/results.json`) to the [Dev set evaluation platform](https://huggingface.co/spaces/AI4Math/IneqMath-Dev-Evaluation). 
 
 ### Evaluate with the Final Answer Judge
 
@@ -312,7 +311,7 @@ We support a broad range of LLM engines, including GPT-4.1, o4-mini, Claude Sonn
 | vLLM           | Various vLLM-supported models, for example, `Qwen3-4B` and `QwQ-32B`. You can also use local checkpoint models for customization and local inference. | [vLLM Models](https://docs.vllm.ai/en/latest/models/supported_models.html) | [Test](models/scripts/run_test_data_vllm.sh) / [Dev](models/scripts/run_dev_data_vllm.sh) |
 
 
-> Note: If you are using TogetherAI models, please ensure you have the prefix 'together-' in the model string, for example, `together-meta-llama/Llama-4-Scout-17B-16E-Instruct`. For vLLM models, please see the [example script](https://github.com/lupantech/ineqmath/blob/main/models/scripts/run_test_data_vllm_qwen3_4b.sh) for usage. For other custom engines, you can edit the [factory.py](https://github.com/lupantech/ineqmath/blob/main/models/engines/factory.py) file and add its interface file to add support for your engine. Your pull request will be warmly welcomed!
+> Note: If you want to run other models from the supported model family, you could substitute or add the model engine name in `ENGINES` of the example scripts, and then run it. If you are using TogetherAI models, please ensure you have the prefix 'together-' in the model string, for example, `together-meta-llama/Llama-4-Scout-17B-16E-Instruct`. For other custom engines, you can edit the [factory.py](https://github.com/lupantech/ineqmath/blob/main/models/engines/factory.py) file and add its interface file to add support for your engine. Your pull request will be warmly welcomed!
 
 
 <a id="dataset-overview"></a>
