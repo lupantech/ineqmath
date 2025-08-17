@@ -6,6 +6,8 @@ import random
 import time
 import atexit
 import subprocess
+import urllib.request
+import shutil
 from typing import List, Dict, Any
 from datasets import load_dataset
 
@@ -19,6 +21,12 @@ from tqdm import tqdm
 
 
 class ProblemSolver:
+    # Predefined list of common theorems
+    FREQUENT_THEOREMS = [
+        "Theorem 35",
+        "Theorem 26",
+        "Theorem 2"
+    ]
     
     BOUND_HINT_PROMPT = "Task description: Please solve the problem with clear, rigorous, and logically sound steps. At the end of your response, state your answer in exactly this format: 'The answer is $C=X$', where X is your calculated numerical bound value. Example: 'The answer is $C=1$'."
     RELATION_HINT_PROMPT = "Task description: Please solve the problem with clear, rigorous, and logically sound steps. At the end of your response, state your answer in exactly this format: 'The answer is (Letter) Symbol', where Letter is one of the given options. Example: 'The answer is (A) $\\leq$'."
@@ -146,7 +154,7 @@ class ProblemSolver:
 
         self.vllm_server_process = vllm_process
     
-    def build_query(self, problem: str, prob_type: str, task_prompt: str = "", shot_num: int = 0) -> str:
+    def build_query(self, problem: str, prob_type: str, task_prompt: str = "", shot_num: int = 0, theorem_num: int = 0, theorem_set_path: str = None) -> str:
         if prob_type == "bound":
             task_hint = f"{self.BOUND_HINT_PROMPT}\n\n"
         elif prob_type == "relation":
@@ -159,11 +167,29 @@ class ProblemSolver:
         if shot_num == 0:
             demonstrations = ""
         else:
-            # TODO: Implement this
             demonstrations = ""  
 
-        query = f"{task_hint}{task_prompt}{demonstrations}Problem: {problem}\n\nSolution:"
+        # Select theorems from predefined list
+        theorem_details = ""
+        if theorem_set_path:
+            try:
+                with open(theorem_set_path, 'r', encoding='utf-8') as f:
+                    theorem_set = json.load(f)
+                # Use predefined theorem list
+                selected_theorems = self.select_theorems(theorem_num)
+                for i, theorem_name in enumerate(selected_theorems):
+                    if theorem_name in theorem_set:
+                        theorem = theorem_set[theorem_name]
+                        theorem_details += f"Theorem {i+1} (Category: {theorem.get('Theorem_Category', '')}, Nicknames: {', '.join(theorem.get('Nickname', []))}): {theorem.get('Theorem', '')}\n\n"
+            except Exception as e:
+                print(f"Error loading theorem set: {e}")
+
+        query = f"{task_hint}{task_prompt}{demonstrations}Problem: {problem}\n\nPlease use some of the following theorems to solve the problem:\n{theorem_details}Solution:"
         return query
+
+    def select_theorems(self, theorem_num: int) -> List[str]:
+        """Select theorems sequentially from the predefined list"""
+        return self.FREQUENT_THEOREMS[:min(theorem_num, len(self.FREQUENT_THEOREMS))]
 
     def build_md_text(self, problem: str, query: str, response: str) -> str:
         text = f"""
@@ -187,7 +213,10 @@ class ProblemSolver:
         try:
             problem = data["problem"]
             prob_type = data["type"]
-            query = self.build_query(problem, prob_type, task_prompt, shot_num)
+            # Extract theorem hint controls from kwargs so they are not passed to the engine
+            theorem_num = kwargs.pop("theorem_num", 0)
+            theorem_set_path = kwargs.pop("theorem_set_path", None)
+            query = self.build_query(problem, prob_type, task_prompt, shot_num, theorem_num, theorem_set_path)
             response = self.llm_engine(query, **kwargs)
             if not response:
                 print(f'response is empty for problem {data_id}')
@@ -233,10 +262,28 @@ def parse_arguments():
     parser.add_argument("--output_path", type=str, default="../../results/baselines_test_data_250320")
     parser.add_argument("--max_workers", type=int, default=1)
     parser.add_argument("--vllm_config_path", type=str, default=None, help="Path to VLLM config file.")
+    parser.add_argument("--theorem_num", type=int, default=0, help="Number of theorems to include as hints. 0 means no theorems.")
+    parser.add_argument("--theorem_set_path", type=str, default='../../data/json/theorems.json', help="Path to the theorem set file.")
     return parser.parse_args()
 
 if __name__ == "__main__":
     args = parse_arguments()
+    # Ensure theorem_set_path exists at startup; download from HF if missing
+    if args.theorem_set_path:
+        if not os.path.exists(args.theorem_set_path):
+            try:
+                base_url = "https://huggingface.co/datasets/AI4Math/IneqMath/resolve/main/json/"
+                filename = "theorems.json"
+                download_url = base_url + filename
+                dirpath = os.path.dirname(args.theorem_set_path)
+                if dirpath:
+                    os.makedirs(dirpath, exist_ok=True)
+                print(f"theorem_set_path not found. Downloading from {download_url} ...")
+                with urllib.request.urlopen(download_url) as response, open(args.theorem_set_path, 'wb') as out_file:
+                    shutil.copyfileobj(response, out_file)
+                print(f"Downloaded theorem set to {args.theorem_set_path}")
+            except Exception as e:
+                print(f"Failed to download theorem set from Hugging Face: {e}")
     
     # Load test data
     if os.path.exists(args.data_path):
@@ -271,7 +318,7 @@ if __name__ == "__main__":
         print(f"Processing {len(test_data_to_process)} test cases...")
 
         # Create kwargs dictionary with additional arguments
-        kwargs = {"max_tokens": args.max_tokens}
+        kwargs = {"max_tokens": args.max_tokens, "theorem_num": args.theorem_num, "theorem_set_path": args.theorem_set_path}
         
         if args.max_workers > 1:
             with concurrent.futures.ThreadPoolExecutor(max_workers=args.max_workers) as executor:

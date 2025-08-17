@@ -6,6 +6,8 @@ import random
 import time
 import atexit
 import subprocess
+import urllib.request
+import shutil
 from typing import List, Dict, Any
 from datasets import load_dataset
 
@@ -19,6 +21,12 @@ from tqdm import tqdm
 
 
 class ProblemSolver:
+    # Predefined list of common theorems
+    FREQUENT_THEOREMS = [
+        "Theorem 35",
+        "Theorem 26",
+        "Theorem 2"
+    ]
     
     BOUND_HINT_PROMPT = "Task description: Please solve the problem with clear, rigorous, and logically sound steps. At the end of your response, state your answer in exactly this format: 'The answer is $C=X$', where X is your calculated numerical bound value. Example: 'The answer is $C=1$'."
     RELATION_HINT_PROMPT = "Task description: Please solve the problem with clear, rigorous, and logically sound steps. At the end of your response, state your answer in exactly this format: 'The answer is (Letter) Symbol', where Letter is one of the given options. Example: 'The answer is (A) $\\leq$'."
@@ -146,7 +154,7 @@ class ProblemSolver:
 
         self.vllm_server_process = vllm_process
     
-    def build_query(self, problem: str, prob_type: str, task_prompt: str = "", shot_num: int = 0) -> str:
+    def build_query(self, problem: str, prob_type: str, task_prompt: str = "", shot_num: int = 0, solution_num: int = 0, solution_file_path: str = None) -> str:
         if prob_type == "bound":
             task_hint = f"{self.BOUND_HINT_PROMPT}\n\n"
         elif prob_type == "relation":
@@ -156,14 +164,31 @@ class ProblemSolver:
 
         task_prompt = f"{task_prompt}\n\n" if task_prompt else ""
         
-        if shot_num == 0:
-            demonstrations = ""
-        else:
-            # TODO: Implement this
-            demonstrations = ""  
+        # Get solution examples
+        solution_examples = ""
+        if solution_file_path:
+            try:
+                with open(solution_file_path, 'r', encoding='utf-8') as f:
+                    solution_set = json.load(f)
+                # Use predefined theorem list
+                selected_theorems = self.select_theorems(solution_num)
+                for i,theorem_name in enumerate(selected_theorems):
+                    # Add solution example for this theorem
+                    solution_key = f"{theorem_name}_{prob_type}"
+                    if solution_key in solution_set:
+                        solution_data = solution_set[solution_key]
+                        solution_examples += f"Example Problem {i+1}: {solution_data['problem']}\n"
+                        solution_examples += f"Solution of Example Problem {i+1}: {solution_data['solution']}\n"
+                        solution_examples += f"Answer of Example Problem {i+1}: {solution_data['answer']}\n\n"
+            except Exception as e:
+                print(f"Error loading solution set: {e}")
 
-        query = f"{task_hint}{task_prompt}{demonstrations}Problem: {problem}\n\nSolution:"
+        query = f"{task_hint}{task_prompt}Here are some example problems and solutions that are related to the problem you are solving:\n\n{solution_examples}\nProblem: {problem}\n\nSolution:"
         return query
+
+    def select_theorems(self, theorem_num: int) -> List[str]:
+        """Select theorems sequentially from the predefined list"""
+        return self.FREQUENT_THEOREMS[:min(theorem_num, len(self.FREQUENT_THEOREMS))]
 
     def build_md_text(self, problem: str, query: str, response: str) -> str:
         text = f"""
@@ -187,7 +212,10 @@ class ProblemSolver:
         try:
             problem = data["problem"]
             prob_type = data["type"]
-            query = self.build_query(problem, prob_type, task_prompt, shot_num)
+            # Extract theorem hint controls from kwargs so they are not passed to the engine
+            solution_num = kwargs.pop("solution_num", 0)
+            solution_file_path = kwargs.pop("solution_file_path", None)
+            query = self.build_query(problem, prob_type, task_prompt, shot_num, solution_num, solution_file_path)
             response = self.llm_engine(query, **kwargs)
             if not response:
                 print(f'response is empty for problem {data_id}')
@@ -233,6 +261,8 @@ def parse_arguments():
     parser.add_argument("--output_path", type=str, default="../../results/baselines_test_data_250320")
     parser.add_argument("--max_workers", type=int, default=1)
     parser.add_argument("--vllm_config_path", type=str, default=None, help="Path to VLLM config file.")
+    parser.add_argument("--solution_num", type=int, default=0, help="Number of solutions to include as hints. 0 means no solutions.")
+    parser.add_argument("--solution_file_path", type=str, default='../../data/json/frequent_solution_set.json', help="Path to the solution set file.")
     return parser.parse_args()
 
 if __name__ == "__main__":
@@ -271,7 +301,7 @@ if __name__ == "__main__":
         print(f"Processing {len(test_data_to_process)} test cases...")
 
         # Create kwargs dictionary with additional arguments
-        kwargs = {"max_tokens": args.max_tokens}
+        kwargs = {"max_tokens": args.max_tokens, "solution_num": args.solution_num, "solution_file_path": args.solution_file_path}
         
         if args.max_workers > 1:
             with concurrent.futures.ThreadPoolExecutor(max_workers=args.max_workers) as executor:

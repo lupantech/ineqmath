@@ -177,10 +177,13 @@ cython_debug/
 .pypirc
 
 # Results files
-# results
+results
 
 # experiments
-experiments/
+
 
 # test files
 run_test_data_test.sh
+
+# theorems.json files
+theorems.json
