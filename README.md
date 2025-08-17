@@ -274,7 +274,7 @@ python compute_score.py \
   --use_cache 
 ```
 
-The score will be saved as `scores.json` in the same directory as `results.json`. 
+The score will be saved as `../../results/models_results_dev_data/gpt-4o-mini_tokens_10000/scores.json` in the same directory as `results.json`. 
 
 
 ### Submit the Results to the Leaderboard

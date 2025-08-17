@@ -178,3 +178,6 @@ cython_debug/
 
 # Results files
 # results
+
+# experiments
+experiments/
