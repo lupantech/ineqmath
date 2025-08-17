@@ -235,10 +235,10 @@ cd ../../data
 wget https://huggingface.co/datasets/AI4Math/IneqMath/resolve/main/json/test.json
 ```
 
-Then, you can then find the model's output in `results/models_results_test_data/MODEL-LABEL/scores.json`, where `MODEL-LABEL` is the label of the model consisting of the model name and the max tokens budget.
+Then, you can find the model's output in `results/models_results_test_data/MODEL-LABEL/scores.json`, where `MODEL-LABEL` is the label of the model consisting of the model name and the max tokens budget.
 
 
-To evaluate your model's output and obtain the answer accuracy and step-wise accuracy reported in our paper, please submit your outputs to the [leaderboard](https://huggingface.co/spaces/AI4Math/IneqMath-Leaderboard). See [the leaderboard submission instruction](#submit-the-results-to-the-leaderboard) for details.
+To evaluate your model's output and obtain the answer accuracy and step-wise accuracy reported in our paper, please submit your outputs to the [leaderboard](https://huggingface.co/spaces/AI4Math/IneqMath-Leaderboard). See [the leaderboard submission instruction](#submit-the-results-to-the-leaderboard) for more details.
 
 
 ### Evaluate Models on <b><span style="color:#103756;">Ineq</span><span style="color:#D03C36;">Math</span></b> Dev Set
@@ -274,7 +274,7 @@ python compute_score.py \
   --use_cache 
 ```
 
-The score will be saved in the same directory as `results.json`. 
+The score will be saved as `scores.json` in the same directory as `results.json`. 
 
 
 ### Submit the Results to the Leaderboard
