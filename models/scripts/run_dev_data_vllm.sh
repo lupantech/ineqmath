@@ -8,7 +8,7 @@ ENGINES=(
 TOKENS=10000
 SPLIT=dev
 OUTPUT_PATH="../../results/models_results_${SPLIT}_data/"
-MAX_WORKERS=32
+MAX_WORKERS=16
 
 
 # ==============================================

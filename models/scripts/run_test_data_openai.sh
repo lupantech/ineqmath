@@ -1,19 +1,19 @@
 ############## Configurations ###############
 ENGINES=(
-    "gemini-2.0-flash"
-    "gemini-2.0-flash-lite"
-    "gpt-4o-2024-08-06"
-    "gpt-4o-mini-2024-07-18"
-    "gpt-4.1-2025-04-14"
-    "grok-3-beta"
-    "claude-3-7-sonnet-20250219"
-    "gemini-2.5-flash-preview-04-17"
-    "gemini-2.5-pro-preview-05-06"
-    "grok-3-mini-beta"
-    "o1-2024-12-17"
-    "o3-2025-04-16"
-    "o3-mini-2025-01-31"
-    "o4-mini-2025-04-16"   
+    "gpt-5"
+    "gpt-5-mini"
+    "gpt-5-nano"
+    "o4-mini"
+    "o3"
+    "o3-mini"
+    "o3-pro"
+    "o1"
+    "o1-pro"
+    "gpt-4.1"
+    "gpt-4.1-mini"
+    "gpt-4o"
+    "gpt-4o-mini"
+    # You can add more models here
 )
 TOKENS=10000
 SPLIT=test

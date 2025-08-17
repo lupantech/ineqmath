@@ -1,11 +1,19 @@
 ############## Configurations ###############
 ENGINES=(
-     "gemini-2.5-pro-preview-06-05"
+     "claude-opus-4-20250514"
+     "claude-sonnet-4-20250514"
+     "claude-3-7-sonnet-20250219"
+     "claude-3-5-sonnet-20240620"
+     "claude-3-5-sonnet-20241022"
+     "claude-3-5-haiku-20241022"
+     "claude-3-opus-20240229"
+     "claude-3-haiku-20240307"
+     # You can add more models here
 )
 TOKENS=10000
-SPLIT=test
+SPLIT=dev
 OUTPUT_PATH="../../results/models_results_${SPLIT}_data/"
-MAX_WORKERS=32
+MAX_WORKERS=16
 
 ############## Run the model ###############
 # Loop through each engine
@@ -27,6 +35,12 @@ for LLM in "${ENGINES[@]}"; do
 
     python generate_results.py \
     --result_dir $OUTPUT_PATH\
+    --run_label $LABEL \
+    --use_cache \
+    --max_workers $MAX_WORKERS
+
+    python compute_score.py \
+    --result_dir $OUTPUT_PATH \
     --run_label $LABEL \
     --use_cache \
     --max_workers $MAX_WORKERS

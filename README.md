@@ -220,6 +220,11 @@ Run `run_test_data_proprietary_all.sh`, `run_test_data_open_source_all.sh`, and 
 ./run_test_data_gemma.sh
 ```
 
+To run vLLM models, use the following example script:
+```bash
+./run_test_data_vllm_qwen3_4b.sh
+```
+
 If the dataset can't be loaded automatically, please download the JSON-formatted dataset manually by:
 ```shell
 mkdir ../../data
@@ -229,7 +234,7 @@ wget https://huggingface.co/datasets/AI4Math/IneqMath/resolve/main/json/test.jso
 
 Then, you can then find the model's output in `results/models_results_test_data`.
 
-If you want to run other models on our test set, you could substitute the model engine name in `ENGINES` of the `.sh` file, and then run it.
+If you want to run other models on our test set, you could substitute the model engine name in `ENGINES` of the `.sh` file, and then run it. (For )
 
 To evaluate your model's output and obtain the answer accuracy and step-wise accuracy reported in our paper, please submit your outputs to the [leaderboard](https://huggingface.co/spaces/AI4Math/IneqMath-Leaderboard). See [the leaderboard submission instruction](#submit-the-results-to-the-leaderboard) for details.
 
@@ -296,15 +301,15 @@ To submit the results to the leaderboard, please follow the follwing instruction
 
 We support a broad range of LLM engines, including GPT-4.1, o4-mini, Claude Sonnet 4, Gemini 2.5 Pro, and more.
 
-| Model Family   | Engines | Official Model List |
-|----------------|----------------------|--------------------|
-| OpenAI         | `GPT-5`, `GPT-5 mini`,`GPT-5 nano`, `o4-mini`, `o3`, `o3-mini`, `o3-pro`, `o1`, `o1-pro`, `gpt-4.1`, `gpt-4.1-mini`, `gpt-4o`, `gpt-4o-mini`, `gpt-4-turbo` etc. | [OpenAI Models](https://platform.openai.com/docs/models) |
-| Anthropic      | `claude-opus-4-20250514`,`claude-sonnet-4-20250514`, `claude-3-7-sonnet-20250219`, `claude-3-5-sonnet-20240620`, `claude-3-5-sonnet-20241022`, `claude-3-5-haiku-20241022`, `claude-3-opus-20240229`, `claude-3-haiku-20240307` | [Anthropic Models](https://docs.anthropic.com/en/docs/about-claude/models/all-models) |
-| TogetherAI     | `meta-llama/Llama-4-Scout-17B-16E-Instruct`, `Qwen/QwQ-32B`, `Qwen/Qwen2-VL-72B-Instruct` etc. | [TogetherAI Models](https://api.together.ai/models) |
-| DeepSeek       | `deepseek-chat`, `deepseek-reasoner`| [DeepSeek Models](https://api-docs.deepseek.com/quick_start/pricing) |
-| Gemini         | `gemini-2.5-pro`, `gemini-2.5-pro-preview-06-05`, `gemini-2.5-pro-preview-05-06`, `gemini-2.5-flash`, `gemini-2.5-flash-preview-05-20`, `gemini-2.5-flash-lite-preview-06-17` etc. | [Gemini Models](https://ai.google.dev/gemini-api/docs/models) |
-| Grok           | `grok-4-0709`, `grok-3`, `grok-3-mini` etc. | [Grok Models](https://docs.x.ai/docs/models#models-and-pricing) |
-| vLLM           | Various vLLM-supported models, for example, `Qwen3-4B` and `QwQ-32B`. You can also use local checkpoint models for customization and local inference. Please see the [example script](https://github.com/lupantech/ineqmath/blob/main/models/scripts/run_test_data_vllm_qwen3_4b.sh). | [vLLM Models](https://docs.vllm.ai/en/latest/models/supported_models.html) |
+| Model Family   | Engines | Official Model List | Example Scripts |
+|----------------|----------------------|--------------------|----------------|
+| OpenAI         | `gpt-5`, `gpt-5-mini`,`gpt-5-nano`, `o4-mini`, `o3`, `o3-mini`, `o3-pro`, `o1`, `o1-pro`, `gpt-4.1`, `gpt-4.1-mini`, `gpt-4o`, `gpt-4o-mini`, `gpt-4-turbo` etc. | [OpenAI Models](https://platform.openai.com/docs/models) | [Test example](models/scripts/run_test_data_openai.sh)<br> [Dev example](models/scripts/run_dev_data_openai.sh) |
+| Anthropic      | `claude-opus-4-20250514`,`claude-sonnet-4-20250514`, `claude-3-7-sonnet-20250219`, `claude-3-5-sonnet-20240620`, `claude-3-5-sonnet-20241022`, `claude-3-5-haiku-20241022`, `claude-3-opus-20240229`, `claude-3-haiku-20240307` | [Anthropic Models](https://docs.anthropic.com/en/docs/about-claude/models/all-models) | [Test example](models/scripts/run_test_data_anthropic.sh)<br> [Dev example](models/scripts/run_dev_data_anthropic.sh) |
+| Gemini         | `gemini-2.5-pro`, `gemini-2.5-pro-preview-06-05`, `gemini-2.5-pro-preview-05-06`, `gemini-2.5-flash`, `gemini-2.5-flash-preview-05-20`, `gemini-2.5-flash-lite-preview-06-17` etc. | [Gemini Models](https://ai.google.dev/gemini-api/docs/models) | [Test example](models/scripts/run_test_data_gemini.sh)<br> [Dev example](models/scripts/run_dev_data_gemini.sh) |
+| DeepSeek       | `deepseek-chat`, `deepseek-reasoner`| [DeepSeek Models](https://api-docs.deepseek.com/quick_start/pricing) | [Test example](models/scripts/run_test_data_deepseek.sh)<br> [Dev example](models/scripts/run_dev_data_deepseek.sh) |
+| Grok           | `grok-4-0709`, `grok-3`, `grok-3-mini` etc. | [Grok Models](https://docs.x.ai/docs/models#models-and-pricing) | Test example: [models/scripts/run_test_data_grok.sh](models/scripts/run_test_data_grok.sh)<br>Dev example: [models/scripts/run_dev_data_grok.sh](models/scripts/run_dev_data_grok.sh) |
+| TogetherAI     | `meta-llama/Llama-4-Scout-17B-16E-Instruct`, `Qwen/QwQ-32B`, `Qwen/Qwen2-VL-72B-Instruct` etc. | [TogetherAI Models](https://api.together.ai/models) | [Test example](models/scripts/run_test_data_together.sh)<br> [Dev example](models/scripts/run_dev_data_together.sh) |
+| vLLM           | Various vLLM-supported models, for example, `Qwen3-4B` and `QwQ-32B`. You can also use local checkpoint models for customization and local inference. | [vLLM Models](https://docs.vllm.ai/en/latest/models/supported_models.html) | [Test example](models/scripts/run_test_data_vllm.sh)<br> [Dev example](models/scripts/run_dev_data_vllm.sh) |
 
 
 > Note: If you are using TogetherAI models, please ensure you have the prefix 'together-' in the model string, for example, `together-meta-llama/Llama-4-Scout-17B-16E-Instruct`. For vLLM models, please see the [example script](https://github.com/lupantech/ineqmath/blob/main/models/scripts/run_test_data_vllm_qwen3_4b.sh) for usage. For other custom engines, you can edit the [factory.py](https://github.com/lupantech/ineqmath/blob/main/models/engines/factory.py) file and add its interface file to add support for your engine. Your pull request will be warmly welcomed!

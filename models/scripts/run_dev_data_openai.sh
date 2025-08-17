@@ -1,11 +1,24 @@
 ############## Configurations ###############
 ENGINES=(
-    "deepseek-ai/together-DeepSeek-V3"
+    "gpt-5"
+    "gpt-5-mini"
+    "gpt-5-nano"
+    "o4-mini"
+    "o3"
+    "o3-mini"
+    "o3-pro"
+    "o1"
+    "o1-pro"
+    "gpt-4.1"
+    "gpt-4.1-mini"
+    "gpt-4o"
+    "gpt-4o-mini"
+    # You can add more models here
 )
 TOKENS=10000
-SPLIT=test
+SPLIT=dev
 OUTPUT_PATH="../../results/models_results_${SPLIT}_data/"
-MAX_WORKERS=32
+MAX_WORKERS=16
 
 ############## Run the model ###############
 # Loop through each engine
@@ -27,6 +40,12 @@ for LLM in "${ENGINES[@]}"; do
 
     python generate_results.py \
     --result_dir $OUTPUT_PATH\
+    --run_label $LABEL \
+    --use_cache \
+    --max_workers $MAX_WORKERS
+
+    python compute_score.py \
+    --result_dir $OUTPUT_PATH \
     --run_label $LABEL \
     --use_cache \
     --max_workers $MAX_WORKERS

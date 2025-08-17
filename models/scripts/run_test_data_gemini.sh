@@ -1,11 +1,17 @@
 ############## Configurations ###############
 ENGINES=(
-    "together-moonshotai/Kimi-K2-Instruct"
+    "gemini-2.5-pro"
+    "gemini-2.5-pro-preview-06-05"
+    "gemini-2.5-pro-preview-05-06"
+    "gemini-2.5-flash"
+    "gemini-2.5-flash-preview-05-20"
+    "gemini-2.5-flash-lite-preview-06-17"
+    # You can add more models here
 )
 TOKENS=10000
 SPLIT=test
 OUTPUT_PATH="../../results/models_results_${SPLIT}_data/"
-MAX_WORKERS=32
+MAX_WORKERS=16
 
 ############## Run the model ###############
 # Loop through each engine

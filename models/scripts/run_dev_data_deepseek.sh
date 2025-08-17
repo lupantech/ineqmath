@@ -1,11 +1,13 @@
 ############## Configurations ###############
 ENGINES=(
-    "o3-pro"
+    "deepseek-chat"
+    "deepseek-reasoner"
+    # You can add more models here
 )
-TOKENS=40000
-SPLIT=test
+TOKENS=10000
+SPLIT=dev
 OUTPUT_PATH="../../results/models_results_${SPLIT}_data/"
-MAX_WORKERS=32
+MAX_WORKERS=16
 
 ############## Run the model ###############
 # Loop through each engine
@@ -27,6 +29,12 @@ for LLM in "${ENGINES[@]}"; do
 
     python generate_results.py \
     --result_dir $OUTPUT_PATH\
+    --run_label $LABEL \
+    --use_cache \
+    --max_workers $MAX_WORKERS
+
+    python compute_score.py \
+    --result_dir $OUTPUT_PATH \
     --run_label $LABEL \
     --use_cache \
     --max_workers $MAX_WORKERS
