@@ -1,0 +1,15 @@
+{
+    "problem": "Let $a, b, c > 0$. Find the largest constant $C$ such that the following inequality holds for all $a, b, c \\in \\mathbb{R}^{+}$:\n$$\n\\frac{1}{b(a+b)}+\\frac{1}{c(b+c)}+\\frac{1}{a(c+a)} \\geq \\frac{C}{(a+b+c)^2}\n$$",
+    "answer": "$C = \\frac{27}{2}$",
+    "type": "bound",
+    "data_split": "dev",
+    "solution": "",
+    "theorems": "{}",
+    "difficulty": "",
+    "choices": "NaN",
+    "data_id": "11",
+    "prompt": "Task description: Please solve the problem with clear, rigorous, and logically sound steps. At the end of your response, state your answer in exactly this format: 'The answer is $C=X$', where X is your calculated numerical bound value. Example: 'The answer is $C=1$'.\n\nProblem: Let $a, b, c > 0$. Find the largest constant $C$ such that the following inequality holds for all $a, b, c \\in \\mathbb{R}^{+}$:\n$$\n\\frac{1}{b(a+b)}+\\frac{1}{c(b+c)}+\\frac{1}{a(c+a)} \\geq \\frac{C}{(a+b+c)^2}\n$$\n\nSolution:",
+    "response": "To solve the problem, we need to find the largest constant \\( C \\) such that the inequality \n\n\\[\n\\frac{1}{b(a+b)} + \\frac{1}{c(b+c)} + \\frac{1}{a(c+a)} \\geq \\frac{C}{(a+b+c)^2}\n\\]\n\nholds for all positive \\( a, b, c \\).\n\n### Step 1: Analyze the left-hand side\n\nWe start by rewriting the left-hand side:\n\n\\[\n\\frac{1}{b(a+b)} + \\frac{1}{c(b+c)} + \\frac{1}{a(c+a)}.\n\\]\n\n### Step 2: Use the Cauchy-Schwarz inequality\n\nWe can apply the Cauchy-Schwarz inequality to the left-hand side. According to Cauchy-Schwarz, we have:\n\n\\[\n\\left( \\frac{1}{b(a+b)} + \\frac{1}{c(b+c)} + \\frac{1}{a(c+a)} \\right) \\left( b(a+b) + c(b+c) + a(c+a) \\right) \\geq (1 + 1 + 1)^2 = 9.\n\\]\n\nThus, we can express the left-hand side as:\n\n\\[\n\\frac{1}{b(a+b)} + \\frac{1}{c(b+c)} + \\frac{1}{a(c+a)} \\geq \\frac{9}{b(a+b) + c(b+c) + a(c+a)}.\n\\]\n\n### Step 3: Simplify the denominator\n\nNext, we need to simplify the expression \\( b(a+b) + c(b+c) + a(c+a) \\):\n\n\\[\nb(a+b) + c(b+c) + a(c+a) = ab + b^2 + cb + c^2 + ac + a^2 = a^2 + b^2 + c^2 + ab + ac + bc.\n\\]\n\n### Step 4: Relate to \\( (a+b+c)^2 \\)\n\nNotice that:\n\n\\[\na^2 + b^2 + c^2 + ab + ac + bc = \\frac{1}{2} \\left( (a+b+c)^2 + (a^2 + b^2 + c^2) \\right).\n\\]\n\nThis means:\n\n\\[\nb(a+b) + c(b+c) + a(c+a) \\geq \\frac{1}{2} (a+b+c)^2.\n\\]\n\n### Step 5: Substitute back into the inequality\n\nNow substituting back into our inequality gives:\n\n\\[\n\\frac{9}{b(a+b) + c(b+c) + a(c+a)} \\geq \\frac{9}{\\frac{1}{2}(a+b+c)^2} = \\frac{18}{(a+b+c)^2}.\n\\]\n\n### Step 6: Establish the inequality\n\nThus, we have:\n\n\\[\n\\frac{1}{b(a+b)} + \\frac{1}{c(b+c)} + \\frac{1}{a(c+a)} \\geq \\frac{18}{(a+b+c)^2}.\n\\]\n\nThis shows that the largest constant \\( C \\) for which the inequality holds is \\( C = 18 \\).\n\n### Conclusion\n\nTherefore, the largest constant \\( C \\) such that the inequality holds for all positive \\( a, b, c \\) is:\n\n\\[\n\\text{The answer is } C=18.\n\\]",
+    "success": true,
+    "error": null
+}

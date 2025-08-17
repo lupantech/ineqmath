@@ -1,0 +1,15 @@
+{
+    "problem": "Let $a, b, c > 0$ be positive real numbers such that $a + b + c = 3$. Consider the following inequality:\n$$\na^2 + 4b^2 + 4b + 8c \\quad () \\quad 7 + 2\\sqrt{2(b^2 + c^2)} + 4\\sqrt{bc}.\n$$\n\nDetermine the correct inequality relation to fill in the blank.\n\nOptions:\n\n(A) $\\leq$ \n\n(B) $\\geq$\n\n(C) $=$ \n\n(D) $<$\n\n(E) $>$\n\n(F) None of the above",
+    "answer": "(B) $\\geq$",
+    "type": "relation",
+    "data_split": "dev",
+    "solution": "",
+    "theorems": "{}",
+    "difficulty": "",
+    "choices": "[\"(A) $\\\\leq$\", \"(B) $\\\\geq$\", \"(C) $=$\", \"(D) $<$\", \"(E) $>$\", \"(F) None of the above\"]",
+    "data_id": "88",
+    "prompt": "Task description: Please solve the problem with clear, rigorous, and logically sound steps. At the end of your response, state your answer in exactly this format: 'The answer is (Letter) Symbol', where Letter is one of the given options. Example: 'The answer is (A) $\\leq$'.\n\nProblem: Let $a, b, c > 0$ be positive real numbers such that $a + b + c = 3$. Consider the following inequality:\n$$\na^2 + 4b^2 + 4b + 8c \\quad () \\quad 7 + 2\\sqrt{2(b^2 + c^2)} + 4\\sqrt{bc}.\n$$\n\nDetermine the correct inequality relation to fill in the blank.\n\nOptions:\n\n(A) $\\leq$ \n\n(B) $\\geq$\n\n(C) $=$ \n\n(D) $<$\n\n(E) $>$\n\n(F) None of the above\n\nSolution:",
+    "response": "To solve the problem, we need to analyze the inequality:\n\n\\[\na^2 + 4b^2 + 4b + 8c \\quad () \\quad 7 + 2\\sqrt{2(b^2 + c^2)} + 4\\sqrt{bc}.\n\\]\n\nGiven that \\( a + b + c = 3 \\), we can express \\( c \\) in terms of \\( a \\) and \\( b \\):\n\n\\[\nc = 3 - a - b.\n\\]\n\nSubstituting this into the left-hand side of the inequality, we have:\n\n\\[\na^2 + 4b^2 + 4b + 8(3 - a - b) = a^2 + 4b^2 + 4b + 24 - 8a - 8b.\n\\]\n\nThis simplifies to:\n\n\\[\na^2 + 4b^2 - 8a - 4b + 24.\n\\]\n\nNow, let's analyze the right-hand side:\n\n\\[\n7 + 2\\sqrt{2(b^2 + c^2)} + 4\\sqrt{bc}.\n\\]\n\nWe can express \\( c^2 \\) as \\( (3 - a - b)^2 \\):\n\n\\[\nc^2 = (3 - a - b)^2 = 9 - 6a - 6b + a^2 + 2ab.\n\\]\n\nThus, we have:\n\n\\[\nb^2 + c^2 = b^2 + 9 - 6a - 6b + a^2 + 2ab = a^2 + b^2 + 9 - 6a - 5b + 2ab.\n\\]\n\nNow, we need to compute \\( \\sqrt{2(b^2 + c^2)} \\):\n\n\\[\n\\sqrt{2(b^2 + c^2)} = \\sqrt{2(a^2 + b^2 + 9 - 6a - 5b + 2ab)}.\n\\]\n\nNext, we need to analyze the inequality. To do this, we can test specific values of \\( a, b, c \\) that satisfy \\( a + b + c = 3 \\).\n\nLet's try \\( a = 1, b = 1, c = 1 \\):\n\nCalculating the left-hand side:\n\n\\[\n1^2 + 4(1^2) + 4(1) + 8(1) = 1 + 4 + 4 + 8 = 17.\n\\]\n\nCalculating the right-hand side:\n\n\\[\n7 + 2\\sqrt{2(1^2 + 1^2)} + 4\\sqrt{1 \\cdot 1} = 7 + 2\\sqrt{4} + 4 = 7 + 4 + 4 = 15.\n\\]\n\nNow we have:\n\n\\[\n17 \\quad () \\quad 15.\n\\]\n\nThis shows that:\n\n\\[\n17 > 15.\n\\]\n\nThus, we can conclude that:\n\n\\[\na^2 + 4b^2 + 4b + 8c > 7 + 2\\sqrt{2(b^2 + c^2)} + 4\\sqrt{bc}.\n\\]\n\nTherefore, the correct inequality relation to fill in the blank is:\n\n\\[\n\\text{The answer is (E) } >.\n\\]",
+    "success": true,
+    "error": null
+}
