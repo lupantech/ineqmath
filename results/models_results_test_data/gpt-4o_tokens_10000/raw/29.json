@@ -1,0 +1,15 @@
+{
+    "problem": "Let $x, y, z > 0$ such that $x+y+z=1$. Determine the minimal constant $C$ such that the following inequality holds for all $x, y, z$:\n\n$$\nx y(y+4 z)+y z(z+4 x)+z x(x+4 y) \\leq C.\n$$",
+    "answer": "",
+    "type": "bound",
+    "data_split": "test",
+    "solution": "",
+    "theorems": "{}",
+    "difficulty": "",
+    "choices": "NaN",
+    "data_id": "29",
+    "prompt": "Task description: Please solve the problem with clear, rigorous, and logically sound steps. At the end of your response, state your answer in exactly this format: 'The answer is $C=X$', where X is your calculated numerical bound value. Example: 'The answer is $C=1$'.\n\nProblem: Let $x, y, z > 0$ such that $x+y+z=1$. Determine the minimal constant $C$ such that the following inequality holds for all $x, y, z$:\n\n$$\nx y(y+4 z)+y z(z+4 x)+z x(x+4 y) \\leq C.\n$$\n\nSolution:",
+    "response": "To solve this problem, we need to find the minimal constant \\( C \\) such that the inequality\n\n\\[\nx y(y+4 z) + y z(z+4 x) + z x(x+4 y) \\leq C\n\\]\n\nholds for all positive \\( x, y, z \\) with \\( x + y + z = 1 \\).\n\nFirst, let's expand each term in the inequality:\n\n1. \\( x y(y + 4z) = xy^2 + 4xyz \\)\n2. \\( y z(z + 4x) = yz^2 + 4xyz \\)\n3. \\( z x(x + 4y) = zx^2 + 4xyz \\)\n\nAdding these, we have:\n\n\\[\nxy^2 + yz^2 + zx^2 + 12xyz\n\\]\n\nThus, the inequality becomes:\n\n\\[\nxy^2 + yz^2 + zx^2 + 12xyz \\leq C\n\\]\n\nTo find the minimal \\( C \\), we consider specific cases and use symmetry and the condition \\( x + y + z = 1 \\).\n\n### Case 1: \\( x = y = z = \\frac{1}{3} \\)\n\nSubstitute \\( x = y = z = \\frac{1}{3} \\) into the expression:\n\n\\[\nxy^2 + yz^2 + zx^2 + 12xyz = \\left(\\frac{1}{3}\\right)\\left(\\frac{1}{3}\\right)^2 + \\left(\\frac{1}{3}\\right)\\left(\\frac{1}{3}\\right)^2 + \\left(\\frac{1}{3}\\right)\\left(\\frac{1}{3}\\right)^2 + 12\\left(\\frac{1}{3}\\right)^3\n\\]\n\nCalculating each term:\n\n- \\( xy^2 = \\frac{1}{3} \\cdot \\frac{1}{9} = \\frac{1}{27} \\)\n- \\( yz^2 = \\frac{1}{3} \\cdot \\frac{1}{9} = \\frac{1}{27} \\)\n- \\( zx^2 = \\frac{1}{3} \\cdot \\frac{1}{9} = \\frac{1}{27} \\)\n- \\( 12xyz = 12 \\cdot \\frac{1}{27} = \\frac{12}{27} = \\frac{4}{9} \\)\n\nSumming these:\n\n\\[\n3 \\cdot \\frac{1}{27} + \\frac{4}{9} = \\frac{3}{27} + \\frac{12}{27} = \\frac{15}{27} = \\frac{5}{9}\n\\]\n\n### Case 2: \\( x = \\frac{1}{2}, y = \\frac{1}{2}, z = 0 \\)\n\nSubstitute \\( x = \\frac{1}{2}, y = \\frac{1}{2}, z = 0 \\):\n\n\\[\nxy^2 + yz^2 + zx^2 + 12xyz = \\frac{1}{2} \\cdot \\left(\\frac{1}{2}\\right)^2 + 0 + 0 + 0 = \\frac{1}{2} \\cdot \\frac{1}{4} = \\frac{1}{8}\n\\]\n\n### Case 3: \\( x = 1, y = z = 0 \\)\n\nSubstitute \\( x = 1, y = 0, z = 0 \\):\n\n\\[\nxy^2 + yz^2 + zx^2 + 12xyz = 0 + 0 + 0 + 0 = 0\n\\]\n\nFrom these cases, the maximum value of the expression is \\(\\frac{5}{9}\\).\n\nThus, the minimal constant \\( C \\) such that the inequality holds for all \\( x, y, z > 0 \\) with \\( x + y + z = 1 \\) is \\(\\frac{5}{9}\\).\n\nThe answer is \\(\\boxed{C = \\frac{5}{9}}\\).",
+    "success": true,
+    "error": null
+}

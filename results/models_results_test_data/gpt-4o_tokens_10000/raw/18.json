@@ -1,0 +1,15 @@
+{
+    "problem": "Let $m, n$ be natural numbers. Find the smallest constant $C$ such that for all real numbers $x$ and $y$, the following inequality holds:\n$$\n\\sin^{2m} x \\cdot \\cos^{2n} y \\leq C\\frac{3m^n n^n}{(m+n)^{m+n}}.\n$$",
+    "answer": "",
+    "type": "bound",
+    "data_split": "test",
+    "solution": "",
+    "theorems": "{}",
+    "difficulty": "",
+    "choices": "NaN",
+    "data_id": "18",
+    "prompt": "Task description: Please solve the problem with clear, rigorous, and logically sound steps. At the end of your response, state your answer in exactly this format: 'The answer is $C=X$', where X is your calculated numerical bound value. Example: 'The answer is $C=1$'.\n\nProblem: Let $m, n$ be natural numbers. Find the smallest constant $C$ such that for all real numbers $x$ and $y$, the following inequality holds:\n$$\n\\sin^{2m} x \\cdot \\cos^{2n} y \\leq C\\frac{3m^n n^n}{(m+n)^{m+n}}.\n$$\n\nSolution:",
+    "response": "To solve this problem, we need to find the smallest constant \\( C \\) such that the inequality\n\n\\[\n\\sin^{2m} x \\cdot \\cos^{2n} y \\leq C \\frac{3m^n n^n}{(m+n)^{m+n}}\n\\]\n\nholds for all real numbers \\( x \\) and \\( y \\).\n\n### Step 1: Analyze the Left-Hand Side\n\nThe expression \\(\\sin^{2m} x \\cdot \\cos^{2n} y\\) is maximized when \\(\\sin^{2m} x = 1\\) and \\(\\cos^{2n} y = 1\\). This occurs when \\(x = \\frac{\\pi}{2} + k\\pi\\) for integers \\(k\\) and \\(y = k\\pi\\) for integers \\(k\\). Thus, the maximum value of \\(\\sin^{2m} x \\cdot \\cos^{2n} y\\) is 1.\n\n### Step 2: Analyze the Right-Hand Side\n\nThe right-hand side of the inequality is:\n\n\\[\nC \\frac{3m^n n^n}{(m+n)^{m+n}}\n\\]\n\nWe need this to be at least 1 for the inequality to hold for all \\(x\\) and \\(y\\), especially when the left-hand side is maximized (i.e., equals 1).\n\n### Step 3: Determine the Smallest \\( C \\)\n\nTo ensure the inequality holds, we set:\n\n\\[\n1 \\leq C \\frac{3m^n n^n}{(m+n)^{m+n}}\n\\]\n\nSolving for \\( C \\), we get:\n\n\\[\nC \\geq \\frac{(m+n)^{m+n}}{3m^n n^n}\n\\]\n\nThus, the smallest possible value for \\( C \\) is:\n\n\\[\nC = \\frac{(m+n)^{m+n}}{3m^n n^n}\n\\]\n\n### Conclusion\n\nThe smallest constant \\( C \\) such that the inequality holds for all real numbers \\( x \\) and \\( y \\) is:\n\n\\[\n\\boxed{\\frac{(m+n)^{m+n}}{3m^n n^n}}\n\\]\n\nTherefore, the answer is \\(\\boxed{C = \\frac{(m+n)^{m+n}}{3m^n n^n}}\\).",
+    "success": true,
+    "error": null
+}

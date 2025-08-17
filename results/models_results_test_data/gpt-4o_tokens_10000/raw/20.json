@@ -1,0 +1,15 @@
+{
+    "problem": "For $a, b > 0$, find the minimal constant $C$ such that the following inequality holds for all $a, b$:\n$$\n\\frac{1}{2}(a+b)^2 + C(a+b) \\geq a \\sqrt{b} + b \\sqrt{a}.\n$$",
+    "answer": "",
+    "type": "bound",
+    "data_split": "test",
+    "solution": "",
+    "theorems": "{}",
+    "difficulty": "",
+    "choices": "NaN",
+    "data_id": "20",
+    "prompt": "Task description: Please solve the problem with clear, rigorous, and logically sound steps. At the end of your response, state your answer in exactly this format: 'The answer is $C=X$', where X is your calculated numerical bound value. Example: 'The answer is $C=1$'.\n\nProblem: For $a, b > 0$, find the minimal constant $C$ such that the following inequality holds for all $a, b$:\n$$\n\\frac{1}{2}(a+b)^2 + C(a+b) \\geq a \\sqrt{b} + b \\sqrt{a}.\n$$\n\nSolution:",
+    "response": "To solve this problem, we need to find the minimal constant \\( C \\) such that the inequality\n\n\\[\n\\frac{1}{2}(a+b)^2 + C(a+b) \\geq a \\sqrt{b} + b \\sqrt{a}\n\\]\n\nholds for all \\( a, b > 0 \\).\n\nFirst, expand the left-hand side:\n\n\\[\n\\frac{1}{2}(a+b)^2 = \\frac{1}{2}(a^2 + 2ab + b^2) = \\frac{1}{2}a^2 + ab + \\frac{1}{2}b^2.\n\\]\n\nThus, the inequality becomes:\n\n\\[\n\\frac{1}{2}a^2 + ab + \\frac{1}{2}b^2 + C(a+b) \\geq a \\sqrt{b} + b \\sqrt{a}.\n\\]\n\nRearrange terms:\n\n\\[\n\\frac{1}{2}a^2 + ab + \\frac{1}{2}b^2 + Ca + Cb - a \\sqrt{b} - b \\sqrt{a} \\geq 0.\n\\]\n\nTo find the minimal \\( C \\), consider the case when \\( a = b \\). In this case, the inequality simplifies to:\n\n\\[\n\\frac{1}{2}(2a)^2 + 2Ca \\geq 2a\\sqrt{a}.\n\\]\n\nThis simplifies to:\n\n\\[\n2a^2 + 2Ca \\geq 2a^{3/2}.\n\\]\n\nDivide through by \\( 2a \\) (assuming \\( a > 0 \\)):\n\n\\[\na + C \\geq a^{1/2}.\n\\]\n\nRearrange to find:\n\n\\[\nC \\geq a^{1/2} - a.\n\\]\n\nThe function \\( a^{1/2} - a \\) is maximized when \\( a = 1 \\), since the derivative \\( \\frac{d}{da}(a^{1/2} - a) = \\frac{1}{2}a^{-1/2} - 1 \\) is zero at \\( a = 1 \\). At \\( a = 1 \\), \\( a^{1/2} - a = 1 - 1 = 0 \\).\n\nNow, consider the case when \\( a \\neq b \\). Use the AM-GM inequality:\n\n\\[\na \\sqrt{b} \\leq \\frac{a^2 + b}{2}, \\quad b \\sqrt{a} \\leq \\frac{b^2 + a}{2}.\n\\]\n\nAdding these inequalities gives:\n\n\\[\na \\sqrt{b} + b \\sqrt{a} \\leq \\frac{a^2 + b^2}{2} + \\frac{a + b}{2}.\n\\]\n\nThus, the inequality\n\n\\[\n\\frac{1}{2}a^2 + ab + \\frac{1}{2}b^2 + Ca + Cb \\geq \\frac{a^2 + b^2}{2} + \\frac{a + b}{2}\n\\]\n\nis satisfied for \\( C \\geq \\frac{1}{2} \\).\n\nTherefore, the minimal constant \\( C \\) that satisfies the inequality for all \\( a, b > 0 \\) is \\( C = \\frac{1}{2} \\).\n\nThe answer is \\( C = \\frac{1}{2} \\).",
+    "success": true,
+    "error": null
+}

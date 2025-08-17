@@ -1,0 +1,15 @@
+{
+    "problem": "Let $a, b, c \\in \\mathbb{R}_{+}$. Find the largest constant $C$ such that the following inequality holds for all positive $a, b, c$:\n$$\n\\sum a \\frac{b^2+c^2}{a^2+bc} \\geq C \\sum 3a\n$$",
+    "answer": "",
+    "type": "bound",
+    "data_split": "test",
+    "solution": "",
+    "theorems": "{}",
+    "difficulty": "",
+    "choices": "NaN",
+    "data_id": "48",
+    "prompt": "Task description: Please solve the problem with clear, rigorous, and logically sound steps. At the end of your response, state your answer in exactly this format: 'The answer is $C=X$', where X is your calculated numerical bound value. Example: 'The answer is $C=1$'.\n\nProblem: Let $a, b, c \\in \\mathbb{R}_{+}$. Find the largest constant $C$ such that the following inequality holds for all positive $a, b, c$:\n$$\n\\sum a \\frac{b^2+c^2}{a^2+bc} \\geq C \\sum 3a\n$$\n\nSolution:",
+    "response": "To solve this problem, we need to find the largest constant \\( C \\) such that the inequality\n\n\\[\n\\sum_{\\text{cyc}} a \\frac{b^2+c^2}{a^2+bc} \\geq C \\sum_{\\text{cyc}} 3a\n\\]\n\nholds for all positive \\( a, b, c \\). Let's start by expanding the cyclic sum:\n\n\\[\n\\sum_{\\text{cyc}} a \\frac{b^2+c^2}{a^2+bc} = a \\frac{b^2+c^2}{a^2+bc} + b \\frac{c^2+a^2}{b^2+ca} + c \\frac{a^2+b^2}{c^2+ab}.\n\\]\n\nWe need to show that this expression is greater than or equal to \\( C(3a + 3b + 3c) = 3C(a + b + c) \\).\n\nTo find the largest \\( C \\), we can test specific cases. A common approach is to test symmetric cases, such as when \\( a = b = c \\).\n\n**Case 1: \\( a = b = c \\):**\n\nSubstitute \\( a = b = c \\) into the inequality:\n\n\\[\na \\frac{a^2+a^2}{a^2+a^2} + a \\frac{a^2+a^2}{a^2+a^2} + a \\frac{a^2+a^2}{a^2+a^2} = 3a.\n\\]\n\nThe right-hand side becomes:\n\n\\[\n3C(a + a + a) = 9Ca.\n\\]\n\nThus, the inequality becomes:\n\n\\[\n3a \\geq 9Ca.\n\\]\n\nDividing both sides by \\( 3a \\) (assuming \\( a > 0 \\)), we get:\n\n\\[\n1 \\geq 3C.\n\\]\n\nThis implies:\n\n\\[\nC \\leq \\frac{1}{3}.\n\\]\n\n**Case 2: Test \\( C = \\frac{1}{3} \\):**\n\nWe need to verify if \\( C = \\frac{1}{3} \\) satisfies the inequality for all positive \\( a, b, c \\). The inequality becomes:\n\n\\[\n\\sum_{\\text{cyc}} a \\frac{b^2+c^2}{a^2+bc} \\geq a + b + c.\n\\]\n\nThis is equivalent to showing:\n\n\\[\na \\frac{b^2+c^2}{a^2+bc} + b \\frac{c^2+a^2}{b^2+ca} + c \\frac{a^2+b^2}{c^2+ab} \\geq a + b + c.\n\\]\n\nBy AM-GM inequality, we have:\n\n\\[\n\\frac{b^2+c^2}{a^2+bc} \\geq \\frac{2bc}{a^2+bc} \\geq \\frac{2bc}{2bc} = 1.\n\\]\n\nThus, each term \\( a \\frac{b^2+c^2}{a^2+bc} \\geq a \\), and similarly for the other terms. Therefore, the inequality holds for \\( C = \\frac{1}{3} \\).\n\nSince \\( C = \\frac{1}{3} \\) satisfies the inequality and is the largest possible value from our analysis, we conclude:\n\nThe answer is \\( C = \\frac{1}{3} \\).",
+    "success": true,
+    "error": null
+}

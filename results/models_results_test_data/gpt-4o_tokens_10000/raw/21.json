@@ -1,0 +1,15 @@
+{
+    "problem": "Let $x, y, z > 0$ such that $x + y + z = xyz$. Find the smallest constant $C$ such that the following inequality holds for all $x, y, z$ satisfying the given constraint:\n$$\n(x-1)(y-1)(z-1) \\leq C\n$$",
+    "answer": "",
+    "type": "bound",
+    "data_split": "test",
+    "solution": "",
+    "theorems": "{}",
+    "difficulty": "",
+    "choices": "NaN",
+    "data_id": "21",
+    "prompt": "Task description: Please solve the problem with clear, rigorous, and logically sound steps. At the end of your response, state your answer in exactly this format: 'The answer is $C=X$', where X is your calculated numerical bound value. Example: 'The answer is $C=1$'.\n\nProblem: Let $x, y, z > 0$ such that $x + y + z = xyz$. Find the smallest constant $C$ such that the following inequality holds for all $x, y, z$ satisfying the given constraint:\n$$\n(x-1)(y-1)(z-1) \\leq C\n$$\n\nSolution:",
+    "response": "To solve this problem, we need to find the smallest constant \\( C \\) such that the inequality \\((x-1)(y-1)(z-1) \\leq C\\) holds for all positive \\( x, y, z \\) satisfying the condition \\( x + y + z = xyz \\).\n\n### Step 1: Analyze the Condition\n\nThe condition \\( x + y + z = xyz \\) can be rewritten as:\n\\[\nxyz - xy - yz - zx + x + y + z - 1 = 1.\n\\]\nThis suggests a symmetry in the variables \\( x, y, z \\).\n\n### Step 2: Consider Special Cases\n\nLet's consider the case where \\( x = y = z \\). Then the condition becomes:\n\\[\n3x = x^3 \\quad \\Rightarrow \\quad x^3 - 3x = 0 \\quad \\Rightarrow \\quad x(x^2 - 3) = 0.\n\\]\nSince \\( x > 0 \\), we have \\( x^2 = 3 \\), so \\( x = \\sqrt{3} \\).\n\nFor \\( x = y = z = \\sqrt{3} \\), the expression \\((x-1)(y-1)(z-1)\\) becomes:\n\\[\n(\\sqrt{3} - 1)^3.\n\\]\n\n### Step 3: Calculate \\((\\sqrt{3} - 1)^3\\)\n\nFirst, calculate \\((\\sqrt{3} - 1)^2\\):\n\\[\n(\\sqrt{3} - 1)^2 = 3 - 2\\sqrt{3} + 1 = 4 - 2\\sqrt{3}.\n\\]\n\nNow, calculate \\((\\sqrt{3} - 1)^3\\):\n\\[\n(\\sqrt{3} - 1)^3 = (\\sqrt{3} - 1)(4 - 2\\sqrt{3}) = 4\\sqrt{3} - 2\\cdot3 - 4 + 2\\sqrt{3} = 6\\sqrt{3} - 6.\n\\]\n\n### Step 4: Verify if This is the Maximum\n\nTo ensure that this is the maximum value, consider the behavior of the function \\((x-1)(y-1)(z-1)\\) under the constraint \\( x + y + z = xyz \\). The symmetry and the special case analysis suggest that the maximum occurs when \\( x = y = z \\).\n\n### Conclusion\n\nThe smallest constant \\( C \\) such that \\((x-1)(y-1)(z-1) \\leq C\\) for all \\( x, y, z > 0 \\) satisfying \\( x + y + z = xyz \\) is:\n\\[\nC = (\\sqrt{3} - 1)^3 = 6\\sqrt{3} - 6.\n\\]\n\nThus, the answer is \\(\\boxed{C = 6\\sqrt{3} - 6}\\).",
+    "success": true,
+    "error": null
+}

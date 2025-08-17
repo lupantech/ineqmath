@@ -1,0 +1,15 @@
+{
+    "problem": "Find the smallest constant $C$ such that for all non-negative real numbers $a, b, c$, the following inequality holds:\n$$\n\\sqrt{\\frac{a b+b c+c a}{3}} \\leq C \\cdot \\sqrt[3]{\\frac{(a+b)(b+c)(c+a)}{2}}\n$$",
+    "answer": "",
+    "type": "bound",
+    "data_split": "test",
+    "solution": "",
+    "theorems": "{}",
+    "difficulty": "",
+    "choices": "NaN",
+    "data_id": "50",
+    "prompt": "Task description: Please solve the problem with clear, rigorous, and logically sound steps. At the end of your response, state your answer in exactly this format: 'The answer is $C=X$', where X is your calculated numerical bound value. Example: 'The answer is $C=1$'.\n\nProblem: Find the smallest constant $C$ such that for all non-negative real numbers $a, b, c$, the following inequality holds:\n$$\n\\sqrt{\\frac{a b+b c+c a}{3}} \\leq C \\cdot \\sqrt[3]{\\frac{(a+b)(b+c)(c+a)}{2}}\n$$\n\nSolution:",
+    "response": "To solve this problem, we need to find the smallest constant \\( C \\) such that the inequality\n\n\\[\n\\sqrt{\\frac{ab + bc + ca}{3}} \\leq C \\cdot \\sqrt[3]{\\frac{(a+b)(b+c)(c+a)}{2}}\n\\]\n\nholds for all non-negative real numbers \\( a, b, c \\).\n\n### Step 1: Analyze the inequality\n\nFirst, let's rewrite the inequality in a more manageable form:\n\n\\[\n\\frac{ab + bc + ca}{3} \\leq C^2 \\cdot \\left(\\frac{(a+b)(b+c)(c+a)}{2}\\right)^{2/3}\n\\]\n\n### Step 2: Consider special cases\n\n#### Case 1: \\( a = b = c \\)\n\nIf \\( a = b = c \\), then both sides of the inequality become equal:\n\n- Left side: \\(\\frac{ab + bc + ca}{3} = \\frac{3a^2}{3} = a^2\\).\n- Right side: \\(\\left(\\frac{(a+a)(a+a)(a+a)}{2}\\right)^{2/3} = \\left(\\frac{8a^3}{2}\\right)^{2/3} = (4a^3)^{2/3} = 4^{2/3}a^2\\).\n\nThus, the inequality becomes:\n\n\\[\na^2 \\leq C^2 \\cdot 4^{2/3} a^2\n\\]\n\nThis simplifies to:\n\n\\[\n1 \\leq C^2 \\cdot 4^{2/3}\n\\]\n\nSo, \\( C^2 \\geq 4^{-2/3} \\).\n\n#### Case 2: \\( a = 1, b = 1, c = 0 \\)\n\n- Left side: \\(\\frac{ab + bc + ca}{3} = \\frac{1 \\cdot 1 + 1 \\cdot 0 + 0 \\cdot 1}{3} = \\frac{1}{3}\\).\n- Right side: \\(\\left(\\frac{(1+1)(1+0)(0+1)}{2}\\right)^{2/3} = \\left(\\frac{2 \\cdot 1 \\cdot 1}{2}\\right)^{2/3} = 1^{2/3} = 1\\).\n\nThe inequality becomes:\n\n\\[\n\\frac{1}{3} \\leq C^2\n\\]\n\nSo, \\( C^2 \\geq \\frac{1}{3} \\).\n\n### Step 3: Determine the smallest \\( C \\)\n\nFrom the two cases, we have:\n\n- \\( C^2 \\geq 4^{-2/3} \\)\n- \\( C^2 \\geq \\frac{1}{3} \\)\n\nCalculate \\( 4^{-2/3} \\):\n\n\\[\n4^{-2/3} = \\left(2^2\\right)^{-2/3} = 2^{-4/3} = \\frac{1}{2^{4/3}}\n\\]\n\nNow, compare \\( \\frac{1}{2^{4/3}} \\) and \\( \\frac{1}{3} \\):\n\n- \\( 2^{4/3} \\approx 2.5198421 \\)\n- \\( \\frac{1}{2^{4/3}} \\approx 0.39685026 \\)\n- \\( \\frac{1}{3} \\approx 0.33333333 \\)\n\nSince \\( \\frac{1}{3} < \\frac{1}{2^{4/3}} \\), the larger bound is \\( \\frac{1}{3} \\).\n\nThus, the smallest \\( C \\) is:\n\n\\[\nC = \\sqrt{\\frac{1}{3}}\n\\]\n\nTherefore, the smallest constant \\( C \\) is:\n\n\\[\nC = \\frac{1}{\\sqrt{3}}\n\\]\n\nThe answer is \\(\\boxed{C = \\frac{1}{\\sqrt{3}}}\\).",
+    "success": true,
+    "error": null
+}

@@ -1,0 +1,15 @@
+{
+    "problem": "Let $0 \\leq x \\leq 1$ and $n \\in \\mathbb{N}$. Find the smallest constant $C$ such that the following inequality holds for all $x$ and $n$:\n$$\n\\left(1-x+\\frac{x^2}{2}\\right)^n-(1-x)^n \\leq Cx.\n$$",
+    "answer": "",
+    "type": "bound",
+    "data_split": "test",
+    "solution": "",
+    "theorems": "{}",
+    "difficulty": "",
+    "choices": "NaN",
+    "data_id": "71",
+    "prompt": "Task description: Please solve the problem with clear, rigorous, and logically sound steps. At the end of your response, state your answer in exactly this format: 'The answer is $C=X$', where X is your calculated numerical bound value. Example: 'The answer is $C=1$'.\n\nProblem: Let $0 \\leq x \\leq 1$ and $n \\in \\mathbb{N}$. Find the smallest constant $C$ such that the following inequality holds for all $x$ and $n$:\n$$\n\\left(1-x+\\frac{x^2}{2}\\right)^n-(1-x)^n \\leq Cx.\n$$\n\nSolution:",
+    "response": "To solve this problem, we need to find the smallest constant \\( C \\) such that the inequality\n\n\\[\n\\left(1-x+\\frac{x^2}{2}\\right)^n-(1-x)^n \\leq Cx\n\\]\n\nholds for all \\( 0 \\leq x \\leq 1 \\) and \\( n \\in \\mathbb{N} \\).\n\n### Step 1: Expand the expressions\n\nFirst, consider the binomial expansions of both terms:\n\n1. \\((1-x)^n\\) can be expanded using the binomial theorem:\n\n\\[\n(1-x)^n = \\sum_{k=0}^{n} \\binom{n}{k} (-x)^k = \\sum_{k=0}^{n} \\binom{n}{k} (-1)^k x^k.\n\\]\n\n2. \\(\\left(1-x+\\frac{x^2}{2}\\right)^n\\) can also be expanded using the binomial theorem:\n\n\\[\n\\left(1-x+\\frac{x^2}{2}\\right)^n = \\sum_{k=0}^{n} \\binom{n}{k} \\left(-x+\\frac{x^2}{2}\\right)^k.\n\\]\n\n### Step 2: Simplify the difference\n\nWe are interested in the difference:\n\n\\[\n\\left(1-x+\\frac{x^2}{2}\\right)^n - (1-x)^n.\n\\]\n\nFor small \\( x \\), we can approximate the terms:\n\n- \\((1-x)^n \\approx 1 - nx + \\frac{n(n-1)}{2}x^2\\).\n- \\(\\left(1-x+\\frac{x^2}{2}\\right)^n \\approx 1 - nx + \\frac{n(n-1)}{2}x^2 + \\frac{n}{2}x^2\\).\n\nThe difference is:\n\n\\[\n\\left(1-x+\\frac{x^2}{2}\\right)^n - (1-x)^n \\approx \\frac{n}{2}x^2.\n\\]\n\n### Step 3: Bound the difference\n\nWe need to ensure:\n\n\\[\n\\frac{n}{2}x^2 \\leq Cx.\n\\]\n\nThis simplifies to:\n\n\\[\n\\frac{n}{2}x \\leq C.\n\\]\n\nFor the inequality to hold for all \\( 0 \\leq x \\leq 1 \\), the worst-case scenario is when \\( x = 1 \\). Thus, we have:\n\n\\[\n\\frac{n}{2} \\leq C.\n\\]\n\n### Step 4: Determine the smallest \\( C \\)\n\nThe smallest \\( C \\) that satisfies this inequality for all \\( n \\) is:\n\n\\[\nC = \\frac{n}{2}.\n\\]\n\nHowever, since \\( n \\) can be any natural number, we need a constant \\( C \\) that works for all \\( n \\). Therefore, the smallest \\( C \\) that works for all \\( n \\) is:\n\n\\[\nC = \\frac{1}{2}.\n\\]\n\nThus, the smallest constant \\( C \\) such that the inequality holds for all \\( x \\) and \\( n \\) is:\n\n\\[\n\\boxed{\\frac{1}{2}}\n\\]\n\nThe answer is \\( C = \\frac{1}{2} \\).",
+    "success": true,
+    "error": null
+}

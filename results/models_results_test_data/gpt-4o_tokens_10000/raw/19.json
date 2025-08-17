@@ -1,0 +1,15 @@
+{
+    "problem": "For $a, b, c > 0$, find the largest constant $C$ such that the following inequality holds for all $a, b, c$:\n\n$$\n\\left\\{\\left(a^2-a b+b^2\\right)^2+\\left(b^2-b c+c^2\\right)^2+\\left(c^2-c a+a^2\\right)^2+3\\right\\}\\left(\\frac{1}{a b}+\\frac{1}{b c}+\\frac{1}{c a}\\right) \\geq C\n$$",
+    "answer": "",
+    "type": "bound",
+    "data_split": "test",
+    "solution": "",
+    "theorems": "{}",
+    "difficulty": "",
+    "choices": "NaN",
+    "data_id": "19",
+    "prompt": "Task description: Please solve the problem with clear, rigorous, and logically sound steps. At the end of your response, state your answer in exactly this format: 'The answer is $C=X$', where X is your calculated numerical bound value. Example: 'The answer is $C=1$'.\n\nProblem: For $a, b, c > 0$, find the largest constant $C$ such that the following inequality holds for all $a, b, c$:\n\n$$\n\\left\\{\\left(a^2-a b+b^2\\right)^2+\\left(b^2-b c+c^2\\right)^2+\\left(c^2-c a+a^2\\right)^2+3\\right\\}\\left(\\frac{1}{a b}+\\frac{1}{b c}+\\frac{1}{c a}\\right) \\geq C\n$$\n\nSolution:",
+    "response": "To solve this problem, we need to find the largest constant \\( C \\) such that the inequality\n\n\\[\n\\left\\{\\left(a^2-ab+b^2\\right)^2+\\left(b^2-bc+c^2\\right)^2+\\left(c^2-ca+a^2\\right)^2+3\\right\\}\\left(\\frac{1}{ab}+\\frac{1}{bc}+\\frac{1}{ca}\\right) \\geq C\n\\]\n\nholds for all positive \\( a, b, c \\).\n\n### Step 1: Simplify the Expression\n\nFirst, consider the expression inside the curly braces:\n\n\\[\n\\left(a^2-ab+b^2\\right)^2 + \\left(b^2-bc+c^2\\right)^2 + \\left(c^2-ca+a^2\\right)^2 + 3.\n\\]\n\nEach term \\((x^2 - xy + y^2)\\) is a perfect square trinomial, which is always non-negative. Therefore, the sum of these squares is non-negative, and adding 3 ensures that the entire expression is positive.\n\n### Step 2: Analyze the Expression\n\nTo find the minimum value of the expression inside the curly braces, consider the case when \\( a = b = c \\). In this case:\n\n\\[\na^2 - ab + b^2 = a^2 - a^2 + a^2 = a^2,\n\\]\n\nand similarly for the other terms. Thus, the expression becomes:\n\n\\[\n3a^4 + 3.\n\\]\n\n### Step 3: Evaluate the Reciprocal Sum\n\nFor \\( a = b = c \\), the reciprocal sum becomes:\n\n\\[\n\\frac{1}{ab} + \\frac{1}{bc} + \\frac{1}{ca} = \\frac{3}{a^2}.\n\\]\n\n### Step 4: Combine and Simplify\n\nSubstitute these into the inequality:\n\n\\[\n(3a^4 + 3) \\cdot \\frac{3}{a^2} = 9a^2 + 9.\n\\]\n\n### Step 5: Find the Minimum Value\n\nThe expression \\( 9a^2 + 9 \\) is minimized when \\( a \\to 0 \\), but since \\( a, b, c > 0 \\), we consider the smallest positive value, which is when \\( a = b = c = 1 \\):\n\n\\[\n9 \\cdot 1^2 + 9 = 18.\n\\]\n\n### Conclusion\n\nThus, the minimum value of the entire expression is 18, which means the largest constant \\( C \\) such that the inequality holds for all positive \\( a, b, c \\) is 18.\n\nThe answer is \\(\\boxed{C=18}\\).",
+    "success": true,
+    "error": null
+}

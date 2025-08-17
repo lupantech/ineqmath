@@ -1,0 +1,15 @@
+{
+    "problem": "Let $a, b, c > 0$ such that $a+b+c=3$. Determine the largest constant $C$ such that the following inequality holds for all $a, b, c$:\n\n$$\na b c + \\frac{17}{a b + b c + c a} \\geq C.\n$$",
+    "answer": "",
+    "type": "bound",
+    "data_split": "test",
+    "solution": "",
+    "theorems": "{}",
+    "difficulty": "",
+    "choices": "NaN",
+    "data_id": "77",
+    "prompt": "Task description: Please solve the problem with clear, rigorous, and logically sound steps. At the end of your response, state your answer in exactly this format: 'The answer is $C=X$', where X is your calculated numerical bound value. Example: 'The answer is $C=1$'.\n\nProblem: Let $a, b, c > 0$ such that $a+b+c=3$. Determine the largest constant $C$ such that the following inequality holds for all $a, b, c$:\n\n$$\na b c + \\frac{17}{a b + b c + c a} \\geq C.\n$$\n\nSolution:",
+    "response": "To solve this problem, we need to find the largest constant \\( C \\) such that the inequality\n\n\\[\nabc + \\frac{17}{ab + bc + ca} \\geq C\n\\]\n\nholds for all positive \\( a, b, c \\) satisfying \\( a + b + c = 3 \\).\n\n### Step 1: Analyze the expression\n\nFirst, consider the expression \\( abc + \\frac{17}{ab + bc + ca} \\). We need to find a lower bound for this expression.\n\n### Step 2: Use AM-GM inequality\n\nBy the AM-GM inequality, we have:\n\n\\[\na + b + c = 3 \\geq 3\\sqrt[3]{abc} \\implies abc \\leq 1.\n\\]\n\n### Step 3: Consider symmetry and special cases\n\nTo find the minimum value, consider the symmetric case where \\( a = b = c = 1 \\). Then:\n\n\\[\nabc = 1 \\quad \\text{and} \\quad ab + bc + ca = 3.\n\\]\n\nSubstituting these into the expression gives:\n\n\\[\nabc + \\frac{17}{ab + bc + ca} = 1 + \\frac{17}{3} = \\frac{20}{3}.\n\\]\n\n### Step 4: Check other configurations\n\nTo ensure this is the minimum, consider other configurations. For instance, let \\( a = 0, b = 1.5, c = 1.5 \\). Then:\n\n\\[\nabc = 0 \\quad \\text{and} \\quad ab + bc + ca = 0 + 1.5 \\times 1.5 + 1.5 \\times 0 = 2.25.\n\\]\n\nSubstituting these into the expression gives:\n\n\\[\nabc + \\frac{17}{ab + bc + ca} = 0 + \\frac{17}{2.25} = \\frac{68}{9} \\approx 7.56.\n\\]\n\nThis is greater than \\(\\frac{20}{3} \\approx 6.67\\).\n\n### Step 5: Consider the limit as one variable approaches zero\n\nConsider the case where \\( a \\to 0^+ \\), \\( b = 1.5 \\), and \\( c = 1.5 \\). Then:\n\n\\[\nabc \\to 0 \\quad \\text{and} \\quad ab + bc + ca \\to 2.25.\n\\]\n\nThus, the expression becomes:\n\n\\[\nabc + \\frac{17}{ab + bc + ca} \\to \\frac{68}{9}.\n\\]\n\n### Conclusion\n\nThe minimum value of the expression occurs when \\( a = b = c = 1 \\), giving us:\n\n\\[\nabc + \\frac{17}{ab + bc + ca} = \\frac{20}{3}.\n\\]\n\nThus, the largest constant \\( C \\) such that the inequality holds for all positive \\( a, b, c \\) with \\( a + b + c = 3 \\) is:\n\n\\[\n\\boxed{\\frac{20}{3}}\n\\]\n\nThe answer is \\( C = \\frac{20}{3} \\).",
+    "success": true,
+    "error": null
+}

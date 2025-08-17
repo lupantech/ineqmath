@@ -1,0 +1,15 @@
+{
+    "problem": "Let $a, b, c$ be the side lengths of a triangle. Determine the largest constant $C$ such that the following inequality holds for all $a, b, c$ satisfying the triangle inequality:\n$$\n\\frac{b+c}{a}+\\frac{c+a}{b}+\\frac{a+b}{c}+\\frac{(b+c-a)(c+a-b)(a+b-c)}{a b c} \\geq C.\n$$",
+    "answer": "",
+    "type": "bound",
+    "data_split": "test",
+    "solution": "",
+    "theorems": "{}",
+    "difficulty": "",
+    "choices": "NaN",
+    "data_id": "34",
+    "prompt": "Task description: Please solve the problem with clear, rigorous, and logically sound steps. At the end of your response, state your answer in exactly this format: 'The answer is $C=X$', where X is your calculated numerical bound value. Example: 'The answer is $C=1$'.\n\nProblem: Let $a, b, c$ be the side lengths of a triangle. Determine the largest constant $C$ such that the following inequality holds for all $a, b, c$ satisfying the triangle inequality:\n$$\n\\frac{b+c}{a}+\\frac{c+a}{b}+\\frac{a+b}{c}+\\frac{(b+c-a)(c+a-b)(a+b-c)}{a b c} \\geq C.\n$$\n\nSolution:",
+    "response": "To solve this problem, we need to find the largest constant \\( C \\) such that the inequality\n\n\\[\n\\frac{b+c}{a} + \\frac{c+a}{b} + \\frac{a+b}{c} + \\frac{(b+c-a)(c+a-b)(a+b-c)}{abc} \\geq C\n\\]\n\nholds for all side lengths \\( a, b, c \\) of a triangle, which satisfy the triangle inequalities \\( a + b > c \\), \\( b + c > a \\), and \\( c + a > b \\).\n\n### Step 1: Simplify the Expression\n\nFirst, consider the expression without the last term:\n\n\\[\n\\frac{b+c}{a} + \\frac{c+a}{b} + \\frac{a+b}{c}.\n\\]\n\nThis can be rewritten as:\n\n\\[\n\\frac{b}{a} + \\frac{c}{a} + \\frac{c}{b} + \\frac{a}{b} + \\frac{a}{c} + \\frac{b}{c}.\n\\]\n\n### Step 2: Analyze the Last Term\n\nThe last term is:\n\n\\[\n\\frac{(b+c-a)(c+a-b)(a+b-c)}{abc}.\n\\]\n\nThis term is non-negative because each factor \\( b+c-a \\), \\( c+a-b \\), and \\( a+b-c \\) is non-negative due to the triangle inequalities.\n\n### Step 3: Consider Special Cases\n\nTo find the largest \\( C \\), consider the case when the triangle is equilateral, i.e., \\( a = b = c \\). In this case, the expression simplifies to:\n\n\\[\n\\frac{2c}{c} + \\frac{2c}{c} + \\frac{2c}{c} + \\frac{(c+c-c)(c+c-c)(c+c-c)}{c^3} = 6 + 0 = 6.\n\\]\n\n### Step 4: General Case\n\nFor a general triangle, the expression is:\n\n\\[\n\\frac{b+c}{a} + \\frac{c+a}{b} + \\frac{a+b}{c} \\geq 6.\n\\]\n\nThis is a known inequality for the sides of a triangle, often derived from the AM-GM inequality or Nesbitt's inequality. The additional term \\(\\frac{(b+c-a)(c+a-b)(a+b-c)}{abc}\\) is non-negative, so it only increases the left-hand side.\n\n### Conclusion\n\nThe smallest value of the left-hand side occurs when the triangle is equilateral, giving a value of 6. Since the additional term is non-negative, the inequality holds for \\( C = 6 \\) in all cases.\n\nThus, the largest constant \\( C \\) such that the inequality holds for all triangles is:\n\n\\[\n\\boxed{6}\n\\]\n\nThe answer is \\( C = 6 \\).",
+    "success": true,
+    "error": null
+}

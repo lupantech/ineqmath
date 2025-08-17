@@ -1,0 +1,15 @@
+{
+    "problem": "Let $x_1, x_2, \\ldots, x_n$ be positive numbers satisfying:\n$$\n\\frac{1}{x_1+1998}+\\frac{1}{x_2+1998}+\\cdots+\\frac{1}{x_n+1998}=\\frac{1}{1998}.\n$$\nDetermine the largest constant $C$ such that the following inequality holds for all $x_1, x_2, \\ldots, x_n$:\n$$\n\\frac{\\sqrt[n]{x_1 x_2 \\cdots x_n}}{n-1} \\geq C.\n$$",
+    "answer": "",
+    "type": "bound",
+    "data_split": "test",
+    "solution": "",
+    "theorems": "{}",
+    "difficulty": "",
+    "choices": "NaN",
+    "data_id": "59",
+    "prompt": "Task description: Please solve the problem with clear, rigorous, and logically sound steps. At the end of your response, state your answer in exactly this format: 'The answer is $C=X$', where X is your calculated numerical bound value. Example: 'The answer is $C=1$'.\n\nProblem: Let $x_1, x_2, \\ldots, x_n$ be positive numbers satisfying:\n$$\n\\frac{1}{x_1+1998}+\\frac{1}{x_2+1998}+\\cdots+\\frac{1}{x_n+1998}=\\frac{1}{1998}.\n$$\nDetermine the largest constant $C$ such that the following inequality holds for all $x_1, x_2, \\ldots, x_n$:\n$$\n\\frac{\\sqrt[n]{x_1 x_2 \\cdots x_n}}{n-1} \\geq C.\n$$\n\nSolution:",
+    "response": "To solve this problem, we need to find the largest constant \\( C \\) such that the inequality\n\n\\[\n\\frac{\\sqrt[n]{x_1 x_2 \\cdots x_n}}{n-1} \\geq C\n\\]\n\nholds for all positive numbers \\( x_1, x_2, \\ldots, x_n \\) satisfying\n\n\\[\n\\frac{1}{x_1+1998}+\\frac{1}{x_2+1998}+\\cdots+\\frac{1}{x_n+1998}=\\frac{1}{1998}.\n\\]\n\nFirst, let's analyze the given condition. We have:\n\n\\[\n\\sum_{i=1}^n \\frac{1}{x_i + 1998} = \\frac{1}{1998}.\n\\]\n\nThis can be rewritten as:\n\n\\[\n\\sum_{i=1}^n \\frac{1}{x_i + 1998} = \\frac{1}{1998}.\n\\]\n\nMultiplying both sides by 1998, we get:\n\n\\[\n\\sum_{i=1}^n \\frac{1998}{x_i + 1998} = 1.\n\\]\n\nNow, consider the function \\( f(x) = \\frac{1998}{x + 1998} \\). This function is decreasing because its derivative \\( f'(x) = -\\frac{1998}{(x + 1998)^2} \\) is negative for all \\( x > 0 \\).\n\nTo maximize the geometric mean \\( \\sqrt[n]{x_1 x_2 \\cdots x_n} \\), we should try to make the \\( x_i \\) as equal as possible, due to the AM-GM inequality. Let's assume \\( x_1 = x_2 = \\cdots = x_n = x \\). Then:\n\n\\[\nn \\cdot \\frac{1998}{x + 1998} = 1 \\implies \\frac{1998}{x + 1998} = \\frac{1}{n}.\n\\]\n\nSolving for \\( x \\), we have:\n\n\\[\n1998 = \\frac{x + 1998}{n} \\implies x + 1998 = 1998n \\implies x = 1998n - 1998.\n\\]\n\nThus, each \\( x_i = 1998(n-1) \\).\n\nNow, calculate the geometric mean:\n\n\\[\n\\sqrt[n]{x_1 x_2 \\cdots x_n} = \\sqrt[n]{(1998(n-1))^n} = 1998(n-1).\n\\]\n\nSubstitute this into the inequality:\n\n\\[\n\\frac{\\sqrt[n]{x_1 x_2 \\cdots x_n}}{n-1} = \\frac{1998(n-1)}{n-1} = 1998.\n\\]\n\nTherefore, the largest constant \\( C \\) such that the inequality holds for all \\( x_1, x_2, \\ldots, x_n \\) is:\n\n\\[\nC = 1998.\n\\]\n\nThe answer is \\(\\boxed{C=1998}\\).",
+    "success": true,
+    "error": null
+}

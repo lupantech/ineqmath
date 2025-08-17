@@ -1,0 +1,15 @@
+{
+    "problem": "Let $x, y, z > 0$ be positive real numbers such that $x + y + z = 1$. Consider the following inequality:\n$$\nxy(y + 4z) + yz(z + 4x) + zx(x + 4y) \\quad () \\quad \\frac{16}{27}.\n$$\n\nDetermine the correct inequality relation to fill in the blank.\n\nOptions:\n\n(A) $\\leq$ \n\n(B) $\\geq$\n\n(C) $=$ \n\n(D) $<$\n\n(E) $>$\n\n(F) None of the above",
+    "answer": "",
+    "type": "relation",
+    "data_split": "test",
+    "solution": "",
+    "theorems": "{}",
+    "difficulty": "",
+    "choices": "[\"(A) $\\\\leq$\", \"(B) $\\\\geq$\", \"(C) $=$\", \"(D) $<$\", \"(E) $>$\", \"(F) None of the above\"]",
+    "data_id": "130",
+    "prompt": "Task description: Please solve the problem with clear, rigorous, and logically sound steps. At the end of your response, state your answer in exactly this format: 'The answer is (Letter) Symbol', where Letter is one of the given options. Example: 'The answer is (A) $\\leq$'.\n\nProblem: Let $x, y, z > 0$ be positive real numbers such that $x + y + z = 1$. Consider the following inequality:\n$$\nxy(y + 4z) + yz(z + 4x) + zx(x + 4y) \\quad () \\quad \\frac{16}{27}.\n$$\n\nDetermine the correct inequality relation to fill in the blank.\n\nOptions:\n\n(A) $\\leq$ \n\n(B) $\\geq$\n\n(C) $=$ \n\n(D) $<$\n\n(E) $>$\n\n(F) None of the above\n\nSolution:",
+    "response": "To solve this problem, we need to analyze the inequality:\n\n\\[\nxy(y + 4z) + yz(z + 4x) + zx(x + 4y) \\quad () \\quad \\frac{16}{27}\n\\]\n\ngiven the condition \\(x + y + z = 1\\) and \\(x, y, z > 0\\).\n\nFirst, let's expand the left-hand side:\n\n\\[\nxy(y + 4z) = xy^2 + 4xyz\n\\]\n\\[\nyz(z + 4x) = yz^2 + 4xyz\n\\]\n\\[\nzx(x + 4y) = zx^2 + 4xyz\n\\]\n\nAdding these, we get:\n\n\\[\nxy^2 + yz^2 + zx^2 + 12xyz\n\\]\n\nThus, the inequality becomes:\n\n\\[\nxy^2 + yz^2 + zx^2 + 12xyz \\quad () \\quad \\frac{16}{27}\n\\]\n\nTo find the correct relation, we can use the method of Lagrange multipliers or test specific values that satisfy \\(x + y + z = 1\\).\n\nLet's test the case where \\(x = y = z = \\frac{1}{3}\\):\n\n\\[\nxy^2 + yz^2 + zx^2 + 12xyz = \\left(\\frac{1}{3}\\right)\\left(\\frac{1}{3}\\right)^2 + \\left(\\frac{1}{3}\\right)\\left(\\frac{1}{3}\\right)^2 + \\left(\\frac{1}{3}\\right)\\left(\\frac{1}{3}\\right)^2 + 12\\left(\\frac{1}{3}\\right)^3\n\\]\n\nCalculating each term:\n\n\\[\nxy^2 = \\frac{1}{3} \\cdot \\frac{1}{9} = \\frac{1}{27}\n\\]\n\\[\nyz^2 = \\frac{1}{3} \\cdot \\frac{1}{9} = \\frac{1}{27}\n\\]\n\\[\nzx^2 = \\frac{1}{3} \\cdot \\frac{1}{9} = \\frac{1}{27}\n\\]\n\\[\n12xyz = 12 \\cdot \\frac{1}{27} = \\frac{12}{27} = \\frac{4}{9}\n\\]\n\nAdding these:\n\n\\[\n\\frac{1}{27} + \\frac{1}{27} + \\frac{1}{27} + \\frac{4}{9} = \\frac{3}{27} + \\frac{12}{27} = \\frac{15}{27} = \\frac{5}{9}\n\\]\n\nNow, compare \\(\\frac{5}{9}\\) with \\(\\frac{16}{27}\\):\n\nConvert \\(\\frac{5}{9}\\) to a denominator of 27:\n\n\\[\n\\frac{5}{9} = \\frac{15}{27}\n\\]\n\nSince \\(\\frac{15}{27} < \\frac{16}{27}\\), we have:\n\n\\[\nxy^2 + yz^2 + zx^2 + 12xyz < \\frac{16}{27}\n\\]\n\nThus, the correct inequality relation is:\n\nThe answer is (D) $<$.",
+    "success": true,
+    "error": null
+}

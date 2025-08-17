@@ -1,0 +1,15 @@
+{
+    "problem": "For arbitrary real numbers $a, b, c$, find the largest constant $C$ such that the following inequality holds for all $a, b, c \\in \\mathbb{R}$:\n$$\n\\sqrt{a^2+(1-b)^2}+\\sqrt{b^2+(1-c)^2}+\\sqrt{c^2+(1-a)^2} \\geq C.\n$$",
+    "answer": "",
+    "type": "bound",
+    "data_split": "test",
+    "solution": "",
+    "theorems": "{}",
+    "difficulty": "",
+    "choices": "NaN",
+    "data_id": "14",
+    "prompt": "Task description: Please solve the problem with clear, rigorous, and logically sound steps. At the end of your response, state your answer in exactly this format: 'The answer is $C=X$', where X is your calculated numerical bound value. Example: 'The answer is $C=1$'.\n\nProblem: For arbitrary real numbers $a, b, c$, find the largest constant $C$ such that the following inequality holds for all $a, b, c \\in \\mathbb{R}$:\n$$\n\\sqrt{a^2+(1-b)^2}+\\sqrt{b^2+(1-c)^2}+\\sqrt{c^2+(1-a)^2} \\geq C.\n$$\n\nSolution:",
+    "response": "To solve this problem, we need to find the largest constant \\( C \\) such that the inequality\n\n\\[\n\\sqrt{a^2 + (1-b)^2} + \\sqrt{b^2 + (1-c)^2} + \\sqrt{c^2 + (1-a)^2} \\geq C\n\\]\n\nholds for all real numbers \\( a, b, c \\).\n\n### Step 1: Analyze the Expression\n\nEach term in the sum is of the form \\(\\sqrt{x^2 + (1-y)^2}\\). This represents the Euclidean distance from the point \\((x, y)\\) to the point \\((0, 1)\\) in the plane. Therefore, the expression can be interpreted as the sum of distances from the points \\((a, 1-b)\\), \\((b, 1-c)\\), and \\((c, 1-a)\\) to the point \\((0, 1)\\).\n\n### Step 2: Consider Special Cases\n\nTo find a lower bound, consider specific values for \\(a\\), \\(b\\), and \\(c\\).\n\n#### Case 1: \\(a = b = c = 0\\)\n\n\\[\n\\sqrt{0^2 + (1-0)^2} + \\sqrt{0^2 + (1-0)^2} + \\sqrt{0^2 + (1-0)^2} = 3\n\\]\n\n#### Case 2: \\(a = b = c = 1\\)\n\n\\[\n\\sqrt{1^2 + (1-1)^2} + \\sqrt{1^2 + (1-1)^2} + \\sqrt{1^2 + (1-1)^2} = 3\n\\]\n\n#### Case 3: \\(a = b = c = -1\\)\n\n\\[\n\\sqrt{(-1)^2 + (1-(-1))^2} + \\sqrt{(-1)^2 + (1-(-1))^2} + \\sqrt{(-1)^2 + (1-(-1))^2} = 3\\sqrt{5}\n\\]\n\n### Step 3: General Lower Bound\n\nThe minimum value of each term \\(\\sqrt{x^2 + (1-y)^2}\\) is 1, which occurs when \\(x = 0\\) and \\(y = 1\\). Therefore, the minimum value of the entire expression is at least 3, since:\n\n\\[\n\\sqrt{a^2 + (1-b)^2} \\geq 1, \\quad \\sqrt{b^2 + (1-c)^2} \\geq 1, \\quad \\sqrt{c^2 + (1-a)^2} \\geq 1\n\\]\n\nAdding these inequalities gives:\n\n\\[\n\\sqrt{a^2 + (1-b)^2} + \\sqrt{b^2 + (1-c)^2} + \\sqrt{c^2 + (1-a)^2} \\geq 3\n\\]\n\n### Step 4: Conclusion\n\nThe largest constant \\( C \\) such that the inequality holds for all real numbers \\( a, b, c \\) is 3. This is confirmed by the specific cases and the general analysis.\n\nThus, the answer is \\(\\boxed{3}\\).\n\nThe answer is \\( C = 3 \\).",
+    "success": true,
+    "error": null
+}

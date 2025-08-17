@@ -21,6 +21,9 @@ OUTPUT_PATH="../../results/models_results_${SPLIT}_data/"
 MAX_WORKERS=16
 
 ############## Run the model ###############
+# Change working directory to utils
+cd ../utils
+
 # Loop through each engine
 for LLM in "${ENGINES[@]}"; do
     echo "Running tests for engine: $LLM"

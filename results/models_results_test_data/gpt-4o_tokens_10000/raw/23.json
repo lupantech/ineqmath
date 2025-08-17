@@ -1,0 +1,15 @@
+{
+    "problem": "For all $a, b, c > 0$ satisfying $a+b+c=2$, determine the largest constant $C$ such that the following inequality holds:\n$$\n\\frac{a}{1-a} \\cdot \\frac{b}{1-b} \\cdot \\frac{c}{1-c} \\geq C.\n$$",
+    "answer": "",
+    "type": "bound",
+    "data_split": "test",
+    "solution": "",
+    "theorems": "{}",
+    "difficulty": "",
+    "choices": "NaN",
+    "data_id": "23",
+    "prompt": "Task description: Please solve the problem with clear, rigorous, and logically sound steps. At the end of your response, state your answer in exactly this format: 'The answer is $C=X$', where X is your calculated numerical bound value. Example: 'The answer is $C=1$'.\n\nProblem: For all $a, b, c > 0$ satisfying $a+b+c=2$, determine the largest constant $C$ such that the following inequality holds:\n$$\n\\frac{a}{1-a} \\cdot \\frac{b}{1-b} \\cdot \\frac{c}{1-c} \\geq C.\n$$\n\nSolution:",
+    "response": "To solve this problem, we need to find the largest constant \\( C \\) such that the inequality\n\n\\[\n\\frac{a}{1-a} \\cdot \\frac{b}{1-b} \\cdot \\frac{c}{1-c} \\geq C\n\\]\n\nholds for all positive \\( a, b, c \\) satisfying \\( a + b + c = 2 \\).\n\nFirst, let's express each term \\(\\frac{x}{1-x}\\) in terms of \\( x \\). For \\( x \\in (0, 1) \\), the function \\(\\frac{x}{1-x}\\) is increasing. Therefore, the product \\(\\frac{a}{1-a} \\cdot \\frac{b}{1-b} \\cdot \\frac{c}{1-c}\\) is also increasing in each variable.\n\nTo find the minimum value of this product, we should consider the scenario where \\( a, b, c \\) are as equal as possible, given the constraint \\( a + b + c = 2 \\). The most symmetric case is when \\( a = b = c = \\frac{2}{3} \\).\n\nLet's calculate the product in this case:\n\n\\[\n\\frac{a}{1-a} = \\frac{\\frac{2}{3}}{1 - \\frac{2}{3}} = \\frac{\\frac{2}{3}}{\\frac{1}{3}} = 2.\n\\]\n\nThus, for \\( a = b = c = \\frac{2}{3} \\), the product is:\n\n\\[\n\\left(\\frac{2}{3}\\right)^3 = 2 \\cdot 2 \\cdot 2 = 8.\n\\]\n\nNow, we need to verify if this is indeed the minimum value. Consider the function:\n\n\\[\nf(x) = \\frac{x}{1-x}\n\\]\n\nThe second derivative of \\( f(x) \\) is positive for \\( x \\in (0, 1) \\), indicating that \\( f(x) \\) is convex. By Jensen's inequality, for convex functions, the minimum value of the product \\(\\frac{a}{1-a} \\cdot \\frac{b}{1-b} \\cdot \\frac{c}{1-c}\\) under the constraint \\( a + b + c = 2 \\) occurs when \\( a = b = c = \\frac{2}{3} \\).\n\nTherefore, the minimum value of the product is indeed 8, and the largest constant \\( C \\) such that the inequality holds for all \\( a, b, c > 0 \\) with \\( a + b + c = 2 \\) is:\n\n\\[\n\\boxed{8}\n\\]\n\nThus, the answer is \\( C = 8 \\).",
+    "success": true,
+    "error": null
+}
