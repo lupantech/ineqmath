@@ -252,7 +252,7 @@ To run the supported models, see the [Supported LLM Engines](#supported-llm-engi
 
 You can then find the answer accuracy in `results/models_results_dev_data/MODEL-LABEL/scores.json`, where `MODEL-LABEL` is the label of the model consisting of the model name and the max tokens budget.
 
-To further evaluate your model's output and obtain the step-wise accuracy reported in our paper, please submit your generated `*.json` file (e.g. `results/models_results_dev_data/MODEL-LABEL/results.json`) to the [Dev set evaluation platform](https://huggingface.co/spaces/AI4Math/IneqMath-Dev-Evaluation). 
+To further evaluate your model's output and obtain the step-wise accuracy reported in our paper, please submit your generated file `results/models_results_dev_data/MODEL-LABEL/results.json` to the [Dev set evaluation platform](https://huggingface.co/spaces/AI4Math/IneqMath-Dev-Evaluation). 
 
 ### Evaluate with the Final Answer Judge
 
