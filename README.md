@@ -223,7 +223,7 @@ Run `run_test_data_proprietary_all.sh`, `run_test_data_open_source_all.sh`, and 
 ./run_test_data_gemma.sh
 ```
 
-To run other supported models, see the [Supported LLM Engines](#supported-llm-engines) section for details and example scripts. For example, to run an OpenAI‑family model, run:
+To run other supported models, see the [Supported LLM Engines](#supported-llm-engines) section for details and example scripts. For example, to run the OpenAI‑family models, run:
 ```bash
 ./run_test_data_openai.sh
 ```
@@ -245,7 +245,7 @@ To evaluate your model's output and obtain the answer accuracy and step-wise acc
 
 We also provide scripts to evaluate models on the **dev set.** In addition, we include our **Final Answer Judge** to compute answer accuracy, helping you tune your models more effectively.
 
-To run the supported models, see the [Supported LLM Engines](#supported-llm-engines) section for details and dev example scripts. For example, to run an OpenAI‑family model on the dev set, run:
+To run the supported models, see the [Supported LLM Engines](#supported-llm-engines) section for details and dev example scripts. For example, to run the OpenAI‑family models on the dev set, run:
 ```bash
 ./run_dev_data_openai.sh
 ```
