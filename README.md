@@ -53,6 +53,8 @@
   - [Frequent Theorems as Hints](#frequent-theorems-as-hints)
   - [Frequent Training Problems and Solutions as Hints](#frequent-training-problems-and-solutions-as-hints)
   - [Few-shot Evaluation](#few-shot-evaluation)
+- [🧪 Other experiments on IneqMath](#other-experiments-on-ineqmath)
+  - [Taking Annotated Theorems as Hints](#taking-annotated-theorems-as-hints)
 - [🤗 Dataset Overview](#dataset-overview)
 - [🧐 Fine-grained Informal Judges](#fine-grained-informal-judges)
 - [📈 Evaluation Results](#evaluation-results)
@@ -67,6 +69,7 @@
 <a id="news"></a>
 ## 💥 News 
 
+- **[2025.08.17]** 🚀 Supercharge your IneqMath runs with our new improvement strategies—[Frequent Theorems as Hints](#frequent-theorems-as-hints), [Frequent Training Problems & Solutions as Hints](#frequent-training-problems-and-solutions-as-hints), and [Few-shot Evaluation](#few-shot-evaluation). Give them a try and let us know if there are other strategies you’d like to see!
 - **[2025.08.16]** 🚀 Updated **example scripts** across **all supported model families**—explore them [here](#supported-llm-engines)!
 - **[2025.08.14]** ✨ Released the **dev set evaluation scripts** and our **Final Answer Judge**—try them now! [Dev set evaluation](#evaluate-models-on-ineqmath-dev-set) | [Final Answer Judge](#evaluate-with-the-final-answer-judge).
 - **[2025.08.08]** 💥 **GPT-5 (medium, 30K)** 🥇 Sets New SOTA on IneqMath with overall accuracy **47.0%**! Read more on the [OpenAI Platform](https://openai.com/index/introducing-gpt-5/).
@@ -365,6 +368,23 @@ cd strategies/few_shots
 Then, you can find the model's output in `results/few_shot_results_dev_data/MODEL-LABEL/results.json` or `results/few_shot_results_test_data/MODEL-LABEL/results.json`, where `MODEL-LABEL` is the label of the model consisting of the *model name*, the *max tokens budget* and the *number of few-shot examples*.
 
 To evaluate your model's output and obtain the answer accuracy and step-wise accuracy reported in our paper, please submit your outputs to the [leaderboard](https://huggingface.co/spaces/AI4Math/IneqMath-Leaderboard). 
+
+
+
+<a id="other-experiments-on-ineqmath"></a>
+## 🧪 Other experiments on IneqMath
+
+### Taking Annotated Theorems as Hints
+We demonstrated the experiment of taking the annotated theorems as hints on the training set in our [paper](https://arxiv.org/abs/2506.07927). To run the experiment, please change the directory to `experiments/training_theorem_as_hints` and run the following script:
+
+```bash
+cd experiments/training_theorem_as_hints
+./run_train_sampled_data_10k.sh # for Grok 3 mini and o3-mini
+./run_train_sampled_data_30k.sh # for Gemini 2.5 Pro and o4-mini
+```
+
+Then, you can find the model's answer accuracy in `results/training_theorems_as_hints_results_train_data/MODEL-LABEL/scores.json`, where `MODEL-LABEL` is the label of the model consisting of the *model name*, the *max tokens budget*.
+
 
 
 

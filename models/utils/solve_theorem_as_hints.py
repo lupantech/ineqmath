@@ -154,6 +154,31 @@ class ProblemSolver:
 
         self.vllm_server_process = vllm_process
     
+    def build_query_train(self, data: Dict[str, Any], problem: str, prob_type: str, task_prompt: str = "", shot_num: int = 0) -> str:
+        if prob_type == "bound":
+            task_hint = f"{self.BOUND_HINT_PROMPT}\n\n"
+        elif prob_type == "relation":
+            task_hint = f"{self.RELATION_HINT_PROMPT}\n\n"
+        else:
+            raise ValueError(f"Unknown problem type: {prob_type}")
+
+        task_prompt = f"{task_prompt}\n\n" if task_prompt else ""
+        
+        demonstrations = ""
+
+        # Load theorem set if provided
+        theorem_details = ""
+        try:
+            # Assume problem is a dictionary with a 'metadata' field containing a 'theorems' list
+            if isinstance(data, dict) and 'theorems' in data:
+                for i, theorem in enumerate(data['theorems'].values()):
+                    theorem_details += f"Theorem {i+1} (Category: {theorem.get('Theorem_Category', '')}, Nicknames: {', '.join(theorem.get('Nickname', []))}): {theorem.get('Theorem', '')}\n\n"
+        except Exception as e:
+            print(f"Error loading theorem set: {e}")
+
+        query = f"{task_hint}{task_prompt}{demonstrations}Problem: {problem}\n\n Please use the following theorems to solve the problem:\n{theorem_details} Solution:"
+        return query
+    
     def build_query(self, problem: str, prob_type: str, task_prompt: str = "", shot_num: int = 0, theorem_num: int = 0, theorem_set_path: str = None) -> str:
         if prob_type == "bound":
             task_hint = f"{self.BOUND_HINT_PROMPT}\n\n"
@@ -216,7 +241,11 @@ class ProblemSolver:
             # Extract theorem hint controls from kwargs so they are not passed to the engine
             theorem_num = kwargs.pop("theorem_num", 0)
             theorem_set_path = kwargs.pop("theorem_set_path", None)
-            query = self.build_query(problem, prob_type, task_prompt, shot_num, theorem_num, theorem_set_path)
+            split = kwargs.pop("split", None)
+            if split is not None and split in ["train", "train_expanded"]:
+                query = self.build_query_train(data, problem, prob_type, task_prompt, shot_num)
+            else:
+                query = self.build_query(problem, prob_type, task_prompt, shot_num, theorem_num, theorem_set_path)
             response = self.llm_engine(query, **kwargs)
             if not response:
                 print(f'response is empty for problem {data_id}')
@@ -270,7 +299,7 @@ if __name__ == "__main__":
     args = parse_arguments()
     # Ensure theorem_set_path exists at startup; download from HF if missing
     if args.theorem_set_path:
-        if not os.path.exists(args.theorem_set_path):
+        if not os.path.exists(args.theorem_set_path) and args.split not in ["train", "train_expanded"]:
             try:
                 base_url = "https://huggingface.co/datasets/AI4Math/IneqMath/resolve/main/json/"
                 filename = "theorems.json"
@@ -318,7 +347,7 @@ if __name__ == "__main__":
         print(f"Processing {len(test_data_to_process)} test cases...")
 
         # Create kwargs dictionary with additional arguments
-        kwargs = {"max_tokens": args.max_tokens, "theorem_num": args.theorem_num, "theorem_set_path": args.theorem_set_path}
+        kwargs = {"max_tokens": args.max_tokens, "theorem_num": args.theorem_num, "theorem_set_path": args.theorem_set_path, "split": args.split}
         
         if args.max_workers > 1:
             with concurrent.futures.ThreadPoolExecutor(max_workers=args.max_workers) as executor:

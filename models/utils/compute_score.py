@@ -328,18 +328,20 @@ class ScoreComputer:
 
     @staticmethod
     def calculate_score(results: Dict[str, Any]) -> Dict[str, Any]:
-        scores = {
-            "dev": {
+        scores_init = {
                 "all": {"total": 0, "correct": 0, "wrong": 0, "accuracy": 0.0, "empty_responses": 0},
                 "bound": {"total": 0, "correct": 0, "wrong": 0, "accuracy": 0.0},
                 "relation": {"total": 0, "correct": 0, "wrong": 0, "accuracy": 0.0},
             }
-        }
+        scores = {}
 
         for test_id, result in results.items():
             prob_type = result["type"]         # "bound" or "relation"
             evaluation = result["evaluation"]
             data_split = result.get("data_split", "test")  # Default to test if not specified
+            
+            if data_split not in scores:
+                scores[data_split] = scores_init.copy().copy()
             
             # Check if the response is empty
             if evaluation["answer_sentence"] == "":
