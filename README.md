@@ -36,6 +36,11 @@
 
 <!-- This is the code repository for the paper [Solving Inequality Proofs with Large Language Models](https://arxiv.org/abs/2506.07927). -->
 
+
+Welcome to the official repository for the paper "[Solving Inequality Proofs with Large Language Models](https://arxiv.org/abs/2506.07927)". With this toolkit you can **evaluate your own models** on our benchmark, **plug in our improvement strategies** to boost performance, **reproduce the paper's experiments** end-to-end, and **train more effectively** with our data. Dive in and push the frontier of inequality and mathematics reasoning with us! 🚀
+
+
+
 ## 📑 Table of Contents
 
 - [💥 News ](#news)
@@ -218,6 +223,9 @@ ANTHROPIC_API_KEY=your-Anthropic-api-key-here
 
 
 ### Evaluate Models on <b><span style="color:#103756;">Ineq</span><span style="color:#D03C36;">Math</span></b> Test Set
+
+This section evaluates models in a **zero-shot setting**, which is the standard configuration in most LLM benchmark studies and the setup used in our paper. For few-shot evaluation, please see [the few-shot evaluation](#few-shot-evaluation) section for more details.
+
 Change the directory to `scripts`:
 ```bash
 cd scripts
@@ -235,6 +243,8 @@ To run other supported models, see the [Supported LLM Engines](#supported-llm-en
 ./run_test_data_openai.sh
 ```
 
+You can customize the max token limits by changing the `TOKENS` variable in the script files. For example, to set a 30000 max tokens limit, modify `TOKENS=30000` in the script before running.
+
 If the dataset can't be loaded automatically, please download the JSON-formatted dataset manually by:
 ```shell
 mkdir ../data
@@ -242,7 +252,7 @@ cd ../data
 wget https://huggingface.co/datasets/AI4Math/IneqMath/resolve/main/json/test.json
 ```
 
-Then, you can find the model's output in `results/models_results_test_data/MODEL-LABEL/scores.json`, where `MODEL-LABEL` is the label of the model consisting of the model name and the max tokens budget.
+Then, you can find the model's output in `results/models_results_test_data/MODEL-LABEL/scores.json`, where `MODEL-LABEL` is the label of the model consisting of the model name and the max tokens budget. For example, the `MODEL-LABEL` for `gpt-4o-mini` with a 10K max tokens limit would be `gpt-4o-mini_tokens_10000`.
 
 
 To evaluate your model's output and obtain the answer accuracy and step-wise accuracy reported in our paper, please submit your outputs to the [leaderboard](https://huggingface.co/spaces/AI4Math/IneqMath-Leaderboard). See [the leaderboard submission instruction](#submit-the-results-to-the-leaderboard) for more details.
@@ -250,16 +260,18 @@ To evaluate your model's output and obtain the answer accuracy and step-wise acc
 
 ### Evaluate Models on <b><span style="color:#103756;">Ineq</span><span style="color:#D03C36;">Math</span></b> Dev Set
 
-We also provide scripts to evaluate models on the **dev set.** In addition, we include our **Final Answer Judge** to compute answer accuracy, helping you tune your models more effectively.
+We also provide scripts to evaluate models on the **dev set** in **zero-shot settings**. In addition, we include our **Final Answer Judge** to compute answer accuracy, helping you tune your models more effectively.
 
 To run the supported models, see the [Supported LLM Engines](#supported-llm-engines) section for details and dev example scripts. For example, to run the OpenAI‑family models on the dev set, run:
 ```bash
 ./run_dev_data_openai.sh
 ```
 
-You can then find the answer accuracy in `results/models_results_dev_data/MODEL-LABEL/scores.json`, where `MODEL-LABEL` is the label of the model consisting of the model name and the max tokens budget.
+You can customize the max token limits by changing the `TOKENS` variable in the script files. For example, to set a 30000 max tokens limit, modify `TOKENS=30000` in the script before running.
 
-To further evaluate your model's output and obtain the step-wise accuracy reported in our paper, please submit your generated file `results/models_results_dev_data/MODEL-LABEL/results.json` to the [Dev set evaluation platform](https://huggingface.co/spaces/AI4Math/IneqMath-Dev-Evaluation). 
+You can then find the answer accuracy in `results/models_results_dev_data/MODEL-LABEL/scores.json`, where `MODEL-LABEL` is the label of the model consisting of the model name and the max tokens budget. For example, the `MODEL-LABEL` for `gpt-4o-mini` with a 10K max tokens limit would be `gpt-4o-mini_tokens_10000`.
+
+To further evaluate your model's output and obtain the step-wise accuracy reported in our paper, please submit your generated file `results/models_results_dev_data/MODEL-LABEL/results.json` to the [Dev set evaluation platform](https://huggingface.co/spaces/AI4Math/IneqMath-Dev-Evaluation). See [the leaderboard submission instruction](#submit-the-results-to-the-leaderboard) for more details. 
 
 ### Evaluate with the Final Answer Judge
 
@@ -293,7 +305,7 @@ The score will be saved as `../../results/models_results_dev_data/gpt-4o-mini_to
 
 To submit the results to the leaderboard, please follow the follwing instructions: 
 
-- If you run the model by our scripts, you can find the results in `results/models_results_test_data/` or `results/models_results_dev_data/` and upload the `results.json` of the model to the corresponding section (test/dev) of the leaderboard.
+- If you run the model by our scripts, you can upload the generated `results.json` of the model to the corresponding section (test/dev) of the leaderboard.
 
 - If you run the model on your own, please check your data format before your submission. The submitted data should be compiled in a single `JSON` file with at least five keys listed below:
 
@@ -309,7 +321,7 @@ To submit the results to the leaderboard, please follow the follwing instruction
 
 ### Supported LLM Engines
 
-We support a broad range of LLM engines, including GPT-4.1, o4-mini, Claude Sonnet 4, Gemini 2.5 Pro, and more.
+We support a broad range of LLM engines, including OpenAI family, Anthropic family, Gemini family, DeepSeek family, Grok family, vLLM family, and more.
 
 | Model Family   | Engines | Official Model List |&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Example Scripts &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|
 |----------------|----------------------|--------------------|----------------|
@@ -322,7 +334,7 @@ We support a broad range of LLM engines, including GPT-4.1, o4-mini, Claude Sonn
 | vLLM           | Various vLLM-supported models, for example, `Qwen3-4B` and `QwQ-32B`. You can also use local checkpoint models for customization and local inference. | [vLLM Models](https://docs.vllm.ai/en/latest/models/supported_models.html) | [Test](scripts/run_test_data_vllm.sh) / [Dev](scripts/run_dev_data_vllm.sh) |
 
 
-> Note: If you want to run other models from the supported model family, you could substitute or add the model engine name in `ENGINES` of the example scripts, and then run it. If you are using TogetherAI models, please ensure you have the prefix 'together-' in the model string, for example, `together-meta-llama/Llama-4-Scout-17B-16E-Instruct`. For other custom engines, you can edit the [factory.py](https://github.com/lupantech/ineqmath/blob/main/models/engines/factory.py) file and add its interface file to add support for your engine. Your pull request will be warmly welcomed!
+> Note: If you want to run other models from the supported model family, you could substitute or add the model engine name in `ENGINES` of the example scripts, and then run it. If you are using TogetherAI models, please ensure you have the prefix 'together-' in the model string, for example, `together-meta-llama/Llama-4-Scout-17B-16E-Instruct` for model `meta-llama/Llama-4-Scout-17B-16E-Instruct`. For other custom engines, you can edit the [factory.py](https://github.com/lupantech/ineqmath/blob/main/models/engines/factory.py) file and add its interface file to add support for your engine. Your pull request will be warmly welcomed!
 
 
 <a id="strategies-on-ineqmath"></a>
@@ -336,15 +348,17 @@ theorems** can significantly improve the performance of LLMs on the <b><span sty
 Please change the directory to `strategies/frequent_theorem_as_hints` and run the following script to evaluate LLMs with top-k most frequent theorems as hints.
 ```bash
 cd strategies/frequent_theorem_as_hints
-./run_test_data_openai.sh # or ./run_dev_data_openai.sh 
-./run_test_data_vllm.sh # or ./run_dev_data_vllm.sh # This is for vLLM only.
+./run_test_data_no_vllm.sh # or ./run_dev_data_no_vllm.sh # This is for non-vLLM models.
+./run_test_data_vllm.sh # or ./run_dev_data_vllm.sh # This is for vLLM models.
 ```
 
-If you want to run other models from the [supported model family](#supported-llm-engines), you could substitute or add the model engine name in `ENGINES` of the example scripts, and then run it. For the vLLM models, please use the `run_test_data_vllm.sh`. For other supported models, please refer to the `run_test_data_openai.sh`.
+If you want to run other models from the [supported model family](#supported-llm-engines), you could substitute or add the model engine name in `ENGINES` of the example scripts, and then run it.
 
-Then, you can find the model's output in `results/frequent_theorems_as_hints_results_dev_data/MODEL-LABEL/results.json` or `results/frequent_theorems_as_hints_results_test_data/MODEL-LABEL/results.json`, where `MODEL-LABEL` is the label of the model consisting of the *model name*, the *max tokens budget* and the *number of most frequent theorems*.
+You can customize the max token limits and the number of most frequent theorems by changing the `TOKENS` and `THEOREM_NUM` variables in the script files. For example, to set a 30000 max tokens limit and 3 most frequent theorems, modify `TOKENS=30000` and `THEOREM_NUM=3` in the script before running.
 
-To evaluate your model's output and obtain the answer accuracy and step-wise accuracy reported in our paper, please submit your outputs to the [leaderboard](https://huggingface.co/spaces/AI4Math/IneqMath-Leaderboard). 
+Then, you can find the model's output in `results/frequent_theorems_as_hints_results_dev_data/MODEL-LABEL/results.json` or `results/frequent_theorems_as_hints_results_test_data/MODEL-LABEL/results.json`, where `MODEL-LABEL` is the label of the model consisting of the *model name*, the *max tokens budget* and the *number of most frequent theorems*. For example, the `MODEL-LABEL` for `gpt-4o-mini` with a 10K max tokens limit and 3 most frequent theorems would be `gpt-4o-mini_tokens_10000_theorem_num_3`.
+
+To evaluate your model's output and obtain the answer accuracy and step-wise accuracy reported in our paper, please submit your outputs to the [leaderboard](https://huggingface.co/spaces/AI4Math/IneqMath-Leaderboard). See [the leaderboard submission instruction](#submit-the-results-to-the-leaderboard) for more details.
 
 ### Frequent Training Problems and Solutions as Hints
 As shown in our [paper](https://arxiv.org/abs/2506.07927), providing **top-k most frequent training problems and their solutions** can also  improve the performance of LLMs on the <b><span style="color:#103756;">Ineq</span><span style="color:#D03C36;">Math</span></b> dataset. Therefore, we provide the scripts to **evaluate LLMs with top-k most frequent training problems and solutions as hints**.
@@ -353,12 +367,17 @@ As shown in our [paper](https://arxiv.org/abs/2506.07927), providing **top-k mos
 Please change the directory to `strategies/frequent_solution_as_hints` and run the following script to evaluate LLMs with top-k most frequent training problems and solutions as hints.
 ```bash
 cd strategies/frequent_solution_as_hints
-./run_test_data_openai.sh # or ./run_dev_data_openai.sh 
-./run_test_data_vllm.sh # or ./run_dev_data_vllm.sh # This is for vLLM only.
+./run_test_data_no_vllm.sh # or ./run_dev_data_no_vllm.sh # This is for non-vLLM models.
+./run_test_data_vllm.sh # or ./run_dev_data_vllm.sh # This is for vLLM models.
 ```
-Then, you can find the model's output in `results/frequent_solution_as_hints_results_dev_data/MODEL-LABEL/results.json` or `results/frequent_solution_as_hints_results_test_data/MODEL-LABEL/results.json`, where `MODEL-LABEL` is the label of the model consisting of the *model name*, the *max tokens budget* and the *number of most frequent training problems and solutions*.
 
-To evaluate your model's output and obtain the answer accuracy and step-wise accuracy reported in our paper, please submit your outputs to the [leaderboard](https://huggingface.co/spaces/AI4Math/IneqMath-Leaderboard).
+If you want to run other models from the [supported model family](#supported-llm-engines), you could substitute or add the model engine name in `ENGINES` of the example scripts, and then run it.
+
+You can customize the max token limits and the number of most frequent training problems and solutions by changing the `TOKENS` and `SOLUTION_NUM` variables in the script files. For example, to set a 30000 max tokens limit and 3 most frequent training problems and solutions, modify `TOKENS=30000` and `SOLUTION_NUM=3` in the script before running.
+
+Then, you can find the model's output in `results/frequent_solution_as_hints_results_dev_data/MODEL-LABEL/results.json` or `results/frequent_solution_as_hints_results_test_data/MODEL-LABEL/results.json`, where `MODEL-LABEL` is the label of the model consisting of the *model name*, the *max tokens budget* and the *number of most frequent training problems and solutions*. For example, the `MODEL-LABEL` for `gpt-4o-mini` with a 10K max tokens limit and 3 most frequent training problems and solutions would be `gpt-4o-mini_tokens_10000_solution_num_3`.
+
+To evaluate your model's output and obtain the answer accuracy and step-wise accuracy reported in our paper, please submit your outputs to the [leaderboard](https://huggingface.co/spaces/AI4Math/IneqMath-Leaderboard). See [the leaderboard submission instruction](#submit-the-results-to-the-leaderboard) for more details.
 
 ### Few-shot Evaluation
 To further evaluate models on the <b><span style="color:#103756;">Ineq</span><span style="color:#D03C36;">Math</span></b> dataset, we provide the scripts to **evaluate LLMs with few-shot settings**. 
@@ -366,12 +385,16 @@ To further evaluate models on the <b><span style="color:#103756;">Ineq</span><sp
 Please change the directory to `strategies/few_shots` and run the following script to evaluate LLMs with few-shot settings.
 ```bash
 cd strategies/few_shots
-./run_test_data_openai.sh # or ./run_dev_data_openai.sh 
-./run_test_data_vllm.sh # or ./run_dev_data_vllm.sh # This is for vLLM only.
+./run_test_data_no_vllm.sh # or ./run_dev_data_no_vllm.sh # This is for non-vLLM models.
+./run_test_data_vllm.sh # or ./run_dev_data_vllm.sh # This is for vLLM models.
 ```
-Then, you can find the model's output in `results/few_shot_results_dev_data/MODEL-LABEL/results.json` or `results/few_shot_results_test_data/MODEL-LABEL/results.json`, where `MODEL-LABEL` is the label of the model consisting of the *model name*, the *max tokens budget* and the *number of few-shot examples*.
 
-To evaluate your model's output and obtain the answer accuracy and step-wise accuracy reported in our paper, please submit your outputs to the [leaderboard](https://huggingface.co/spaces/AI4Math/IneqMath-Leaderboard). 
+If you want to run other models from the [supported model family](#supported-llm-engines), you could substitute or add the model engine name in `ENGINES` of the example scripts, and then run it.
+You can customize the max token limits and the number of few-shot examples by changing the `TOKENS` and `SHOT_NUM` variables in the script files. For example, to set a 30000 max tokens limit and 3-shot examples, modify `TOKENS=30000` and `SHOT_NUM=3` in the script before running.
+
+Then, you can find the model's output in `results/few_shot_results_dev_data/MODEL-LABEL/results.json` or `results/few_shot_results_test_data/MODEL-LABEL/results.json`, where `MODEL-LABEL` is the label of the model consisting of the *model name*, the *max tokens budget* and the *number of few-shot examples*. For example, the `MODEL-LABEL` for `gpt-4o-mini` with a 10K max tokens limit and 3-shot examples would be `gpt-4o-mini_tokens_10000_shot_num_3`.
+
+To evaluate your model's output and obtain the answer accuracy and step-wise accuracy reported in our paper, please submit your outputs to the [leaderboard](https://huggingface.co/spaces/AI4Math/IneqMath-Leaderboard). See [the leaderboard submission instruction](#submit-the-results-to-the-leaderboard) for more details.
 
 
 
@@ -387,9 +410,7 @@ cd experiments/training_theorem_as_hints
 ./run_train_sampled_data_30k.sh # for Gemini 2.5 Pro and o4-mini
 ```
 
-Then, you can find the model's answer accuracy in `results/training_theorems_as_hints_results_train_data/MODEL-LABEL/scores.json`, where `MODEL-LABEL` is the label of the model consisting of the *model name*, the *max tokens budget*.
-
-
+Then, you can find the model's answer accuracy in `results/training_theorems_as_hints_results_train_data/MODEL-LABEL/scores.json`, where `MODEL-LABEL` is the label of the model consisting of the *model name*, the *max tokens budget*. For example, the `MODEL-LABEL` for `gpt-4o-mini` with a 10K max tokens limit would be `gpt-4o-mini_tokens_10000`.
 
 
 <a id="dataset-overview"></a>

@@ -1,0 +1,23 @@
+{
+    "dev": {
+        "all": {
+            "total": 100,
+            "correct": 45,
+            "wrong": 55,
+            "accuracy": 45.0,
+            "empty_responses": 0
+        },
+        "bound": {
+            "total": 50,
+            "correct": 27,
+            "wrong": 23,
+            "accuracy": 54.0
+        },
+        "relation": {
+            "total": 50,
+            "correct": 18,
+            "wrong": 32,
+            "accuracy": 36.0
+        }
+    }
+}
