@@ -17,7 +17,7 @@ THEOREM_NUM=3 # 1,2,3
 # ==============================================
 
 # Change working directory to utils
-cd ../utils
+cd ../../models/utils
 
 echo "----------------------------------------"
 echo "Starting model download process..."
