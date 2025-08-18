@@ -322,8 +322,8 @@ We support a broad range of LLM engines, including GPT-4.1, o4-mini, Claude Sonn
 In this section, we provide some potential improvement strategies mentioned in our paper to improve the performance of your model on the <b><span style="color:#103756;">Ineq</span><span style="color:#D03C36;">Math</span></b> dataset.
 
 ### Frequent Theorems as Hints
-As shown in our [paper](https://arxiv.org/abs/2506.07927), providing top-k most frequent
-theorems can significantly improve the performance of LLMs on the <b><span style="color:#103756;">Ineq</span><span style="color:#D03C36;">Math</span></b> dataset. Therefore, we provide the scripts to evaluate LLMs with top-k most frequent theorems as hints.
+As shown in our [paper](https://arxiv.org/abs/2506.07927), providing **top-k most frequent
+theorems** can significantly improve the performance of LLMs on the <b><span style="color:#103756;">Ineq</span><span style="color:#D03C36;">Math</span></b> dataset. Therefore, we provide the scripts to **evaluate LLMs with top-k most frequent theorems as hints**.
 
 Please change the directory to `strategies/frequent_theorem_as_hints` and run the following script to evaluate LLMs with top-k most frequent theorems as hints.
 ```bash
@@ -334,12 +334,13 @@ cd strategies/frequent_theorem_as_hints
 
 If you want to run other models from the [supported model family](#supported-llm-engines), you could substitute or add the model engine name in `ENGINES` of the example scripts, and then run it. For the vLLM models, please use the `run_test_data_vllm.sh`. For other supported models, please refer to the `run_test_data_openai.sh`.
 
-Then, you can find the model's output in `results/frequent_theorems_as_hints_results_dev_data/MODEL-LABEL/results.json` or `results/frequent_theorems_as_hints_results_test_data/MODEL-LABEL/results.json`, where `MODEL-LABEL` is the label of the model consisting of the model name, the max tokens budget and the number of most frequent theorems.
+Then, you can find the model's output in `results/frequent_theorems_as_hints_results_dev_data/MODEL-LABEL/results.json` or `results/frequent_theorems_as_hints_results_test_data/MODEL-LABEL/results.json`, where `MODEL-LABEL` is the label of the model consisting of the *model name*, the *max tokens budget* and the *number of most frequent theorems*.
 
-To evaluate your model's output and obtain the answer accuracy and step-wise accuracy reported in our paper, please submit your outputs to the [leaderboard](https://huggingface.co/spaces/AI4Math/IneqMath-Leaderboard). See [the leaderboard submission instruction](#submit-the-results-to-the-leaderboard) for more details.
+To evaluate your model's output and obtain the answer accuracy and step-wise accuracy reported in our paper, please submit your outputs to the [leaderboard](https://huggingface.co/spaces/AI4Math/IneqMath-Leaderboard). 
 
 ### Frequent Training Problems and Solutions as Hints
-As shown in our [paper](https://arxiv.org/abs/2506.07927), providing top-k most frequent training problems and their solutions can also  improve the performance of LLMs on the <b><span style="color:#103756;">Ineq</span><span style="color:#D03C36;">Math</span></b> dataset. Therefore, we provide the scripts to evaluate LLMs with top-k most frequent training problems and solutions as hints.
+As shown in our [paper](https://arxiv.org/abs/2506.07927), providing **top-k most frequent training problems and their solutions** can also  improve the performance of LLMs on the <b><span style="color:#103756;">Ineq</span><span style="color:#D03C36;">Math</span></b> dataset. Therefore, we provide the scripts to **evaluate LLMs with top-k most frequent training problems and solutions as hints**.
+
 
 Please change the directory to `strategies/frequent_solution_as_hints` and run the following script to evaluate LLMs with top-k most frequent training problems and solutions as hints.
 ```bash
@@ -347,9 +348,24 @@ cd strategies/frequent_solution_as_hints
 ./run_test_data_openai.sh # or ./run_dev_data_openai.sh 
 ./run_test_data_vllm.sh # or ./run_dev_data_vllm.sh # This is for vLLM only.
 ```
-Then, you can find the model's output in `results/frequent_solution_as_hints_results_dev_data/MODEL-LABEL/results.json` or `results/frequent_solution_as_hints_results_test_data/MODEL-LABEL/results.json`, where `MODEL-LABEL` is the label of the model consisting of the model name, the max tokens budget and the number of most frequent training problems and solutions.
+Then, you can find the model's output in `results/frequent_solution_as_hints_results_dev_data/MODEL-LABEL/results.json` or `results/frequent_solution_as_hints_results_test_data/MODEL-LABEL/results.json`, where `MODEL-LABEL` is the label of the model consisting of the *model name*, the *max tokens budget* and the *number of most frequent training problems and solutions*.
 
-To evaluate your model's output and obtain the answer accuracy and step-wise accuracy reported in our paper, please submit your outputs to the [leaderboard](https://huggingface.co/spaces/AI4Math/IneqMath-Leaderboard). See [the leaderboard submission instruction](#submit-the-results-to-the-leaderboard) for more details.
+To evaluate your model's output and obtain the answer accuracy and step-wise accuracy reported in our paper, please submit your outputs to the [leaderboard](https://huggingface.co/spaces/AI4Math/IneqMath-Leaderboard).
+
+### Few-shot Evaluation
+To further evaluate models on the <b><span style="color:#103756;">Ineq</span><span style="color:#D03C36;">Math</span></b> dataset, we provide the scripts to **evaluate LLMs with few-shot settings**. 
+
+Please change the directory to `strategies/few_shots` and run the following script to evaluate LLMs with few-shot settings.
+```bash
+cd strategies/few_shots
+./run_test_data_openai.sh # or ./run_dev_data_openai.sh 
+./run_test_data_vllm.sh # or ./run_dev_data_vllm.sh # This is for vLLM only.
+```
+Then, you can find the model's output in `results/few_shot_results_dev_data/MODEL-LABEL/results.json` or `results/few_shot_results_test_data/MODEL-LABEL/results.json`, where `MODEL-LABEL` is the label of the model consisting of the *model name*, the *max tokens budget* and the *number of few-shot examples*.
+
+To evaluate your model's output and obtain the answer accuracy and step-wise accuracy reported in our paper, please submit your outputs to the [leaderboard](https://huggingface.co/spaces/AI4Math/IneqMath-Leaderboard). 
+
+
 
 <a id="dataset-overview"></a>
 ## 🤗 Dataset Overview

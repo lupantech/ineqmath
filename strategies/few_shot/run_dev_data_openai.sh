@@ -5,13 +5,13 @@ ENGINES=(
 )
 TOKENS=10000
 SPLIT=dev
-OUTPUT_PATH="../../results/models_results_${SPLIT}_data/"
+OUTPUT_PATH="../../results/few_shot_results_${SPLIT}_data/"
 MAX_WORKERS=16
-SHOT_NUM=0 # 1,2,3
+SHOT_NUM=3 # 1,2,3
 
 ############## Run the model ###############
 # Change working directory to utils
-cd ../utils
+cd ../../models/utils
 
 # Loop through each engine
 for LLM in "${ENGINES[@]}"; do

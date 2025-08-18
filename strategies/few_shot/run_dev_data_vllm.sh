@@ -7,10 +7,10 @@ ENGINES=(
      # You can add more vllm models here
 )
 TOKENS=10000
-SPLIT=test
-OUTPUT_PATH="../../results/frequent_solution_as_hints_results_${SPLIT}_data/"
+SPLIT=dev
+OUTPUT_PATH="../../results/few_shot_results_${SPLIT}_data/"
 MAX_WORKERS=16
-SOLUTION_NUM=3 # 1,2,3
+SHOT_NUM=3 # 1,2,3
 
 # ==============================================
 # The following content does not need to be changed.
@@ -54,9 +54,9 @@ for HF_MODEL_NAME in "${ENGINES[@]}"; do
     echo "Running tests for HF model: $HF_MODEL_NAME"
     echo "Using engine name: $ENGINE_NAME"
 
-    LABEL=${LOCAL_MODEL_NAME}_tokens_${TOKENS}_solution_num_${SOLUTION_NUM}
+    LABEL=${LOCAL_MODEL_NAME}_tokens_${TOKENS}_shot_num_${SHOT_NUM}
 
-    python solve_solution_as_hints.py \
+    python solve_few_shot.py \
     --data_path ../../data/json/${SPLIT}.json\
     --split $SPLIT\
     --output_path $OUTPUT_PATH\
@@ -66,10 +66,16 @@ for HF_MODEL_NAME in "${ENGINES[@]}"; do
     --max_workers $MAX_WORKERS \
     --max_tokens $TOKENS \
     --test_num -1 \
-    --solution_num $SOLUTION_NUM \
+    --shot_num $SHOT_NUM \
 
     python generate_results.py \
     --result_dir $OUTPUT_PATH\
+    --run_label $LABEL \
+    --use_cache \
+    --max_workers $MAX_WORKERS
+
+    python compute_score.py \
+    --result_dir $OUTPUT_PATH \
     --run_label $LABEL \
     --use_cache \
     --max_workers $MAX_WORKERS

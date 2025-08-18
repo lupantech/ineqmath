@@ -1,14 +1,13 @@
 ############## Configurations ###############
 ENGINES=(
     "gpt-4o-mini"
-    # You can add more models here 
-    # For vllm, you need to use another script run_test_data_vllm.sh
+    # You can add more models here
 )
 TOKENS=10000
-SPLIT=dev
-OUTPUT_PATH="../../results/frequent_solution_as_hints_results_${SPLIT}_data/"
+SPLIT=test
+OUTPUT_PATH="../../results/few_shot_results_${SPLIT}_data/"
 MAX_WORKERS=16
-SOLUTION_NUM=3 # 1,2,3
+SHOT_NUM=3 # 1,2,3
 
 ############## Run the model ###############
 # Change working directory to utils
@@ -18,9 +17,9 @@ cd ../../models/utils
 for LLM in "${ENGINES[@]}"; do
     echo "Running tests for engine: $LLM"
 
-    LABEL=${LLM}_tokens_${TOKENS}_solution_num_${SOLUTION_NUM}
+    LABEL=${LLM}_tokens_${TOKENS}_shot_num_${SHOT_NUM}
 
-    python solve_solution_as_hints.py \
+    python solve_few_shot.py \
     --data_path ../../data/json/${SPLIT}.json\
     --split $SPLIT\
     --output_path $OUTPUT_PATH\
@@ -29,9 +28,8 @@ for LLM in "${ENGINES[@]}"; do
     --use_cache \
     --max_workers $MAX_WORKERS \
     --max_tokens $TOKENS \
-    --test_num -1 \
-    --solution_num $SOLUTION_NUM \
-  
+    --shot_num $SHOT_NUM \
+    --test_num -1
 
     python generate_results.py \
     --result_dir $OUTPUT_PATH\
@@ -39,11 +37,6 @@ for LLM in "${ENGINES[@]}"; do
     --use_cache \
     --max_workers $MAX_WORKERS
 
-    python compute_score.py \
-    --result_dir $OUTPUT_PATH \
-    --run_label $LABEL \
-    --use_cache \
-    --max_workers $MAX_WORKERS
 
     echo "Completed tests for engine: $LLM"
     echo "----------------------------------------"

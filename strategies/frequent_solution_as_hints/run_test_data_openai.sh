@@ -12,7 +12,7 @@ SOLUTION_NUM=3 # 1,2,3
 
 ############## Run the model ###############
 # Change working directory to utils
-cd ../utils
+cd ../../models/utils
 
 # Loop through each engine
 for LLM in "${ENGINES[@]}"; do
