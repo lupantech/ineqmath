@@ -50,6 +50,8 @@
   - [Submit the Results to the Leaderboard](#submit-the-results-to-the-leaderboard)
   - [Supported LLM Engines](#supported-llm-engines)
 - [🎯 Strategies on IneqMath](#strategies-on-ineqmath)
+  - [Frequent Theorems as Hints](#frequent-theorems-as-hints)
+  - [Frequent Training Problems and Solutions as Hints](#frequent-training-problems-and-solutions-as-hints)
 - [🤗 Dataset Overview](#dataset-overview)
 - [🧐 Fine-grained Informal Judges](#fine-grained-informal-judges)
 - [📈 Evaluation Results](#evaluation-results)
