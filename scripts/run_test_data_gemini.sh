@@ -1,17 +1,12 @@
 ############## Configurations ###############
 ENGINES=(
-    "meta-llama/together-Llama-4-Maverick-17B-128E-Instruct-FP8"
-    "meta-llama/together-Llama-4-Scout-17B-16E-Instruct"
-    "meta-llama/together-Meta-Llama-3.1-8B-Instruct-Turbo"
-    "meta-llama/together-Llama-3.2-3B-Instruct-Turbo"
-    "Qwen/together-Qwen2.5-Coder-32B-Instruct"
-    "Qwen/together-Qwen2.5-7B-Instruct-Turbo"
-    "Qwen/together-Qwen2.5-72B-Instruct-Turbo"
-    "deepseek-ai/together-DeepSeek-R1-Distill-Llama-70B"
-    "deepseek-ai/together-DeepSeek-R1-Distill-Qwen-14B"
-    "Qwen/together-Qwen3-235B-A22B-fp8-tput"
-    "Qwen/together-QwQ-32B"
-    "Qwen/together-QwQ-32B-Preview"   
+    "gemini-2.5-pro"
+    "gemini-2.5-pro-preview-06-05"
+    "gemini-2.5-pro-preview-05-06"
+    "gemini-2.5-flash"
+    "gemini-2.5-flash-preview-05-20"
+    "gemini-2.5-flash-lite-preview-06-17"
+    # You can add more models here
 )
 TOKENS=10000
 SPLIT=test
@@ -20,7 +15,7 @@ MAX_WORKERS=16
 
 ############## Run the model ###############
 # Change working directory to utils
-cd ../utils
+cd ../models/utils
 
 # Loop through each engine
 for LLM in "${ENGINES[@]}"; do

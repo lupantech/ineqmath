@@ -1,8 +1,7 @@
 ############## Configurations ###############
 ENGINES=(
-    "grok-4-0709"
-    "grok-3"
-    "grok-3-mini"
+    "deepseek-chat"
+    "deepseek-reasoner"
     # You can add more models here
 )
 TOKENS=10000
@@ -12,7 +11,7 @@ MAX_WORKERS=16
 
 ############## Run the model ###############
 # Change working directory to utils
-cd ../utils
+cd ../models/utils
 
 # Loop through each engine
 for LLM in "${ENGINES[@]}"; do

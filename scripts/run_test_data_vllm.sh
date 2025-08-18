@@ -21,7 +21,7 @@ echo "Starting model download process..."
 echo "----------------------------------------"
 
 # Change working directory to utils
-cd ../utils
+cd ../models/utils
 
 # Download models from ENGINES array
 for HF_MODEL_NAME in "${ENGINES[@]}"; do

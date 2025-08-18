@@ -1,28 +1,21 @@
 ############## Configurations ###############
 ENGINES=(
-    "gemini-2.0-flash"
-    "gemini-2.0-flash-lite"
-    "gpt-4o-2024-08-06"
-    "gpt-4o-mini-2024-07-18"
-    "gpt-4.1-2025-04-14"
-    "grok-3-beta"
-    "claude-3-7-sonnet-20250219"
-    "gemini-2.5-flash-preview-04-17"
+    "gemini-2.5-pro"
+    "gemini-2.5-pro-preview-06-05"
     "gemini-2.5-pro-preview-05-06"
-    "grok-3-mini-beta"
-    "o1-2024-12-17"
-    "o3-2025-04-16"
-    "o3-mini-2025-01-31"
-    "o4-mini-2025-04-16"   
+    "gemini-2.5-flash"
+    "gemini-2.5-flash-preview-05-20"
+    "gemini-2.5-flash-lite-preview-06-17"
+    # You can add more models here
 )
 TOKENS=10000
-SPLIT=test
+SPLIT=dev
 OUTPUT_PATH="../../results/models_results_${SPLIT}_data/"
 MAX_WORKERS=16
 
 ############## Run the model ###############
 # Change working directory to utils
-cd ../utils
+cd ../models/utils
 
 # Loop through each engine
 for LLM in "${ENGINES[@]}"; do
@@ -43,6 +36,12 @@ for LLM in "${ENGINES[@]}"; do
 
     python generate_results.py \
     --result_dir $OUTPUT_PATH\
+    --run_label $LABEL \
+    --use_cache \
+    --max_workers $MAX_WORKERS
+
+    python compute_score.py \
+    --result_dir $OUTPUT_PATH \
     --run_label $LABEL \
     --use_cache \
     --max_workers $MAX_WORKERS

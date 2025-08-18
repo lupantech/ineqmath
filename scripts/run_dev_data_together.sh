@@ -1,14 +1,10 @@
 ############## Configurations ###############
 ENGINES=(
-     "claude-opus-4-20250514"
-     "claude-sonnet-4-20250514"
-     "claude-3-7-sonnet-20250219"
-     "claude-3-5-sonnet-20240620"
-     "claude-3-5-sonnet-20241022"
-     "claude-3-5-haiku-20241022"
-     "claude-3-opus-20240229"
-     "claude-3-haiku-20240307"
-     # You can add more models here
+    "together-moonshotai/Kimi-K2-Instruct"
+    "together-meta-llama/Llama-4-Scout-17B-16E-Instruct"
+    "together-Qwen/QwQ-32B"
+    "together-Qwen/Qwen2-VL-72B-Instruct"
+    # You can add more models here
 )
 TOKENS=10000
 SPLIT=dev
@@ -17,7 +13,7 @@ MAX_WORKERS=16
 
 ############## Run the model ###############
 # Change working directory to utils
-cd ../utils
+cd ../models/utils
 
 # Loop through each engine
 for LLM in "${ENGINES[@]}"; do

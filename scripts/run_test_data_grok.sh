@@ -1,9 +1,8 @@
 ############## Configurations ###############
 ENGINES=(
-    "together-moonshotai/Kimi-K2-Instruct"
-    "together-meta-llama/Llama-4-Scout-17B-16E-Instruct"
-    "together-Qwen/QwQ-32B"
-    "together-Qwen/Qwen2-VL-72B-Instruct"
+    "grok-4-0709"
+    "grok-3"
+    "grok-3-mini"
     # You can add more models here
 )
 TOKENS=10000
@@ -13,7 +12,7 @@ MAX_WORKERS=16
 
 ############## Run the model ###############
 # Change working directory to utils
-cd ../utils
+cd ../models/utils
 
 # Loop through each engine
 for LLM in "${ENGINES[@]}"; do

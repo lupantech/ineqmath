@@ -1,11 +1,18 @@
 ############## Configurations ###############
 ENGINES=(
-    "gemini-2.5-pro"
-    "gemini-2.5-pro-preview-06-05"
-    "gemini-2.5-pro-preview-05-06"
-    "gemini-2.5-flash"
-    "gemini-2.5-flash-preview-05-20"
-    "gemini-2.5-flash-lite-preview-06-17"
+    "gpt-5"
+    "gpt-5-mini"
+    "gpt-5-nano"
+    "o4-mini"
+    "o3"
+    "o3-mini"
+    "o3-pro"
+    "o1"
+    "o1-pro"
+    "gpt-4.1"
+    "gpt-4.1-mini"
+    "gpt-4o"
+    "gpt-4o-mini"
     # You can add more models here
 )
 TOKENS=10000
@@ -15,7 +22,7 @@ MAX_WORKERS=16
 
 ############## Run the model ###############
 # Change working directory to utils
-cd ../utils
+cd ../models/utils
 
 # Loop through each engine
 for LLM in "${ENGINES[@]}"; do
