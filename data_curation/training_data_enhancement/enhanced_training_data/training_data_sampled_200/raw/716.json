@@ -1,0 +1,34 @@
+{
+    "data_id": "716",
+    "type": "relation",
+    "problem": "Let $x, y \\in \\mathbb{R}^{+}$ such that $x + y = 2$. Consider the following inequality:\n$$\nx^{3} y^{3}\\left(x^{3}+y^{3}\\right) \\quad () \\quad 2 .\n$$\n\nDetermine the correct inequality relation to fill in the blank.\n\nOptions:\n\n(A) $\\leq$ \n\n(B) $\\geq$\n\n(C) $=$ \n\n(D) $<$\n\n(E) $>$\n\n(F) None of the above",
+    "current_solution": "Since $A M \\geq G M$ we have $\\sqrt{x y} \\leq \\frac{x+y}{2}=1$, i.e. $x y \\leq 1$.\nHence $0 \\leq x y \\leq 1$.\nFurthermore\n$$\n\\begin{aligned}\nx^{3} y^{3}\\left(x^{3}+y^{3}\\right) & =(x y)^{3}(x+y)\\left(x^{2}-x y+y^{2}\\right)=2(x y)^{3}\\left((x+y)^{2}-3 x y\\right) \\\\\n& =2(x y)^{3}(4-3 x y)\n\\end{aligned}\n$$\n\nIt's enough to show that\n$$\n(x y)^{3}(4-3 x y) \\leq 1\n$$\n\nLet $x y=z$ then $0 \\leq z \\leq 1$ and clearly $4-3 z>0$.\n\nThen using $A M \\geq G M$ we obtain\n$$\nz^{3}(4-3 z)=z \\cdot z \\cdot z(4-3 z) \\leq\\left(\\frac{z+z+z+4-3 z}{4}\\right)^{4}=1\n$$\nas required.\nEquality occurs if and only if $z=4-3 z$, i.e. $z=1$, i.e. $x=y=1$. Therefore, the answer is (A) $\\leq$.",
+    "answer": "(A) $\\leq$",
+    "enhanced_solution": "We start with two positive real numbers x,y satisfying\n\n  (1)  x+y = 2.  \n\nWe wish to determine the correct relation among “<, >, =, ≤, ≥” between the expression\n\n  E = x^3 y^3 (x^3 + y^3)\n\nand the constant 2.  In other words, we want to decide whether\n\n  x^3 y^3 (x^3 + y^3)  ()  2\n\nholds, and find the correct inequality symbol “()”.\n\n---\n\nStep 1.  Bound on the product x y using the AM–GM inequality.\n\nSince x,y>0, the Arithmetic Mean–Geometric Mean (AM–GM) inequality states\n\n  (x + y)/2  ≥  sqrt(xy),\n\nwith equality if and only if x=y.  But x+y=2 by (1), so\n\n  2/2  ≥  sqrt(xy)   ⇒   1 ≥  sqrt(xy)   ⇒   (sqrt(xy))^2 = x y  ≤ 1.\n\nHence\n\n  0 < x y ≤ 1.\n\nWe introduce the notation\n\n  z = x y,\n\nso that 0 < z ≤ 1.  We will re-express E in terms of z.\n\n---\n\nStep 2.  Rewrite E = x^3 y^3 (x^3 + y^3) in terms of z and x+y.\n\nFirst observe that\n\n  x^3 y^3 = (x y)^3 = z^3.\n\nAlso, the sum of cubes factorization gives\n\n  x^3 + y^3  =  (x + y)(x^2 - x y + y^2).\n\nSince x+y=2, we get\n\n  x^3 + y^3  =  2·(x^2 - x y + y^2).\n\nNext, note that\n\n  x^2 - x y + y^2  =  (x+y)^2 - 3 x y  =  2^2 - 3z  =  4 - 3z.\n\nPutting these together,\n\n  E = x^3 y^3 (x^3 + y^3)\n    = z^3 · [2·(4 - 3z)]\n    = 2 · z^3 · (4 - 3z).\n\nThus the original inequality E () 2 becomes\n\n  2 · z^3 (4 - 3z)  ()  2.\n\nBecause 2>0, we can divide both sides by 2 and reduce the problem to showing\n\n  z^3 (4 - 3z)  ()  1,\n\nwith 0 < z ≤ 1.\n\n---\n\nStep 3.  Prove the reduced inequality z^3(4−3z) ≤ 1 by AM–GM.\n\nWe are to show\n\n  z^3 (4 - 3z)  ≤  1,\n\nfor all z in (0,1].  Observe that 4−3z > 0 on (0,1], so the product is well-defined and nonnegative.\n\nApply the AM–GM inequality to the four nonnegative numbers\n\n  z,  z,  z,  (4 − 3z).\n\nTheir arithmetic mean is\n\n  (z + z + z + (4−3z)) / 4  =  (3z + 4 − 3z)/4  =  4/4  = 1.\n\nBy AM–GM,\n\n  (z·z·z·(4−3z))^(1/4)  ≤  (z+z+z+4−3z)/4  = 1.\n\nRaising both sides to the fourth power yields\n\n  z^3 · (4−3z)  ≤  1^4  = 1.\n\nHence the reduced inequality holds, and thus\n\n  E = x^3 y^3 (x^3 + y^3)  = 2·[z^3(4−3z)]  ≤  2·1  = 2.\n\nWe conclude that for all x,y>0 with x+y=2,\n\n  x^3 y^3 (x^3 + y^3)  ≤  2.\n\n---\n\nStep 4.  Equality case.\n\nThe AM–GM step becomes an equality precisely when all the four numbers\n\n  z, z, z, 4−3z\n\nare equal.  Setting z = 4−3z gives\n\n  4z = 4   ⇒   z = 1.\n\nSince z = x y = 1 and x + y = 2, the only possibility (for positive x,y) is x=y=1.  Substituting x=y=1 indeed gives E = 1^3·1^3·(1^3+1^3)=2, so equality occurs.\n\n---\n\nFinal Answer:\n\nThe answer is (A) ≤",
+    "original_entry": {
+        "data_id": "716",
+        "problem": "Let $x, y \\in \\mathbb{R}^{+}$ such that $x + y = 2$. Consider the following inequality:\n$$\nx^{3} y^{3}\\left(x^{3}+y^{3}\\right) \\quad () \\quad 2 .\n$$\n\nDetermine the correct inequality relation to fill in the blank.\n\nOptions:\n\n(A) $\\leq$ \n\n(B) $\\geq$\n\n(C) $=$ \n\n(D) $<$\n\n(E) $>$\n\n(F) None of the above",
+        "type": "relation",
+        "data_split": "train",
+        "answer": "(A) $\\leq$",
+        "solution": [
+            "Since $A M \\geq G M$ we have $\\sqrt{x y} \\leq \\frac{x+y}{2}=1$, i.e. $x y \\leq 1$.\nHence $0 \\leq x y \\leq 1$.\nFurthermore\n$$\n\\begin{aligned}\nx^{3} y^{3}\\left(x^{3}+y^{3}\\right) & =(x y)^{3}(x+y)\\left(x^{2}-x y+y^{2}\\right)=2(x y)^{3}\\left((x+y)^{2}-3 x y\\right) \\\\\n& =2(x y)^{3}(4-3 x y)\n\\end{aligned}\n$$\n\nIt's enough to show that\n$$\n(x y)^{3}(4-3 x y) \\leq 1\n$$\n\nLet $x y=z$ then $0 \\leq z \\leq 1$ and clearly $4-3 z>0$.\n\nThen using $A M \\geq G M$ we obtain\n$$\nz^{3}(4-3 z)=z \\cdot z \\cdot z(4-3 z) \\leq\\left(\\frac{z+z+z+4-3 z}{4}\\right)^{4}=1\n$$\nas required.\nEquality occurs if and only if $z=4-3 z$, i.e. $z=1$, i.e. $x=y=1$. Therefore, the answer is (A) $\\leq$."
+        ],
+        "theorems": {
+            "Theorem 23": {
+                "Nickname": [],
+                "Theorem": "Let $a, b, c \\in \\mathbb{R}^{+}$, and let us denote\n$$\n\\begin{aligned}\nQ M & =\\sqrt{\\frac{a^{2}+b^{2}+c^{2}}{3}}, \\quad A M=\\frac{a+b+c}{3}, \\quad G M=\\sqrt[3]{a b c} \\text { and } \\\\\nH M & =\\frac{3}{\\frac{1}{a}+\\frac{1}{b}+\\frac{1}{c}}\n\\end{aligned}\n$$\n\nThen\n$$\nQ M \\geq A M \\geq G M \\geq H M\n$$\n\nEqualities occur if and only if $a=b=c$.",
+                "Theorem_Category": "Inequality Between Means"
+            }
+        },
+        "choices": [
+            "(A) $\\leq$",
+            "(B) $\\geq$",
+            "(C) $=$",
+            "(D) $<$",
+            "(E) $>$",
+            "(F) None of the above"
+        ],
+        "difficulty": ""
+    }
+}

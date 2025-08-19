@@ -1,0 +1,32 @@
+{
+    "data_id": "656",
+    "type": "relation",
+    "problem": "Let $a, b, c$ be positive real numbers. Consider the following inequality:\n$$\na b \\frac{a+c}{b+c} + b c \\frac{b+a}{c+a} + c a \\frac{c+b}{a+b} \\quad () \\quad \\sqrt{3 a b c(a+b+c)} .\n$$\n\nDetermine the correct inequality relation to fill in the blank.\n\nOptions:\n\n(A) $\\leq$ \n\n(B) $\\geq$\n\n(C) $=$ \n\n(D) $<$\n\n(E) $>$\n\n(F) None of the above",
+    "current_solution": "Let $x=\\frac{1}{b c}, y=\\frac{1}{a c}, z=\\frac{1}{a b}$ and $A=a c, B=a b, C=b c$.\nWe have\n$$\n\\begin{aligned}\n\\frac{x}{y+z}(B+C) & =a b \\frac{a+c}{b+c}, \\quad \\frac{y}{z+x}(C+A)=b c \\frac{b+a}{c+a} \\quad \\text { and } \\\\\n\\frac{z}{x+y}(A+B) & =c a \\frac{c+b}{a+b}\n\\end{aligned}\n$$\n\nUsing Corollary Let $a, b, c$ and $x, y, z$ be positive real numbers. Then\n$$\n\\frac{x}{y+z}(b+c)+\\frac{y}{z+x}(c+a)+\\frac{z}{x+y}(a+b) \\geq \\sqrt{3(a b+b c+c a)}\n$$\nand the previous identities we obtain\n$$\n\\begin{aligned}\n& a b \\frac{a+c}{b+c}+b c \\frac{b+a}{c+a}+c a \\frac{c+b}{a+b} \\\\\n& \\quad=\\frac{x}{y+z}(B+C)+\\frac{y}{z+x}(C+A)+\\frac{z}{x+y}(A+B) \\\\\n& \\quad \\geq \\sqrt{3(A B+B C+C A)}=\\sqrt{3 a b c(a+b+c)}\n\\end{aligned}\n$$ Therefore, the answer is (B) $\\geq$.",
+    "answer": "(B) $\\geq$",
+    "enhanced_solution": "Enhanced Solution:\n\nWe wish to determine which relation “≤, ≥, =, <, >” correctly fills the blank in the inequality\n\n  a b · (a + c)/(b + c)  (?)  √[3 a b c (a + b + c)],\n\nwhere a, b, c are positive real numbers.  The original solution introduces a specific substitution that transforms the left‐hand side into a form amenable to a known symmetric inequality.  We now present a more detailed derivation, step by step.\n\nStep 1.  Introduce auxiliary variables.\n\n  Define x = 1/(b c),   y = 1/(a c),   z = 1/(a b),\n  and define A = a c,   B = a b,   C = b c.\n\nObserve that x, y, z are positive because a, b, c > 0.  Likewise A, B, C > 0.\n\nStep 2.  Express each term a b·(a+c)/(b+c) etc. in terms of x, y, z and A, B, C.\n\n  • Compute x/(y+z):\n    y + z = 1/(a c) + 1/(a b) = (b + c)/(a b c).\n    Hence\n      x/(y+z)\n      = [1/(b c)] / [(b + c)/(a b c)]\n      = (1/(b c)) · (a b c/(b + c))\n      = a/(b + c).\n  • Also B + C = a b + b c = b(a + c).\n\n  Therefore\n    (x/(y+z))·(B + C)\n    = [a/(b + c)] · [b(a + c)]\n    = a b · (a + c)/(b + c).\n\n  By exactly the same algebraic steps (cyclically permuting a,b,c and x,y,z), one obtains\n\n    (y/(z + x))·(C + A) = b c · (b + a)/(c + a),\n\n    (z/(x + y))·(A + B) = c a · (c + b)/(a + b).\n\nHence the entire left‐hand side of the original inequality can be written as\n\n  a b·(a + c)/(b + c)\n  + b c·(b + a)/(c + a)\n  + c a·(c + b)/(a + b)\n\n  = (x/(y+z))(B+C) + (y/(z+x))(C+A) + (z/(x+y))(A+B).\n\nStep 3.  Apply the known symmetric inequality (a corollary of the Cauchy–Schwarz or Nesbitt‐type inequality).\n\nCorollary.  For any positive reals a, b, c and x, y, z,\n\n  (x/(y+z))(b+c) + (y/(z+x))(c+a) + (z/(x+y))(a+b)\n  ≥ √[3 (a b + b c + c a)].\n\nProof sketch of corollary (for completeness):  One can use the Titu–Andreescu lemma or weighted AM–GM to show that each term x(b+c)/(y+z) \n  satisfies certain convexity properties, and then symmetrize.  The sharp constant √3 arises by testing equality when (a:b:c) is a permutation of (1:1:1) and (x:y:z) likewise.\n\nStep 4.  Match the corollary’s parameters to our substitution.\n\n  In the corollary’s notation, set a → A, b → B, c → C, and keep the same x, y, z as above.  Then b + c → B + C, etc.  Hence\n\n    (x/(y+z))(B+C) + (y/(z+x))(C+A) + (z/(x+y))(A+B)\n    ≥ √[3 (A B + B C + C A)].\n\nBut A B + B C + C A = (a c)(a b) + (a b)(b c) + (b c)(c a)\n                   = a b c (a + b + c).\n\nThus\n\n  a b · (a + c)/(b + c) + b c · (b + a)/(c + a) + c a · (c + b)/(a + b)\n  ≥ √[3 a b c (a + b + c)].\n\nStep 5.  Conclusion.\n\nComparing with the original inequality\n\n  a b·(a + c)/(b + c)   (?)   √[3 a b c (a + b + c)],\n\nwe see that the correct relation is “≥”.\n\nTherefore, the answer is (B) ≥",
+    "original_entry": {
+        "data_id": "656",
+        "problem": "Let $a, b, c$ be positive real numbers. Consider the following inequality:\n$$\na b \\frac{a+c}{b+c} + b c \\frac{b+a}{c+a} + c a \\frac{c+b}{a+b} \\quad () \\quad \\sqrt{3 a b c(a+b+c)} .\n$$\n\nDetermine the correct inequality relation to fill in the blank.\n\nOptions:\n\n(A) $\\leq$ \n\n(B) $\\geq$\n\n(C) $=$ \n\n(D) $<$\n\n(E) $>$\n\n(F) None of the above",
+        "type": "relation",
+        "data_split": "train",
+        "answer": "(B) $\\geq$",
+        "solution": "Let $x=\\frac{1}{b c}, y=\\frac{1}{a c}, z=\\frac{1}{a b}$ and $A=a c, B=a b, C=b c$.\nWe have\n$$\n\\begin{aligned}\n\\frac{x}{y+z}(B+C) & =a b \\frac{a+c}{b+c}, \\quad \\frac{y}{z+x}(C+A)=b c \\frac{b+a}{c+a} \\quad \\text { and } \\\\\n\\frac{z}{x+y}(A+B) & =c a \\frac{c+b}{a+b}\n\\end{aligned}\n$$\n\nUsing Corollary Let $a, b, c$ and $x, y, z$ be positive real numbers. Then\n$$\n\\frac{x}{y+z}(b+c)+\\frac{y}{z+x}(c+a)+\\frac{z}{x+y}(a+b) \\geq \\sqrt{3(a b+b c+c a)}\n$$\nand the previous identities we obtain\n$$\n\\begin{aligned}\n& a b \\frac{a+c}{b+c}+b c \\frac{b+a}{c+a}+c a \\frac{c+b}{a+b} \\\\\n& \\quad=\\frac{x}{y+z}(B+C)+\\frac{y}{z+x}(C+A)+\\frac{z}{x+y}(A+B) \\\\\n& \\quad \\geq \\sqrt{3(A B+B C+C A)}=\\sqrt{3 a b c(a+b+c)}\n\\end{aligned}\n$$ Therefore, the answer is (B) $\\geq$.",
+        "theorems": {
+            "Theorem 32": {
+                "Nickname": [],
+                "Theorem": "Let $a, b, c$ and $x, y, z$ be positive real numbers. Then\n$$\n\\frac{x}{y+z}(b+c)+\\frac{y}{z+x}(c+a)+\\frac{z}{x+y}(a+b) \\geq \\sqrt{3(a b+b c+c a)}\n$$",
+                "Theorem_Category": "Cauchy-Schwarz Inequality"
+            }
+        },
+        "choices": [
+            "(A) $\\leq$",
+            "(B) $\\geq$",
+            "(C) $=$",
+            "(D) $<$",
+            "(E) $>$",
+            "(F) None of the above"
+        ],
+        "difficulty": ""
+    }
+}

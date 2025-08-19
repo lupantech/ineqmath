@@ -1,0 +1,34 @@
+{
+    "data_id": "643",
+    "type": "relation",
+    "problem": "Let $a, b, c, d > 0$ be real numbers such that $a \\leq 1$, $a+b \\leq 5$, $a+b+c \\leq 14$, and $a+b+c+d \\leq 30$. Consider the following expressions:\n$$\n\\sqrt{a}+\\sqrt{b}+\\sqrt{c}+\\sqrt{d} \\quad () \\quad 10\n$$\nDetermine the correct inequality relation to fill in the blank.\n\nOptions:\n\n(A) $\\leq$ \n\n(B) $\\geq$\n\n(C) $=$ \n\n(D) $<$\n\n(E) $>$\n\n(F) None of the above",
+    "current_solution": "The function $f:(0,+\\infty) \\rightarrow(0,+\\infty)$ defined by $f(x)=\\sqrt{x}$ is concave on $(0,+\\infty)$, so by Jensen's inequality, for\n$$\nn=4, \\quad \\alpha_{1}=\\frac{1}{10}, \\quad \\alpha_{2}=\\frac{2}{10}, \\quad \\alpha_{3}=\\frac{3}{10}, \\quad \\alpha_{4}=\\frac{4}{10}\n$$\nwe get\n$$\n\\frac{1}{10} \\sqrt{a}+\\frac{2}{10} \\sqrt{\\frac{b}{4}}+\\frac{3}{10} \\sqrt{\\frac{c}{9}}+\\frac{4}{10} \\sqrt{\\frac{d}{16}} \\leq \\sqrt{\\frac{a}{10}+\\frac{b}{20}+\\frac{c}{30}+\\frac{d}{40}}\n$$\ni.e.\n$$\n\\begin{equation*}\n\\sqrt{a}+\\sqrt{b}+\\sqrt{c}+\\sqrt{d} \\leq 10 \\sqrt{\\frac{12 a+6 b+4 c+3 d}{120}} \\tag{1}\n\\end{equation*}\n$$\n\nOn the other hand, we have\n$$\n\\begin{aligned}\n& 12 a+6 b+4 c+3 d \\\\\n& \\quad=3(a+b+c+d)+(a+b+c)+2(a+b)+6 a \\\\\n& \\quad \\leq 3 \\cdot 30+14+2 \\cdot 5+6 \\cdot 1=120\n\\end{aligned}\n$$\n\nBy (1) and the last inequality we obtain the required result. Therefore, the answer is (A) $\\leq$.",
+    "answer": "(A) $\\leq$",
+    "enhanced_solution": "Solution (Enhanced with Full Justification):\n\n1.  Concavity of the square‐root function\n   \n   Define f(x)=√x on (0,∞).  We compute\n   f′(x)=1/(2√x),    f″(x)=−1/(4 x^(3/2)) <0 for all x>0.\n   Hence f is strictly concave on (0,∞).\n\n2.  Application of Jensen’s Inequality\n\n   Let us choose four positive weights that sum to 1:  \n   w₁=1/10,\n   w₂=2/10,\n   w₃=3/10,\n   w₄=4/10.\n   Clearly w₁+w₂+w₃+w₄=1.\n\n   Jensen’s inequality for a concave function f states:\n   w₁ f(x₁)+w₂ f(x₂)+w₃ f(x₃)+w₄ f(x₄)\n     ≤ f\\,\\bigl(w₁ x₁ + w₂ x₂ + w₃ x₃ + w₄ x₄\\bigr).\n\n   We now make the following substitutions to engineer √a + √b + √c + √d on the left:\n   x₁ = a,\n   x₂ = b/4,\n   x₃ = c/9,\n   x₄ = d/16.\n\n   Then f(x₁)=√a,\n   f(x₂)=√(b/4)=½√b,\n   f(x₃)=√(c/9)=⅓√c,\n   f(x₄)=√(d/16)=¼√d.\n\n   The left‐hand side becomes\n   w₁√a + w₂·½√b + w₃·⅓√c + w₄·¼√d\n   = (1/10)√a + (2/10)·(1/2)√b + (3/10)·(1/3)√c + (4/10)·(1/4)√d\n   = 1/10·(√a + √b + √c + √d).\n\n   Hence Jensen gives\n   1/10\\,\\bigl(√a+√b+√c+√d\\bigr)\n     ≤ √\\bigl(w₁ a + w₂ (b/4) + w₃ (c/9) + w₄ (d/16)\\bigr).\n\n   Multiply both sides by 10 to obtain\n   √a + √b + √c + √d\n     ≤ 10·√\\Bigl(\\frac{1}{10}a + \\frac{2}{10}·\\frac b4 + \\frac{3}{10}·\\frac c9 + \\frac{4}{10}·\\frac d{16}\\Bigr).\n\n   Simplify the argument of the square root:\n   \\frac{1}{10}a + \\frac{2}{40}b + \\frac{3}{90}c + \\frac{4}{160}d\n   = \\frac{12a + 6b + 4c + 3d}{120}.\n\n   Thus we have the key inequality\n   (1)   √a + √b + √c + √d\n         ≤ 10·√\\bigl( (12a + 6b + 4c + 3d) / 120 \\bigr).\n\n3.  Bounding the linear combination 12a + 6b + 4c + 3d\n\n   We are given the constraints:\n   a ≤  1,\n   a + b ≤  5,\n   a + b + c ≤ 14,\n   a + b + c + d ≤ 30.\n\n   Observe the identity\n   12a + 6b + 4c + 3d\n     = 3(a+b+c+d)\n       + (a+b+c)\n       + 2(a+b)\n       + 6a.\n\n   Applying the given bounds term by term,\n   3(a+b+c+d) ≤ 3·30 = 90,\n   (a+b+c) ≤ 14,\n   2(a+b) ≤ 2·5 = 10,\n   6a ≤ 6·1 = 6.\n\n   Summing these estimates gives\n   12a + 6b + 4c + 3d\n     ≤ 90 + 14 + 10 + 6 = 120.\n\n4.  Conclusion\n\n   Substitute this bound into inequality (1):\n   √a + √b + √c + √d\n     ≤ 10·√(120/120)\n     = 10·1 = 10.\n\n   Therefore\n   √a + √b + √c + √d ≤ 10.\n\nAnswer in the required format:\nThe answer is (A) ≤",
+    "original_entry": {
+        "data_id": "643",
+        "problem": "Let $a, b, c, d > 0$ be real numbers such that $a \\leq 1$, $a+b \\leq 5$, $a+b+c \\leq 14$, and $a+b+c+d \\leq 30$. Consider the following expressions:\n$$\n\\sqrt{a}+\\sqrt{b}+\\sqrt{c}+\\sqrt{d} \\quad () \\quad 10\n$$\nDetermine the correct inequality relation to fill in the blank.\n\nOptions:\n\n(A) $\\leq$ \n\n(B) $\\geq$\n\n(C) $=$ \n\n(D) $<$\n\n(E) $>$\n\n(F) None of the above",
+        "type": "relation",
+        "data_split": "train",
+        "answer": "(A) $\\leq$",
+        "solution": "The function $f:(0,+\\infty) \\rightarrow(0,+\\infty)$ defined by $f(x)=\\sqrt{x}$ is concave on $(0,+\\infty)$, so by Jensen's inequality, for\n$$\nn=4, \\quad \\alpha_{1}=\\frac{1}{10}, \\quad \\alpha_{2}=\\frac{2}{10}, \\quad \\alpha_{3}=\\frac{3}{10}, \\quad \\alpha_{4}=\\frac{4}{10}\n$$\nwe get\n$$\n\\frac{1}{10} \\sqrt{a}+\\frac{2}{10} \\sqrt{\\frac{b}{4}}+\\frac{3}{10} \\sqrt{\\frac{c}{9}}+\\frac{4}{10} \\sqrt{\\frac{d}{16}} \\leq \\sqrt{\\frac{a}{10}+\\frac{b}{20}+\\frac{c}{30}+\\frac{d}{40}}\n$$\ni.e.\n$$\n\\begin{equation*}\n\\sqrt{a}+\\sqrt{b}+\\sqrt{c}+\\sqrt{d} \\leq 10 \\sqrt{\\frac{12 a+6 b+4 c+3 d}{120}} \\tag{1}\n\\end{equation*}\n$$\n\nOn the other hand, we have\n$$\n\\begin{aligned}\n& 12 a+6 b+4 c+3 d \\\\\n& \\quad=3(a+b+c+d)+(a+b+c)+2(a+b)+6 a \\\\\n& \\quad \\leq 3 \\cdot 30+14+2 \\cdot 5+6 \\cdot 1=120\n\\end{aligned}\n$$\n\nBy (1) and the last inequality we obtain the required result. Therefore, the answer is (A) $\\leq$.",
+        "theorems": {
+            "Theorem 40": {
+                "Nickname": [
+                    "jensen's inequality"
+                ],
+                "Theorem": "Let $f:(a, b) \\rightarrow \\mathbb{R}$ be a convex function on the interval $(a, b)$. Let $n \\in \\mathbb{N}$ and $\\alpha_{1}, \\alpha_{2}, \\ldots, \\alpha_{n} \\in(0,1)$ be real numbers such that $\\alpha_{1}+\\alpha_{2}+\\cdots+\\alpha_{n}=1$. Then for any $x_{1}, x_{2}, \\ldots, x_{n} \\in(a, b)$ we have\n$$\nf\\left(\\sum_{i=1}^{n} \\alpha_{i} x_{i}\\right) \\leq \\sum_{i=1}^{n} \\alpha_{i} f\\left(x_{i}\\right)\n$$\ni.e.\n$$\n\\begin{equation*}\nf\\left(\\alpha_{1} x_{1}+\\alpha_{2} x_{2}+\\cdots+\\alpha_{n} x_{n}\\right) \\leq \\alpha_{1} f\\left(x_{1}\\right)+\\alpha_{2} f\\left(x_{2}\\right)+\\cdots+\\alpha_{n} f\\left(x_{n}\\right) \\tag{7.2}\n\\end{equation*}\n$$",
+                "Theorem_Category": "Convexity, Jensen's Inequality"
+            }
+        },
+        "choices": [
+            "(A) $\\leq$",
+            "(B) $\\geq$",
+            "(C) $=$",
+            "(D) $<$",
+            "(E) $>$",
+            "(F) None of the above"
+        ],
+        "difficulty": ""
+    }
+}

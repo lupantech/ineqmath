@@ -1,0 +1,44 @@
+{
+    "data_id": "661",
+    "type": "relation",
+    "problem": "Let $x, y$ be positive real numbers and $m, n$ be positive integers. Consider the following inequality:\n$$\n(n-1)(m-1)\\left(x^{m+n}+y^{m+n}\\right)+(m+n-1)\\left(x^{m} y^{n}+x^{n} y^{m}\\right) \\quad () \\quad m n\\left(x^{m+n-1} y+y^{m+n-1} x\\right) .\n$$\n\nDetermine the correct inequality relation to fill in the blank.\n\nOptions:\n\n(A) $\\leq$ \n\n(B) $\\geq$\n\n(C) $=$ \n\n(D) $<$\n\n(E) $>$\n\n(F) None of the above",
+    "current_solution": "We transform the inequality as follows:\n\n$$\n\\begin{gathered}\nm n(x-y)\\left(x^{m+n-1}-y^{m+n-1}\\right) \\geq(m+n-1)\\left(x^{m}-y^{m}\\right)\\left(x^{n}-y^{n}\\right) \\Leftrightarrow \\\\\n\\Leftrightarrow \\frac{x^{m+n-1}-y^{m+n-1}}{(m+n-1)(x-y)} \\geq \\frac{x^{m}-y^{m}}{m(x-y)} \\cdot \\frac{x^{n}-y^{n}}{n(x-y)}\n\\end{gathered}\n$$\n\n(we have assumed that $x>y$ ). The last relation can also be written\n\n$$\n(x-y) \\int_{y}^{x} t^{m+n-2} d t \\geq \\int_{y}^{x} t^{m-1} d t \\cdot \\int_{y}^{x} t^{n-1} d t\n$$\n\nand this follows from Chebyshev's Inequality for integrals. Therefore, the answer is (B) $\\geq$.",
+    "answer": "(B) $\\geq$",
+    "enhanced_solution": "Enhanced Solution:\n\nWe wish to determine the correct relational sign “()” in the inequality\n\n  (n−1)(m−1)\\bigl(x^{m+n}+y^{m+n}\\bigr)\n  + (m+n−1)\\bigl(x^{m}y^{n}+x^{n}y^{m}\\bigr)\n  \\;()\\; m\\,n\\bigl(x^{m+n-1}y + y^{m+n-1}x\\bigr),\n\nwhere x, y are positive real numbers and m, n are positive integers.  The claimed answer is “≥”.  We now give a detailed, step-by-step justification of this fact, following exactly the original approach.\n\n1.  Symmetry and the case x=y.\n\n    Observe that the given inequality is symmetric in x and y: exchanging x and y leaves both sides unchanged.  In particular, if x=y then both sides coincide, so the inequality holds with equality.  Hence it suffices to prove the desired relation when x≠y; by symmetry we may assume without loss of generality that x>y.\n\n2.  Rewriting the difference.\n\n    We begin by bringing all terms to one side and factoring.  A direct expansion shows that the original inequality is equivalent to\n\n      (n−1)(m−1)(x^{m+n}+y^{m+n}) + (m+n−1)(x^{m}y^{n}+x^{n}y^{m})\n      \n      \\quad− mn(x^{m+n-1}y + y^{m+n-1}x)\n      \\;≥\\;0.\n\n    A further algebraic manipulation factors this expression as\n\n      mn\\,\\bigl(x−y\\bigr)\\bigl(x^{m+n-1}−y^{m+n-1}\\bigr)\n      \\;−\\;(m+n−1)\\bigl(x^{m}−y^{m}\\bigr)\\bigl(x^{n}−y^{n}\\bigr)\n      \\;≥\\;0.\n\n    Thus the inequality is equivalent to\n\n      mn\\,(x−y)\\,(x^{m+n-1}−y^{m+n-1})\n      \\;≥\\;\n      (m+n−1)\\,(x^{m}−y^{m})\\,(x^{n}−y^{n}).\n\n3.  Division by positive factors.\n\n    Since x>y>0 and m,n≥1, each of the factors mn, (m+n−1), and (x−y) is strictly positive.  We divide both sides of the last displayed inequality by the product mn\\,(m+n−1)\\,(x−y)>0.  This yields the equivalent form\n\n      \\frac{x^{m+n-1}−y^{m+n-1}}{(m+n−1)\\,(x−y)}\n      \\;≥\\;\n      \\frac{x^{m}−y^{m}}{m\\,(x−y)}\\;\\times\\;\\frac{x^{n}−y^{n}}{n\\,(x−y)}.\n\n4.  Expressing differences via integrals.\n\n    For any integer k≥1, the identity\n\n      x^{k}−y^{k}  =  k\\int_{y}^{x}t^{k-1}\\,dt\n\n    is immediate by the Fundamental Theorem of Calculus.  Hence\n\n      \\frac{x^{k}−y^{k}}{k\\,(x−y)}  =  \\frac{1}{x−y}\\int_{y}^{x}t^{k-1}\\,dt.\n\n    Applying this with k=m, k=n, and k=m+n−1 gives the substitutions\n\n      (i)  \\frac{x^{m+n-1}−y^{m+n-1}}{(m+n-1)(x−y)}  =  \\frac{1}{x−y}\\int_{y}^{x}t^{m+n-2}\\,dt,\n\n      (ii) \\frac{x^{m}−y^{m}}{m(x−y)}  =  \\frac{1}{x−y}\\int_{y}^{x}t^{m-1}\\,dt,\n\n      (iii)\\frac{x^{n}−y^{n}}{n(x−y)}  =  \\frac{1}{x−y}\\int_{y}^{x}t^{n-1}\\,dt.\n\n    With the shorthand\n\n      A  =  \\int_{y}^{x}t^{m+n-2}\\,dt,\n      B  =  \\int_{y}^{x}t^{m-1}\\,dt,\n      C  =  \\int_{y}^{x}t^{n-1}\\,dt,\n\n    the inequality of Step 3 becomes\n\n      \\frac{A}{x−y}  \\;≥\\; \\frac{B}{x−y}\\;\\times\\;\\frac{C}{x−y}\n      \\quad\\Longleftrightarrow\\quad\n      (x−y)\\,A  \\;≥\\; B\\,C.\n\n5.  Application of Chebyshev’s integral inequality.\n\n    We now invoke Chebyshev’s Inequality in integral form: if f and g are integrable functions that are both monotonically increasing (or both monotonically decreasing) on [y,x], then\n\n      \\frac{1}{x−y}\\int_{y}^{x}f(t)g(t)\\,dt\n      \\;\\ge\\;\n      \\Bigl(\\frac{1}{x−y}\\int_{y}^{x}f(t)\\,dt\\Bigr)\n      ·\n      \\Bigl(\\frac{1}{x−y}\\int_{y}^{x}g(t)\\,dt\\Bigr).\n\n    In our setting we take\n\n      f(t)=t^{m-1},\n      g(t)=t^{n-1}.\n\n    Both f and g are strictly increasing on [y,x], since m−1,n−1≥0.  Hence\n\n      \\frac{1}{x−y}\\int_{y}^{x}t^{m-1}\\,t^{n-1}\\,dt\n      \\;\\ge\\;\n      \\Bigl(\\frac{1}{x−y}\\int_{y}^{x}t^{m-1}\\,dt\\Bigr)\n      ·\n      \\Bigl(\\frac{1}{x−y}\\int_{y}^{x}t^{n-1}\\,dt\\Bigr).\n\n    But \\int_{y}^{x}t^{m-1}t^{n-1}dt=\\int_{y}^{x}t^{m+n-2}dt=A, so this inequality reads exactly\n\n      \\frac{A}{x−y}  \\;\\ge\\;  \\frac{B}{x−y}\\times\\frac{C}{x−y},\n\n    which is equivalent to (x−y)A ≥ B C, the form needed in Step 4.  Therefore the chain of equivalences is complete, and the original inequality holds in the direction “≥”.\n\nConclusion.  Combining the above steps shows that for all positive x,y and positive integers m,n,\n\n  (n−1)(m−1)(x^{m+n}+y^{m+n}) + (m+n−1)(x^{m}y^{n}+x^{n}y^{m})\n  \\;\\ge\\; m n (x^{m+n-1}y + y^{m+n-1}x).\n\nHence the correct relation is “≥”, and the answer is\n\nThe answer is (B) ≥",
+    "original_entry": {
+        "data_id": "661",
+        "problem": "Let $x, y$ be positive real numbers and $m, n$ be positive integers. Consider the following inequality:\n$$\n(n-1)(m-1)\\left(x^{m+n}+y^{m+n}\\right)+(m+n-1)\\left(x^{m} y^{n}+x^{n} y^{m}\\right) \\quad () \\quad m n\\left(x^{m+n-1} y+y^{m+n-1} x\\right) .\n$$\n\nDetermine the correct inequality relation to fill in the blank.\n\nOptions:\n\n(A) $\\leq$ \n\n(B) $\\geq$\n\n(C) $=$ \n\n(D) $<$\n\n(E) $>$\n\n(F) None of the above",
+        "type": "relation",
+        "data_split": "train",
+        "answer": "(B) $\\geq$",
+        "solution": [
+            "We transform the inequality as follows:\n\n$$\n\\begin{gathered}\nm n(x-y)\\left(x^{m+n-1}-y^{m+n-1}\\right) \\geq(m+n-1)\\left(x^{m}-y^{m}\\right)\\left(x^{n}-y^{n}\\right) \\Leftrightarrow \\\\\n\\Leftrightarrow \\frac{x^{m+n-1}-y^{m+n-1}}{(m+n-1)(x-y)} \\geq \\frac{x^{m}-y^{m}}{m(x-y)} \\cdot \\frac{x^{n}-y^{n}}{n(x-y)}\n\\end{gathered}\n$$\n\n(we have assumed that $x>y$ ). The last relation can also be written\n\n$$\n(x-y) \\int_{y}^{x} t^{m+n-2} d t \\geq \\int_{y}^{x} t^{m-1} d t \\cdot \\int_{y}^{x} t^{n-1} d t\n$$\n\nand this follows from Chebyshev's Inequality for integrals. Therefore, the answer is (B) $\\geq$."
+        ],
+        "theorems": {
+            "Theorem 8": {
+                "Nickname": [
+                    "chebyshev's inequality for integrals"
+                ],
+                "Theorem": "If $a, b$ are real numbers, $a<b$, and $f, g:[a, b] \\rightarrow R$ are integrable functions and having the same monotonicity, then\n\n$$\n(b-a) \\int_{a}^{b} f(x) g(x) d x \\geq \\int_{a}^{b} f(x) d x \\cdot \\int_{a}^{b} g(x) d x\n$$\n\nand if one is increasing, while the other is decreasing the reversed inequality is true.",
+                "Theorem_Category": "Chebishev's Inequality"
+            },
+            "Theorem 7": {
+                "Nickname": [
+                    "chebyshev's inequality",
+                    "chebyshev"
+                ],
+                "Theorem": "If $a_{1} \\leq a_{2} \\leq \\ldots \\leq a_{n}$ and $b_{1}, b_{2}, \\ldots, b_{n}$ are real numbers, then\n1)If $b_{1} \\leq b_{2} \\leq \\ldots \\leq b_{n}$ then $\\sum_{i=1}^{n} a_{i} b_{i} \\geq \\frac{1}{n}\\left(\\sum_{i=1}^{n} a_{i}\\right) \\cdot\\left(\\sum_{i=1}^{n} b_{i}\\right)$;\n2)If $b_{1} \\geq b_{2} \\geq \\ldots \\geq b_{n}$ then $\\sum_{i=1}^{n} a_{i} b_{i} \\leq \\frac{1}{n}\\left(\\sum_{i=1}^{n} a_{i}\\right) \\cdot\\left(\\sum_{i=1}^{n} b_{i}\\right)$;",
+                "Theorem_Category": "Chebishev's Inequality"
+            }
+        },
+        "choices": [
+            "(A) $\\leq$",
+            "(B) $\\geq$",
+            "(C) $=$",
+            "(D) $<$",
+            "(E) $>$",
+            "(F) None of the above"
+        ],
+        "difficulty": ""
+    }
+}

@@ -1,0 +1,43 @@
+{
+    "data_id": "746",
+    "type": "relation",
+    "problem": "Let $a, b, c, x, y, z \\in \\mathbb{R}^{+}$. Consider the following inequality:\n$$\n\\frac{a^{3}}{x}+\\frac{b^{3}}{y}+\\frac{c^{3}}{z} \\quad () \\quad \\frac{(a+b+c)^{3}}{3(x+y+z)} .\n$$\n\nDetermine the correct inequality relation to fill in the blank.\n\nOptions:\n\n(A) $\\leq$ \n\n(B) $\\geq$\n\n(C) $=$ \n\n(D) $<$\n\n(E) $>$\n\n(F) None of the above",
+    "current_solution": "By the generalized Hölder's inequality (or simply Hölder's inequality) we have\n$$\n\\left(\\frac{a^{3}}{x}+\\frac{b^{3}}{y}+\\frac{c^{3}}{z}\\right)^{\\frac{1}{3}}(1+1+1)^{\\frac{1}{3}}(x+y+z)^{\\frac{1}{3}} \\geq a+b+c\n$$\nand the conclusion follows. Therefore, the answer is (B) $\\geq$.",
+    "answer": "(B) $\\geq$",
+    "enhanced_solution": "We wish to show that for all positive real numbers a,b,c,x,y,z the following holds:\n\n  (1)     a^{3}/x + b^{3}/y + c^{3}/z   ≥   (a + b + c)^{3}  /  [ 3(x + y + z) ].\n\nIn other words, we must decide which symbol from {≤, ≥, =, <, >} correctly fills the blank\n\n      a^{3}/x + b^{3}/y + c^{3}/z   (   )   (a + b + c)^{3} / [3(x + y + z)].\n\nOriginal solution uses Hölder’s inequality. We now give a fully detailed derivation.\n\nStep 1  (Statement of Hölder’s inequality).\nLet p, q, r be positive real exponents satisfying 1/p + 1/q + 1/r = 1.  For any nonnegative sequences (u_{i}), (v_{i}), (w_{i}) of the same length, Hölder’s inequality states:\n\n   Σ_{i} (u_{i} v_{i} w_{i})   ≤   ( Σ_{i} u_{i}^{p} )^{1/p} · ( Σ_{i} v_{i}^{q} )^{1/q} · ( Σ_{i} w_{i}^{r} )^{1/r}.\n\nWe apply this with three terms (i=1,2,3) and choose p = q = r = 3.  Note that then 1/3 + 1/3 + 1/3 = 1, so the condition on the exponents is satisfied.\n\nStep 2  (Defining the three sequences).\nWe set up three sequences of length 3 as follows:\n\n  For i=1, take\n     u_{1} = a / x^{1/3},\n     v_{1} = 1,\n     w_{1} = x^{1/3}.\n  For i=2, take\n     u_{2} = b / y^{1/3},\n     v_{2} = 1,\n     w_{2} = y^{1/3}.\n  For i=3, take\n     u_{3} = c / z^{1/3},\n     v_{3} = 1,\n     w_{3} = z^{1/3}.\n\nObserve that for each i,\n   u_{i}·v_{i}·w_{i} = ( [a or b or c] / [the corresponding root of x,y,z] ) × 1 × ([the same root])\n                         = a, b, or c respectively.\nHence\n\n   Σ_{i=1}^{3} u_{i} v_{i} w_{i}   = a + b + c.\n\nStep 3  (Computing each norm).\nSince p = 3, we compute\n\n  (Σ u_{i}^{3})^{1/3}  = [ (a^{3}/x) + (b^{3}/y) + (c^{3}/z ) ]^{1/3},\n\n  (Σ v_{i}^{3})^{1/3}  = [ 1^{3} + 1^{3} + 1^{3} ]^{1/3} = 3^{1/3},\n\n  (Σ w_{i}^{3})^{1/3}  = [ x + y + z ]^{1/3}.\n\nStep 4  (Applying Hölder).\nPlugging into Hölder’s inequality for p=q=r=3 yields\n\n   Σ u_{i} v_{i} w_{i}\n   ≤   (Σ u_{i}^{3})^{1/3} · (Σ v_{i}^{3})^{1/3} · (Σ w_{i}^{3})^{1/3}\n\n   i.e.\n\n   a + b + c  ≤  [ (a^{3}/x) + (b^{3}/y) + (c^{3}/z ) ]^{1/3} ⋅ 3^{1/3} ⋅ (x + y + z)^{1/3}.\n\nStep 5  (Algebraic rearrangement).\nRaise both sides to the third power (permissible since both sides are nonnegative):\n\n   (a + b + c)^{3}\n   ≤  [ (a^{3}/x) + (b^{3}/y) + (c^{3}/z ) ] · 3 · (x + y + z).\n\nNext, divide both sides by [3(x + y + z)], which is positive:\n\n   [ (a + b + c)^{3} ]  /  [3(x + y + z)]   ≤   (a^{3}/x) + (b^{3}/y) + (c^{3}/z).\n\nThis is exactly the statement\n\n   a^{3}/x + b^{3}/y + c^{3}/z   ≥   (a + b + c)^{3}/[3(x + y + z)].\n\nStep 6  (Conclusion).\nWe have shown via a valid application of Hölder’s inequality and straightforward algebraic steps that the left–hand side is at least as large as the right–hand side.  Hence the correct relation is “≥.”\n\nTherefore, in the requested format:\n\nThe answer is (B) ≥.",
+    "original_entry": {
+        "data_id": "746",
+        "problem": "Let $a, b, c, x, y, z \\in \\mathbb{R}^{+}$. Consider the following inequality:\n$$\n\\frac{a^{3}}{x}+\\frac{b^{3}}{y}+\\frac{c^{3}}{z} \\quad () \\quad \\frac{(a+b+c)^{3}}{3(x+y+z)} .\n$$\n\nDetermine the correct inequality relation to fill in the blank.\n\nOptions:\n\n(A) $\\leq$ \n\n(B) $\\geq$\n\n(C) $=$ \n\n(D) $<$\n\n(E) $>$\n\n(F) None of the above",
+        "type": "relation",
+        "data_split": "train",
+        "answer": "(B) $\\geq$",
+        "solution": [
+            "By the generalized Hölder's inequality (or simply Hölder's inequality) we have\n$$\n\\left(\\frac{a^{3}}{x}+\\frac{b^{3}}{y}+\\frac{c^{3}}{z}\\right)^{\\frac{1}{3}}(1+1+1)^{\\frac{1}{3}}(x+y+z)^{\\frac{1}{3}} \\geq a+b+c\n$$\nand the conclusion follows. Therefore, the answer is (B) $\\geq$."
+        ],
+        "theorems": {
+            "Theorem 54": {
+                "Nickname": [
+                    "weighted minkowski's inequality"
+                ],
+                "Theorem": "Let $a_{1}, a_{2}, \\ldots, a_{n} ; b_{1}, b_{2}$, $\\ldots, b_{n} ; m_{1}, m_{2}, \\ldots, m_{n}$ be three sequences of positive real numbers and let $p>1$. Then\n$$\n\\left(\\sum_{i=1}^{n}\\left(a_{i}+b_{i}\\right)^{p} m_{i}\\right)^{\\frac{1}{p}} \\leq\\left(\\sum_{i=1}^{n} a_{i}^{p} m_{i}\\right)^{\\frac{1}{p}}+\\left(\\sum_{i=1}^{n} b_{i}^{p} m_{i}\\right)^{\\frac{1}{p}}\n$$\n\nEquality occurs if and only if $\\frac{a_{1}}{b_{1}}=\\frac{a_{2}}{b_{2}}=\\cdots=\\frac{a_{n}}{b_{n}}$.",
+                "Theorem_Category": "Minkowski's Inequality"
+            },
+            "Theorem 48": {
+                "Nickname": [
+                    "hölder's inequality"
+                ],
+                "Theorem": "Let $a_{1}, a_{2}, \\ldots, a_{n} ; b_{1}, b_{2}, \\ldots, b_{n}$ be positive real numbers and $p, q>1$ be such that $1 / p+1 / q=1$.\nThen\n$$\n\\sum_{i=1}^{n} a_{i} b_{i} \\leq\\left(\\sum_{i=1}^{n} a_{i}^{p}\\right)^{\\frac{1}{p}}\\left(\\sum_{i=1}^{n} b_{i}^{q}\\right)^{\\frac{1}{q}}\n$$\n\nEquality occurs if and only if $\\frac{a_{1}^{p}}{b_{1}^{q}}=\\frac{a_{2}^{p}}{b_{2}^{q}}=\\cdots=\\frac{a_{n}^{p}}{b_{n}^{q}}$.",
+                "Theorem_Category": "Hölder's Inequality"
+            }
+        },
+        "choices": [
+            "(A) $\\leq$",
+            "(B) $\\geq$",
+            "(C) $=$",
+            "(D) $<$",
+            "(E) $>$",
+            "(F) None of the above"
+        ],
+        "difficulty": ""
+    }
+}

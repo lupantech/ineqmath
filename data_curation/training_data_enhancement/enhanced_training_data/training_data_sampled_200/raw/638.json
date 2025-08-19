@@ -1,0 +1,34 @@
+{
+    "data_id": "638",
+    "type": "relation",
+    "problem": "Let $a, b, c, d, e$ be positive real numbers such that $a+b+c+d+e=5$. Consider the following inequality:\n$$\na b c + b c d + c d e + d e a + e a b \\quad () \\quad 5 .\n$$\n\nDetermine the correct inequality relation to fill in the blank.\n\nOptions:\n\n(A) $\\leq$ \n\n(B) $\\geq$\n\n(C) $=$ \n\n(D) $<$\n\n(E) $>$\n\n(F) None of the above",
+    "current_solution": "Without loss of generality, we may assume that $e=\\min \\{a, b, c, d, e\\}$.\nBy $A M \\geq G M$, we have\n$$\n\\begin{aligned}\na b c+b c d+c d e+d e a+e a b & =e(a+c)(b+d)+b c(a+d-e) \\\\\n& \\leq e\\left(\\frac{a+c+b+d}{2}\\right)^{2}+\\left(\\frac{b+c+a+d-e}{3}\\right)^{3} \\\\\n& =\\frac{e(5-e)^{2}}{4}+\\frac{(5-2 e)^{3}}{27}\n\\end{aligned}\n$$\n\nSo it suffices to prove that\n$$\n\\frac{e(5-e)^{2}}{4}+\\frac{(5-2 e)^{3}}{27} \\leq 5\n$$\nwhich can be rewrite as $(e-1)^{2}(e+8) \\geq 0$, which is obviously true.\nEquality holds if and only if $a=b=c=d=e=1$. Therefore, the answer is (A) $\\leq$.",
+    "answer": "(A) $\\leq$",
+    "enhanced_solution": "Enhanced Solution:\n\nWe wish to determine the correct inequality relation between\n    S = a b c + b c d + c d e + d e a + e a b\nand the constant 5, under the constraint\na + b + c + d + e = 5,\nwhere a, b, c, d, e are positive real numbers.\n\nStep 1.  Reduction by symmetry.  \nSince the set {a,b,c,d,e} is symmetric in the expression S and in the condition a + b + c + d + e = 5, we may, without loss of generality, assume that e is the smallest of the five variables:\n    e = min{a, b, c, d, e}.\nThis choice will simplify some ensuing inequalities.\n\nStep 2.  Rewriting S in two grouped terms.  \nObserve that we can group the five products as follows:\n    S = a b c + b c d + c d e + d e a + e a b\n      = e(a + c)(b + d)\n        + b c (a + d – e).\nTo see this, note that expanding e(a + c)(b + d) gives\ne·[ a b + a d + b c + c d ] = a b e + a d e + b c e + c d e,\nand expanding b c(a + d – e) gives b c a + b c d – b c e.\nSumming these two expansions yields exactly the five terms of S.\n\nStep 3.  First AM–GM application.  \nWe estimate the first grouped term e(a + c)(b + d) by applying the Arithmetic Mean – Geometric Mean inequality (AM ≥ GM) to the two positive numbers (a + c) and (b + d):\n    (a + c)(b + d)\n      ≤ [ ( (a + c) + (b + d) ) / 2 ]^2\n      = [ (a + b + c + d) / 2 ]^2.\nHence\n    e(a + c)(b + d)\n      ≤ e · [ (a + b + c + d) / 2 ]^2\n      = e · [ (5 – e) / 2 ]^2\n      = e (5 – e)^2 / 4,\nwhere we used a + b + c + d = (a + b + c + d + e) – e = 5 – e.\n\nStep 4.  Second AM–GM application.  \nNext we estimate the second grouped term b c (a + d – e).  The four positive numbers b, c, a, (d – e) are not required in this step—instead, we directly apply AM–GM to the three positive numbers b, c, (a + d – e):\n    b c (a + d – e)\n      ≤ [ (b + c + (a + d – e)) / 3 ]^3\n      = [ (a + b + c + d – e) / 3 ]^3\n      = [ (5 – 2 e) / 3 ]^3,\nwhere we used a + b + c + d – e = (a + b + c + d + e) – 2e = 5 – 2e.\n\nCombining the two estimates, we obtain\n    S ≤ e (5 – e)^2 / 4  +  (5 – 2e)^3 / 27.\nIt follows that in order to show S ≤ 5, it suffices to prove the single-variable inequality\n    f(e) := e (5 – e)^2 / 4  +  (5 – 2e)^3 / 27  ≤ 5,\nfor e in the interval (0,1], since e ≤ the average (a + b + c + d + e)/5 = 1.\n\nStep 5.  Verifying the single-variable inequality.  \nWe rearrange f(e) ≤ 5 algebraically.  Multiply both sides by the common denominator 108 = lcm(4,27):\n    108 · f(e) ≤ 108 · 5 = 540.\nExplicitly,\n    108·[ e(5 – e)^2 / 4 ] + 108·[ (5 – 2e)^3 / 27 ]  ≤ 540\n⇔ 27 e (5 – e)^2 + 4 (5 – 2e)^3  ≤ 540.\nExpanding and simplifying the left–hand side yields a polynomial in e whose difference from 540 factors neatly.  One finds equivalently\n    (e – 1)^2 (e + 8)  ≥ 0.\nSince e > 0, we have e + 8 > 8 > 0, and of course (e – 1)^2 ≥ 0 for all real e.  Therefore the product (e – 1)^2 (e + 8) is nonnegative, establishing that f(e) ≤ 5.\n\nStep 6.  Conclusion and equality case.  \nCombining the above steps shows that\n    S ≤ e (5 – e)^2 / 4  +  (5 – 2e)^3 / 27  ≤ 5.\nHence\n    a b c + b c d + c d e + d e a + e a b  ≤ 5.\nMoreover, equality throughout occurs precisely when all the AM–GM estimates are equalities.  These require\n    (a + c) = (b + d),\n    b = c = a + d – e,\nand also e = 1 (since (e – 1)^2 = 0).  Together with a + b + c + d + e = 5, one deduces a = b = c = d = e = 1.\n\nTherefore the correct inequality relation is “≤.”\n\nThe answer is (A) ≤",
+    "original_entry": {
+        "data_id": "638",
+        "problem": "Let $a, b, c, d, e$ be positive real numbers such that $a+b+c+d+e=5$. Consider the following inequality:\n$$\na b c + b c d + c d e + d e a + e a b \\quad () \\quad 5 .\n$$\n\nDetermine the correct inequality relation to fill in the blank.\n\nOptions:\n\n(A) $\\leq$ \n\n(B) $\\geq$\n\n(C) $=$ \n\n(D) $<$\n\n(E) $>$\n\n(F) None of the above",
+        "type": "relation",
+        "data_split": "train",
+        "answer": "(A) $\\leq$",
+        "solution": "Without loss of generality, we may assume that $e=\\min \\{a, b, c, d, e\\}$.\nBy $A M \\geq G M$, we have\n$$\n\\begin{aligned}\na b c+b c d+c d e+d e a+e a b & =e(a+c)(b+d)+b c(a+d-e) \\\\\n& \\leq e\\left(\\frac{a+c+b+d}{2}\\right)^{2}+\\left(\\frac{b+c+a+d-e}{3}\\right)^{3} \\\\\n& =\\frac{e(5-e)^{2}}{4}+\\frac{(5-2 e)^{3}}{27}\n\\end{aligned}\n$$\n\nSo it suffices to prove that\n$$\n\\frac{e(5-e)^{2}}{4}+\\frac{(5-2 e)^{3}}{27} \\leq 5\n$$\nwhich can be rewrite as $(e-1)^{2}(e+8) \\geq 0$, which is obviously true.\nEquality holds if and only if $a=b=c=d=e=1$. Therefore, the answer is (A) $\\leq$.",
+        "theorems": {
+            "Theorem 35": {
+                "Nickname": [
+                    "mean inequalities"
+                ],
+                "Theorem": "Let $a_{1}, a_{2}, \\ldots, a_{n}$ be positive real numbers. The numbers\n$$\n\\begin{aligned}\n& Q M=\\sqrt{\\frac{a_{1}^{2}+a_{2}^{2}+\\cdots+a_{n}^{2}}{n}}, \\quad A M=\\frac{a_{1}+a_{2}+\\cdots+a_{n}}{n} \\\\\n& G M=\\sqrt[n]{a_{1} a_{2} \\cdots a_{n}} \\quad \\text { and } \\quad H M=\\frac{n}{\\frac{1}{a_{1}}+\\frac{1}{a_{2}}+\\cdots+\\frac{1}{a_{n}}}\n\\end{aligned}\n$$\nare called the quadratic, arithmetic, geometric and harmonic mean for the numbers $a_{1}, a_{2}, \\ldots, a_{n}$, respectively, and we have\n$$\nQ M \\geq A M \\geq G M \\geq H M\n$$\n\nEqualities occur if and only if $a_{1}=a_{2}=\\cdots=a_{n}$.",
+                "Theorem_Category": "Inequality Between Means"
+            }
+        },
+        "choices": [
+            "(A) $\\leq$",
+            "(B) $\\geq$",
+            "(C) $=$",
+            "(D) $<$",
+            "(E) $>$",
+            "(F) None of the above"
+        ],
+        "difficulty": ""
+    }
+}

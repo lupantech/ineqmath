@@ -1,0 +1,37 @@
+{
+    "data_id": "748",
+    "type": "relation",
+    "problem": "Let $a_{1}, a_{2}, \\ldots, a_{n}$ be any real numbers. Consider the following inequality:\n$$\n\\left(\\sum_{i=1}^{n} a_{i}\\right)^{2} \\quad () \\quad \\sum_{i, j=1}^{n} \\frac{i j}{i+j-1} a_{i} a_{j}\n$$\n\nDetermine the correct inequality relation to fill in the blank.\n\nOptions:\n\n(A) $\\leq$ \n\n(B) $\\geq$\n\n(C) $=$ \n\n(D) $<$\n\n(E) $>$\n\n(F) None of the above",
+    "current_solution": "Observe that\n\n$$\n\\begin{aligned}\n\\sum_{i, j=1}^{n} \\frac{i j}{i+j-1} a_{i} a_{j} & =\\sum_{i, j=1}^{n} i a_{i} \\cdot j a_{j} \\int_{0}^{1} t^{i+j-2} d t= \\\\\n& =\\int_{0}^{1}\\left(\\sum_{i, j=1}^{n} i a_{i} \\cdot j a_{j} \\cdot t^{i-1+j-1}\\right) d t= \\\\\n& =\\int_{0}^{1}\\left(\\sum_{i=1}^{n} i a_{i} \\cdot t^{i-1}\\right)^{2}\n\\end{aligned}\n$$\n\nNow, using the Cauchy-Schwarz Inequality for integrals, we get\n\n$$\n\\int_{0}^{1}\\left(\\sum_{i=1}^{n} i a_{i} \\cdot t^{i-1}\\right)^{2} d t \\geq\\left(\\int_{0}^{1}\\left(\\sum_{i=1}^{n} i a_{i} \\cdot t^{i-1}\\right) d t\\right)^{2}=\\left(\\sum_{i=1}^{n} a_{i}\\right)^{2}\n$$\n\nwhich ends the proof. Therefore, the answer is (A) $\\leq$.",
+    "answer": "(A) $\\leq$",
+    "enhanced_solution": "Enhanced Solution:\n\nWe wish to compare the two quantities\n\n  LHS = \\bigl(\\sum_{i=1}^n a_i\\bigr)^2,\n  \nand  \n  RHS = \\sum_{i,j=1}^n \\frac{i\\,j}{i+j-1}\\,a_i\\,a_j.\n\nOur goal is to show\n\n  \\bigl(\\sum_{i=1}^n a_i\\bigr)^2 \\;\\le\\; \\sum_{i,j=1}^n \\frac{i\\,j}{i+j-1}\\,a_i\\,a_j.\n\nStep 1: Integral representation of the kernel\n---------------------------------------------\nFor any positive integers i and j, we have the well-known beta‐integral\n\n  \\int_{0}^{1}t^{i+j-2}\\,dt \n  = \\frac1{i+j-1}.\n\nMultiplying both sides by i\\,j gives\n\n  \\frac{i\\,j}{i+j-1}\n  = \\int_{0}^{1} i\\,j\\,t^{i+j-2}\\,dt.\n\nStep 2: Interchange sum and integral\n-------------------------------------\nUsing the above representation, we rewrite the double sum as an integral:\n\n  RHS\n  = \\sum_{i,j=1}^n \\frac{i\\,j}{i+j-1}\\,a_i\\,a_j\n  = \\sum_{i,j=1}^n \\int_{0}^{1} \\bigl(i\\,a_i\\,t^{i-1}\\bigr)\\bigl(j\\,a_j\\,t^{j-1}\\bigr)\\,dt\n  = \\int_{0}^{1} \\sum_{i,j=1}^n \\bigl(i\\,a_i\\,t^{i-1}\\bigr)\\bigl(j\\,a_j\\,t^{j-1}\\bigr)\\,dt.\n\nSince the sums are finite, we may interchange summation and integration. Factorizing the inner sum gives\n\n  RHS = \\int_{0}^{1} \\Bigl(\\sum_{i=1}^n i\\,a_i\\,t^{i-1}\\Bigr)^2 \\,dt.\n\nStep 3: Define the auxiliary function\n--------------------------------------\nLet\n\n  f(t) = \\sum_{i=1}^n i\\,a_i\\,t^{i-1}, \\quad t\\in[0,1].\n\nThen the above shows\n\n  RHS = \\int_{0}^{1} [f(t)]^2 \\,dt.\n\nStep 4: Compute the integral of f(t)\n--------------------------------------\nWe also compute the first moment of f(t):\n\n  \\int_{0}^{1} f(t)\\,dt\n  = \\sum_{i=1}^n i\\,a_i \\int_{0}^{1} t^{i-1} \\,dt\n  = \\sum_{i=1}^n i\\,a_i \\cdot \\frac1{i}\n  = \\sum_{i=1}^n a_i.\n\nHence\n\n  \\int_{0}^{1} f(t)\\,dt = \\sum_{i=1}^n a_i,\n\nand therefore\n\n  \\bigl(\\sum_{i=1}^n a_i\\bigr)^2 = \\Bigl(\\int_{0}^{1} f(t)\\,dt\\Bigr)^2.\n\nStep 5: Apply the Cauchy–Schwarz inequality\n--------------------------------------------\nWe invoke the Cauchy–Schwarz inequality in the space L^2([0,1]) with the inner product\n\n  \\langle g,h\\rangle = \\int_{0}^{1} g(t)\\,h(t)\\,dt.\n\nTaking g(t)=f(t) and h(t)=1, we get\n\n  \\Bigl(\\int_{0}^{1} f(t)\\cdot1\\,dt\\Bigr)^2\n  \\le \\Bigl(\\int_{0}^{1} f(t)^2\\,dt\\Bigr) \\Bigl(\\int_{0}^{1}1^2\\,dt\\Bigr).\n\nSince \\int_{0}^{1}1^2\\,dt=1, this becomes\n\n  \\Bigl(\\int_{0}^{1} f(t)\\,dt\\Bigr)^2 \\le \\int_{0}^{1} f(t)^2\\,dt,\n\nor equivalently\n\n  \\bigl(\\sum_{i=1}^n a_i\\bigr)^2 \\le \\int_{0}^{1} [f(t)]^2\\,dt = RHS.\n\nConclusion\n----------\nWe conclude that for all real numbers a_1,\\dots,a_n,\n\n  \\bigl(\\sum_{i=1}^n a_i\\bigr)^2 \\le \\sum_{i,j=1}^n \\frac{i\\,j}{i+j-1}\\,a_i\\,a_j.\n\nThus the correct inequality sign is “≤”.  The answer is (A) ≤.",
+    "original_entry": {
+        "data_id": "748",
+        "problem": "Let $a_{1}, a_{2}, \\ldots, a_{n}$ be any real numbers. Consider the following inequality:\n$$\n\\left(\\sum_{i=1}^{n} a_{i}\\right)^{2} \\quad () \\quad \\sum_{i, j=1}^{n} \\frac{i j}{i+j-1} a_{i} a_{j}\n$$\n\nDetermine the correct inequality relation to fill in the blank.\n\nOptions:\n\n(A) $\\leq$ \n\n(B) $\\geq$\n\n(C) $=$ \n\n(D) $<$\n\n(E) $>$\n\n(F) None of the above",
+        "type": "relation",
+        "data_split": "train",
+        "answer": "(A) $\\leq$",
+        "solution": [
+            "Observe that\n\n$$\n\\begin{aligned}\n\\sum_{i, j=1}^{n} \\frac{i j}{i+j-1} a_{i} a_{j} & =\\sum_{i, j=1}^{n} i a_{i} \\cdot j a_{j} \\int_{0}^{1} t^{i+j-2} d t= \\\\\n& =\\int_{0}^{1}\\left(\\sum_{i, j=1}^{n} i a_{i} \\cdot j a_{j} \\cdot t^{i-1+j-1}\\right) d t= \\\\\n& =\\int_{0}^{1}\\left(\\sum_{i=1}^{n} i a_{i} \\cdot t^{i-1}\\right)^{2}\n\\end{aligned}\n$$\n\nNow, using the Cauchy-Schwarz Inequality for integrals, we get\n\n$$\n\\int_{0}^{1}\\left(\\sum_{i=1}^{n} i a_{i} \\cdot t^{i-1}\\right)^{2} d t \\geq\\left(\\int_{0}^{1}\\left(\\sum_{i=1}^{n} i a_{i} \\cdot t^{i-1}\\right) d t\\right)^{2}=\\left(\\sum_{i=1}^{n} a_{i}\\right)^{2}\n$$\n\nwhich ends the proof. Therefore, the answer is (A) $\\leq$."
+        ],
+        "theorems": {
+            "Theorem 5": {
+                "Nickname": [
+                    "cauchy-schwarz's inequality",
+                    "cauchy-schwarz"
+                ],
+                "Theorem": "For any real numbers $a_{1}, a_{2}, \\ldots, a_{n}$ and $b_{1}, b_{2}, \\ldots, b_{n}$\n\n$$\n\\begin{gathered}\n\\left(a_{1}^{2}+a_{2}^{2}+\\ldots+a_{n}^{2}\\right)\\left(b_{1}^{2}+b_{2}^{2}+\\ldots+b_{n}^{2}\\right) \\geq \\\\\n\\geq\\left(a_{1} b_{1}+a_{2} b_{2}+\\ldots+a_{n} b_{n}\\right)^{2}\n\\end{gathered}\n$$\n\nwith equality if and only if $a_{i}$ and $b_{i}$ are proportional, $i=1,2, \\ldots, n$.",
+                "Theorem_Category": "Cauchy-Schwarz Inequality"
+            }
+        },
+        "choices": [
+            "(A) $\\leq$",
+            "(B) $\\geq$",
+            "(C) $=$",
+            "(D) $<$",
+            "(E) $>$",
+            "(F) None of the above"
+        ],
+        "difficulty": ""
+    }
+}

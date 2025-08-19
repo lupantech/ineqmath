@@ -1,0 +1,34 @@
+{
+    "data_id": "697",
+    "type": "relation",
+    "problem": "Let $a, b, c$ be the side lengths of a given triangle. Consider the following expressions:\n$$\na^{2}+b^{2}+c^{2} \\quad () \\quad 2(a b+b c+c a)\n$$\nDetermine the correct inequality relation to fill in the blank.\n\nOptions:\n\n(A) $\\leq$ \n\n(B) $\\geq$\n\n(C) $=$ \n\n(D) $<$\n\n(E) $>$\n\n(F) None of the above",
+    "current_solution": "Let $a=x+y, b=y+z, c=z+x, x, y, z>0$.\nThen we have\n$$\n\\begin{aligned}\n& (x+y)^{2}+(y+z)^{2}+(z+x)^{2} \\\\\n& \\quad<2((x+y)(y+z)+(y+z)(z+x)+(z+x)(x+y))\n\\end{aligned}\n$$\nor\n$$\nx y+y z+z x>0\n$$\nwhich is clearly true. Therefore, the answer is (D) $<$.",
+    "answer": "(D) $<$",
+    "enhanced_solution": "Enhanced Solution:\n\nWe wish to compare the two symmetric expressions in the side-lengths a, b, c of a triangle:\n\n  S = a² + b² + c²   and   T = 2(ab + bc + ca)\n\nand determine which of the relations “<, ≤, =, ≥, >” holds.\n\nStep 1:  Justification of the Ravi Substitution\n------------------------------------------------\nSince a, b, c are the side-lengths of a triangle, they satisfy the triangle inequalities:\n\n  a < b + c,\n  b < c + a,\n  c < a + b.\n\nEquivalently, each of the quantities (b + c – a), (c + a – b), (a + b – c) is strictly positive.  We set\n\n  x = (b + c – a)/2,\n  y = (c + a – b)/2,\n  z = (a + b – c)/2.\n\nThen x, y, z > 0, and one readily checks that\n\n  a = y + z,\n  b = z + x,\n  c = x + y.\n\nThis is the standard “Ravi substitution,” which encodes the triangle inequalities via x, y, z > 0.\n\nStep 2:  Express S in terms of x, y, z\n----------------------------------------\nSubstitute a = y + z, b = z + x, c = x + y into S:\n\n  S = (y + z)² + (z + x)² + (x + y)²\n    = [y² + 2yz + z²] + [z² + 2zx + x²] + [x² + 2xy + y²]\n    = 2(x² + y² + z²) + 2(xy + yz + zx).\n\nStep 3:  Express T in terms of x, y, z\n----------------------------------------\nFirst compute the pairwise products:\n\n  (a b) = (y + z)(z + x) = yz + yx + z² + zx,\n  (b c) = (z + x)(x + y) = zx + zy + x² + xy,\n  (c a) = (x + y)(y + z) = xy + xz + y² + yz.\n\nSumming these three:\n\n  ab + bc + ca\n  = (x² + y² + z²)\n    + 3(xy + yz + zx).\n\nTherefore\n  T = 2(ab + bc + ca)\n    = 2(x² + y² + z²) + 6(xy + yz + zx).\n\nStep 4:  Compare S and T\n------------------------\nCompute the difference:\n\n  S – T\n  = [2(x² + y² + z²) + 2(xy + yz + zx)]\n    – [2(x² + y² + z²) + 6(xy + yz + zx)]\n  = –4(xy + yz + zx).\n\nSince x, y, z are all strictly positive, their pairwise products sum xy + yz + zx > 0.  Hence\n\n  S – T = –4(xy + yz + zx) < 0\n      ⇒  S < T.\n\nConclusion\n----------\nWe have shown that for any triangle with sides a, b, c,\n\n  a² + b² + c²   <   2(ab + bc + ca).\n\nTherefore the correct answer is\n\nThe answer is (D) <",
+    "original_entry": {
+        "data_id": "697",
+        "problem": "Let $a, b, c$ be the side lengths of a given triangle. Consider the following expressions:\n$$\na^{2}+b^{2}+c^{2} \\quad () \\quad 2(a b+b c+c a)\n$$\nDetermine the correct inequality relation to fill in the blank.\n\nOptions:\n\n(A) $\\leq$ \n\n(B) $\\geq$\n\n(C) $=$ \n\n(D) $<$\n\n(E) $>$\n\n(F) None of the above",
+        "type": "relation",
+        "data_split": "train",
+        "answer": "(D) $<$",
+        "solution": [
+            "Let $a=x+y, b=y+z, c=z+x, x, y, z>0$.\nThen we have\n$$\n\\begin{aligned}\n& (x+y)^{2}+(y+z)^{2}+(z+x)^{2} \\\\\n& \\quad<2((x+y)(y+z)+(y+z)(z+x)+(z+x)(x+y))\n\\end{aligned}\n$$\nor\n$$\nx y+y z+z x>0\n$$\nwhich is clearly true. Therefore, the answer is (D) $<$."
+        ],
+        "theorems": {
+            "Theorem 23": {
+                "Nickname": [],
+                "Theorem": "Let $a, b, c \\in \\mathbb{R}^{+}$, and let us denote\n$$\n\\begin{aligned}\nQ M & =\\sqrt{\\frac{a^{2}+b^{2}+c^{2}}{3}}, \\quad A M=\\frac{a+b+c}{3}, \\quad G M=\\sqrt[3]{a b c} \\text { and } \\\\\nH M & =\\frac{3}{\\frac{1}{a}+\\frac{1}{b}+\\frac{1}{c}}\n\\end{aligned}\n$$\n\nThen\n$$\nQ M \\geq A M \\geq G M \\geq H M\n$$\n\nEqualities occur if and only if $a=b=c$.",
+                "Theorem_Category": "Inequality Between Means"
+            }
+        },
+        "choices": [
+            "(A) $\\leq$",
+            "(B) $\\geq$",
+            "(C) $=$",
+            "(D) $<$",
+            "(E) $>$",
+            "(F) None of the above"
+        ],
+        "difficulty": ""
+    }
+}

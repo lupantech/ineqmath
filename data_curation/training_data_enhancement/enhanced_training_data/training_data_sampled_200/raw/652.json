@@ -1,0 +1,36 @@
+{
+    "data_id": "652",
+    "type": "relation",
+    "problem": "Let $a, b, c$ be positive real numbers. Consider the following inequality:\n$$\na^{b} b^{c} c^{a} \\quad () \\quad \\left(\\frac{a+b+c}{3}\\right)^{a+b+c} .\n$$\n\nDetermine the correct inequality relation to fill in the blank.\n\nOptions:\n\n(A) $\\leq$ \n\n(B) $\\geq$\n\n(C) $=$ \n\n(D) $<$\n\n(E) $>$\n\n(F) None of the above",
+    "current_solution": "By the weighted power mean inequality we have\n$$\n\\begin{aligned}\n\\left(a^{b} b^{c} c^{a}\\right)^{\\frac{1}{a+b+c}} & =a^{\\frac{b}{a+b+c}} \\cdot b^{\\frac{c}{a+b+c}} \\cdot c^{\\frac{a}{a+b+c}} \\leq \\frac{b a+c b+a c}{a+b+c} \\leq \\frac{(a+b+c)^{2}}{3(a+b+c)} \\\\\n& =\\frac{a+b+c}{3}\n\\end{aligned}\n$$ Therefore, the answer is (A) $\\leq$.",
+    "answer": "(A) $\\leq$",
+    "enhanced_solution": "We wish to compare the two quantities\n\n  a^b b^c c^a     and     ((a + b + c)/3)^{a + b + c}\n\nand decide which inequality holds for all positive real a, b, c.  The original solution uses a weighted AM–GM argument together with a well-known bound on ab + bc + ca.  We now expand each step in full detail.\n\n**Step 1. Rewrite the left side as a weighted geometric mean.**\n\nObserve that\n\n  (a^b b^c c^a)^{1/(a + b + c)}\n  = a^{b/(a + b + c)} \\cdot b^{c/(a + b + c)} \\cdot c^{a/(a + b + c)}.\n\nHere the exponents\n\n  w_1 = b/(a + b + c),\n  w_2 = c/(a + b + c),\n  w_3 = a/(a + b + c)\n\nare nonnegative and satisfy\n\n  w_1 + w_2 + w_3 = (a + b + c)/(a + b + c) = 1.\n\nThus a^b b^c c^a to the power 1/(a + b + c) is exactly the geometric mean of the numbers a, b, c with weights w_1, w_2, w_3.\n\n**Step 2. Apply the weighted AM–GM inequality.**\n\nThe weighted arithmetic–geometric mean (AM–GM) inequality states that for any nonnegative numbers x_1, x_2, x_3 and weights w_1, w_2, w_3 with w_1 + w_2 + w_3 = 1, one has\n\n  x_1^{w_1} \\, x_2^{w_2} \\, x_3^{w_3}\n    ≤ w_1 x_1 + w_2 x_2 + w_3 x_3.\n\nWe apply this with x_1 = a, x_2 = b, x_3 = c and the weights defined above.  Therefore\n\n  a^{b/(a + b + c)} \\cdot b^{c/(a + b + c)} \\cdot c^{a/(a + b + c)}\n    ≤ (b/(a + b + c))·a + (c/(a + b + c))·b + (a/(a + b + c))·c\n  = (ba + cb + ac)/(a + b + c).\n\nHence\n\n  (a^b b^c c^a)^{1/(a + b + c)} ≤ (ba + bc + ca)/(a + b + c).\n\n**Step 3. Bound the sum of pairwise products by (a + b + c)²/3.**\n\nWe claim that for any positive a, b, c,\n\n  ab + bc + ca ≤ (a + b + c)²/3.\n\nEquivalently,\n\n  3(ab + bc + ca) ≤ (a + b + c)²\n  = a² + b² + c² + 2(ab + bc + ca).\n\nRearrange:\n\n  3(ab + bc + ca) − 2(ab + bc + ca) ≤ a² + b² + c²\n  ⇒ ab + bc + ca ≤ a² + b² + c².\n\nBut a² + b² + c² ≥ ab + bc + ca is itself a standard consequence of\n\n  a² + b² − 2ab = (a − b)² ≥ 0,\n  b² + c² − 2bc = (b − c)² ≥ 0,\n  c² + a² − 2ca = (c − a)² ≥ 0,\n\nand summing any two of these shows a² + b² + c² ≥ ab + bc + ca.  Thus the desired bound holds.\n\nTherefore,\n\n  (ba + bc + ca)/(a + b + c) ≤ [ (a + b + c)²/3 ] / (a + b + c)\n  = (a + b + c)/3.\n\n**Step 4. Combine the inequalities.**\n\nPutting Steps 2 and 3 together,\n\n  (a^b b^c c^a)^{1/(a + b + c)} ≤ (ba + bc + ca)/(a + b + c) ≤ (a + b + c)/3.\n\nSince the function x ↦ x^{a + b + c} is strictly increasing for x > 0, we may raise both sides of the outer inequality to the power a + b + c and preserve the direction.  Hence\n\n  a^b b^c c^a ≤ ((a + b + c)/3)^{a + b + c}.\n\nThis shows that for all positive a, b, c,\n\n  a^b b^c c^a ≤ ((a + b + c)/3)^{a + b + c}.\n\n**Conclusion.**  The correct relation is “≤.”\n\nThe answer is (A) ≤",
+    "original_entry": {
+        "data_id": "652",
+        "problem": "Let $a, b, c$ be positive real numbers. Consider the following inequality:\n$$\na^{b} b^{c} c^{a} \\quad () \\quad \\left(\\frac{a+b+c}{3}\\right)^{a+b+c} .\n$$\n\nDetermine the correct inequality relation to fill in the blank.\n\nOptions:\n\n(A) $\\leq$ \n\n(B) $\\geq$\n\n(C) $=$ \n\n(D) $<$\n\n(E) $>$\n\n(F) None of the above",
+        "type": "relation",
+        "data_split": "train",
+        "answer": "(A) $\\leq$",
+        "solution": [
+            "By the weighted power mean inequality we have\n$$\n\\begin{aligned}\n\\left(a^{b} b^{c} c^{a}\\right)^{\\frac{1}{a+b+c}} & =a^{\\frac{b}{a+b+c}} \\cdot b^{\\frac{c}{a+b+c}} \\cdot c^{\\frac{a}{a+b+c}} \\leq \\frac{b a+c b+a c}{a+b+c} \\leq \\frac{(a+b+c)^{2}}{3(a+b+c)} \\\\\n& =\\frac{a+b+c}{3}\n\\end{aligned}\n$$ Therefore, the answer is (A) $\\leq$."
+        ],
+        "theorems": {
+            "Theorem 59": {
+                "Nickname": [
+                    "weighted power mean inequality"
+                ],
+                "Theorem": "Let $a=\\left(a_{1}, a_{2}, \\ldots, a_{n}\\right)$ be a sequence of positive real numbers, and let $m=\\left(m_{1}, m_{2}, \\ldots, m_{n}\\right)$ also be a sequence of positive real numbers such that $m_{1}+m_{2}+\\cdots+m_{n}=1$.\nThen for each $r \\leq s$ we have\n$$\nM_{r}^{m}(a) \\leq M_{s}^{m}(a)\n$$\ni.e.\n$$\n\\left(m_{1} a_{1}^{r}+m_{2} a_{2}^{r}+\\cdots+m_{n} a_{n}^{r}\\right)^{\\frac{1}{r}} \\leq\\left(m_{1} a_{1}^{s}+m_{2} a_{2}^{s}+\\cdots+m_{n} a_{n}^{s}\\right)^{\\frac{1}{s}}\n$$",
+                "Theorem_Category": "Inequality Between Means"
+            }
+        },
+        "choices": [
+            "(A) $\\leq$",
+            "(B) $\\geq$",
+            "(C) $=$",
+            "(D) $<$",
+            "(E) $>$",
+            "(F) None of the above"
+        ],
+        "difficulty": ""
+    }
+}

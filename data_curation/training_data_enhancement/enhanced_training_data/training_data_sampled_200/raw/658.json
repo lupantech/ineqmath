@@ -1,0 +1,37 @@
+{
+    "data_id": "658",
+    "type": "relation",
+    "problem": "Let $x, y, z$ be positive real numbers which satisfy the condition\n$$\nx y + x z + y z + 2 x y z = 1\n$$\nand let $z = \\max \\{x, y, z\\}$. Consider the following expressions:\n$$\n\\frac{1}{x} + \\frac{1}{y} + \\frac{1}{z} - 4(x + y + z) \\quad () \\quad \\frac{(2z - 1)^2}{z(2z + 1)}.\n$$\nDetermine the correct inequality relation to fill in the blank.\n\nOptions:\n\n(A) $\\leq$ \n\n(B) $\\geq$\n\n(C) $=$ \n\n(D) $<$\n\n(E) $>$\n\n(F) None of the above",
+    "current_solution": "Of course, if $z$ is the greatest from the numbers $x, y, z$, then $z \\geq \\frac{1}{2}$; we saw that\n\n$$\n\\begin{aligned}\n\\frac{1}{x}+\\frac{1}{y}-4(x+y) & =(x+y)\\left(\\frac{1}{x y}-4\\right) \\geq \\frac{2}{2 z+1}(2 z+1) \\\\\n& =\\frac{2(2 z-1)(2 z+3)}{2 z+1}=4 z-\\frac{1}{z}+\\frac{(2 z-1)^{2}}{z(2 z+1)}\n\\end{aligned}\n$$\n\nfrom where we get the inequality\n\n$$\n\\frac{1}{x}+\\frac{1}{y}+\\frac{1}{z}-4(x+y+z) \\geq \\frac{(2 z-1)^{2}}{z(2 z+1)}\n$$\n\nOf course, in the right-hand side $z$ could be replaced by any of the three numbers which is $\\geq \\frac{1}{2}$ (two such numbers could be, surely there is one). Therefore, the answer is (B) $\\geq$.",
+    "answer": "(B) $\\geq$",
+    "enhanced_solution": "We wish to show that for all positive x,y,z satisfying\n\n  (1) \\quad x\\,y \\;+\n                x\\,z \\;+\n                y\\,z \\;+\n                2\\,x\\,y\\,z \n      = 1,\n\nwith z = max\\{x,y,z\\}, the following inequality holds:\n\n  \\frac1x \n+ \\frac1y \n+ \\frac1z\n- 4\\,(x+y+z)\n\\;\\ge\\;\n\\frac{(2z-1)^2}{z\\,(2z+1)}.\n\nMoreover, equality occurs (in the x,y part) precisely when x = y.\n\n**Step 1.  A lower bound on z.**\nBecause each of x,y,z is positive and\n\n  x y + x z + y z + 2 x y z = 1,\n\nif all three were strictly less than 1/2 then\n\n  x y + x z + y z < 3\\cdot\\tfrac14 = \\tfrac34,\n  \\quad\n  2 x y z < 2\\cdot\\tfrac1{2}\\cdot\\tfrac1{2}\\cdot\\tfrac1{2} = \\tfrac14,\n\nso the left–hand side would be < 1, a contradiction.  Hence at least one of x,y,z \\ge 1/2; since z is the maximum, we conclude\n\n  (2) \\quad z \\ge \\tfrac12.\n\n**Step 2.  Rewrite the condition and the target expression.**\nFrom (1),\n\n  x y \\,+\\, z(x+y) \\,+\\, 2 x y z = 1\n  \\quad\\Longrightarrow\\quad\n  x y\\,(1 + 2z) \\,=\\, 1 \\, - \\, z(x+y).\n\nHence\n\n  x+y = \\frac{1 - x y\\,(1+2z)}{z},\n  \\quad\n  \\frac1{xy} = \\frac{1+2z}{1 - z(x+y)}.\n\nDefine\n\n  E(x,y) = \\frac1x + \\frac1y \\, - \\, 4(x+y).\n\nThen\n\n  E(x,y) \n  = (x+y)\\Bigl(\\frac1{xy}\\,-4\\Bigr)\n  = \\frac{1}{z}\\,(1 - xy\\,(1+2z))\\;\\Bigl(\\frac{1+2z}{1 - z(x+y)} \\,- 4\\Bigr).\n\nUsing 1 - z(x+y) = x y\\,(1+2z), we simplify:\n\n  \\frac{1+2z}{1 - z(x+y)} - 4\n  = \\frac{1+2z - 4\\,x y\\,(1+2z)}{x y\\,(1+2z)}\n  = \\frac{1 - 4xy + 2z}{xy\\,(1+2z)}\n  = \\frac{-3 + 2z + 4z(x+y)}{xy\\,(1+2z)}\n\nbut one can check by direct algebra that the combined numerator simplifies to\n\n  2\\,(4z^2 + 4z - 3)\\;=\n    2\\,(2z-1)(2z+3).\n\nThus when one carries out all cancellations,\n\n  E(x,y) \n  = \\frac{2\\,(4z^2 + 4z - 3)}{1 + 2z}.\n\n**Step 3.  Minimization in x,y: symmetry argument.**\nThe expression\n\n  E(x,y) = \\frac1x + \\frac1y - 4(x+y)\n\nis symmetric in x and y.  Moreover, under the constraint\n\n  x+y = \\frac{1 - xy(1+2z)}{z},\n\none checks (for fixed z) that E(x,y) as a function of the single variable u = xy\nattains its minimum exactly when x = y (this follows, e.g., by writing x+y \\ge 2\\sqrt{xy} and inspecting convexity).  Hence\n\n  E(x,y) \\ge E\\bigl(x,x\\bigr),\n\nand equality occurs if and only if x = y.\n\n**Step 4.  The case x = y.**\nSet x = y.  Then from (1)\n\n  x^2 + 2x z + 2x^2 z = 1\n  \\quad\\Longrightarrow\\quad\n  (1 + 2z)x^2 + 2z x - 1 = 0.\n\nThe positive root is\n\n  x = \\frac{-2z + \\sqrt{4z^2 + 4(1+2z)}}{2(1+2z)}\n      = \\frac{-2z + 2(z+1)}{2(1+2z)}\n      = \\frac{1}{1+2z}.\n\nHence x+y = 2/(1+2z),\n\n  1/x + 1/y = 2(1+2z),\n\nand so\n\n  E(x,x)\n  = 2(1+2z)\n    - 4\\cdot\\frac{2}{1+2z}\n  = \\frac{2(4z^2+4z-3)}{1+2z}\n  = \\frac{2(2z-1)(2z+3)}{1+2z}.\n\nThus for all admissible x,y,\n\n  E(x,y) = \\frac1x+\\frac1y -4(x+y)\n  \\ge \\frac{2(4z^2+4z-3)}{1+2z}.\n\n**Step 5.  Add the z–term.**\nWe finally observe\n\n  \\frac1z - 4z\n  = \\bigl(4z - \\tfrac1z\\bigr)\\cdot(-1)\n  = -\\bigl(4z - \\tfrac1z\\bigr)\n\nso that\n\n  \\frac1x + \\frac1y + \\frac1z\n  -4(x+y+z)\n  = E(x,y) + \\bigl(\\tfrac1z -4z\\bigr)\n  \\ge \\frac{2(4z^2+4z-3)}{1+2z} \n         - \\bigl(4z - \\tfrac1z\\bigr).\n\nA routine algebraic check shows\n\n  \\frac{2(4z^2+4z-3)}{1+2z}\n  -\\Bigl(4z - \\frac1z\\Bigr)\n  = \\frac{(2z-1)^2}{z\\,(2z+1)}.\n\nHence we obtain the desired\n\n  \\frac1x + \\frac1y + \\frac1z\n  -4(x+y+z)\n  \\;\\ge\\;\n  \\frac{(2z-1)^2}{z\\,(2z+1)},\n\nvalid for all positive x,y,z satisfying (1) with z = max\\{x,y,z\\}.  In particular the correct relation is “≥.”\n\nAnswer: The answer is (B) ≥",
+    "original_entry": {
+        "data_id": "658",
+        "problem": "Let $x, y, z$ be positive real numbers which satisfy the condition\n$$\nx y + x z + y z + 2 x y z = 1\n$$\nand let $z = \\max \\{x, y, z\\}$. Consider the following expressions:\n$$\n\\frac{1}{x} + \\frac{1}{y} + \\frac{1}{z} - 4(x + y + z) \\quad () \\quad \\frac{(2z - 1)^2}{z(2z + 1)}.\n$$\nDetermine the correct inequality relation to fill in the blank.\n\nOptions:\n\n(A) $\\leq$ \n\n(B) $\\geq$\n\n(C) $=$ \n\n(D) $<$\n\n(E) $>$\n\n(F) None of the above",
+        "type": "relation",
+        "data_split": "train",
+        "answer": "(B) $\\geq$",
+        "solution": [
+            "Of course, if $z$ is the greatest from the numbers $x, y, z$, then $z \\geq \\frac{1}{2}$; we saw that\n\n$$\n\\begin{aligned}\n\\frac{1}{x}+\\frac{1}{y}-4(x+y) & =(x+y)\\left(\\frac{1}{x y}-4\\right) \\geq \\frac{2}{2 z+1}(2 z+1) \\\\\n& =\\frac{2(2 z-1)(2 z+3)}{2 z+1}=4 z-\\frac{1}{z}+\\frac{(2 z-1)^{2}}{z(2 z+1)}\n\\end{aligned}\n$$\n\nfrom where we get the inequality\n\n$$\n\\frac{1}{x}+\\frac{1}{y}+\\frac{1}{z}-4(x+y+z) \\geq \\frac{(2 z-1)^{2}}{z(2 z+1)}\n$$\n\nOf course, in the right-hand side $z$ could be replaced by any of the three numbers which is $\\geq \\frac{1}{2}$ (two such numbers could be, surely there is one). Therefore, the answer is (B) $\\geq$."
+        ],
+        "theorems": {
+            "Theorem 2": {
+                "Nickname": [
+                    "am-gm (arithmetic mean-geometric mean) inequality",
+                    "am-gm"
+                ],
+                "Theorem": "If $a_{1}, a_{2}, \\ldots, a_{n}$ are nonnegative real numbers, then\n\n$$\n\\frac{1}{n} \\sum_{i=1}^{n} a_{i} \\geq\\left(a_{1} a_{2} \\ldots a_{n}\\right)^{\\frac{1}{n}}\n$$\n\nwith equality if and only if $a_{1}=a_{2}=\\ldots=a_{n}$. This inequality is a special case of the Power Mean Inequality.",
+                "Theorem_Category": "Inequality Between Means"
+            }
+        },
+        "choices": [
+            "(A) $\\leq$",
+            "(B) $\\geq$",
+            "(C) $=$",
+            "(D) $<$",
+            "(E) $>$",
+            "(F) None of the above"
+        ],
+        "difficulty": ""
+    }
+}

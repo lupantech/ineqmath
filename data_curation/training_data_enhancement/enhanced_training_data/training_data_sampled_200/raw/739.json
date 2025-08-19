@@ -1,0 +1,34 @@
+{
+    "data_id": "739",
+    "type": "relation",
+    "problem": "Let $x, y, z \\in \\mathbb{R}^{+}$, such that $x y z \\geq x y + y z + z x$. Consider the following expressions:\n$$\nx y z \\quad () \\quad 3(x+y+z)\n$$\nDetermine the correct inequality relation to fill in the blank.\n\nOptions:\n\n(A) $\\leq$ \n\n(B) $\\geq$\n\n(C) $=$ \n\n(D) $<$\n\n(E) $>$\n\n(F) None of the above",
+    "current_solution": "Letting $\\frac{1}{x}=a, \\frac{1}{y}=b, \\frac{1}{z}=c$, the initial condition $x y z \\geq x y+y z+z x$ becomes\n$$\n\\begin{equation*}\na+b+c \\leq 1 \\tag{1}\n\\end{equation*}\n$$\n\nWe need to show that\n$$\n\\begin{equation*}\nx y z \\geq 3(x+y+z) \\quad \\Leftrightarrow \\quad 3(a b+b c+c a) \\leq 1 \\tag{2}\n\\end{equation*}\n$$\n\nClearly\n$$\n\\begin{equation*}\n(a+b+c)^{2} \\geq 3(a b+b c+c a) \\tag{3}\n\\end{equation*}\n$$\n\nNow from (1) and (3) we obtain (2). Therefore, the answer is (B) $\\geq$.",
+    "answer": "(B) $\\geq$",
+    "enhanced_solution": "Enhanced Solution:\n\nWe wish to determine the correct relation between x y z and 3(x + y + z), given that x, y, z are positive real numbers satisfying\n\n  x y z  ≥ x y + y z + z x.    (1)\n\nOur goal is to show that under condition (1), the following inequality holds:\n\n  x y z  ≥ 3(x + y + z).    (2)\n\nWe will proceed by the same substitution as in the original solution, but with fuller justification of each step.\n\nStep 1: Introduce new positive variables a, b, c by\n\n  a = 1/x,\n  b = 1/y,\n  c = 1/z.\n\nSince x, y, z > 0, each of a, b, c is also positive.\n\nStep 2: Rewrite the given condition (1) in terms of a, b, c.\n\nWe have\n\n  x y z  = 1/(a b c),\n  x y    = 1/(a b),\n  y z    = 1/(b c),\n  z x    = 1/(c a).\n\nSubstituting into x y z ≥ x y + y z + z x gives\n\n  1/(a b c)  ≥ 1/(a b) + 1/(b c) + 1/(c a).\n\nMultiply both sides by the positive quantity a b c to clear denominators:\n\n  1  ≥  c + a + b.\n\nReordering the sum yields\n\n  a + b + c  ≤ 1.    (3)\n\nThis is the equivalent form of the original condition in the new variables.\n\nStep 3: Rewrite the target inequality (2) in terms of a, b, c.\n\nStarting from x y z ≥ 3(x + y + z), we similarly substitute:\n\n  x y z     = 1/(a b c),\n  x         = 1/a,   y = 1/b,   z = 1/c,\n  x + y + z = 1/a + 1/b + 1/c.\n\nHence (2) becomes\n\n  1/(a b c)  ≥ 3(1/a + 1/b + 1/c).\n\nMultiply through by the positive a b c:\n\n  1  ≥  3(b c + c a + a b).\n\nRewriting, we obtain the equivalent inequality\n\n  3(a b + b c + c a)  ≤ 1.    (4)\n\nThus our task is reduced to proving (4) under the assumption (3).\n\nStep 4: Relate a + b + c and a b + b c + c a via a standard symmetric inequality.\n\nA well-known fact for any real numbers a, b, c is that\n\n  (a + b + c)²  =  a² + b² + c²  + 2(a b + b c + c a)\n               ≥  3(a b + b c + c a),\n\nbecause a² + b² + c² ≥ a b + b c + c a (which itself follows from summing the nonnegative squares (a − b)² + (b − c)² + (c − a)² ≥ 0).  Hence\n\n  (a + b + c)²  ≥ 3(a b + b c + c a).    (5)\n\nStep 5: Combine (3) and (5) to derive (4).\n\nFrom (3) we have a + b + c ≤ 1.  Squaring both sides (permitted since both sides are nonnegative) gives\n\n  (a + b + c)²  ≤ 1²  = 1.    (6)\n\nComparing (5) and (6), we see that\n\n  3(a b + b c + c a)  ≤ (a + b + c)²  ≤ 1.\n\nIn particular, 3(a b + b c + c a) ≤ 1, which is precisely inequality (4).\n\nStep 6: Translate back to the original variables.\n\nSince (4) is equivalent to x y z ≥ 3(x + y + z), we have established that whenever x y z ≥ x y + y z + z x holds, it follows that x y z ≥ 3(x + y + z).  Therefore, the correct relation between x y z and 3(x + y + z) is ≥.\n\nFinal Answer:\n\nThe answer is (B) ≥",
+    "original_entry": {
+        "data_id": "739",
+        "problem": "Let $x, y, z \\in \\mathbb{R}^{+}$, such that $x y z \\geq x y + y z + z x$. Consider the following expressions:\n$$\nx y z \\quad () \\quad 3(x+y+z)\n$$\nDetermine the correct inequality relation to fill in the blank.\n\nOptions:\n\n(A) $\\leq$ \n\n(B) $\\geq$\n\n(C) $=$ \n\n(D) $<$\n\n(E) $>$\n\n(F) None of the above",
+        "type": "relation",
+        "data_split": "train",
+        "answer": "(B) $\\geq$",
+        "solution": "Letting $\\frac{1}{x}=a, \\frac{1}{y}=b, \\frac{1}{z}=c$, the initial condition $x y z \\geq x y+y z+z x$ becomes\n$$\n\\begin{equation*}\na+b+c \\leq 1 \\tag{1}\n\\end{equation*}\n$$\n\nWe need to show that\n$$\n\\begin{equation*}\nx y z \\geq 3(x+y+z) \\quad \\Leftrightarrow \\quad 3(a b+b c+c a) \\leq 1 \\tag{2}\n\\end{equation*}\n$$\n\nClearly\n$$\n\\begin{equation*}\n(a+b+c)^{2} \\geq 3(a b+b c+c a) \\tag{3}\n\\end{equation*}\n$$\n\nNow from (1) and (3) we obtain (2). Therefore, the answer is (B) $\\geq$.",
+        "theorems": {
+            "Theorem 36": {
+                "Nickname": [
+                    "rearrangement inequality"
+                ],
+                "Theorem": "Let $a_{1} \\leq a_{2} \\leq \\cdots \\leq a_{n}$ and $b_{1} \\leq$ $b_{2} \\leq \\cdots \\leq b_{n}$ be real numbers. For any permutation $\\left(x_{1}, x_{2}, \\ldots, x_{n}\\right)$ of $\\left(a_{1}, a_{2}, \\ldots, a_{n}\\right)$ we have the following inequalities:\n$$\n\\begin{aligned}\na_{1} b_{1}+a_{2} b_{2}+\\cdots+a_{n} b_{n} & \\geq x_{1} b_{1}+x_{2} b_{2}+\\cdots+x_{n} b_{n} \\\\\n& \\geq a_{n} b_{1}+a_{n-1} b_{2}+\\cdots+a_{1} b_{n}\n\\end{aligned}\n$$",
+                "Theorem_Category": "Rearrangement Inequality"
+            }
+        },
+        "choices": [
+            "(A) $\\leq$",
+            "(B) $\\geq$",
+            "(C) $=$",
+            "(D) $<$",
+            "(E) $>$",
+            "(F) None of the above"
+        ],
+        "difficulty": ""
+    }
+}

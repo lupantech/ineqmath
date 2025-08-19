@@ -1,0 +1,34 @@
+{
+    "data_id": "691",
+    "type": "relation",
+    "problem": "Let $a, b, c \\in \\mathbb{R}^{+}$. Consider the following inequality:\n$$\n\\frac{a b c}{(1+a)(a+b)(b+c)(c+16)} \\quad () \\quad \\frac{1}{81} .\n$$\n\nDetermine the correct inequality relation to fill in the blank.\n\nOptions:\n\n(A) $\\leq$ \n\n(B) $\\geq$\n\n(C) $=$ \n\n(D) $<$\n\n(E) $>$\n\n(F) None of the above",
+    "current_solution": "We have\n$$\n\\begin{aligned}\n&(1+a)(a+b)(b+c)(c+16) \\\\\n&=\\left(1+\\frac{a}{2}+\\frac{a}{2}\\right)\\left(a+\\frac{b}{2}+\\frac{b}{2}\\right)\\left(b+\\frac{c}{2}+\\frac{c}{2}\\right)(c+8+8) \\\\\n& \\geq 3 \\sqrt[3]{\\frac{a^{2}}{4}} \\cdot 3 \\sqrt[3]{\\frac{a b^{2}}{4}} \\cdot 3 \\sqrt[3]{\\frac{b c^{2}}{4}} \\cdot 3 \\sqrt[3]{\\frac{64 c}{4}} \\geq 81 a b c\n\\end{aligned}\n$$\n\nThus\n$$\n\\frac{a b c}{(1+a)(a+b)(b+c)(c+16)} \\leq \\frac{1}{81}\n$$ Therefore, the answer is (A) $\\leq$.",
+    "answer": "(A) $\\leq$",
+    "enhanced_solution": "Enhanced Solution:\n\nWe wish to compare the quantity\n  \\[ \\frac{a b c}{(1+a)\\,(a+b)\\,(b+c)\\,(c+16)} \\quad \\text{with}\\quad \\frac1{81},\\]\nwhere \\(a,b,c>0\\).  Our strategy is to show by repeated applications of the classical AM–GM inequality that\n  \\[(1+a)(a+b)(b+c)(c+16)\\;\\ge\\;81\\,a b c.\n  \\]\n\nStep 1 (First factor).  Observe\n  \\[1+a \\,=\\,1 + \\frac a2 + \\frac a2.\n  \\]\nBy the AM–GM inequality for three nonnegative numbers \\(x,y,z\\),\n  \\[\\frac{x+y+z}{3}\\ge\\bigl(xyz\\bigr)^{1/3},\\]\nwe set \\(x=1,\\,y=a/2,\\,z=a/2\\).  Then\n  \\[\n  \\frac{1 + \\tfrac a2 + \\tfrac a2}{3}\n  \\;\\ge\\;\n  \\bigl(1\\cdot\\tfrac a2\\cdot\\tfrac a2\\bigr)^{1/3}\n  =\\bigl(\\tfrac{a^2}{4}\\bigr)^{1/3}.\n  \\]\nMultiplying both sides by 3 gives\n  \\[1 + a \\;\\ge\\; 3\\,(a^2/4)^{1/3}.\n  \\]\n\nStep 2 (Second factor).  Write\n  \\[a+b = a + \\tfrac b2 + \\tfrac b2.\n  \\]\nBy AM–GM on \\(a,\\,b/2,\\,b/2\\),\n  \\[a+b \\;\\ge\\; 3\\,(a\\,b^2/4)^{1/3}.\n  \\]\n\nStep 3 (Third factor).  Similarly,\n  \\[b+c = b + \\tfrac c2 + \\tfrac c2\n    \\;\\ge\\; 3\\,(b\\,c^2/4)^{1/3}.\n  \\]\n\nStep 4 (Fourth factor).  Finally,\n  \\[c+16 = c + 8 + 8\n    \\;\\ge\\; 3\\,(c\\cdot8\\cdot8)^{1/3}\n    =3\\,(64\\,c)^{1/3}.\n  \\]\n\nStep 5 (Combine all four estimates).  Multiply the four inequalities:\n  \\[\n  (1+a)(a+b)(b+c)(c+16)\n  \\;\\ge\\;\n  3^4\\;\\bigl[(a^2/4)\\,(a b^2/4)\\,(b c^2/4)\\,(64c)\\bigr]^{1/3}.\n  \\]\nCompute the product inside the cube root:\n  \\[\n    (a^2/4)\\,(a b^2/4)\\,(b c^2/4)\\,(64c)\n    =\\frac{a^2\\cdot a b^2\\cdot b c^2\\cdot64c}{4\\cdot4\\cdot4}\n    =\\frac{64\\,a^3 b^3 c^3}{64}\n    =a^3 b^3 c^3.\n  \\]\nHence\n  \\[\n  (1+a)(a+b)(b+c)(c+16)\n  \\ge 3^4\\,(a^3 b^3 c^3)^{1/3}\n  =81\\,a b c.\n  \\]\nSince all factors are positive, taking reciprocals reverses the inequality: \n  \\[\n  \\frac{a b c}{(1+a)(a+b)(b+c)(c+16)}\n  \\le\\frac1{81}.\n  \\]\nTherefore the correct relation is “\\(\\le\\)”.\n\nThe answer is (A) \\(\\leq\\).",
+    "original_entry": {
+        "data_id": "691",
+        "problem": "Let $a, b, c \\in \\mathbb{R}^{+}$. Consider the following inequality:\n$$\n\\frac{a b c}{(1+a)(a+b)(b+c)(c+16)} \\quad () \\quad \\frac{1}{81} .\n$$\n\nDetermine the correct inequality relation to fill in the blank.\n\nOptions:\n\n(A) $\\leq$ \n\n(B) $\\geq$\n\n(C) $=$ \n\n(D) $<$\n\n(E) $>$\n\n(F) None of the above",
+        "type": "relation",
+        "data_split": "train",
+        "answer": "(A) $\\leq$",
+        "solution": [
+            "We have\n$$\n\\begin{aligned}\n&(1+a)(a+b)(b+c)(c+16) \\\\\n&=\\left(1+\\frac{a}{2}+\\frac{a}{2}\\right)\\left(a+\\frac{b}{2}+\\frac{b}{2}\\right)\\left(b+\\frac{c}{2}+\\frac{c}{2}\\right)(c+8+8) \\\\\n& \\geq 3 \\sqrt[3]{\\frac{a^{2}}{4}} \\cdot 3 \\sqrt[3]{\\frac{a b^{2}}{4}} \\cdot 3 \\sqrt[3]{\\frac{b c^{2}}{4}} \\cdot 3 \\sqrt[3]{\\frac{64 c}{4}} \\geq 81 a b c\n\\end{aligned}\n$$\n\nThus\n$$\n\\frac{a b c}{(1+a)(a+b)(b+c)(c+16)} \\leq \\frac{1}{81}\n$$ Therefore, the answer is (A) $\\leq$."
+        ],
+        "theorems": {
+            "Theorem 23": {
+                "Nickname": [],
+                "Theorem": "Let $a, b, c \\in \\mathbb{R}^{+}$, and let us denote\n$$\n\\begin{aligned}\nQ M & =\\sqrt{\\frac{a^{2}+b^{2}+c^{2}}{3}}, \\quad A M=\\frac{a+b+c}{3}, \\quad G M=\\sqrt[3]{a b c} \\text { and } \\\\\nH M & =\\frac{3}{\\frac{1}{a}+\\frac{1}{b}+\\frac{1}{c}}\n\\end{aligned}\n$$\n\nThen\n$$\nQ M \\geq A M \\geq G M \\geq H M\n$$\n\nEqualities occur if and only if $a=b=c$.",
+                "Theorem_Category": "Inequality Between Means"
+            }
+        },
+        "choices": [
+            "(A) $\\leq$",
+            "(B) $\\geq$",
+            "(C) $=$",
+            "(D) $<$",
+            "(E) $>$",
+            "(F) None of the above"
+        ],
+        "difficulty": ""
+    }
+}

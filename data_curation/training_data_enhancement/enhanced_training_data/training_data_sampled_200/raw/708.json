@@ -1,0 +1,36 @@
+{
+    "data_id": "708",
+    "type": "relation",
+    "problem": "Let \\(a, b \\in \\mathbb{R}^{+}\\) and \\(n \\in \\mathbb{N}\\). Consider the following inequality:\n$$\n(a+b)^{n}\\left(a^{n}+b^{n}\\right) \\quad () \\quad 2^{n}\\left(a^{2 n}+b^{2 n}\\right) .\n$$\n\nDetermine the correct inequality relation to fill in the blank.\n\nOptions:\n\n(A) $\\leq$ \n\n(B) $\\geq$\n\n(C) $=$ \n\n(D) $<$\n\n(E) $>$\n\n(F) None of the above",
+    "current_solution": "By the power mean inequality, for any $x, y \\in \\mathbb{R}^{+}, n \\in \\mathbb{N}$, we have\n$$\n\\left(\\frac{x+y}{2}\\right)^{n} \\leq \\frac{x^{n}+y^{n}}{2}\n$$\n\nTherefore\n$$\n\\begin{aligned}\n(a+b)^{n}\\left(a^{n}+b^{n}\\right) & =2^{n}\\left(\\frac{a+b}{2}\\right)^{n}\\left(a^{n}+b^{n}\\right) \\\\\n& \\leq 2^{n}\\left(\\frac{a^{n}+b^{n}}{2}\\right)\\left(a^{n}+b^{n}\\right)=2^{n} \\frac{\\left(a^{n}+b^{n}\\right)^{2}}{2} \\\\\n& \\leq 2^{n} \\frac{2\\left(a^{2 n}+b^{2 n}\\right)}{2}=2^{n}\\left(a^{2 n}+b^{2 n}\\right)\n\\end{aligned}\n$$ Therefore, the answer is (A) $\\leq$.",
+    "answer": "(A) $\\leq$",
+    "enhanced_solution": "Enhanced Solution:\n\nWe wish to determine the correct inequality sign in\n\\[\n(a+b)^{n}\\,(a^{n}+b^{n})\\;()\\;2^{n}\\,(a^{2n}+b^{2n}),\n\\]\nwhere a,b>0 and n is a positive integer.  We shall prove\n\\[\n(a+b)^{n}(a^{n}+b^{n})\\le 2^{n}(a^{2n}+b^{2n}).\n\\]\n\n1.  Recall the Power Mean (or generalized AM–GM) inequality for two positive numbers x,y and exponent n≥1:\n   \\[\n   \\Bigl(\\frac{x+y}{2}\\Bigr)^{n}\\le\\frac{x^{n}+y^{n}}{2}.\n   \\]\n   Taking x=a and y=b, we get\n   \\[\n   \\Bigl(\\frac{a+b}{2}\\Bigr)^{n}\\le\\frac{a^{n}+b^{n}}{2}.\n   \\]\n   Multiply both sides by 2ⁿ to obtain\n   \\[\n   (a+b)^{n}=2^{n}\\Bigl(\\frac{a+b}{2}\\Bigr)^{n}\\le 2^{n}\\,\\frac{a^{n}+b^{n}}{2}\n   =2^{n-1}(a^{n}+b^{n}).\n   \\]\n\n2.  Multiply this last inequality by the positive factor (a^{n}+b^{n}):\n   \\[\n   (a+b)^{n}(a^{n}+b^{n})\\le 2^{n-1}(a^{n}+b^{n})^{2}.\n   \\]\n\n3.  We apply the same Power Mean inequality again, now with u=a^{n}, v=b^{n} and exponent 2:\n   \\[\n   \\Bigl(\\frac{u+v}{2}\\Bigr)^{2}\\le\\frac{u^{2}+v^{2}}{2}\n   \\quad\\Longrightarrow\\quad\n   (u+v)^{2}\\le 2(u^{2}+v^{2}).\n   \\]\n   Substituting u=a^{n}, v=b^{n}, this becomes\n   \\[\n   (a^{n}+b^{n})^{2}\\le 2\\bigl(a^{2n}+b^{2n}\\bigr).\n   \\]\n\n4.  Combine the two derived bounds:\n   \\[\n   (a+b)^{n}(a^{n}+b^{n})\\le 2^{n-1}(a^{n}+b^{n})^{2}\n   \\le 2^{n-1}\\cdot2\\bigl(a^{2n}+b^{2n}\\bigr)\n   =2^{n}(a^{2n}+b^{2n}).\n   \\]\n\nHence the correct relation is “≤”.\n\nThe answer is (A) ≤",
+    "original_entry": {
+        "data_id": "708",
+        "problem": "Let \\(a, b \\in \\mathbb{R}^{+}\\) and \\(n \\in \\mathbb{N}\\). Consider the following inequality:\n$$\n(a+b)^{n}\\left(a^{n}+b^{n}\\right) \\quad () \\quad 2^{n}\\left(a^{2 n}+b^{2 n}\\right) .\n$$\n\nDetermine the correct inequality relation to fill in the blank.\n\nOptions:\n\n(A) $\\leq$ \n\n(B) $\\geq$\n\n(C) $=$ \n\n(D) $<$\n\n(E) $>$\n\n(F) None of the above",
+        "type": "relation",
+        "data_split": "train",
+        "answer": "(A) $\\leq$",
+        "solution": [
+            "By the power mean inequality, for any $x, y \\in \\mathbb{R}^{+}, n \\in \\mathbb{N}$, we have\n$$\n\\left(\\frac{x+y}{2}\\right)^{n} \\leq \\frac{x^{n}+y^{n}}{2}\n$$\n\nTherefore\n$$\n\\begin{aligned}\n(a+b)^{n}\\left(a^{n}+b^{n}\\right) & =2^{n}\\left(\\frac{a+b}{2}\\right)^{n}\\left(a^{n}+b^{n}\\right) \\\\\n& \\leq 2^{n}\\left(\\frac{a^{n}+b^{n}}{2}\\right)\\left(a^{n}+b^{n}\\right)=2^{n} \\frac{\\left(a^{n}+b^{n}\\right)^{2}}{2} \\\\\n& \\leq 2^{n} \\frac{2\\left(a^{2 n}+b^{2 n}\\right)}{2}=2^{n}\\left(a^{2 n}+b^{2 n}\\right)\n\\end{aligned}\n$$ Therefore, the answer is (A) $\\leq$."
+        ],
+        "theorems": {
+            "Theorem 59": {
+                "Nickname": [
+                    "weighted power mean inequality"
+                ],
+                "Theorem": "Let $a=\\left(a_{1}, a_{2}, \\ldots, a_{n}\\right)$ be a sequence of positive real numbers, and let $m=\\left(m_{1}, m_{2}, \\ldots, m_{n}\\right)$ also be a sequence of positive real numbers such that $m_{1}+m_{2}+\\cdots+m_{n}=1$.\nThen for each $r \\leq s$ we have\n$$\nM_{r}^{m}(a) \\leq M_{s}^{m}(a)\n$$\ni.e.\n$$\n\\left(m_{1} a_{1}^{r}+m_{2} a_{2}^{r}+\\cdots+m_{n} a_{n}^{r}\\right)^{\\frac{1}{r}} \\leq\\left(m_{1} a_{1}^{s}+m_{2} a_{2}^{s}+\\cdots+m_{n} a_{n}^{s}\\right)^{\\frac{1}{s}}\n$$",
+                "Theorem_Category": "Inequality Between Means"
+            }
+        },
+        "choices": [
+            "(A) $\\leq$",
+            "(B) $\\geq$",
+            "(C) $=$",
+            "(D) $<$",
+            "(E) $>$",
+            "(F) None of the above"
+        ],
+        "difficulty": ""
+    }
+}

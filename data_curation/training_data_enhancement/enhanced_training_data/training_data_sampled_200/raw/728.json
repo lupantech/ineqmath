@@ -1,0 +1,36 @@
+{
+    "data_id": "728",
+    "type": "relation",
+    "problem": "Let $a, b, c \\in \\mathbb{R}^{+}$. Consider the following inequality:\n$$\n(a+b+c)^{3} \\quad () \\quad a^{3}+b^{3}+c^{3}+24 a b c .\n$$\n\nDetermine the correct inequality relation to fill in the blank.\n\nOptions:\n\n(A) $\\leq$ \n\n(B) $\\geq$\n\n(C) $=$ \n\n(D) $<$\n\n(E) $>$\n\n(F) None of the above",
+    "current_solution": "We have\n$$\n\\begin{aligned}\n(a+b+c)^{3} & =a^{3}+b^{3}+c^{3}+6 a b c+3\\left(a^{2} b+a^{2} c+b^{2} a+b^{2} c+c^{2} a+c^{2} b\\right) \\\\\n& \\geq a^{3}+b^{3}+c^{3}+6 a b c+3 \\cdot 6 \\sqrt[6]{a^{6} b^{6} c^{6}}=a^{3}+b^{3}+c^{3}+24 a b c\n\\end{aligned}\n$$\n\nEquality holds if and only if $a=b=c$. Therefore, the answer is (B) $\\geq$.",
+    "answer": "(B) $\\geq$",
+    "enhanced_solution": "We wish to compare\n\\[(a+b+c)^{3}\\quad()\\quad a^{3}+b^{3}+c^{3}+24abc\\]\nfor positive real numbers a,b,c.  We proceed by expanding the left-hand side and then applying the AM–GM inequality to the mixed terms.\n\n**Step 1. Expand \\((a+b+c)^3\\).**\n\nBy the multinomial (or binomial) expansion,\n\\[\n(a+b+c)^{3}\n= a^{3}+b^{3}+c^{3}\n  + 3\\bigl(a^{2}b + a^{2}c + b^{2}a + b^{2}c + c^{2}a + c^{2}b\\bigr)\n  + 6abc.\n\\]\nGroup the terms as follows:\n\\[\n(a+b+c)^{3}\n= \\bigl(a^{3}+b^{3}+c^{3}\\bigr)\n  + 6abc\n  + 3\\sum_{\\text{sym}} a^{2}b,\n\\]\nwhere “\\(\\sum_{\\text{sym}}a^{2}b\\)” denotes the six terms\n\\(a^{2}b, a^{2}c, b^{2}a, b^{2}c, c^{2}a, c^{2}b\\).\n\n**Step 2. Apply AM–GM to the six mixed terms.**\n\nBy the Arithmetic Mean–Geometric Mean inequality, for any six positive numbers\n\\(x_{1},x_{2},\\dots,x_{6}\\),\n\\[\n\\frac{x_{1}+x_{2}+\\cdots+x_{6}}{6}\n\\ge \\sqrt[6]{x_{1}x_{2}\\cdots x_{6}},\n\\]\nwith equality precisely when \\(x_{1}=x_{2}=\\cdots=x_{6}\\).\n\nSet\n\\[\nx_{1} = a^{2}b,\n\\quad x_{2} = a^{2}c,\n\\quad x_{3} = b^{2}a,\n\\quad x_{4} = b^{2}c,\n\\quad x_{5} = c^{2}a,\n\\quad x_{6} = c^{2}b.\n\\]\nThen their product is\n\\[\n\\prod_{i=1}^{6} x_{i}\n= (a^{2}b)(a^{2}c)(b^{2}a)(b^{2}c)(c^{2}a)(c^{2}b)\n= a^{6}b^{6}c^{6}=(abc)^{6}.\n\\]\nHence\n\\[\n\\sum_{\\text{sym}} a^{2}b\n= x_{1}+\\cdots+x_{6}\n\\ge 6\\sqrt[6]{(abc)^{6}} = 6\\,abc.\n\\]\n\n**Step 3. Combine the inequalities.**\nSubstitute back into the expansion:\n\\[\n(a+b+c)^{3}\n= a^{3}+b^{3}+c^{3}\n  +6abc\n  +3\\sum_{\\text{sym}}a^{2}b\n\\ge a^{3}+b^{3}+c^{3}\n  +6abc\n  +3\\times(6abc)\n= a^{3}+b^{3}+c^{3}+24abc.\n\\]\nThus we have shown\n\\[\n(a+b+c)^{3} \\ge a^{3}+b^{3}+c^{3}+24abc.\n\\]\n\n**Step 4. Determine the equality case.**\nEquality in AM–GM occurs exactly when\n\\(a^{2}b = a^{2}c = b^{2}a = b^{2}c = c^{2}a = c^{2}b\\).\nSince \\(a,b,c>0\\), this forces \\(a=b=c\\).  Hence the inequality is strict whenever the three variables are not all equal.\n\nTherefore, the correct relation is “greater than or equal to.”  The answer is\n\nThe answer is (B) ≥",
+    "original_entry": {
+        "data_id": "728",
+        "problem": "Let $a, b, c \\in \\mathbb{R}^{+}$. Consider the following inequality:\n$$\n(a+b+c)^{3} \\quad () \\quad a^{3}+b^{3}+c^{3}+24 a b c .\n$$\n\nDetermine the correct inequality relation to fill in the blank.\n\nOptions:\n\n(A) $\\leq$ \n\n(B) $\\geq$\n\n(C) $=$ \n\n(D) $<$\n\n(E) $>$\n\n(F) None of the above",
+        "type": "relation",
+        "data_split": "train",
+        "answer": "(B) $\\geq$",
+        "solution": [
+            "We have\n$$\n\\begin{aligned}\n(a+b+c)^{3} & =a^{3}+b^{3}+c^{3}+6 a b c+3\\left(a^{2} b+a^{2} c+b^{2} a+b^{2} c+c^{2} a+c^{2} b\\right) \\\\\n& \\geq a^{3}+b^{3}+c^{3}+6 a b c+3 \\cdot 6 \\sqrt[6]{a^{6} b^{6} c^{6}}=a^{3}+b^{3}+c^{3}+24 a b c\n\\end{aligned}\n$$\n\nEquality holds if and only if $a=b=c$. Therefore, the answer is (B) $\\geq$."
+        ],
+        "theorems": {
+            "Theorem 35": {
+                "Nickname": [
+                    "mean inequalities"
+                ],
+                "Theorem": "Let $a_{1}, a_{2}, \\ldots, a_{n}$ be positive real numbers. The numbers\n$$\n\\begin{aligned}\n& Q M=\\sqrt{\\frac{a_{1}^{2}+a_{2}^{2}+\\cdots+a_{n}^{2}}{n}}, \\quad A M=\\frac{a_{1}+a_{2}+\\cdots+a_{n}}{n} \\\\\n& G M=\\sqrt[n]{a_{1} a_{2} \\cdots a_{n}} \\quad \\text { and } \\quad H M=\\frac{n}{\\frac{1}{a_{1}}+\\frac{1}{a_{2}}+\\cdots+\\frac{1}{a_{n}}}\n\\end{aligned}\n$$\nare called the quadratic, arithmetic, geometric and harmonic mean for the numbers $a_{1}, a_{2}, \\ldots, a_{n}$, respectively, and we have\n$$\nQ M \\geq A M \\geq G M \\geq H M\n$$\n\nEqualities occur if and only if $a_{1}=a_{2}=\\cdots=a_{n}$.",
+                "Theorem_Category": "Inequality Between Means"
+            }
+        },
+        "choices": [
+            "(A) $\\leq$",
+            "(B) $\\geq$",
+            "(C) $=$",
+            "(D) $<$",
+            "(E) $>$",
+            "(F) None of the above"
+        ],
+        "difficulty": ""
+    }
+}

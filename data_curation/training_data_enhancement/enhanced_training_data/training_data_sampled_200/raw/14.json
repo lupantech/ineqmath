@@ -1,0 +1,28 @@
+{
+    "data_id": "14",
+    "type": "bound",
+    "problem": "Let $a, b, c, d > 1$ be real numbers. Find the smallest constant $C$ such that the following inequality holds for all $a, b, c, d > 1$:\n$$\n\\sqrt{a-1}+\\sqrt{b-1}+\\sqrt{c-1}+\\sqrt{d-1} \\leq C \\sqrt{(a b+1)(c d+1)}.\n$$",
+    "current_solution": "We'll prove that for every $x, y \\in \\mathbb{R}^{+}$ we have $\\sqrt{x-1}+\\sqrt{y-1} \\leq \\sqrt{x y}$.\nApplying the Cauchy-Schwarz inequality for $a_{1}=\\sqrt{x-1}, a_{2}=1 ; b_{1}=1, b_{2}=\\sqrt{y-1}$ gives us\n$$\n(\\sqrt{x-1}+\\sqrt{y-1})^{2} \\leq x y, \\quad \\text { i.e. } \\quad \\sqrt{x-1}+\\sqrt{y-1} \\leq \\sqrt{x y}\n$$\n\nNow we easily deduce that\n$$\n\\sqrt{a-1}+\\sqrt{b-1}+\\sqrt{c-1}+\\sqrt{d-1} \\leq \\sqrt{a b}+\\sqrt{c d} \\leq \\sqrt{(a b+1)(c d+1)}\n$$\n\nEquality holds when $a = b = c = d = 2$, since then $\\sqrt{a-1} = 1$ and $\\sqrt{a b + 1} = \\sqrt{5}$, so both sides equal $4$ and $\\sqrt{(2\\cdot2+1)(2\\cdot2+1)} = 5$. Thus, the minimum value of $C$ for which the inequality always holds is $C = 1$.\n\nTherefore, the answer is $C = 1$.",
+    "answer": "$C = 1$",
+    "enhanced_solution": "We begin by isolating a key two‐variable estimate and then extend it in two steps to the full four‐variable inequality.  Throughout, all quantities are nonnegative and all square roots denote the principal (nonnegative) root.\n\n1.  Lemma (Pair‐wise bound).  For any real x,y>1,\n   (√(x−1)+√(y−1))^2 ≤ x y.\n\n   Proof of Lemma.  Define the two vectors in ℝ^2:\n      u = (√(x−1),    1),\n      v = (   1,   √(y−1)).\n   Then by the Cauchy–Schwarz inequality,\n      (u·v)^2 ≤ (u·u)·(v·v).\n   On the one hand,\n      u·v = √(x−1)·1 + 1·√(y−1) = √(x−1) + √(y−1),\n   so (u·v)^2 = (√(x−1)+√(y−1))^2.\n   On the other hand,\n      u·u = (√(x−1))^2 + 1^2 = x−1 + 1 = x,\n      v·v = 1^2 + (√(y−1))^2 = 1 + (y−1) = y.\n   Hence\n      (√(x−1)+√(y−1))^2 ≤ x·y,\n   and taking nonnegative square roots gives the desired bound\n      √(x−1)+√(y−1) ≤ √(x y).\n   Equality occurs exactly when u and v are linearly dependent, which here forces x−1 = y−1 = 1, i.e. x=y=2.\n\n2.  First application.  Apply the Lemma to the pairs (a,b) and (c,d), noting a,b,c,d>1:\n     √(a−1)+√(b−1) ≤ √(a b),\n     √(c−1)+√(d−1) ≤ √(c d).\n   Summing these two inequalities yields\n     √(a−1)+√(b−1)+√(c−1)+√(d−1) ≤ √(a b) + √(c d).\n\n3.  Second bound.  We now show\n     √(a b) + √(c d) ≤ √((a b + 1)(c d + 1)).\n   Square both sides (all terms nonnegative):\n     (√(a b) + √(c d))^2 = a b + c d + 2√(a b c d).\n   Meanwhile\n     (a b + 1)(c d + 1) = a b·c d + a b + c d + 1.\n   It remains to check\n     a b + c d + 2√(a b c d) ≤ a b + c d + a b c d + 1\n     ⟺ 2√(a b c d) ≤ a b c d + 1.\n   But this is an instance of the AM–GM inequality on the two nonnegative numbers a b c d and 1:\n     (a b c d + 1)/2 ≥ √((a b c d)·1) = √(a b c d).\n   Rearranging gives exactly 2√(a b c d) ≤ a b c d + 1.\n   Hence the squared form of our desired inequality holds, and taking square roots completes the proof of\n     √(a b) + √(c d) ≤ √((a b + 1)(c d + 1)).\n\n4.  Conclusion.  Combining steps 2 and 3, we obtain\n     √(a−1)+√(b−1)+√(c−1)+√(d−1)\n       ≤ √(a b) + √(c d)\n       ≤ √((a b + 1)(c d + 1)).\n   Therefore, the given inequality holds with constant C=1, and one checks directly that no smaller constant can work uniformly for all a,b,c,d>1.\n\nThe answer is $C=1$.  ",
+    "original_entry": {
+        "data_id": "14",
+        "problem": "Let $a, b, c, d > 1$ be real numbers. Find the smallest constant $C$ such that the following inequality holds for all $a, b, c, d > 1$:\n$$\n\\sqrt{a-1}+\\sqrt{b-1}+\\sqrt{c-1}+\\sqrt{d-1} \\leq C \\sqrt{(a b+1)(c d+1)}.\n$$",
+        "type": "bound",
+        "data_split": "train",
+        "answer": "$$C = 1$$",
+        "solution": [
+            "We'll prove that for every $x, y \\in \\mathbb{R}^{+}$ we have $\\sqrt{x-1}+\\sqrt{y-1} \\leq \\sqrt{x y}$.\nApplying the Cauchy-Schwarz inequality for $a_{1}=\\sqrt{x-1}, a_{2}=1 ; b_{1}=1, b_{2}=\\sqrt{y-1}$ gives us\n$$\n(\\sqrt{x-1}+\\sqrt{y-1})^{2} \\leq x y, \\quad \\text { i.e. } \\quad \\sqrt{x-1}+\\sqrt{y-1} \\leq \\sqrt{x y}\n$$\n\nNow we easily deduce that\n$$\n\\sqrt{a-1}+\\sqrt{b-1}+\\sqrt{c-1}+\\sqrt{d-1} \\leq \\sqrt{a b}+\\sqrt{c d} \\leq \\sqrt{(a b+1)(c d+1)}\n$$\n\nEquality holds when $a = b = c = d = 2$, since then $\\sqrt{a-1} = 1$ and $\\sqrt{a b + 1} = \\sqrt{5}$, so both sides equal $4$ and $\\sqrt{(2\\cdot2+1)(2\\cdot2+1)} = 5$. Thus, the minimum value of $C$ for which the inequality always holds is $C = 1$.\n\nTherefore, the answer is $C = 1$."
+        ],
+        "theorems": {
+            "Theorem 26": {
+                "Nickname": [
+                    "cauchy-schwarz inequality"
+                ],
+                "Theorem": "Let $a_{1}, a_{2}, \\ldots, a_{n}$ and $b_{1}, b_{2}$, $\\ldots, b_{n}$ be real numbers. Then we have\n$$\n\\left(\\sum_{i=1}^{n} a_{i}^{2}\\right)\\left(\\sum_{i=1}^{n} b_{i}^{2}\\right) \\geq\\left(\\sum_{i=1}^{n} a_{i} b_{i}\\right)^{2}\n$$\ni.e.\n$$\n\\left(a_{1}^{2}+a_{2}^{2}+\\cdots+a_{n}^{2}\\right)\\left(b_{1}^{2}+b_{2}^{2}+\\cdots+b_{n}^{2}\\right) \\geq\\left(a_{1} b_{1}+a_{2} b_{2}+\\cdots+a_{n} b_{n}\\right)^{2}\n$$\n\nEquality occurs if and only if the sequences $\\left(a_{1}, a_{2}, \\ldots, a_{n}\\right)$ and $\\left(b_{1}, b_{2}\\right.$, $\\ldots, b_{n}$ ) are proportional, i.e. $\\frac{a_{1}}{b_{1}}=\\frac{a_{2}}{b_{2}}=\\cdots=\\frac{a_{n}}{b_{n}}$.",
+                "Theorem_Category": "Cauchy-Schwarz Inequality"
+            }
+        },
+        "difficulty": ""
+    }
+}

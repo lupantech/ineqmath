@@ -1,0 +1,32 @@
+{
+    "data_id": "653",
+    "type": "relation",
+    "problem": "Let $a, b, c$ be the lengths of the sides of a triangle. Consider the following condition:\n$$\n2\\left(a b^{2}+b c^{2}+c a^{2}\\right)=a^{2} b+b^{2} c+c^{2} a+3 a b c.\n$$\nDetermine the correct relation between $a$, $b$, and $c$ to fill in the blank.\n\nOptions:\n\n(A) $\\leq$ \n\n(B) $\\geq$\n\n(C) $=$ \n\n(D) $<$\n\n(E) $>$\n\n(F) None of the above",
+    "current_solution": "We'll show that\n$$\na^{2} b+b^{2} c+c^{2} a+3 a b c \\geq 2\\left(a b^{2}+b c^{2}+c a^{2}\\right)\n$$\nwith equality if and only if $a=b=c$, i.e. the triangle is equilateral.\nLet us use Ravi's substitutions, i.e. $a=x+y, b=y+z, c=z+x$. Then the given inequality becomes\n$$\nx^{3}+y^{3}+z^{3}+x^{2} y+y^{2} z+z^{2} x \\geq 2\\left(x^{2} z+y^{2} x+z^{2} y\\right)\n$$\n\nSince $A M \\geq G M$ we have\n$$\nx^{3}+z^{2} x \\geq 2 x^{2} z, y^{3}+x^{2} y \\geq 2 y^{2} x, z^{3}+y^{2} z \\geq 2 z^{2} y\n$$\n\nAfter adding these inequalities we obtain\n$$\nx^{3}+y^{3}+z^{3}+x^{2} y+y^{2} z+z^{2} x \\geq 2\\left(x^{2} z+y^{2} x+z^{2} y\\right)\n$$\n\nEquality holds if and only if $x=y=z$, i.e. $a=b=c$, as required. Therefore, the answer is (A) $\\leq$.",
+    "answer": "(A) $\\leq$",
+    "enhanced_solution": "Enhanced Detailed Solution:\n\n1. Restating the inequality to be proved\n   We wish to show that for any triangle with positive side lengths a, b, c,\n   \n   LHS := 2\\bigl(a b^2 + b c^2 + c a^2\\bigr)\n   \\le\n   RHS := a^2 b + b^2 c + c^2 a + 3 a b c.\n\n2. Justification of positivity and the use of Ravi’s substitution\n   • Since a, b, c are the side lengths of a (nondegenerate) triangle, we have a, b, c > 0 and the triangle inequalities a < b + c, b < c + a, c < a + b.\n   • It is standard to set a = x + y, b = y + z, c = z + x where x, y, z are strictly positive.  This parametrization automatically enforces a, b, c > 0 and the triangle inequalities.\n\n3. Rewriting both sides in terms of x, y, z\n   Substitute a = x + y, b = y + z, c = z + x into both LHS and RHS.  A direct expansion shows (after collecting like terms) that the desired inequality\n\n     2\\bigl(a b^2 + b c^2 + c a^2\\bigr) \\\\ \\le\\  a^2 b + b^2 c + c^2 a + 3 a b c\n\n   is algebraically equivalent to\n\n     x^3 + y^3 + z^3 \n     + x^2 y + y^2 z + z^2 x\n   \\ge\n     2\\bigl(x^2 z + y^2 x + z^2 y\\bigr).\n\n4. Applying the AM–GM inequality term by term\n   We break the right-hand side sum into three pairs and apply the Arithmetic Mean–Geometric Mean (AM–GM) inequality in each case:\n\n   • For the pair (x^3, z^2 x), note that x^3 > 0 and z^2 x > 0.  By AM–GM,\n\n       (x^3 + z^2 x)/2 \\ge \\sqrt{x^3 \\cdot (z^2 x)} = x^2 z.\n\n     Hence x^3 + z^2 x \\ge 2 x^2 z.\n\n   • For the pair (y^3, x^2 y), similarly,\n\n       (y^3 + x^2 y)/2 \\ge \\sqrt{y^3 \\cdot (x^2 y)} = y^2 x,\n       so\n       y^3 + x^2 y \\ge 2 y^2 x.\n\n   • For the pair (z^3, y^2 z), likewise,\n\n       (z^3 + y^2 z)/2 \\ge \\sqrt{z^3 \\cdot (y^2 z)} = z^2 y,\n       so\n       z^3 + y^2 z \\ge 2 z^2 y.\n\n5. Summing the three inequalities\n   Adding the three AM–GM inequalities term by term yields exactly\n\n     (x^3 + y^3 + z^3)\n     + (x^2 y + y^2 z + z^2 x)\n   \\ge\n     2\\bigl(x^2 z + y^2 x + z^2 y\\bigr),\n\n   which is the desired transformed inequality.\n\n6. Characterization of equality cases\n   • In each application of AM–GM, equality holds precisely when the two terms are equal.  Thus we require\n\n       x^3 = z^2 x  ⇒  x^2 = z^2  ⇒ x = z,\n       y^3 = x^2 y  ⇒  y^2 = x^2  ⇒ y = x,\n       z^3 = y^2 z  ⇒  z^2 = y^2  ⇒ z = y.\n\n   • Together these force x = y = z > 0.  Substituting back gives a = x + y = 2x, b = y + z = 2x, c = z + x = 2x, so a = b = c.  Hence equality in the original inequality holds if and only if the triangle is equilateral.\n\n7. Conclusion\n   We have rigorously shown\n\n     2\\bigl(a b^2 + b c^2 + c a^2\\bigr) \\le a^2 b + b^2 c + c^2 a + 3 a b c\n\n   for all positive a, b, c satisfying the triangle inequalities, with equality exactly when a = b = c.\n\nTherefore, the correct relation is “≤”.  The answer is (A) ≤",
+    "original_entry": {
+        "data_id": "653",
+        "problem": "Let $a, b, c$ be the lengths of the sides of a triangle. Consider the following condition:\n$$\n2\\left(a b^{2}+b c^{2}+c a^{2}\\right)=a^{2} b+b^{2} c+c^{2} a+3 a b c.\n$$\nDetermine the correct relation between $a$, $b$, and $c$ to fill in the blank.\n\nOptions:\n\n(A) $\\leq$ \n\n(B) $\\geq$\n\n(C) $=$ \n\n(D) $<$\n\n(E) $>$\n\n(F) None of the above",
+        "type": "relation",
+        "data_split": "train",
+        "answer": "(A) $\\leq$",
+        "solution": "We'll show that\n$$\na^{2} b+b^{2} c+c^{2} a+3 a b c \\geq 2\\left(a b^{2}+b c^{2}+c a^{2}\\right)\n$$\nwith equality if and only if $a=b=c$, i.e. the triangle is equilateral.\nLet us use Ravi's substitutions, i.e. $a=x+y, b=y+z, c=z+x$. Then the given inequality becomes\n$$\nx^{3}+y^{3}+z^{3}+x^{2} y+y^{2} z+z^{2} x \\geq 2\\left(x^{2} z+y^{2} x+z^{2} y\\right)\n$$\n\nSince $A M \\geq G M$ we have\n$$\nx^{3}+z^{2} x \\geq 2 x^{2} z, y^{3}+x^{2} y \\geq 2 y^{2} x, z^{3}+y^{2} z \\geq 2 z^{2} y\n$$\n\nAfter adding these inequalities we obtain\n$$\nx^{3}+y^{3}+z^{3}+x^{2} y+y^{2} z+z^{2} x \\geq 2\\left(x^{2} z+y^{2} x+z^{2} y\\right)\n$$\n\nEquality holds if and only if $x=y=z$, i.e. $a=b=c$, as required. Therefore, the answer is (A) $\\leq$.",
+        "theorems": {
+            "Theorem 23": {
+                "Nickname": [],
+                "Theorem": "Let $a, b, c \\in \\mathbb{R}^{+}$, and let us denote\n$$\n\\begin{aligned}\nQ M & =\\sqrt{\\frac{a^{2}+b^{2}+c^{2}}{3}}, \\quad A M=\\frac{a+b+c}{3}, \\quad G M=\\sqrt[3]{a b c} \\text { and } \\\\\nH M & =\\frac{3}{\\frac{1}{a}+\\frac{1}{b}+\\frac{1}{c}}\n\\end{aligned}\n$$\n\nThen\n$$\nQ M \\geq A M \\geq G M \\geq H M\n$$\n\nEqualities occur if and only if $a=b=c$.",
+                "Theorem_Category": "Inequality Between Means"
+            }
+        },
+        "choices": [
+            "(A) $\\leq$",
+            "(B) $\\geq$",
+            "(C) $=$",
+            "(D) $<$",
+            "(E) $>$",
+            "(F) None of the above"
+        ],
+        "difficulty": ""
+    }
+}

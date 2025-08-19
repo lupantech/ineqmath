@@ -1,0 +1,28 @@
+{
+    "data_id": "102",
+    "type": "bound",
+    "problem": "Let $a, b, c \\in \\mathbb{R}^{+}$. Find the largest constant $C$ such that the following inequality holds for all $a, b, c$:\n$$\n(a+b+c)^{3} \\geq a^{3}+b^{3}+c^{3}+C a b c\n$$",
+    "current_solution": "We have\n$$\n\\begin{aligned}\n(a+b+c)^{3} & =a^{3}+b^{3}+c^{3}+6 a b c+3\\left(a^{2} b+a^{2} c+b^{2} a+b^{2} c+c^{2} a+c^{2} b\\right) \\\\\n& \\geq a^{3}+b^{3}+c^{3}+6 a b c+3 \\cdot 6 \\sqrt[6]{a^{6} b^{6} c^{6}}=a^{3}+b^{3}+c^{3}+24 a b c\n\\end{aligned}\n$$\n\nEquality holds if and only if $a = b = c$, in which case $(a+b+c)^3 = 3^3 a^3 = 27 a^3$ and $a^3 + b^3 + c^3 + 24abc = 3a^3 + 24a^3 = 27a^3$, so the inequality becomes equality. This gives the maximum value of $C$ for which the inequality always holds, which is $C = 24$.\n\nTherefore, the answer is $C = 24$.",
+    "answer": "$C = 24$",
+    "enhanced_solution": "We wish to determine the largest real constant C for which the inequality\n\\[ (a + b + c)^3 \\ge a^3 + b^3 + c^3 + C\\,a b c \\]\nholds for all positive real numbers a,b,c.\n\nStep 1: Expand the left-hand side.\nRecall the standard expansion:\n\\[\n(a + b + c)^3 \n= a^3 + b^3 + c^3 \n  + 3\\bigl(a^2 b + a^2 c + b^2 a + b^2 c + c^2 a + c^2 b\\bigr)\n  + 6\\,a b c.\n\\]\nHence the inequality becomes\n\\[\na^3 + b^3 + c^3 \n  + 3\\bigl(a^2 b + a^2 c + b^2 a + b^2 c + c^2 a + c^2 b\\bigr)\n  + 6abc\n\\ge a^3 + b^3 + c^3 + C\\,a b c.\n\\]\nCanceling the common terms a^3+b^3+c^3 on both sides gives the equivalent form\n\\[\n3\\bigl(a^2 b + a^2 c + b^2 a + b^2 c + c^2 a + c^2 b\\bigr)\n  + 6abc \\ge C\\,abc.\n\\]\n\nStep 2: Bound the symmetric sum by AM–GM.\nLet us apply the Arithmetic Mean–Geometric Mean inequality to the six nonnegative terms\n\\[ a^2 b,\n   \\; a^2 c,\n   \\; b^2 a,\n   \\; b^2 c,\n   \\; c^2 a,\n   \\; c^2 b.\n\\]\nBy AM–GM,\n\\[\n\\frac{a^2 b + a^2 c + b^2 a + b^2 c + c^2 a + c^2 b}{6} \n\\ge \\sqrt[6]{(a^2 b)(a^2 c)(b^2 a)(b^2 c)(c^2 a)(c^2 b)}.\n\\]\nCompute the product inside the root:\n\\[\n(a^2 b)(a^2 c)(b^2 a)(b^2 c)(c^2 a)(c^2 b)\n= a^{2+2+1+0+1+0}\\, b^{1+0+2+2+0+1}\\, c^{0+1+0+1+2+2}\n= a^6 b^6 c^6.\n\\]\nHence\n\\[\n\\sqrt[6]{(a^2 b)\\cdots(c^2 b)} = (a^6 b^6 c^6)^{1/6} = abc.\n\\]\nIt follows that\n\\[\na^2 b + a^2 c + b^2 a + b^2 c + c^2 a + c^2 b \n\\ge 6\\,abc.\n\\]\nMultiplying both sides by 3 gives\n\\[\n3\\bigl(a^2 b + a^2 c + b^2 a + b^2 c + c^2 a + c^2 b\\bigr)\n\\ge 18\\,abc.\n\\]\n\nStep 3: Combine terms to identify C.\nSubstitute this bound back into our reduced inequality:\n\\[\n18abc + 6abc \\ge C abc\n\\quad\\Longrightarrow\\quad\n24\\,abc \\ge C\\,abc.\n\\]\nSince a,b,c>0, we may divide both sides by abc to conclude\n\\[\n24 \\ge C.\n\\]\nThus for the inequality to hold in all cases we require C≤24.\n\nStep 4: Verify that C=24 is attainable and is the maximum.\nEquality in the AM–GM step occurs precisely when\n\\[a^2 b = a^2 c = b^2 a = b^2 c = c^2 a = c^2 b,\n\\]which forces a = b = c.  Substituting a=b=c into the original inequality yields\n\\[\n(3a)^3 = 27a^3,\n\\quad\na^3 + a^3 + a^3 + 24a\\cdot a\\cdot a = 3a^3 + 24a^3 = 27a^3,\n\\]\nverifying that equality holds exactly when C=24 and a=b=c.\nTherefore the largest constant C for which the inequality is always valid is 24.\n\nHence, the answer is $C=24$.",
+    "original_entry": {
+        "data_id": "102",
+        "problem": "Let $a, b, c \\in \\mathbb{R}^{+}$. Find the largest constant $C$ such that the following inequality holds for all $a, b, c$:\n$$\n(a+b+c)^{3} \\geq a^{3}+b^{3}+c^{3}+C a b c\n$$",
+        "type": "bound",
+        "data_split": "train",
+        "answer": "$$C = 24$$",
+        "solution": [
+            "We have\n$$\n\\begin{aligned}\n(a+b+c)^{3} & =a^{3}+b^{3}+c^{3}+6 a b c+3\\left(a^{2} b+a^{2} c+b^{2} a+b^{2} c+c^{2} a+c^{2} b\\right) \\\\\n& \\geq a^{3}+b^{3}+c^{3}+6 a b c+3 \\cdot 6 \\sqrt[6]{a^{6} b^{6} c^{6}}=a^{3}+b^{3}+c^{3}+24 a b c\n\\end{aligned}\n$$\n\nEquality holds if and only if $a = b = c$, in which case $(a+b+c)^3 = 3^3 a^3 = 27 a^3$ and $a^3 + b^3 + c^3 + 24abc = 3a^3 + 24a^3 = 27a^3$, so the inequality becomes equality. This gives the maximum value of $C$ for which the inequality always holds, which is $C = 24$.\n\nTherefore, the answer is $C = 24$."
+        ],
+        "theorems": {
+            "Theorem 35": {
+                "Nickname": [
+                    "mean inequalities"
+                ],
+                "Theorem": "Let $a_{1}, a_{2}, \\ldots, a_{n}$ be positive real numbers. The numbers\n$$\n\\begin{aligned}\n& Q M=\\sqrt{\\frac{a_{1}^{2}+a_{2}^{2}+\\cdots+a_{n}^{2}}{n}}, \\quad A M=\\frac{a_{1}+a_{2}+\\cdots+a_{n}}{n} \\\\\n& G M=\\sqrt[n]{a_{1} a_{2} \\cdots a_{n}} \\quad \\text { and } \\quad H M=\\frac{n}{\\frac{1}{a_{1}}+\\frac{1}{a_{2}}+\\cdots+\\frac{1}{a_{n}}}\n\\end{aligned}\n$$\nare called the quadratic, arithmetic, geometric and harmonic mean for the numbers $a_{1}, a_{2}, \\ldots, a_{n}$, respectively, and we have\n$$\nQ M \\geq A M \\geq G M \\geq H M\n$$\n\nEqualities occur if and only if $a_{1}=a_{2}=\\cdots=a_{n}$.",
+                "Theorem_Category": "Inequality Between Means"
+            }
+        },
+        "difficulty": ""
+    }
+}

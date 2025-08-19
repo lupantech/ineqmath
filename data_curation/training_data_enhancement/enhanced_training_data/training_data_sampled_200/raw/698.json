@@ -1,0 +1,36 @@
+{
+    "data_id": "698",
+    "type": "relation",
+    "problem": "Let $a, b, c$ be positive real numbers such that $a+b+c=6$. Consider the following expressions:\n$$\n\\sqrt[3]{a b+b c}+\\sqrt[3]{b c+c a}+\\sqrt[3]{c a+a b} \\quad () \\quad 6 .\n$$\nDetermine the correct inequality relation to fill in the blank.\n\nOptions:\n\n(A) $\\leq$ \n\n(B) $\\geq$\n\n(C) $=$ \n\n(D) $<$\n\n(E) $>$\n\n(F) None of the above",
+    "current_solution": "By the power mean inequality we have\n$$\n\\frac{\\sqrt[3]{a b+b c}+\\sqrt[3]{b c+c a}+\\sqrt[3]{c a+a b}}{3} \\leq \\sqrt[3]{\\frac{(a b+b c)+(b c+c a)+(c a+a b)}{3}}\n$$\ni.e.\n$$\n\\begin{equation*}\n\\sqrt[3]{a b+b c}+\\sqrt[3]{b c+c a}+\\sqrt[3]{c a+a b} \\leq \\sqrt[3]{18(a b+b c+c a)} \\tag{1}\n\\end{equation*}\n$$\n\nSince $a b+b c+c a \\leq \\frac{(a+b+c)^{2}}{3}=12$ by (1) we obtain\n$$\n\\sqrt[3]{a b+b c}+\\sqrt[3]{b c+c a}+\\sqrt[3]{c a+a b} \\leq \\sqrt[3]{18 \\cdot 12}=6\n$$\n\nEquality occurs if and only if $a=b=c=2$. Therefore, the answer is (A) $\\leq$.",
+    "answer": "(A) $\\leq$",
+    "enhanced_solution": "Enhanced Solution:\n\nWe wish to compare the quantity\n  S = √[3]{ab+bc} + √[3]{bc+ca} + √[3]{ca+ab}\nwith the number 6, under the constraint a,b,c>0 and a+b+c=6.\n\nStep 1: Introduce auxiliary variables and apply the Power Mean (Jensen) inequality\n-------------------------------------------------------------------------------\nLet\n  x₁ = ab + bc,\n  x₂ = bc + ca,\n  x₃ = ca + ab.\nEach xᵢ is nonnegative.  Recall that the cube‐root function f(x)=x^{1/3} is concave on [0,∞).  By Jensen’s (or the Power Mean) inequality for three points,\n  (1/3)[f(x₁)+f(x₂)+f(x₃)] ≤ f((x₁+x₂+x₃)/3).\nMultiplying both sides by 3 gives\n  √[3]{x₁} + √[3]{x₂} + √[3]{x₃} ≤ 3·√[3]{(x₁+x₂+x₃)/3}.\nSubstitute x₁+x₂+x₃ = (ab+bc)+(bc+ca)+(ca+ab) = 2(ab+bc+ca) to obtain\n  S ≤ 3·√[3]{(2(ab+bc+ca)/3)}\n     = √[3]{27·(2(ab+bc+ca)/3)}\n     = √[3]{18·(ab+bc+ca)}.          (Inequality (1))\n\nStep 2: Bound the symmetric sum ab+bc+ca\n-----------------------------------------\nUnder the fixed sum a+b+c=6, a standard inequality yields\n  ab + bc + ca ≤ (a+b+c)²/3 = 6²/3 = 12.\nIndeed, one way to see this is:\n  ab+bc+ca = [(a+b+c)² – (a²+b²+c²)]/2 ≤ [(a+b+c)² – (a²+b²+c²)/3]/2 = (a+b+c)²/3.\n\nStep 3: Combine the estimates\n------------------------------\nSubstitute ab+bc+ca ≤ 12 into (1):\n  S ≤ √[3]{18·12} = √[3]{216} = 6.\nHence\n  √[3]{ab+bc} + √[3]{bc+ca} + √[3]{ca+ab} ≤ 6.\n\nStep 4: Equality case\n---------------------\nBoth inequalities we used become equalities exactly when a=b=c.  In that case a=b=c=2, and indeed all x₁=x₂=x₃=2·2+2·2=8, so S=3·√[3]{8}=6.\n\nConclusion\n----------\nThe required inequality relation is “≤”.\n\nAnswer:\nThe answer is (A) ≤",
+    "original_entry": {
+        "data_id": "698",
+        "problem": "Let $a, b, c$ be positive real numbers such that $a+b+c=6$. Consider the following expressions:\n$$\n\\sqrt[3]{a b+b c}+\\sqrt[3]{b c+c a}+\\sqrt[3]{c a+a b} \\quad () \\quad 6 .\n$$\nDetermine the correct inequality relation to fill in the blank.\n\nOptions:\n\n(A) $\\leq$ \n\n(B) $\\geq$\n\n(C) $=$ \n\n(D) $<$\n\n(E) $>$\n\n(F) None of the above",
+        "type": "relation",
+        "data_split": "train",
+        "answer": "(A) $\\leq$",
+        "solution": [
+            "By the power mean inequality we have\n$$\n\\frac{\\sqrt[3]{a b+b c}+\\sqrt[3]{b c+c a}+\\sqrt[3]{c a+a b}}{3} \\leq \\sqrt[3]{\\frac{(a b+b c)+(b c+c a)+(c a+a b)}{3}}\n$$\ni.e.\n$$\n\\begin{equation*}\n\\sqrt[3]{a b+b c}+\\sqrt[3]{b c+c a}+\\sqrt[3]{c a+a b} \\leq \\sqrt[3]{18(a b+b c+c a)} \\tag{1}\n\\end{equation*}\n$$\n\nSince $a b+b c+c a \\leq \\frac{(a+b+c)^{2}}{3}=12$ by (1) we obtain\n$$\n\\sqrt[3]{a b+b c}+\\sqrt[3]{b c+c a}+\\sqrt[3]{c a+a b} \\leq \\sqrt[3]{18 \\cdot 12}=6\n$$\n\nEquality occurs if and only if $a=b=c=2$. Therefore, the answer is (A) $\\leq$."
+        ],
+        "theorems": {
+            "Theorem 59": {
+                "Nickname": [
+                    "weighted power mean inequality"
+                ],
+                "Theorem": "Let $a=\\left(a_{1}, a_{2}, \\ldots, a_{n}\\right)$ be a sequence of positive real numbers, and let $m=\\left(m_{1}, m_{2}, \\ldots, m_{n}\\right)$ also be a sequence of positive real numbers such that $m_{1}+m_{2}+\\cdots+m_{n}=1$.\nThen for each $r \\leq s$ we have\n$$\nM_{r}^{m}(a) \\leq M_{s}^{m}(a)\n$$\ni.e.\n$$\n\\left(m_{1} a_{1}^{r}+m_{2} a_{2}^{r}+\\cdots+m_{n} a_{n}^{r}\\right)^{\\frac{1}{r}} \\leq\\left(m_{1} a_{1}^{s}+m_{2} a_{2}^{s}+\\cdots+m_{n} a_{n}^{s}\\right)^{\\frac{1}{s}}\n$$",
+                "Theorem_Category": "Inequality Between Means"
+            }
+        },
+        "choices": [
+            "(A) $\\leq$",
+            "(B) $\\geq$",
+            "(C) $=$",
+            "(D) $<$",
+            "(E) $>$",
+            "(F) None of the above"
+        ],
+        "difficulty": ""
+    }
+}

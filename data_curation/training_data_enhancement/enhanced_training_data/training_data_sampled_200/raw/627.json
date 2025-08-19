@@ -1,0 +1,46 @@
+{
+    "data_id": "627",
+    "type": "relation",
+    "problem": "Let $a, b, c, x, y, z$ be positive real numbers such that $x + y + z = 1$. Consider the following expressions:\n$$\na x + b y + c z + 2 \\sqrt{(x y + y z + z x)(a b + b c + c a)} \\quad () \\quad a + b + c\n$$\nDetermine the correct inequality relation to fill in the blank.\n\nOptions:\n\n(A) $\\leq$ \n\n(B) $\\geq$\n\n(C) $=$ \n\n(D) $<$\n\n(E) $>$\n\n(F) None of the above",
+    "current_solution": "The inequality being homogeneous in $a, b, c$ we can assume that $a+b+c=1$. We apply this time the AM-GM Inequality and we find that\n$a x+b y+c z+2 \\sqrt{(x y+y z+z x)(a b+b c+c a)} \\leq a x+b y+c z+x y+y z+z x+a b+b c+c a$.\nConsequently,\n$x y+y z+z x+a b+b c+c a=\\frac{1-x^{2}-y^{2}-z^{2}}{2}+\\frac{1-a^{2}-b^{2}-c^{2}}{2} \\leq 1-a x-b y-c z$,\nthe last one being equivalent to $(x-a)^{2}+(y-b)^{2}+(z-c)^{2} \\geq 0$. Therefore, the answer is (A) $\\leq$.",
+    "answer": "(A) $\\leq$",
+    "enhanced_solution": "We wish to prove the inequality\n   a x + b y + c z + 2\\,\\sqrt{(x y + y z + z x)\\,(a b + b c + c a)} \\;\\le\\; a + b + c,\nwhere a,b,c,x,y,z are positive reals with x+y+z=1.  The original solution uses homogeneity and the AM–GM inequality; we now expand each step in detail.\n\n1. Homogenization in a,b,c\n   Observe that both sides of the desired inequality are homogeneous of degree 1 in (a,b,c).  Indeed,\n     – The term a x + b y + c z is linear in a,b,c.\n     – The term \\sqrt{(x y + y z + z x)(a b + b c + c a)} is the square root of a product in which (a b + b c + c a) is homogeneous of degree 2 in (a,b,c), so the entire square root is homogeneous of degree 1.\n   Likewise, a + b + c is homogeneous of degree 1.  Hence, without loss of generality we may impose the normalization\n     a + b + c = 1.\n\n2. Notation for symmetric sums\n   Set\n     S = x y + y z + z x,\n     T = a b + b c + c a.\n   Then the left‐hand side becomes a x + b y + c z + 2\\,\\sqrt{S\\,T}.\n\n3. Applying the AM–GM inequality\n   By the classical AM–GM inequality on the two nonnegative numbers S and T,\n     2\\,\\sqrt{S\\,T} \\;\\le\\; S + T.\n   Therefore,\n     a x + b y + c z + 2\\,\\sqrt{S\\,T}\n       \\;\\le\\; a x + b y + c z + (S + T).\n\n4. Expressing S and T in terms of squares\n   Since x+y+z=1, we have\n     (x+y+z)^2 = x^2 + y^2 + z^2 + 2S = 1\n     \\implies S = \\frac{1 - (x^2+y^2+z^2)}{2}.\n   Similarly, because a+b+c=1,\n     T = \\frac{1 - (a^2+b^2+c^2)}{2}.\n   Hence\n     a x + b y + c z + S + T\n       = a x + b y + c z\n         + \\frac{1 - (x^2+y^2+z^2)}{2}\n         + \\frac{1 - (a^2+b^2+c^2)}{2}\n       = a x + b y + c z + 1\n         - \\tfrac{1}{2}\\bigl(x^2+y^2+z^2 + a^2+b^2+c^2\\bigr).\n\n5. Reducing to a sum of squares\n   We now show\n     a x + b y + c z + S + T \\le 1.\n   Equivalently,\n     a x + b y + c z + 1 - \\tfrac{1}{2}(x^2+y^2+z^2 + a^2+b^2+c^2) \\le 1\n   \\iff a x + b y + c z \\le \\tfrac{1}{2}(x^2+y^2+z^2 + a^2+b^2+c^2).\n   Multiply both sides by 2:\n     2(a x + b y + c z) \\le x^2+y^2+z^2 + a^2+b^2+c^2\n   \\iff (x^2 - 2a x + a^2) + (y^2 - 2b y + b^2) + (z^2 - 2c z + c^2) \\ge 0\n   \\iff (x - a)^2 + (y - b)^2 + (z - c)^2 \\ge 0.\n   This last inequality is manifestly true, since a sum of squares is nonnegative.\n\n6. Conclusion by chaining inequalities\n   From Steps 3 and 5 we have\n     a x + b y + c z + 2\\sqrt{S\\,T}\n       \\le a x + b y + c z + (S+T)\n       \\le 1.\n   Recalling our normalization a+b+c=1, this yields\n     a x + b y + c z + 2\\sqrt{(x y + y z + z x)(a b + b c + c a)}\n       \\le a + b + c.\n   Hence the correct relation is “≤.”\n\nThe answer is (A) ≤",
+    "original_entry": {
+        "data_id": "627",
+        "problem": "Let $a, b, c, x, y, z$ be positive real numbers such that $x + y + z = 1$. Consider the following expressions:\n$$\na x + b y + c z + 2 \\sqrt{(x y + y z + z x)(a b + b c + c a)} \\quad () \\quad a + b + c\n$$\nDetermine the correct inequality relation to fill in the blank.\n\nOptions:\n\n(A) $\\leq$ \n\n(B) $\\geq$\n\n(C) $=$ \n\n(D) $<$\n\n(E) $>$\n\n(F) None of the above",
+        "type": "relation",
+        "data_split": "train",
+        "answer": "(A) $\\leq$",
+        "solution": [
+            "The inequality being homogeneous in $a, b, c$ we can assume that $a+b+c=1$. We apply this time the AM-GM Inequality and we find that\n$a x+b y+c z+2 \\sqrt{(x y+y z+z x)(a b+b c+c a)} \\leq a x+b y+c z+x y+y z+z x+a b+b c+c a$.\nConsequently,\n$x y+y z+z x+a b+b c+c a=\\frac{1-x^{2}-y^{2}-z^{2}}{2}+\\frac{1-a^{2}-b^{2}-c^{2}}{2} \\leq 1-a x-b y-c z$,\nthe last one being equivalent to $(x-a)^{2}+(y-b)^{2}+(z-c)^{2} \\geq 0$. Therefore, the answer is (A) $\\leq$.",
+            "We will use the Cauchy-Schwarz Inequality twice. First, we can write $a x+b y+$ $c z \\leq \\sqrt{a^{2}+b^{2}+c^{2}} \\cdot \\sqrt{x^{2}+y^{2}+z^{2}}$ and then we apply again the Cauchy-Schwarz Inequality to obtain:\n\n$$\n\\begin{aligned}\na x+b y+c z & +2 \\sqrt{(x y+y z+z x)(a b+b c+c a)} \\leq \\\\\n& \\leq \\sqrt{\\sum a^{2}} \\cdot \\sqrt{\\sum x^{2}}+\\sqrt{2 \\sum a b} \\cdot \\sqrt{2 \\sum x y} \\leq \\\\\n& \\leq \\sqrt{\\sum x^{2}+2 \\sum x y} \\cdot \\sqrt{\\sum a^{2}+2 \\sum a b}=\\sum a\n\\end{aligned}\n$$ Therefore, the answer is (A) $\\leq$."
+        ],
+        "theorems": {
+            "Theorem 5": {
+                "Nickname": [
+                    "cauchy-schwarz's inequality",
+                    "cauchy-schwarz"
+                ],
+                "Theorem": "For any real numbers $a_{1}, a_{2}, \\ldots, a_{n}$ and $b_{1}, b_{2}, \\ldots, b_{n}$\n\n$$\n\\begin{gathered}\n\\left(a_{1}^{2}+a_{2}^{2}+\\ldots+a_{n}^{2}\\right)\\left(b_{1}^{2}+b_{2}^{2}+\\ldots+b_{n}^{2}\\right) \\geq \\\\\n\\geq\\left(a_{1} b_{1}+a_{2} b_{2}+\\ldots+a_{n} b_{n}\\right)^{2}\n\\end{gathered}\n$$\n\nwith equality if and only if $a_{i}$ and $b_{i}$ are proportional, $i=1,2, \\ldots, n$.",
+                "Theorem_Category": "Cauchy-Schwarz Inequality"
+            },
+            "Theorem 2": {
+                "Nickname": [
+                    "am-gm (arithmetic mean-geometric mean) inequality",
+                    "am-gm"
+                ],
+                "Theorem": "If $a_{1}, a_{2}, \\ldots, a_{n}$ are nonnegative real numbers, then\n\n$$\n\\frac{1}{n} \\sum_{i=1}^{n} a_{i} \\geq\\left(a_{1} a_{2} \\ldots a_{n}\\right)^{\\frac{1}{n}}\n$$\n\nwith equality if and only if $a_{1}=a_{2}=\\ldots=a_{n}$. This inequality is a special case of the Power Mean Inequality.",
+                "Theorem_Category": "Inequality Between Means"
+            }
+        },
+        "choices": [
+            "(A) $\\leq$",
+            "(B) $\\geq$",
+            "(C) $=$",
+            "(D) $<$",
+            "(E) $>$",
+            "(F) None of the above"
+        ],
+        "difficulty": ""
+    }
+}

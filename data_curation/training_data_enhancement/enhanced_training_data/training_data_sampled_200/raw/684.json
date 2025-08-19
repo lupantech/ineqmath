@@ -1,0 +1,36 @@
+{
+    "data_id": "684",
+    "type": "relation",
+    "problem": "Let $a, b, c, d > 0$ be real numbers. Let $u = ab + ac + ad + bc + bd + cd$ and $v = abc + abd + acd + bcd$. Consider the following inequality:\n$$\n2 u^{3} \\quad () \\quad 27 v^{2}\n$$\n\nDetermine the correct inequality relation to fill in the blank.\n\nOptions:\n\n(A) $\\leq$ \n\n(B) $\\geq$\n\n(C) $=$ \n\n(D) $<$\n\n(E) $>$\n\n(F) None of the above",
+    "current_solution": "We have $p_{2}=\\frac{u}{\\binom{4}{2}}=\\frac{u}{6}$ and $p_{3}=\\frac{v}{\\binom{4}{3}}=\\frac{v}{4}$.\nBy Maclaurin's inequality we have\n$$\np_{2}^{\\frac{1}{2}} \\geq p_{3}^{\\frac{1}{3}} \\quad \\Leftrightarrow \\quad p_{2}^{3} \\geq p_{3}^{2} \\quad \\Leftrightarrow \\quad\\left(\\frac{u}{6}\\right)^{3} \\geq\\left(\\frac{v}{4}\\right)^{2} \\quad \\Leftrightarrow \\quad 2 u^{3} \\geq 27 v^{2}\n$$\n\nEquality occurs iff $a=b=c=d$. Therefore, the answer is (B) $\\geq$.",
+    "answer": "(B) $\\geq$",
+    "enhanced_solution": "Enhanced Solution:\n\nWe wish to compare the two symmetric expressions 2u³ and 27v², where u and v are defined by\n  u = ab + ac + ad + bc + bd + cd,\n  v = abc + abd + acd + bcd,\nwith a, b, c, d positive real numbers.  The original solution applies Maclaurin’s inequality to these elementary symmetric sums; we now give a more detailed and rigorous derivation of the same result.\n\n1.  Definitions of elementary symmetric means:\n   Let n = 4.  For k = 1,2,3,4, define the k-th elementary symmetric sum e_k by\n     e_1 = a + b + c + d,\n     e_2 = ab + ac + ad + bc + bd + cd = u,\n     e_3 = abc + abd + acd + bcd = v,\n     e_4 = abcd.\n   Then the k-th elementary symmetric mean is\n     p_k = e_k / \\binom{n}{k}.\n   In particular,\n     p_2 = e_2 / \\binom{4}{2} = u/6,\n     p_3 = e_3 / \\binom{4}{3} = v/4.\n\n2.  Statement of Maclaurin’s inequality:\n   For any n positive real numbers, their elementary symmetric means satisfy\n     p_1 ≥ √(p_2) ≥ ³√(p_3) ≥ ⁴√(p_4).\n   More generally, for 1 ≤ r < s ≤ n,\n     p_r^(1/r) ≥ p_s^(1/s).\n   Whenever equality holds in one of these steps, all variables must be equal.\n\n3.  Application to p_2 and p_3:\n   Taking (r,s) = (2,3) gives\n     p_2^(1/2) ≥ p_3^(1/3).\n   Raising both sides to the 6th power (the least common multiple of 2 and 3) yields\n     (p_2^(1/2))^6 ≥ (p_3^(1/3))^6\n   ⇒ p_2^3 ≥ p_3^2.\n\n4.  Substitution of u and v:\n   Substitute p_2 = u/6 and p_3 = v/4 into p_2^3 ≥ p_3^2:\n     (u/6)^3 ≥ (v/4)^2\n   ⇒ u^3 / 6^3 ≥ v^2 / 4^2\n   ⇒ u^3 / 216 ≥ v^2 / 16\n   ⇒ multiplying both sides by 216·16 = 3456 gives\n     16·u^3 ≥ 216·v^2\n   ⇒ divide by 8\n     2·u^3 ≥ 27·v^2.\n\n5.  Conclusion and equality condition:\n   Hence we have established the inequality\n     2u^3 ≥ 27v^2\n   for all positive a, b, c, d.  Moreover, equality holds precisely when a = b = c = d, since that is the condition for equality in Maclaurin’s inequality.\n\nTherefore, the correct relation is “greater than or equal to.”  The answer is (B) ≥",
+    "original_entry": {
+        "data_id": "684",
+        "problem": "Let $a, b, c, d > 0$ be real numbers. Let $u = ab + ac + ad + bc + bd + cd$ and $v = abc + abd + acd + bcd$. Consider the following inequality:\n$$\n2 u^{3} \\quad () \\quad 27 v^{2}\n$$\n\nDetermine the correct inequality relation to fill in the blank.\n\nOptions:\n\n(A) $\\leq$ \n\n(B) $\\geq$\n\n(C) $=$ \n\n(D) $<$\n\n(E) $>$\n\n(F) None of the above",
+        "type": "relation",
+        "data_split": "train",
+        "answer": "(B) $\\geq$",
+        "solution": [
+            "We have $p_{2}=\\frac{u}{\\binom{4}{2}}=\\frac{u}{6}$ and $p_{3}=\\frac{v}{\\binom{4}{3}}=\\frac{v}{4}$.\nBy Maclaurin's inequality we have\n$$\np_{2}^{\\frac{1}{2}} \\geq p_{3}^{\\frac{1}{3}} \\quad \\Leftrightarrow \\quad p_{2}^{3} \\geq p_{3}^{2} \\quad \\Leftrightarrow \\quad\\left(\\frac{u}{6}\\right)^{3} \\geq\\left(\\frac{v}{4}\\right)^{2} \\quad \\Leftrightarrow \\quad 2 u^{3} \\geq 27 v^{2}\n$$\n\nEquality occurs iff $a=b=c=d$. Therefore, the answer is (B) $\\geq$."
+        ],
+        "theorems": {
+            "Theorem 61": {
+                "Nickname": [
+                    "maclaurin's inequality"
+                ],
+                "Theorem": "Let $a_{1}, a_{2}, \\ldots, a_{n}>0$. Then\n$$\np_{1} \\geq p_{2}^{\\frac{1}{2}} \\geq \\cdots \\geq p_{k}^{\\frac{1}{k}} \\geq \\cdots \\geq p_{n}^{\\frac{1}{n}}\n$$\n\nEquality occurs if and only if $a_{1}=a_{2}=\\cdots=a_{n}$.",
+                "Theorem_Category": "Maclaurin's Inequality"
+            }
+        },
+        "choices": [
+            "(A) $\\leq$",
+            "(B) $\\geq$",
+            "(C) $=$",
+            "(D) $<$",
+            "(E) $>$",
+            "(F) None of the above"
+        ],
+        "difficulty": ""
+    }
+}

@@ -1,0 +1,26 @@
+{
+    "data_id": "26",
+    "type": "bound",
+    "problem": "Let $a, b, c$ be positive real numbers. Find the minimal constant $C$ such that the following inequality holds for all $a, b, c \\in \\mathbb{R}^{+}$:\n$$\na^{b} b^{c} c^{a} \\leq\\left(C(a+b+c)\\right)^{a+b+c}\n$$",
+    "current_solution": "By the weighted power mean inequality we have\n$$\n\\begin{aligned}\n\\left(a^{b} b^{c} c^{a}\\right)^{\\frac{1}{a+b+c}} & =a^{\\frac{b}{a+b+c}} \\cdot b^{\\frac{c}{a+b+c}} \\cdot c^{\\frac{a}{a+b+c}} \\leq \\frac{b a+c b+a c}{a+b+c} \\leq \\frac{(a+b+c)^{2}}{3(a+b+c)} \\\\\n& =\\frac{a+b+c}{3}\n\\end{aligned}\n$$\n\nEquality holds when $a = b = c$, in which case $a^b b^c c^a = a^{a} a^{a} a^{a} = a^{3a}$ and $(C(a+b+c))^{a+b+c} = (3C a)^{3a}$, so $a^{3a} \\leq (3C a)^{3a}$, which gives $C \\geq \\frac{1}{3}$. Thus, the minimal value of $C$ is $\\frac{1}{3}$.\n\nTherefore, the answer is $C = \\frac{1}{3}$.",
+    "answer": "$C = \\frac{1}{3}$",
+    "enhanced_solution": "Enhanced Solution:\n\nLet a, b, c be arbitrary positive real numbers, and set\n\n    S = a + b + c.\n\nWe wish to find the smallest constant C > 0 such that\n\n    a^b · b^c · c^a ≤ [C · (a + b + c)]^(a + b + c)\n\nfor all a, b, c > 0.\n\nStep 1.  Rewrite the inequality in an exponent-normalized form.\n\n  Observe that both sides are raised to the power S = a + b + c.  Hence, it suffices to prove\n\n    (a^b · b^c · c^a)^(1/S)  ≤  C · S.\n\nStep 2.  Apply the weighted AM–GM inequality.\n\n  We view (a^b · b^c · c^a)^(1/S) as a weighted geometric mean of the numbers a, b, c with weights\n\n    w₁ = b/S,   w₂ = c/S,   w₃ = a/S,\n\n  which indeed satisfy w₁ + w₂ + w₃ = 1 and w₁, w₂, w₃ ≥ 0.  The weighted AM–GM inequality states:\n\n    a^(w₁) · b^(w₂) · c^(w₃)\n      ≤  w₁·a + w₂·b + w₃·c.\n\n  Therefore,\n\n    (a^b · b^c · c^a)^(1/S)\n      = a^(b/S) · b^(c/S) · c^(a/S)\n      ≤ (b/S)·a + (c/S)·b + (a/S)·c\n      = (ab + bc + ca)/S.    (1)\n\nStep 3.  Bound the symmetric sum ab + bc + ca.\n\n  A well-known inequality for any real a, b, c is\n\n    ab + bc + ca  ≤  (a + b + c)² / 3  =  S² / 3.\n\n  Substituting into (1) gives\n\n    (a^b · b^c · c^a)^(1/S)\n      ≤ (S² / 3) / S  =  S/3.\n\nHence we have shown for all a, b, c > 0,\n\n    (a^b · b^c · c^a)^(1/S) ≤ S/3,\n\nand raising both sides to the power S yields\n\n    a^b · b^c · c^a  ≤  (S/3)^S  =  [ (1/3)·S ]^S  =  [ C·S ]^S  with C = 1/3.\n\nStep 4.  Verify minimality of C.\n\n  Equality in the weighted AM–GM step occurs precisely when a = b = c, and equality in ab + bc + ca ≤ S²/3 also requires a = b = c.  Set a = b = c; then S = 3a, and the original inequality becomes\n\n    (a^a · a^a · a^a)  =  a^{3a}\n      ≤ [C·(3a)]^{3a}  =  (3C a)^{3a}.\n\n  For this to hold for all a > 0, we need  a^{3a} ≤ (3C a)^{3a}, i.e.\n\n    1  ≤  (3C)^{3a}  for every a > 0.\n\n  This forces 3C ≥ 1, so C ≥ 1/3.  Combining with the upper bound established above shows the minimal admissible C is exactly 1/3.\n\nTherefore, the minimal constant C satisfying the inequality is\n\nThe answer is $C=\\frac{1}{3}$.  ",
+    "original_entry": {
+        "data_id": "26",
+        "problem": "Let $a, b, c$ be positive real numbers. Find the minimal constant $C$ such that the following inequality holds for all $a, b, c \\in \\mathbb{R}^{+}$:\n$$\na^{b} b^{c} c^{a} \\leq\\left(C(a+b+c)\\right)^{a+b+c}\n$$",
+        "type": "bound",
+        "data_split": "train",
+        "answer": "$$C = \\frac{1}{3}$$",
+        "solution": "By the weighted power mean inequality we have\n$$\n\\begin{aligned}\n\\left(a^{b} b^{c} c^{a}\\right)^{\\frac{1}{a+b+c}} & =a^{\\frac{b}{a+b+c}} \\cdot b^{\\frac{c}{a+b+c}} \\cdot c^{\\frac{a}{a+b+c}} \\leq \\frac{b a+c b+a c}{a+b+c} \\leq \\frac{(a+b+c)^{2}}{3(a+b+c)} \\\\\n& =\\frac{a+b+c}{3}\n\\end{aligned}\n$$\n\nEquality holds when $a = b = c$, in which case $a^b b^c c^a = a^{a} a^{a} a^{a} = a^{3a}$ and $(C(a+b+c))^{a+b+c} = (3C a)^{3a}$, so $a^{3a} \\leq (3C a)^{3a}$, which gives $C \\geq \\frac{1}{3}$. Thus, the minimal value of $C$ is $\\frac{1}{3}$.\n\nTherefore, the answer is $C = \\frac{1}{3}$.",
+        "theorems": {
+            "Theorem 59": {
+                "Nickname": [
+                    "weighted power mean inequality"
+                ],
+                "Theorem": "Let $a=\\left(a_{1}, a_{2}, \\ldots, a_{n}\\right)$ be a sequence of positive real numbers, and let $m=\\left(m_{1}, m_{2}, \\ldots, m_{n}\\right)$ also be a sequence of positive real numbers such that $m_{1}+m_{2}+\\cdots+m_{n}=1$.\nThen for each $r \\leq s$ we have\n$$\nM_{r}^{m}(a) \\leq M_{s}^{m}(a)\n$$\ni.e.\n$$\n\\left(m_{1} a_{1}^{r}+m_{2} a_{2}^{r}+\\cdots+m_{n} a_{n}^{r}\\right)^{\\frac{1}{r}} \\leq\\left(m_{1} a_{1}^{s}+m_{2} a_{2}^{s}+\\cdots+m_{n} a_{n}^{s}\\right)^{\\frac{1}{s}}\n$$",
+                "Theorem_Category": "Inequality Between Means"
+            }
+        },
+        "difficulty": ""
+    }
+}

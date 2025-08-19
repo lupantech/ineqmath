@@ -1,0 +1,26 @@
+{
+    "data_id": "106",
+    "type": "bound",
+    "problem": "Let $a, b, c$ be positive real numbers. Find the smallest constant $C$ such that the following inequality holds for all $a, b, c \\in \\mathbb{R}^{+}$:\n$$\nC(a+b)(b+c)(c+a) \\geq 8(a+b+c)(ab+bc+ca).\n$$",
+    "current_solution": "The given inequality is equivalent to $a(b-c)^{2}+b(c-a)^{2}+c(a-b)^{2} \\geq 0$, which is obviously true. Equality occurs iff $a=b=c$.\n\nEquality holds when $a = b = c$, in which case both sides of the inequality are equal. This gives the minimum value of $C$, so $C = 9$ is the smallest constant for which the inequality always holds.\n\nTherefore, the answer is $C = 9$.",
+    "answer": "$C = 9$",
+    "enhanced_solution": "Enhanced Solution:\n\nWe wish to find the smallest real constant C>0 such that for all positive real numbers a,b,c the following holds:\n\n  C\\,(a+b)(b+c)(c+a) \\;\\ge\\; 8\\,(a+b+c)\\,(ab+bc+ca).\n\nStep 1: Determining a lower bound for C via the equality case.\n\nObserve that if we set a=b=c, then both sides become symmetric expressions in a alone.  Let a=b=c=t>0.  Then\n  (a+b)(b+c)(c+a)\n    = (t+t)^3 = (2t)^3 = 8t^3,\n  (a+b+c)(ab+bc+ca)\n    = (3t)(3t^2)= 9t^3.\nHence the inequality\n  C\\cdot8t^3 \\ge 8\\cdot9t^3\nsimplifies (for t>0) to\n  8C \\ge 72,\nso C \\ge 9.\nThus no constant C smaller than 9 can work, and the minimal feasible C must satisfy C\\ge9.\n\nStep 2: Verifying that C=9 indeed suffices by rewriting the difference as a sum of squares.\n\nDefine the difference\n  D = 9\\,(a+b)(b+c)(c+a) \n      - 8\\,(a+b+c)(ab+bc+ca).\nWe expand both terms and simplify:\n\n1. Expand (a+b)(b+c)(c+a):\n   (a+b)(b+c)(c+a)\n   = a^2b + ab^2 + a^2c + ac^2 + b^2c + bc^2 + 2abc.\nMultiplying by 9 gives\n   9[(a^2b + ab^2 + a^2c + ac^2 + b^2c + bc^2) + 2abc]\n  = 9(a^2b + ab^2 + a^2c + ac^2 + b^2c + bc^2) + 18abc.\n\n2. Expand (a+b+c)(ab+bc+ca):\n   (a+b+c)(ab+bc+ca)\n   = (a^2b + ab^2) + (a^2c + ac^2) + (b^2c + bc^2) + 3abc.\nMultiplying by 8 gives\n   8(a^2b + ab^2 + a^2c + ac^2 + b^2c + bc^2) + 24abc.\n\n3. Subtracting the second expansion from the first:\n\n  D\n  = [9(a^2b + ab^2 + a^2c + ac^2 + b^2c + bc^2) + 18abc]\n    - [8(a^2b + ab^2 + a^2c + ac^2 + b^2c + bc^2) + 24abc]\n  = (a^2b + ab^2 + a^2c + ac^2 + b^2c + bc^2) - 6abc.\n\n4. Recognize this as a sum of nonnegative terms:\n\n  a(b-c)^2 + b(c-a)^2 + c(a-b)^2\n    = [ab^2 -2abc + ac^2]\n      + [bc^2 -2bca + ba^2]\n      + [ca^2 -2abc + cb^2]\n    = (a^2b + ab^2 + a^2c + ac^2 + b^2c + bc^2) -6abc\n    = D.\n\nSince each square (b-c)^2, (c-a)^2, (a-b)^2 is nonnegative and a,b,c>0, it follows that D\\ge0 for all positive a,b,c.  Hence with C=9 the original inequality holds universally.\n\nStep 3: Conclusion.\n\nWe have shown (i) no C<9 can satisfy the inequality in the equality case a=b=c, and (ii) C=9 makes the difference a nonnegative sum of squares.  Therefore the smallest such constant is 9.\n\nThe answer is $C=9$",
+    "original_entry": {
+        "data_id": "106",
+        "problem": "Let $a, b, c$ be positive real numbers. Find the smallest constant $C$ such that the following inequality holds for all $a, b, c \\in \\mathbb{R}^{+}$:\n$$\nC(a+b)(b+c)(c+a) \\geq 8(a+b+c)(ab+bc+ca).\n$$",
+        "type": "bound",
+        "data_split": "train",
+        "answer": "$$C = 9$$",
+        "solution": "The given inequality is equivalent to $a(b-c)^{2}+b(c-a)^{2}+c(a-b)^{2} \\geq 0$, which is obviously true. Equality occurs iff $a=b=c$.\n\nEquality holds when $a = b = c$, in which case both sides of the inequality are equal. This gives the minimum value of $C$, so $C = 9$ is the smallest constant for which the inequality always holds.\n\nTherefore, the answer is $C = 9$.",
+        "theorems": {
+            "Theorem 11": {
+                "Nickname": [
+                    "cyclic sum"
+                ],
+                "Theorem": "Let $n$ be a positive integer. Given a function $f$ of $n$ variables, define the cyclic sum of variables $\\left(x_{1}, x_{2}, \\ldots, x_{n}\\right)$ as\n\n$$\n\\begin{gathered}\n\\sum_{c y c} f\\left(x_{1}, x_{3}, \\ldots, x_{n}\\right)=f\\left(x_{1}, x_{2}, \\ldots, x_{n}\\right)+f\\left(x_{2}, x_{3}, \\ldots, x_{n}, x_{1}\\right) \\\\\n+\\ldots+f\\left(a_{n}, a_{1}, a_{2}, \\ldots, a_{n-1}\\right)\n\\end{gathered}\n$$",
+                "Theorem_Category": "Cyclic Sum"
+            }
+        },
+        "difficulty": ""
+    }
+}

@@ -1,0 +1,38 @@
+{
+    "data_id": "645",
+    "type": "relation",
+    "problem": "Let $a, b, c$ be positive real numbers. Consider the following expressions:\n$$\n\\frac{a^{3}}{b^{2}}+\\frac{b^{3}}{c^{2}}+\\frac{c^{3}}{a^{2}} \\quad () \\quad \\frac{a^{2}}{b}+\\frac{b^{2}}{c}+\\frac{c^{2}}{a}\n$$\nDetermine the correct inequality relation to fill in the blank.\n\nOptions:\n\n(A) $\\leq$ \n\n(B) $\\geq$\n\n(C) $=$ \n\n(D) $<$\n\n(E) $>$\n\n(F) None of the above",
+    "current_solution": "By the Cauchy-Schwarz Inequality we have\n\n$$\n(a+b+c)\\left(\\frac{a^{3}}{b^{2}}+\\frac{b^{3}}{c^{2}}+\\frac{c^{3}}{a^{2}}\\right) \\geq\\left(\\frac{a^{2}}{b}+\\frac{b^{2}}{c}+\\frac{c^{2}}{a}\\right)^{2}\n$$\n\nso we only have to prove that\n\n$$\n\\frac{a^{2}}{b}+\\frac{b^{2}}{c}+\\frac{c^{2}}{a} \\geq a+b+c\n$$\n\nBut this follows immediately from the Cauchy-Schwarz Inequality. Therefore, the answer is (B) $\\geq$.",
+    "answer": "(B) $\\geq$",
+    "enhanced_solution": "Enhanced Solution:\n\nWe wish to compare the two cyclic sums\n  S₁ = a³/b² + b³/c² + c³/a²\nand\n  S₂ = a²/b  + b²/c  + c²/a\nfor arbitrary positive real numbers a,b,c.  We claim that\n  S₁ ≥ S₂.\n\nStep 1:  Apply the Cauchy–Schwarz inequality to the two sequences\n    ( √(a³/b²),   √(b³/c²),   √(c³/a²) )\nand\n    ( √a,         √b,         √c ).\nBy Cauchy–Schwarz, the square of their dot product does not exceed the product of their sums of squares:  \n  [ (a^(3/2)/b)·√a  +  (b^(3/2)/c)·√b  +  (c^(3/2)/a)·√c ]²\n    ≤ [ a³/b² + b³/c² + c³/a² ] · [ a + b + c ].\nBut the dot product is exactly a²/b + b²/c + c²/a = S₂, so we obtain\n  S₂²  ≤  S₁ · (a + b + c).\nSince a+b+c>0, we rearrange to\n  S₁  ≥  S₂² / (a + b + c).               (1)\n\nStep 2:  To conclude S₁ ≥ S₂ it suffices by (1) to prove\n  S₂² / (a + b + c)  ≥  S₂,\nor equivalently (noting S₂>0)\n  S₂  ≥  a + b + c.                         (2)\n\nStep 3:  We again invoke Cauchy–Schwarz, now on the sequences\n    ( √(a²/b),  √(b²/c),  √(c²/a) )\nand\n    ( √b,        √c,        √a ).\nTheir dot product is again √(a²/b)·√b + … = a + b + c, so  \n  (a²/b + b²/c + c²/a) · (b + c + a)  ≥  (a + b + c)².\nSince b+c+a = a+b+c >0, dividing both sides by (a+b+c) yields exactly\n  S₂  =  a²/b + b²/c + c²/a  ≥  a + b + c.\nThis completes the justification of (2).\n\nCombining (1) with (2) we deduce\n  S₁  ≥  S₂,\nas required.\n\nTherefore the correct inequality relation is “≥.”\n\nThe answer is (B) ≥",
+    "original_entry": {
+        "data_id": "645",
+        "problem": "Let $a, b, c$ be positive real numbers. Consider the following expressions:\n$$\n\\frac{a^{3}}{b^{2}}+\\frac{b^{3}}{c^{2}}+\\frac{c^{3}}{a^{2}} \\quad () \\quad \\frac{a^{2}}{b}+\\frac{b^{2}}{c}+\\frac{c^{2}}{a}\n$$\nDetermine the correct inequality relation to fill in the blank.\n\nOptions:\n\n(A) $\\leq$ \n\n(B) $\\geq$\n\n(C) $=$ \n\n(D) $<$\n\n(E) $>$\n\n(F) None of the above",
+        "type": "relation",
+        "data_split": "train",
+        "answer": "(B) $\\geq$",
+        "solution": [
+            "By the Cauchy-Schwarz Inequality we have\n\n$$\n(a+b+c)\\left(\\frac{a^{3}}{b^{2}}+\\frac{b^{3}}{c^{2}}+\\frac{c^{3}}{a^{2}}\\right) \\geq\\left(\\frac{a^{2}}{b}+\\frac{b^{2}}{c}+\\frac{c^{2}}{a}\\right)^{2}\n$$\n\nso we only have to prove that\n\n$$\n\\frac{a^{2}}{b}+\\frac{b^{2}}{c}+\\frac{c^{2}}{a} \\geq a+b+c\n$$\n\nBut this follows immediately from the Cauchy-Schwarz Inequality. Therefore, the answer is (B) $\\geq$.",
+            "We have\n\n$$\n\\frac{a^{3}}{b^{2}} \\geq \\frac{a^{2}}{b}+a-b \\Leftrightarrow a^{3}+b^{3} \\geq a b(a+b) \\Leftrightarrow(a-b)^{2}(a+b) \\geq 0\n$$\n\nwhich is clearly true. Writing the analogous inequalities and adding them up gives\n\n$$\n\\frac{a^{3}}{b^{2}}+\\frac{b^{3}}{c^{2}}+\\frac{c^{3}}{a^{2}} \\geq \\frac{a^{2}}{b}+a-b+\\frac{b^{2}}{c}+b-c+\\frac{c^{2}}{a}+c-a=\\frac{a^{2}}{b}+\\frac{b^{2}}{c}+\\frac{c^{2}}{a}\n$$ Therefore, the answer is (B) $\\geq$."
+        ],
+        "theorems": {
+            "Theorem 5": {
+                "Nickname": [
+                    "cauchy-schwarz's inequality",
+                    "cauchy-schwarz"
+                ],
+                "Theorem": "For any real numbers $a_{1}, a_{2}, \\ldots, a_{n}$ and $b_{1}, b_{2}, \\ldots, b_{n}$\n\n$$\n\\begin{gathered}\n\\left(a_{1}^{2}+a_{2}^{2}+\\ldots+a_{n}^{2}\\right)\\left(b_{1}^{2}+b_{2}^{2}+\\ldots+b_{n}^{2}\\right) \\geq \\\\\n\\geq\\left(a_{1} b_{1}+a_{2} b_{2}+\\ldots+a_{n} b_{n}\\right)^{2}\n\\end{gathered}\n$$\n\nwith equality if and only if $a_{i}$ and $b_{i}$ are proportional, $i=1,2, \\ldots, n$.",
+                "Theorem_Category": "Cauchy-Schwarz Inequality"
+            }
+        },
+        "choices": [
+            "(A) $\\leq$",
+            "(B) $\\geq$",
+            "(C) $=$",
+            "(D) $<$",
+            "(E) $>$",
+            "(F) None of the above"
+        ],
+        "difficulty": ""
+    }
+}

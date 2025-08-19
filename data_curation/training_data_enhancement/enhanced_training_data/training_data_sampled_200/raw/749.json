@@ -1,0 +1,43 @@
+{
+    "data_id": "749",
+    "type": "relation",
+    "problem": "Let $a, b, c \\in \\mathbb{R}^{+}$. Consider the following inequality:\n$$\n3\\left(a^{8}+b^{8}+c^{8}\\right) \\quad () \\quad \\left(a^{3}+b^{3}+c^{3}\\right)\\left(a^{5}+b^{5}+c^{5}\\right) .\n$$\n\nDetermine the correct inequality relation to fill in the blank.\n\nOptions:\n\n(A) $\\leq$ \n\n(B) $\\geq$\n\n(C) $=$ \n\n(D) $<$\n\n(E) $>$\n\n(F) None of the above",
+    "current_solution": "Let $a \\geq b \\geq c$. Then $a^{3} \\geq b^{3} \\geq c^{3}$ and $a^{5} \\geq b^{5} \\geq c^{5}$.\nDue to Chebishev's inequality we have\n$$\n\\left(a^{3}+b^{3}+c^{3}\\right)\\left(a^{5}+b^{5}+c^{5}\\right) \\leq 3\\left(a^{8}+b^{8}+c^{8}\\right)\n$$ Therefore, the answer is (B) $\\geq$.",
+    "answer": "(B) $\\geq$",
+    "enhanced_solution": "Enhanced Solution:\n\nWe wish to compare the two expressions\n 3\\bigl(a^{8}+b^{8}+c^{8}\\bigr)\nand\n \\bigl(a^{3}+b^{3}+c^{3}\\bigr)\\,\\bigl(a^{5}+b^{5}+c^{5}\\bigr)\nfor arbitrary positive real numbers a, b, c.  Our goal is to determine which inequality sign (≤, ≥, =, <, >) makes the statement\n 3\\bigl(a^{8}+b^{8}+c^{8}\\bigr)  ()  \\bigl(a^{3}+b^{3}+c^{3}\\bigr)\\bigl(a^{5}+b^{5}+c^{5}\\bigr)\nvalid for all a, b, c>0.\n\nStep 1: Ordering the variables.\nSince a, b, c are arbitrary positive reals, we may, without loss of generality, relabel them so that\na ≥ b ≥ c > 0.\nThen raising to positive powers preserves the ordering:\n a^{3} ≥ b^{3} ≥ c^{3},\n a^{5} ≥ b^{5} ≥ c^{5}.\n\nStep 2: Identifying the sequences for Chebyshev’s inequality.\nDefine two sequences of real numbers of length n=3:\n x_{1}=a^{3},  x_{2}=b^{3},  x_{3}=c^{3},\n y_{1}=a^{5},  y_{2}=b^{5},  y_{3}=c^{5}.\nBy the ordering above, both (x_{1},x_{2},x_{3}) and (y_{1},y_{2},y_{3}) are sorted in non-increasing order.\n\nStep 3: Statement of Chebyshev’s inequality.\nFor any two real sequences (x_{i}) and (y_{i}) of the same length n=3 that are both sorted in the same order (here non-increasing), Chebyshev’s inequality asserts:\n (1/3)\\sum_{i=1}^{3} x_{i}y_{i}  ≥  \\bigl((1/3)\\sum_{i=1}^{3} x_{i}\\bigr) \\bigl((1/3)\\sum_{i=1}^{3} y_{i}\\bigr).\nEquivalently, multiplying both sides by 3·3=9,\n 3\\sum_{i=1}^{3} x_{i}y_{i}  ≥  \\Bigl(\\sum_{i=1}^{3} x_{i}\\Bigr)\\Bigl(\\sum_{i=1}^{3} y_{i}\\Bigr).\n\nStep 4: Applying Chebyshev to our sequences.\nHere \\sum_{i=1}^{3} x_{i}y_{i}=a^{3}·a^{5}+b^{3}·b^{5}+c^{3}·c^{5}=a^{8}+b^{8}+c^{8},\nwhile\n \\sum_{i=1}^{3} x_{i}=a^{3}+b^{3}+c^{3},\n \\sum_{i=1}^{3} y_{i}=a^{5}+b^{5}+c^{5}.\nSubstituting into Chebyshev’s conclusion gives\n 3\\bigl(a^{8}+b^{8}+c^{8}\\bigr)  ≥  \\bigl(a^{3}+b^{3}+c^{3}\\bigr)\\bigl(a^{5}+b^{5}+c^{5}\\bigr).\nThis establishes the desired inequality direction for all positive a, b, c.\n\nConclusion:\nThe correct relation filling the blank is “≥”.\n\nThe answer is (B) ≥",
+    "original_entry": {
+        "data_id": "749",
+        "problem": "Let $a, b, c \\in \\mathbb{R}^{+}$. Consider the following inequality:\n$$\n3\\left(a^{8}+b^{8}+c^{8}\\right) \\quad () \\quad \\left(a^{3}+b^{3}+c^{3}\\right)\\left(a^{5}+b^{5}+c^{5}\\right) .\n$$\n\nDetermine the correct inequality relation to fill in the blank.\n\nOptions:\n\n(A) $\\leq$ \n\n(B) $\\geq$\n\n(C) $=$ \n\n(D) $<$\n\n(E) $>$\n\n(F) None of the above",
+        "type": "relation",
+        "data_split": "train",
+        "answer": "(B) $\\geq$",
+        "solution": [
+            "Let $a \\geq b \\geq c$. Then $a^{3} \\geq b^{3} \\geq c^{3}$ and $a^{5} \\geq b^{5} \\geq c^{5}$.\nDue to Chebishev's inequality we have\n$$\n\\left(a^{3}+b^{3}+c^{3}\\right)\\left(a^{5}+b^{5}+c^{5}\\right) \\leq 3\\left(a^{8}+b^{8}+c^{8}\\right)\n$$ Therefore, the answer is (B) $\\geq$."
+        ],
+        "theorems": {
+            "Theorem 30": {
+                "Nickname": [
+                    "surányi's inequality"
+                ],
+                "Theorem": "Let $a_{1}, a_{2}, \\ldots, a_{n}$ be non-negative real numbers, and let $n$ be a positive integer. Then\n$$\n\\begin{aligned}\n& (n-1)\\left(a_{1}^{n}+a_{2}^{n}+\\cdots+a_{n}^{n}\\right)+n a_{1} a_{2} \\cdots a_{n} \\\\\n& \\quad \\geq\\left(a_{1}+a_{2}+\\cdots+a_{n}\\right)\\left(a_{1}^{n-1}+a_{2}^{n-1}+\\cdots+a_{n}^{n-1}\\right)\n\\end{aligned}\n$$",
+                "Theorem_Category": "Suranyi's Inequality"
+            },
+            "Theorem 28": {
+                "Nickname": [
+                    "chebishev's inequality"
+                ],
+                "Theorem": "Let $a_{1} \\leq a_{2} \\leq \\cdots \\leq a_{n}$ and $b_{1} \\leq b_{2} \\leq$ $\\cdots \\leq b_{n}$ be real numbers. Then we have\n$$\n\\left(\\sum_{i=1}^{n} a_{i}\\right)\\left(\\sum_{i=1}^{n} b_{i}\\right) \\leq n \\sum_{i=1}^{n} a_{i} b_{i}\n$$\ni.e.\n$$\n\\left(a_{1}+a_{2}+\\cdots+a_{n}\\right)\\left(b_{1}+b_{2}+\\cdots+b_{n}\\right) \\leq n\\left(a_{1} b_{1}+a_{2} b_{2}+\\cdots+a_{n} b_{n}\\right)\n$$\n\nEquality occurs if and only if $a_{1}=a_{2}=\\cdots=a_{n}$ or $b_{1}=b_{2}=\\cdots=b_{n}$.",
+                "Theorem_Category": "Chebishev's Inequality"
+            }
+        },
+        "choices": [
+            "(A) $\\leq$",
+            "(B) $\\geq$",
+            "(C) $=$",
+            "(D) $<$",
+            "(E) $>$",
+            "(F) None of the above"
+        ],
+        "difficulty": ""
+    }
+}

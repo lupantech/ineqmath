@@ -1,0 +1,34 @@
+{
+    "data_id": "639",
+    "type": "relation",
+    "problem": "Let $a, b, c$ be non-negative real numbers. Consider the following inequality:\n$$\na^{3}+b^{3}+c^{3}+a b c \\quad () \\quad \\frac{1}{7}(a+b+c)^{3} .\n$$\n\nDetermine the correct inequality relation to fill in the blank.\n\nOptions:\n\n(A) $\\leq$ \n\n(B) $\\geq$\n\n(C) $=$ \n\n(D) $<$\n\n(E) $>$\n\n(F) None of the above",
+    "current_solution": "We have\n$$\n\\begin{aligned}\n(a+b+c)^{3} & =a^{3}+b^{3}+c^{3}+3\\left(a^{2}(b+c)+b^{2}(c+a)+c^{2}(a+b)\\right)+6 a b c \\\\\n& =\\frac{T[3,0,0]}{2}+3 T[2,1,0]+T[1,1,1]\n\\end{aligned}\n$$\nand\n$$\na^{3}+b^{3}+c^{3}+a b c=\\frac{T[3,0,0]}{2}+\\frac{T[1,1,1]}{6}\n$$\n\nSo we need to prove that\n$$\n7\\left(\\frac{T[3,0,0]}{2}+\\frac{T[1,1,1]}{6}\\right) \\geq \\frac{T[3,0,0]}{2}+3 T[2,1,0]+T[1,1,1]\n$$\ni.e.\n$$\n3 T[3,0,0]+\\frac{T[1,1,1]}{6} \\geq 3 T[2,1,0]\n$$\nwhich is true according to $T[3,0,0] \\geq T[2,1,0]$ and $T[1,1,1] \\geq 0$ (Muirhead's theorem). Therefore, the answer is (B) $\\geq$.",
+    "answer": "(B) $\\geq$",
+    "enhanced_solution": "We wish to determine which inequality sign correctly relates\n\\[a^{3}+b^{3}+c^{3}+a b c \\;()\\; \\frac{1}{7}(a+b+c)^{3},\\]\nfor all nonnegative real numbers \\(a,b,c\\).\nOur goal is to show that\n\\[a^{3}+b^{3}+c^{3}+a b c\\;\\ge\\;\\frac{1}{7}(a+b+c)^{3}\\]\nand hence conclude that the correct sign is “\\(\\ge\\)”.\n\n1.  Expand \\((a+b+c)^3\\).\n    By the multinomial theorem,\n    \\[\n    (a+b+c)^3\n    = a^3 + b^3 + c^3\n      +3\\bigl[a^2(b+c)+b^2(c+a)+c^2(a+b)\\bigr]\n      +6abc.\n    \\]\n\n2.  Introduce symmetric sums notation.\n    Define\n    \\[\n    T[3,0,0] = a^3+b^3+c^3,\n    \\quad\n    T[2,1,0] = a^2b + a^2c + b^2a + b^2c + c^2a + c^2b,\n    \\quad\n    T[1,1,1] = 6abc.\n    \\]\n    Then the expansion becomes\n    \\[\n    (a+b+c)^3 = T[3,0,0] + 3\\,T[2,1,0] + T[1,1,1].\n    \\]\n\n3.  Express the left–hand side \\(a^3+b^3+c^3 + abc\\) in the same notation.\n    Observe that \\(abc = \\tfrac{1}{6}T[1,1,1]\\). Hence\n    \\[\n    a^3+b^3+c^3 + abc\n    = T[3,0,0] + \\frac{1}{6}T[1,1,1].\n    \\]\n\n4.  Multiply the proposed inequality by 7 to eliminate fractions.\n    We want\n    \\[\n    a^3+b^3+c^3 + abc \\;\\ge\\; \\frac{1}{7}(a+b+c)^3\n    \\quad\\Longleftrightarrow\\quad\n    7\\bigl(a^3+b^3+c^3 + abc\\bigr) \\;\\ge\\; (a+b+c)^3.\n    \\]\n    Substituting the symmetric‐sum expressions gives\n    \\[\n    7\\Bigl(T[3,0,0] + \\tfrac{1}{6}T[1,1,1]\\Bigr)\n    \\;\\ge\\;\n    T[3,0,0] + 3\\,T[2,1,0] + T[1,1,1].\n    \\]\n    Simplify the left side:\n    \\[\n    7T[3,0,0] + \\frac{7}{6}T[1,1,1]\n    = 7T[3,0,0] + T[1,1,1] + \\frac{1}{6}T[1,1,1]\n    = 7T[3,0,0] + T[1,1,1] + \\frac{1}{6}T[1,1,1].\n    \\]\n    Subtract \\(T[3,0,0] + T[1,1,1]\\) from both sides to obtain the equivalent inequality\n    \\[\n    6T[3,0,0] + \\frac{1}{6}T[1,1,1]\n    \\;\\ge\\;\n    3T[2,1,0].\n    \\]\n    Or equivalently,\n    \\[\n    3T[3,0,0] + \\frac{1}{6}T[1,1,1]\n    \\;\\ge\\; 3T[2,1,0].\n    \\]\n\n5.  Apply Muirhead’s inequality and nonnegativity.\n    •  Because \\((3,0,0)\\) majorizes \\((2,1,0)\\), Muirhead’s theorem yields\n       \\(T[3,0,0] \\ge T[2,1,0]\\).\n    •  Since \\(a,b,c\\ge0\\), clearly \\(T[1,1,1]=6abc\\ge0\\).\n\n    Therefore\n    \\[\n    3T[3,0,0] + \\frac{1}{6}T[1,1,1]\n    \\;\\ge\\; 3T[2,1,0] + 0\n    = 3T[2,1,0],\n    \\]\n    as required.\n\nConclusion: the correct relation is “\\(\\ge\\)”.\n\nThe answer is (B) ≥",
+    "original_entry": {
+        "data_id": "639",
+        "problem": "Let $a, b, c$ be non-negative real numbers. Consider the following inequality:\n$$\na^{3}+b^{3}+c^{3}+a b c \\quad () \\quad \\frac{1}{7}(a+b+c)^{3} .\n$$\n\nDetermine the correct inequality relation to fill in the blank.\n\nOptions:\n\n(A) $\\leq$ \n\n(B) $\\geq$\n\n(C) $=$ \n\n(D) $<$\n\n(E) $>$\n\n(F) None of the above",
+        "type": "relation",
+        "data_split": "train",
+        "answer": "(B) $\\geq$",
+        "solution": "We have\n$$\n\\begin{aligned}\n(a+b+c)^{3} & =a^{3}+b^{3}+c^{3}+3\\left(a^{2}(b+c)+b^{2}(c+a)+c^{2}(a+b)\\right)+6 a b c \\\\\n& =\\frac{T[3,0,0]}{2}+3 T[2,1,0]+T[1,1,1]\n\\end{aligned}\n$$\nand\n$$\na^{3}+b^{3}+c^{3}+a b c=\\frac{T[3,0,0]}{2}+\\frac{T[1,1,1]}{6}\n$$\n\nSo we need to prove that\n$$\n7\\left(\\frac{T[3,0,0]}{2}+\\frac{T[1,1,1]}{6}\\right) \\geq \\frac{T[3,0,0]}{2}+3 T[2,1,0]+T[1,1,1]\n$$\ni.e.\n$$\n3 T[3,0,0]+\\frac{T[1,1,1]}{6} \\geq 3 T[2,1,0]\n$$\nwhich is true according to $T[3,0,0] \\geq T[2,1,0]$ and $T[1,1,1] \\geq 0$ (Muirhead's theorem). Therefore, the answer is (B) $\\geq$.",
+        "theorems": {
+            "Theorem 66": {
+                "Nickname": [
+                    "muirhead's theorem"
+                ],
+                "Theorem": "Let $x_{1}, x_{2}, \\ldots, x_{n}$ be a sequence of non-negative real numbers and let $\\left(\\alpha_{i}\\right)$ and $\\left(\\beta_{i}\\right)$ be sequences of positive real numbers such that $\\left(\\beta_{i}\\right) \\prec\\left(\\alpha_{i}\\right)$. Then\n$$\nT\\left[\\beta_{i}\\right] \\leq T\\left[\\alpha_{i}\\right]\n$$\n\nEquality occurs iff $\\left(\\alpha_{i}\\right)=\\left(\\beta_{i}\\right)$ or $x_{1}=x_{2}=\\cdots=x_{n}$.",
+                "Theorem_Category": "Muirhead's Inequality"
+            }
+        },
+        "choices": [
+            "(A) $\\leq$",
+            "(B) $\\geq$",
+            "(C) $=$",
+            "(D) $<$",
+            "(E) $>$",
+            "(F) None of the above"
+        ],
+        "difficulty": ""
+    }
+}

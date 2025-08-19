@@ -1,0 +1,38 @@
+{
+    "data_id": "115",
+    "type": "bound",
+    "problem": "Let $a, b, c$ be positive real numbers. Find the maximal positive number $C$ such that the inequality below holds for all $a, b, c \\in \\mathbb{R}^{+}$:\n$$\n\\frac{a^{2}+b^{2}}{a+b}+\\frac{b^{2}+c^{2}}{b+c}+\\frac{c^{2}+a^{2}}{c+a} \\geq C(a+b+c)\n$$",
+    "current_solution": "By the Cauchy-Schwarz inequality we have\n$$\n\\begin{aligned}\n& \\frac{a^{2}+b^{2}}{a+b}+\\frac{b^{2}+c^{2}}{b+c}+\\frac{c^{2}+a^{2}}{c+a} \\\\\n& \\quad=\\frac{a^{2}}{a+b}+\\frac{b^{2}}{b+c}+\\frac{c^{2}}{c+a}+\\frac{b^{2}}{a+b}+\\frac{c^{2}}{b+c}+\\frac{a^{2}}{c+a} \\\\\n& \\geq \\frac{(2(a+b+c))^{2}}{4(a+b+c)}=a+b+c\n\\end{aligned}\n$$\n\nEquality holds when $a = b = c$, in which case both sides are equal. This gives the minimum value of the expression, so the maximal value of $C$ is $1$.\n\nTherefore, the answer is $C = 1$. ",
+    "answer": "$C = 1$",
+    "enhanced_solution": "We wish to show that for all positive real numbers a,b,c the following inequality holds and to determine the largest constant C for which it is valid:  \n  \n  (⋆)   (a² + b²)/(a + b) + (b² + c²)/(b + c) + (c² + a²)/(c + a)   ≥   C (a + b + c).  \n  \nStep 1.  Rewrite the left–hand side as a sum of six simpler fractions.  Observe that  \n  (a² + b²)/(a + b)   =   a²/(a + b)   +   b²/(a + b),  \nand similarly for the other two terms.  Hence  \n  LHS  =  a²/(a + b) + b²/(a + b)  \n         + b²/(b + c) + c²/(b + c)  \n         + c²/(c + a) + a²/(c + a).  \n  \nStep 2.  Apply the Cauchy–Schwarz (Titu’s) lemma in the form  \n  ∑_{i=1}^n u_i²/v_i  ≥  (∑_{i=1}^n u_i)² / (∑_{i=1}^n v_i),  \nvalid whenever each v_i>0.  We choose n=6 and set  \n  u₁ = a,  v₁ = a + b;    u₂ = b,  v₂ = b + c;    u₃ = c,  v₃ = c + a;  \n  u₄ = b,  v₄ = a + b;    u₅ = c,  v₅ = b + c;    u₆ = a,  v₆ = c + a.  \nThen  \n  ∑_{i=1}^6 u_i²/v_i  =  a²/(a+b) + b²/(b+c) + c²/(c+a)  \n                        + b²/(a+b) + c²/(b+c) + a²/(c+a)  \n                      =  LHS.  \nMoreover,  \n  ∑_{i=1}^6 u_i  =  (a + b + c) + (a + b + c)  =  2(a + b + c),  \n  ∑_{i=1}^6 v_i  =  2[(a + b) + (b + c) + (c + a)]  =  4(a + b + c).  \nBy Cauchy–Schwarz,  \n  LHS  ≥  [2(a + b + c)]² / [4(a + b + c)]  =  4(a + b + c)² / [4(a + b + c)]  =  a + b + c.  \n  \nStep 3.  Conclude the inequality.  We have shown  \n  (a² + b²)/(a + b) + (b² + c²)/(b + c) + (c² + a²)/(c + a)  ≥  a + b + c.  \nComparing with (⋆), this proves the original inequality with C=1.  \n  \nStep 4.  Check the equality case.  Equality in the Cauchy–Schwarz step occurs precisely when the six ratios u_i/v_i are all equal.  That condition forces a = b = c, which indeed makes both sides of (⋆) equal to 2a for each term and totals 3⋅(2a)/2 = 3a on the left and 1⋅3a on the right.  \n  \nTherefore the largest constant C for which the inequality holds for all positive a,b,c is C=1.  \n  \nThe answer is $C=1$.",
+    "original_entry": {
+        "data_id": "115",
+        "problem": "Let $a, b, c$ be positive real numbers. Find the maximal positive number $C$ such that the inequality below holds for all $a, b, c \\in \\mathbb{R}^{+}$:\n$$\n\\frac{a^{2}+b^{2}}{a+b}+\\frac{b^{2}+c^{2}}{b+c}+\\frac{c^{2}+a^{2}}{c+a} \\geq C(a+b+c)\n$$",
+        "type": "bound",
+        "data_split": "train",
+        "answer": "$$C = 1$$",
+        "solution": "By the Cauchy-Schwarz inequality we have\n$$\n\\begin{aligned}\n& \\frac{a^{2}+b^{2}}{a+b}+\\frac{b^{2}+c^{2}}{b+c}+\\frac{c^{2}+a^{2}}{c+a} \\\\\n& \\quad=\\frac{a^{2}}{a+b}+\\frac{b^{2}}{b+c}+\\frac{c^{2}}{c+a}+\\frac{b^{2}}{a+b}+\\frac{c^{2}}{b+c}+\\frac{a^{2}}{c+a} \\\\\n& \\geq \\frac{(2(a+b+c))^{2}}{4(a+b+c)}=a+b+c\n\\end{aligned}\n$$\n\nEquality holds when $a = b = c$, in which case both sides are equal. This gives the minimum value of the expression, so the maximal value of $C$ is $1$.\n\nTherefore, the answer is $C = 1$. ",
+        "theorems": {
+            "Theorem 30": {
+                "Nickname": [
+                    "surányi's inequality"
+                ],
+                "Theorem": "Let $a_{1}, a_{2}, \\ldots, a_{n}$ be non-negative real numbers, and let $n$ be a positive integer. Then\n$$\n\\begin{aligned}\n& (n-1)\\left(a_{1}^{n}+a_{2}^{n}+\\cdots+a_{n}^{n}\\right)+n a_{1} a_{2} \\cdots a_{n} \\\\\n& \\quad \\geq\\left(a_{1}+a_{2}+\\cdots+a_{n}\\right)\\left(a_{1}^{n-1}+a_{2}^{n-1}+\\cdots+a_{n}^{n-1}\\right)\n\\end{aligned}\n$$",
+                "Theorem_Category": "Suranyi's Inequality"
+            },
+            "Theorem 26": {
+                "Nickname": [
+                    "cauchy-schwarz inequality"
+                ],
+                "Theorem": "Let $a_{1}, a_{2}, \\ldots, a_{n}$ and $b_{1}, b_{2}$, $\\ldots, b_{n}$ be real numbers. Then we have\n$$\n\\left(\\sum_{i=1}^{n} a_{i}^{2}\\right)\\left(\\sum_{i=1}^{n} b_{i}^{2}\\right) \\geq\\left(\\sum_{i=1}^{n} a_{i} b_{i}\\right)^{2}\n$$\ni.e.\n$$\n\\left(a_{1}^{2}+a_{2}^{2}+\\cdots+a_{n}^{2}\\right)\\left(b_{1}^{2}+b_{2}^{2}+\\cdots+b_{n}^{2}\\right) \\geq\\left(a_{1} b_{1}+a_{2} b_{2}+\\cdots+a_{n} b_{n}\\right)^{2}\n$$\n\nEquality occurs if and only if the sequences $\\left(a_{1}, a_{2}, \\ldots, a_{n}\\right)$ and $\\left(b_{1}, b_{2}\\right.$, $\\ldots, b_{n}$ ) are proportional, i.e. $\\frac{a_{1}}{b_{1}}=\\frac{a_{2}}{b_{2}}=\\cdots=\\frac{a_{n}}{b_{n}}$.",
+                "Theorem_Category": "Cauchy-Schwarz Inequality"
+            },
+            "Theorem 29": {
+                "Nickname": [],
+                "Theorem": "Let $a_{1}, a_{2}, \\ldots, a_{n} ; b_{1}, b_{2}, \\ldots, b_{n}$ be real numbers such that $b_{1}, b_{2}, \\ldots, b_{n}>0$. Then\n$$\n\\frac{a_{1}^{2}}{b_{1}}+\\frac{a_{2}^{2}}{b_{2}}+\\cdots+\\frac{a_{n}^{2}}{b_{n}} \\geq \\frac{\\left(a_{1}+a_{2}+\\cdots+a_{n}\\right)^{2}}{b_{1}+b_{2}+\\cdots+b_{n}}\n$$\nwith equality if and only if $\\frac{a_{1}}{b_{1}}=\\frac{a_{2}}{b_{2}}=\\cdots=\\frac{a_{n}}{b_{n}}$.",
+                "Theorem_Category": "Cauchy-Schwarz Inequality"
+            }
+        },
+        "difficulty": ""
+    }
+}

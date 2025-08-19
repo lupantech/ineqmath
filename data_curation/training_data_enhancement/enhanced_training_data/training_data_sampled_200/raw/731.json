@@ -1,0 +1,34 @@
+{
+    "data_id": "731",
+    "type": "relation",
+    "problem": "Let $a, b, c$ be positive real numbers such that $a b c = 1$. Consider the following inequality:\n$$\n\\frac{a}{\\sqrt{7+b^{2}+c^{2}}}+\\frac{b}{\\sqrt{7+c^{2}+a^{2}}}+\\frac{c}{\\sqrt{7+a^{2}+b^{2}}} \\quad () \\quad 1 .\n$$\n\nDetermine the correct inequality relation to fill in the blank.\n\nOptions:\n\n(A) $\\leq$ \n\n(B) $\\geq$\n\n(C) $=$ \n\n(D) $<$\n\n(E) $>$\n\n(F) None of the above",
+    "current_solution": "Denote\n$$\nA=\\frac{a}{\\sqrt{7+b^{2}+c^{2}}}+\\frac{b}{\\sqrt{7+c^{2}+a^{2}}}+\\frac{c}{\\sqrt{7+a^{2}+b^{2}}}\n$$\nand\n$$\nB=a\\left(7+b^{2}+c^{2}\\right)+b\\left(7+c^{2}+a^{2}\\right)+c\\left(7+a^{2}+b^{2}\\right)\n$$\n\nBy Hölder's inequality we have\n$$\n\\begin{equation*}\nA^{2} B \\geq(a+b+c)^{3} . \\tag{1}\n\\end{equation*}\n$$\n\nFurthermore\n$$\n\\begin{align*}\nB & =7(a+b+c)+(a+b+c)(a b+b c+c a)-3 \\\\\n& \\leq 7(a+b+c)+\\frac{(a+b+c)^{3}}{3}-3 \\leq(a+b+c)^{3} \\tag{2}\n\\end{align*}\n$$\nand by (1) and (2) we obtain\n$$\nA^{2} \\geq \\frac{(a+b+c)^{3}}{B} \\geq 1, \\quad \\text { i.e. } \\quad A \\geq 1\n$$\nas required. Therefore, the answer is (B) $\\geq$.",
+    "answer": "(B) $\\geq$",
+    "enhanced_solution": "We begin by setting\r\n\\[\r\nA \\,=\\,\\frac{a}{\\sqrt{7+b^{2}+c^{2}}} \\;+\n\\frac{b}{\\sqrt{7+c^{2}+a^{2}}} \\;+\n\\frac{c}{\\sqrt{7+a^{2}+b^{2}}}\r\n\\]\r\nand\r\n\\[\r\nB \\,=\\,a\\bigl(7+b^{2}+c^{2}\\bigr)\n\\;+\n b\\bigl(7+c^{2}+a^{2}\\bigr)\n\\;+\n c\\bigl(7+a^{2}+b^{2}\\bigr).\r\n\\]\r\nOur goal is to compare $A$ with $1$.  \r\n\r\n1.  Application of Hölder’s Inequality\r\n\r\nWe apply Hölder’s inequality in the form\r\n\\[\r\n\\Bigl(\\sum_{\\cyc}x_i y_i\\Bigr)^{2}\n\\le\\,\n\\Bigl(\\sum_{\\cyc}x_i^{2} z_i\\Bigr)\n\\Bigl(\\sum_{\\cyc}\\frac{y_i^{2}}{z_i}\\Bigr),\r\n\\]\r\nwhere we choose for the three cyclic terms:\r\n\\[\r\nx_i =1,\n\\quad y_i = \\sqrt{a},\n\\quad z_i = a\\bigl(7+b^{2}+c^{2}\\bigr)\n\\]\r\n(for the term corresponding to $a$, and similarly for $b,c$).  Concretely, this yields\r\n\\[\r\n\\bigl(A\\bigr)^{2}\n\\;\\times\\;B\n\\;=\\;\n\\Bigl(\\sum_{\\cyc}\\frac{a}{\\sqrt{7+b^{2}+c^{2}}}\\Bigr)^{2}\n\\times\n\\sum_{\\cyc}a\\bigl(7+b^{2}+c^{2}\\bigr)\n\\ge\n(\\sqrt{a}+\\sqrt{b}+\\sqrt{c})^{4}.\r\n\\]\r\nSince $abc=1$, we have by the AM–GM inequality\r\n\\[\n\\sqrt{a}+\\sqrt{b}+\\sqrt{c}\\ge3\\sqrt[6]{abc}=3,\r\n\\]\nso\r\n\\[\n(\\sqrt{a}+\\sqrt{b}+\\sqrt{c})^{4}\\ge3^{4}=81.\n\\]\nThus from Hölder\n\\[\nA^{2}\\,B\\ge81.  \\tag{1}\n\\]\r\n\r\n2.  Upper bound for $B$\r\n\r\nNext we expand and estimate $B$:\r\n\\[\nB\n= a(7+b^{2}+c^{2}) + b(7+c^{2}+a^{2}) + c(7+a^{2}+b^{2})\n=7(a+b+c)\n+\\sum_{\\cyc}a(b^{2}+c^{2}).\n\\]\r\nObserve that\n\\[\n\\sum_{\\cyc}a(b^{2}+c^{2})\n= (a+b+c)(ab+bc+ca) -3abc\n= (a+b+c)(ab+bc+ca) -3.\n\\]\r\nBy the well-known inequality $ab+bc+ca\\le\\tfrac{(a+b+c)^{2}}{3}$ and using $abc=1$, we get\r\n\\[\n\\sum_{\\cyc}a(b^{2}+c^{2})\n\\le (a+b+c)\\cdot\\frac{(a+b+c)^{2}}{3} -3\n=\\frac{(a+b+c)^{3}}{3} -3.\n\\]\r\nHence\r\n\\[\nB \\le 7(a+b+c)\n+\\Bigl(\\frac{(a+b+c)^{3}}{3} -3\\Bigr)\n= \\frac{(a+b+c)^{3}}{3} +7(a+b+c) -3.\n\\]\r\nSet $S=a+b+c$.  We want to show\r\n\\[\n\\frac{S^{3}}{3}+7S-3 \\le S^{3},\n\\]\nwhich is equivalent to\r\n\\[\n2S^{3}/3 -7S +3 \\ge0.\n\\]\nDefine $f(S)=2S^{3}/3 -7S +3$.  Then\n\\[\nf'(S)=2S^{2}-7>0\\quad\\text{for }S\\ge3,\n\\]\nand since AM–GM gives $S=a+b+c\\ge3\\sqrt[3]{abc}=3$, we have $f'(S)>0$ on $[3,\\infty)$.  Moreover,\r\n\\[\nf(3)=2\\cdot3^{3}/3 -7\\cdot3 +3=18-21+3=0.\n\\]\nIt follows that $f(S)\\ge0$ for all $S\\ge3$, i.e.\r\n\\[\nB\\le S^{3}=(a+b+c)^{3}.  \\tag{2}\n\\]\r\n\r\n3.  Conclusion\r\n\r\nCombining (1) and (2) gives\r\n\\[\nA^{2}\\ge\\frac{81}{B}\\ge\\frac{81}{(a+b+c)^{3}}\\times (a+b+c)^{3}=1,\n\\]\nso $A\\ge1$.  Hence the correct inequality is\n\\[\n\\frac{a}{\\sqrt{7+b^{2}+c^{2}}}+\\frac{b}{\\sqrt{7+c^{2}+a^{2}}}+\\frac{c}{\\sqrt{7+a^{2}+b^{2}}}\\;\\ge\\;1.\n\\]\nThe answer is (B) ≥",
+    "original_entry": {
+        "data_id": "731",
+        "problem": "Let $a, b, c$ be positive real numbers such that $a b c = 1$. Consider the following inequality:\n$$\n\\frac{a}{\\sqrt{7+b^{2}+c^{2}}}+\\frac{b}{\\sqrt{7+c^{2}+a^{2}}}+\\frac{c}{\\sqrt{7+a^{2}+b^{2}}} \\quad () \\quad 1 .\n$$\n\nDetermine the correct inequality relation to fill in the blank.\n\nOptions:\n\n(A) $\\leq$ \n\n(B) $\\geq$\n\n(C) $=$ \n\n(D) $<$\n\n(E) $>$\n\n(F) None of the above",
+        "type": "relation",
+        "data_split": "train",
+        "answer": "(B) $\\geq$",
+        "solution": "Denote\n$$\nA=\\frac{a}{\\sqrt{7+b^{2}+c^{2}}}+\\frac{b}{\\sqrt{7+c^{2}+a^{2}}}+\\frac{c}{\\sqrt{7+a^{2}+b^{2}}}\n$$\nand\n$$\nB=a\\left(7+b^{2}+c^{2}\\right)+b\\left(7+c^{2}+a^{2}\\right)+c\\left(7+a^{2}+b^{2}\\right)\n$$\n\nBy Hölder's inequality we have\n$$\n\\begin{equation*}\nA^{2} B \\geq(a+b+c)^{3} . \\tag{1}\n\\end{equation*}\n$$\n\nFurthermore\n$$\n\\begin{align*}\nB & =7(a+b+c)+(a+b+c)(a b+b c+c a)-3 \\\\\n& \\leq 7(a+b+c)+\\frac{(a+b+c)^{3}}{3}-3 \\leq(a+b+c)^{3} \\tag{2}\n\\end{align*}\n$$\nand by (1) and (2) we obtain\n$$\nA^{2} \\geq \\frac{(a+b+c)^{3}}{B} \\geq 1, \\quad \\text { i.e. } \\quad A \\geq 1\n$$\nas required. Therefore, the answer is (B) $\\geq$.",
+        "theorems": {
+            "Theorem 48": {
+                "Nickname": [
+                    "hölder's inequality"
+                ],
+                "Theorem": "Let $a_{1}, a_{2}, \\ldots, a_{n} ; b_{1}, b_{2}, \\ldots, b_{n}$ be positive real numbers and $p, q>1$ be such that $1 / p+1 / q=1$.\nThen\n$$\n\\sum_{i=1}^{n} a_{i} b_{i} \\leq\\left(\\sum_{i=1}^{n} a_{i}^{p}\\right)^{\\frac{1}{p}}\\left(\\sum_{i=1}^{n} b_{i}^{q}\\right)^{\\frac{1}{q}}\n$$\n\nEquality occurs if and only if $\\frac{a_{1}^{p}}{b_{1}^{q}}=\\frac{a_{2}^{p}}{b_{2}^{q}}=\\cdots=\\frac{a_{n}^{p}}{b_{n}^{q}}$.",
+                "Theorem_Category": "Hölder's Inequality"
+            }
+        },
+        "choices": [
+            "(A) $\\leq$",
+            "(B) $\\geq$",
+            "(C) $=$",
+            "(D) $<$",
+            "(E) $>$",
+            "(F) None of the above"
+        ],
+        "difficulty": ""
+    }
+}

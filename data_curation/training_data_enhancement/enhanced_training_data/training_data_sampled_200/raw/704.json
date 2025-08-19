@@ -1,0 +1,36 @@
+{
+    "data_id": "704",
+    "type": "relation",
+    "problem": "Let $a, b, c$ be the lengths of the sides of a triangle. Consider the following expressions:\n$$\n(a+b-c)^{a}(b+c-a)^{b}(c+a-b)^{c} \\quad () \\quad a^{a} b^{b} c^{c}\n$$\nDetermine the correct inequality relation to fill in the blank.\n\nOptions:\n\n(A) $\\leq$ \n\n(B) $\\geq$\n\n(C) $=$ \n\n(D) $<$\n\n(E) $>$\n\n(F) None of the above",
+    "current_solution": "By the weighted power mean inequality we have\n$$\n\\begin{aligned}\n& \\sqrt[a+b+c]{\\left(\\frac{a+b-c}{a}\\right)^{a}\\left(\\frac{b+c-a}{b}\\right)^{b}\\left(\\frac{c+a-b}{c}\\right)^{c}} \\\\\n& \\leq \\frac{1}{a+b+c}\\left(a \\cdot \\frac{a+b-c}{a}+b \\cdot \\frac{b+c-a}{b}+c \\cdot \\frac{c+a-b}{c}\\right)=1\n\\end{aligned}\n$$\ni.e.\n$$\n(a+b-c)^{a}(b+c-a)^{b}(c+a-b)^{c} \\leq a^{a} b^{b} c^{c}\n$$\n\nEquality occurs iff $a=b=c$. Therefore, the answer is (A) $\\leq$.",
+    "answer": "(A) $\\leq$",
+    "enhanced_solution": "Enhanced Detailed Solution:\n\n1.  Problem restatement and conditions:\n   Let a, b, c be the side–lengths of a triangle.  Then by definition we have a, b, c > 0 and they satisfy the triangle inequalities:\n     a + b > c,\n     b + c > a,\n     c + a > b.\n   In particular, each of the expressions a + b – c, b + c – a, c + a – b is strictly positive.\n\n2.  Introduction of auxiliary positive quantities:\n   Define three positive numbers\n     x = (a + b – c)/a,\n     y = (b + c – a)/b,\n     z = (c + a – b)/c.\n   Because a + b – c > 0, etc., we know x, y, z > 0.\n\n3.  Reformulation of the desired inequality:\n   We wish to compare\n     (a + b – c)^{a} (b + c – a)^{b} (c + a – b)^{c}\n   with\n     a^{a} b^{b} c^{c}.\n   Observe that\n     (a + b – c)^{a} (b + c – a)^{b} (c + a – b)^{c}\n     = (a x)^{a} (b y)^{b} (c z)^{c}\n     = a^{a} b^{b} c^{c} · (x^{a} y^{b} z^{c}).\n   Hence the inequality\n     (a + b – c)^{a} (b + c – a)^{b} (c + a – b)^{c} ≤ a^{a} b^{b} c^{c}\n   is equivalent to showing\n     x^{a} y^{b} z^{c} ≤ 1.\n\n4.  Application of the weighted AM–GM inequality:\n   The weighted arithmetic–geometric mean inequality states that for any positive numbers x, y, z and positive weights a, b, c,\n     (x^{a} y^{b} z^{c})^{1/(a + b + c)} ≤ (a x + b y + c z)/(a + b + c).\n   Raise both sides to the power a + b + c to obtain\n     x^{a} y^{b} z^{c} ≤ \\bigl( (a x + b y + c z)/(a + b + c) \\bigr)^{a + b + c}.\n\n5.  Computation of the weighted average a x + b y + c z:\n   Substitute the definitions of x, y, z:\n     a x = a · (a + b – c)/a = a + b – c,\n     b y = b · (b + c – a)/b = b + c – a,\n     c z = c · (c + a – b)/c = c + a – b.\n   Summing these three terms gives\n     a x + b y + c z\n       = (a + b – c) + (b + c – a) + (c + a – b)\n       = [a + b + b + c + c + a] – [c + a + b]\n       = 2(a + b + c) – (a + b + c)\n       = a + b + c.\n   Therefore the weighted arithmetic mean is\n     (a x + b y + c z)/(a + b + c) = (a + b + c)/(a + b + c) = 1.\n\n6.  Conclusion of the inequality chain:\n   From step 4 we have\n     x^{a} y^{b} z^{c} ≤ 1^{a + b + c} = 1.\n   Hence,\n     (a + b – c)^{a} (b + c – a)^{b} (c + a – b)^{c}\n       = a^{a} b^{b} c^{c} · (x^{a} y^{b} z^{c})\n       ≤ a^{a} b^{b} c^{c} · 1\n       = a^{a} b^{b} c^{c}.\n   This establishes the required inequality.\n\n7.  Equality condition:\n   The weighted AM–GM inequality becomes an equality precisely when x = y = z.  That is,\n     (a + b – c)/a = (b + c – a)/b = (c + a – b)/c.\n   Solving these proportionalities shows that a = b = c.  Hence equality holds if and only if the triangle is equilateral.\n\nFinal Answer:\nThe answer is (A) ≤",
+    "original_entry": {
+        "data_id": "704",
+        "problem": "Let $a, b, c$ be the lengths of the sides of a triangle. Consider the following expressions:\n$$\n(a+b-c)^{a}(b+c-a)^{b}(c+a-b)^{c} \\quad () \\quad a^{a} b^{b} c^{c}\n$$\nDetermine the correct inequality relation to fill in the blank.\n\nOptions:\n\n(A) $\\leq$ \n\n(B) $\\geq$\n\n(C) $=$ \n\n(D) $<$\n\n(E) $>$\n\n(F) None of the above",
+        "type": "relation",
+        "data_split": "train",
+        "answer": "(A) $\\leq$",
+        "solution": [
+            "By the weighted power mean inequality we have\n$$\n\\begin{aligned}\n& \\sqrt[a+b+c]{\\left(\\frac{a+b-c}{a}\\right)^{a}\\left(\\frac{b+c-a}{b}\\right)^{b}\\left(\\frac{c+a-b}{c}\\right)^{c}} \\\\\n& \\leq \\frac{1}{a+b+c}\\left(a \\cdot \\frac{a+b-c}{a}+b \\cdot \\frac{b+c-a}{b}+c \\cdot \\frac{c+a-b}{c}\\right)=1\n\\end{aligned}\n$$\ni.e.\n$$\n(a+b-c)^{a}(b+c-a)^{b}(c+a-b)^{c} \\leq a^{a} b^{b} c^{c}\n$$\n\nEquality occurs iff $a=b=c$. Therefore, the answer is (A) $\\leq$."
+        ],
+        "theorems": {
+            "Theorem 59": {
+                "Nickname": [
+                    "weighted power mean inequality"
+                ],
+                "Theorem": "Let $a=\\left(a_{1}, a_{2}, \\ldots, a_{n}\\right)$ be a sequence of positive real numbers, and let $m=\\left(m_{1}, m_{2}, \\ldots, m_{n}\\right)$ also be a sequence of positive real numbers such that $m_{1}+m_{2}+\\cdots+m_{n}=1$.\nThen for each $r \\leq s$ we have\n$$\nM_{r}^{m}(a) \\leq M_{s}^{m}(a)\n$$\ni.e.\n$$\n\\left(m_{1} a_{1}^{r}+m_{2} a_{2}^{r}+\\cdots+m_{n} a_{n}^{r}\\right)^{\\frac{1}{r}} \\leq\\left(m_{1} a_{1}^{s}+m_{2} a_{2}^{s}+\\cdots+m_{n} a_{n}^{s}\\right)^{\\frac{1}{s}}\n$$",
+                "Theorem_Category": "Inequality Between Means"
+            }
+        },
+        "choices": [
+            "(A) $\\leq$",
+            "(B) $\\geq$",
+            "(C) $=$",
+            "(D) $<$",
+            "(E) $>$",
+            "(F) None of the above"
+        ],
+        "difficulty": ""
+    }
+}

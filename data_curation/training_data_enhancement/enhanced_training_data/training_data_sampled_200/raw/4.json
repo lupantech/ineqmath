@@ -1,0 +1,28 @@
+{
+    "data_id": "4",
+    "type": "bound",
+    "problem": "Let $x_{1}, x_{2}, \\ldots, x_{n}$ be non-negative real numbers such that $x_{1} + x_{2} + \\cdots + x_{n} \\leq \\frac{1}{2}$. Find the largest constant $C$ such that the following inequality holds for all $x_{1}, x_{2}, \\ldots, x_{n}$ satisfying the given constraint:\n$$\n\\left(1 - x_{1}\\right)\\left(1 - x_{2}\\right) \\cdots \\left(1 - x_{n}\\right) \\geq C\n$$",
+    "current_solution": "From $x_{1}+x_{2}+\\cdots+x_{n} \\leq \\frac{1}{2}$ and the fact that $x_{1}, x_{2}, \\ldots, x_{n}$ are nonnegative we deduce that\n$$\n0 \\leq x_{i} \\leq \\frac{1}{2}<1, \\quad \\text { i.e. } \\quad-x_{i}>-1, \\quad \\text { for all } i=1,2, \\ldots, n\n$$\nand it's clear that all $-x_{i}$ are of the same sign.\nWe obtain\n$$\n\\begin{aligned}\n\\left(1-x_{1}\\right)\\left(1-x_{2}\\right) \\cdots\\left(1-x_{n}\\right) & =\\left(1+\\left(-x_{1}\\right)\\right)\\left(1+\\left(-x_{2}\\right)\\right) \\cdots\\left(1+\\left(-x_{n}\\right)\\right) \\\\\n& \\geq 1+\\left(-x_{1}-x_{2}-\\cdots-x_{n}\\right) \\\\\n& =1-\\left(x_{1}+x_{2}+\\cdots+x_{n}\\right) \\geq 1-\\frac{1}{2}=\\frac{1}{2}\n\\end{aligned}\n$$\nEquality holds when $x_1 = \\frac{1}{2}$ and $x_2 = x_3 = \\cdots = x_n = 0$. This gives the minimum value of the product, so $C = \\frac{1}{2}$ is the largest constant for which the inequality always holds.\n\nTherefore, the answer is $C = \\frac{1}{2}$.",
+    "answer": "$C = \\frac{1}{2}$",
+    "enhanced_solution": "We wish to find the largest constant C such that for any nonnegative real numbers x₁,…,xₙ with x₁+⋯+xₙ ≤ 1/2, the product\n\n    (1−x₁)(1−x₂)⋯(1−xₙ)\n\nis bounded below by C.  We will show by a careful application of a product‐version of Bernoulli’s inequality that\n\n    (1−x₁)(1−x₂)⋯(1−xₙ) ≥ 1 − (x₁+⋯+xₙ) ≥ 1 − 1/2 = 1/2,\n\nand that this bound is sharp (so C = 1/2).\n\nStep 1.  Bound each xᵢ.\nSince x₁,…,xₙ are nonnegative and their sum is at most 1/2, each xᵢ satisfies\n\n    0 ≤ xᵢ ≤ x₁+⋯+xₙ ≤ 1/2 < 1.\n\nHence 1−xᵢ > 0 for every i.\n\nStep 2.  Set a convenient notation.\nDefine aᵢ = −xᵢ for i = 1,…,n.  Then each aᵢ lies in the interval [−1,0], and all the aᵢ’s are nonpositive (i.e. of the same sign).  Moreover,\n\n    ∑_{i=1}ⁿ aᵢ = −∑_{i=1}ⁿ xᵢ ≥ −1/2.\n\nIn these terms,\n\n    1 − xᵢ = 1 + aᵢ,   so   (1−x₁)…(1−xₙ) = ∏_{i=1}ⁿ (1 + aᵢ).\n\nStep 3.  Apply the product‐version of Bernoulli’s inequality.\nWe claim that whenever a₁,…,aₙ ≥ −1 and all have the same sign, one has\n\n    ∏_{i=1}ⁿ(1 + aᵢ) ≥ 1 + ∑_{i=1}ⁿ aᵢ.\n\nProof (by induction):\n• Base case n=1 is trivial: ∏(1 + a₁)=1 + a₁.\n• Inductive step: assume for n factors\n      ∏_{i=1}ⁿ(1 + aᵢ) ≥ 1 + ∑_{i=1}ⁿ aᵢ.\n  Then multiplying by (1 + aₙ₊₁) gives\n\n    ∏_{i=1}^{n+1}(1 + aᵢ) = (∏_{i=1}ⁿ(1 + aᵢ))·(1 + aₙ₊₁)\n      ≥ (1 + ∑_{i=1}ⁿ aᵢ)(1 + aₙ₊₁)\n      = 1 + ∑_{i=1}^{n+1} aᵢ + \bigl(∑_{i=1}ⁿ aᵢ\bigr)aₙ₊₁.\n\n  Since each aᵢ ≤ 0, both ∑_{i=1}ⁿ aᵢ ≤ 0 and aₙ₊₁ ≤ 0, so their product is ≥0.  Hence\n\n    ∏_{i=1}^{n+1}(1 + aᵢ) ≥ 1 + ∑_{i=1}^{n+1} aᵢ,\n\n  completing the induction.\n\nStep 4.  Conclude the lower bound.\nApplying this to aᵢ = −xᵢ gives\n\n    (1−x₁)…(1−xₙ) = ∏(1 + aᵢ) ≥ 1 + ∑aᵢ = 1 − (x₁+…+xₙ) ≥ 1 − 1/2 = 1/2.\n\nThus the product is always at least 1/2.\n\nStep 5.  Show sharpness.\nEquality in the product‐Bernoulli step holds exactly when at most one of the aᵢ is nonzero, i.e. at most one xᵢ>0.  To make 1 − (x₁+⋯+xₙ) minimal under the constraint ∑xᵢ ≤ 1/2, we take one variable equal to 1/2 and the rest zero.  Then the product is exactly 1−1/2 = 1/2.\n\nHence the largest possible constant C for which\n\n    (1−x₁)…(1−xₙ) ≥ C\n\nalways holds is C = 1/2.\n\nThe answer is $C=\\tfrac12$",
+    "original_entry": {
+        "data_id": "4",
+        "problem": "Let $x_{1}, x_{2}, \\ldots, x_{n}$ be non-negative real numbers such that $x_{1} + x_{2} + \\cdots + x_{n} \\leq \\frac{1}{2}$. Find the largest constant $C$ such that the following inequality holds for all $x_{1}, x_{2}, \\ldots, x_{n}$ satisfying the given constraint:\n$$\n\\left(1 - x_{1}\\right)\\left(1 - x_{2}\\right) \\cdots \\left(1 - x_{n}\\right) \\geq C\n$$",
+        "type": "bound",
+        "data_split": "train",
+        "answer": "$$C = \\frac{1}{2}$$",
+        "solution": [
+            "From $x_{1}+x_{2}+\\cdots+x_{n} \\leq \\frac{1}{2}$ and the fact that $x_{1}, x_{2}, \\ldots, x_{n}$ are nonnegative we deduce that\n$$\n0 \\leq x_{i} \\leq \\frac{1}{2}<1, \\quad \\text { i.e. } \\quad-x_{i}>-1, \\quad \\text { for all } i=1,2, \\ldots, n\n$$\nand it's clear that all $-x_{i}$ are of the same sign.\nWe obtain\n$$\n\\begin{aligned}\n\\left(1-x_{1}\\right)\\left(1-x_{2}\\right) \\cdots\\left(1-x_{n}\\right) & =\\left(1+\\left(-x_{1}\\right)\\right)\\left(1+\\left(-x_{2}\\right)\\right) \\cdots\\left(1+\\left(-x_{n}\\right)\\right) \\\\\n& \\geq 1+\\left(-x_{1}-x_{2}-\\cdots-x_{n}\\right) \\\\\n& =1-\\left(x_{1}+x_{2}+\\cdots+x_{n}\\right) \\geq 1-\\frac{1}{2}=\\frac{1}{2}\n\\end{aligned}\n$$\nEquality holds when $x_1 = \\frac{1}{2}$ and $x_2 = x_3 = \\cdots = x_n = 0$. This gives the minimum value of the product, so $C = \\frac{1}{2}$ is the largest constant for which the inequality always holds.\n\nTherefore, the answer is $C = \\frac{1}{2}$."
+        ],
+        "theorems": {
+            "Theorem 25": {
+                "Nickname": [
+                    "bernoulli's inequality"
+                ],
+                "Theorem": "Let $n \\in \\mathbb{N}$ and $x>-1$. Then $(1+x)^{n} \\geq 1+n x$",
+                "Theorem_Category": "Bernoulli's Inequality"
+            }
+        },
+        "difficulty": ""
+    }
+}

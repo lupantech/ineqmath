@@ -1,0 +1,34 @@
+{
+    "data_id": "630",
+    "type": "relation",
+    "problem": "Let $x_{1}, x_{2}, \\ldots, x_{n}$ be non-negative real numbers such that $x_{1}+x_{2}+\\cdots+x_{n} \\leq \\frac{1}{2}$. Consider the following inequality:\n$$\n\\left(1-x_{1}\\right)\\left(1-x_{2}\\right) \\cdots\\left(1-x_{n}\\right) \\quad () \\quad \\frac{1}{2} .\n$$\n\nDetermine the correct inequality relation to fill in the blank.\n\nOptions:\n\n(A) $\\leq$ \n\n(B) $\\geq$\n\n(C) $=$ \n\n(D) $<$\n\n(E) $>$\n\n(F) None of the above",
+    "current_solution": "From $x_{1}+x_{2}+\\cdots+x_{n} \\leq \\frac{1}{2}$ and the fact that $x_{1}, x_{2}, \\ldots, x_{n}$ are nonnegative we deduce that\n$$\n0 \\leq x_{i} \\leq \\frac{1}{2}<1, \\quad \\text { i.e. } \\quad-x_{i}>-1, \\quad \\text { for all } i=1,2, \\ldots, n\n$$\nand it's clear that all $-x_{i}$ are of the same sign.\nApplying Bernoulli's inequality we obtain\n$$\n\\begin{aligned}\n\\left(1-x_{1}\\right)\\left(1-x_{2}\\right) \\cdots\\left(1-x_{n}\\right) & =\\left(1+\\left(-x_{1}\\right)\\right)\\left(1+\\left(-x_{2}\\right)\\right) \\cdots\\left(1+\\left(-x_{n}\\right)\\right) \\\\\n& \\geq 1+\\left(-x_{1}-x_{2}-\\cdots-x_{n}\\right) \\\\\n& =1-\\left(x_{1}+x_{2}+\\cdots+x_{n}\\right) \\geq 1-\\frac{1}{2}=\\frac{1}{2}\n\\end{aligned}\n$$ Therefore, the answer is (B) $\\geq$.",
+    "answer": "(B) $\\geq$",
+    "enhanced_solution": "Enhanced Solution:\n\nWe are given non-negative real numbers x₁, x₂, …, xₙ satisfying\n\n    x₁ + x₂ + … + xₙ ≤ 1/2,\n\nand we wish to compare the product\n\n    P = (1 − x₁)(1 − x₂)⋯(1 − xₙ)\n\nwith 1/2.  We will show in a sequence of clear, rigorous steps that P ≥ 1/2.\n\nStep 1.  Bound each xᵢ and define auxiliary variables.\nSince xᵢ ≥ 0 for each i and the total sum is at most 1/2, we have\n\n    0 ≤ xᵢ ≤ 1/2 < 1,\n\nfor all i = 1, 2, …, n.  Define yᵢ = −xᵢ.  Then for each i,\n\n    yᵢ ≤ 0   and   yᵢ ≥ −1,\n\nso that −1 ≤ yᵢ ≤ 0.  Notice in particular that all the yᵢ have the same sign (namely, nonpositive).\n\nStep 2.  Expand the product in terms of the yᵢ.\n\n    P = ∏_{i=1}^n (1 − xᵢ)\n      = ∏_{i=1}^n (1 + yᵢ).\n\nWhen we expand this product, we get a sum of terms of the form\n\n    1  +  Σ yᵢ  +  Σ_{i<j} (yᵢ yⱼ)  +  Σ_{i<j<k} (yᵢ yⱼ y_k)  +  …  +  (y₁ y₂⋯yₙ).\n\nStep 3.  Observe that all higher-order terms are nonnegative.\nBecause each yᵢ ≤ 0, any product yᵢ yⱼ of two or more such factors satisfies\n\n    yᵢ yⱼ ≥ 0,\n\nand similarly any product of three or more of the yᵢ is also ≥ 0.  Therefore, in the full expansion,\n\n    ∑_{i<j} (yᵢ yⱼ)  +  ∑_{i<j<k} (yᵢ yⱼ y_k)  +  …  +  (y₁·y₂·…·yₙ)  ≥ 0.\n\nIt follows that\n\n    P = ∏_{i=1}^n (1 + yᵢ)\n      = 1 + Σ_{i=1}^n yᵢ  +  (nonnegative terms)\n      ≥ 1 + Σ_{i=1}^n yᵢ.\n\nSubstituting back yᵢ = −xᵢ gives\n\n    P ≥ 1 − (x₁ + x₂ + … + xₙ).\n\nStep 4.  Use the given sum bound.\nSince x₁ + x₂ + … + xₙ ≤ 1/2, we obtain\n\n    P ≥ 1 − (x₁ + x₂ + … + xₙ)\n      ≥ 1 − 1/2\n      = 1/2.\n\nConclusion.\nWe have shown that\n\n    (1 − x₁)(1 − x₂)⋯(1 − xₙ)  ≥  1/2.\n\nHence the correct relational symbol to fill the blank in\n\n    (1 − x₁)(1 − x₂)⋯(1 − xₙ)  (   )  1/2\n\nis “≥.”\n\nThe answer is (B) ≥",
+    "original_entry": {
+        "data_id": "630",
+        "problem": "Let $x_{1}, x_{2}, \\ldots, x_{n}$ be non-negative real numbers such that $x_{1}+x_{2}+\\cdots+x_{n} \\leq \\frac{1}{2}$. Consider the following inequality:\n$$\n\\left(1-x_{1}\\right)\\left(1-x_{2}\\right) \\cdots\\left(1-x_{n}\\right) \\quad () \\quad \\frac{1}{2} .\n$$\n\nDetermine the correct inequality relation to fill in the blank.\n\nOptions:\n\n(A) $\\leq$ \n\n(B) $\\geq$\n\n(C) $=$ \n\n(D) $<$\n\n(E) $>$\n\n(F) None of the above",
+        "type": "relation",
+        "data_split": "train",
+        "answer": "(B) $\\geq$",
+        "solution": "From $x_{1}+x_{2}+\\cdots+x_{n} \\leq \\frac{1}{2}$ and the fact that $x_{1}, x_{2}, \\ldots, x_{n}$ are nonnegative we deduce that\n$$\n0 \\leq x_{i} \\leq \\frac{1}{2}<1, \\quad \\text { i.e. } \\quad-x_{i}>-1, \\quad \\text { for all } i=1,2, \\ldots, n\n$$\nand it's clear that all $-x_{i}$ are of the same sign.\nApplying Bernoulli's inequality we obtain\n$$\n\\begin{aligned}\n\\left(1-x_{1}\\right)\\left(1-x_{2}\\right) \\cdots\\left(1-x_{n}\\right) & =\\left(1+\\left(-x_{1}\\right)\\right)\\left(1+\\left(-x_{2}\\right)\\right) \\cdots\\left(1+\\left(-x_{n}\\right)\\right) \\\\\n& \\geq 1+\\left(-x_{1}-x_{2}-\\cdots-x_{n}\\right) \\\\\n& =1-\\left(x_{1}+x_{2}+\\cdots+x_{n}\\right) \\geq 1-\\frac{1}{2}=\\frac{1}{2}\n\\end{aligned}\n$$ Therefore, the answer is (B) $\\geq$.",
+        "theorems": {
+            "Theorem 25": {
+                "Nickname": [
+                    "bernoulli's inequality"
+                ],
+                "Theorem": "Let $n \\in \\mathbb{N}$ and $x>-1$. Then $(1+x)^{n} \\geq 1+n x$",
+                "Theorem_Category": "Bernoulli's Inequality"
+            }
+        },
+        "choices": [
+            "(A) $\\leq$",
+            "(B) $\\geq$",
+            "(C) $=$",
+            "(D) $<$",
+            "(E) $>$",
+            "(F) None of the above"
+        ],
+        "difficulty": ""
+    }
+}

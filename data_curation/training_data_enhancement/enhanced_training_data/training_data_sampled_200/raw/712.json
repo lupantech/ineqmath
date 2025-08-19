@@ -1,0 +1,36 @@
+{
+    "data_id": "712",
+    "type": "relation",
+    "problem": "Let $a, b, c \\in \\mathbb{R}^{+}$. Consider the following inequality:\n$$\n\\frac{(a+2 b+3 c)^{2}}{a^{2}+2 b^{2}+3 c^{2}} \\quad () \\quad 6 .\n$$\n\nDetermine the correct inequality relation to fill in the blank.\n\nOptions:\n\n(A) $\\leq$ \n\n(B) $\\geq$\n\n(C) $=$ \n\n(D) $<$\n\n(E) $>$\n\n(F) None of the above",
+    "current_solution": "For $m_{1}=\\frac{1}{6}, m_{2}=\\frac{2}{6}, m_{3}=\\frac{3}{6}, n=3$ by the inequality\n$$\nM_{1}^{m}(a, b, c) \\leq M_{2}^{m}(a, b, c)\n$$\nwhich is true due to the weighted power mean inequality, we obtain\n$$\n\\frac{a+2 b+3 c}{6} \\leq \\sqrt{\\frac{a^{2}+2 b^{2}+3 c^{2}}{6}}, \\quad \\text { i.e. } \\quad \\frac{(a+2 b+3 c)^{2}}{a^{2}+2 b^{2}+3 c^{2}} \\leq 6\n$$ Therefore, the answer is (A) $\\leq$.",
+    "answer": "(A) $\\leq$",
+    "enhanced_solution": "Enhanced Solution:\n\nWe wish to determine the correct inequality relation between the two expressions\n\n    (a + 2 b + 3 c)²  and  6 · (a² + 2 b² + 3 c²)\n\nto decide how (a + 2 b + 3 c)² / (a² + 2 b² + 3 c²) compares with 6.  We use the weighted power mean inequality without changing the original approach.\n\nStep 1: Introduce positive weights that sum to 1\n\n  Let w₁ = 1/6,  w₂ = 2/6,  w₃ = 3/6.  Then each wᵢ > 0 and\n\n      w₁ + w₂ + w₃ = (1 + 2 + 3)/6 = 1.\n\nStep 2: Define the weighted arithmetic mean (first power mean) A and the weighted quadratic mean (second power mean) Q\n\n  A = w₁·a + w₂·b + w₃·c\n    = (1/6)·a + (2/6)·b + (3/6)·c\n    = (a + 2b + 3c)/6,\n\n  Q = \\sqrt{w₁·a² + w₂·b² + w₃·c²}\n    = \\sqrt{(1/6)·a² + (2/6)·b² + (3/6)·c²}\n    = \\sqrt{(a² + 2b² + 3c²)/6}.\n\nStep 3: Apply the weighted power mean inequality\n\n  For any positive numbers xᵢ and weights wᵢ > 0 with sum 1, the power mean with exponent r is\n\n      M_r = (w₁·x₁^r + w₂·x₂^r + w₃·x₃^r)^{1/r}.\n\n  The inequality states that if r < s, then M_r ≤ M_s.  Here take r = 1 and s = 2, so\n\n      A = M₁(a,b,c) ≤ M₂(a,b,c) = Q.\n\n  Hence\n\n      (a + 2b + 3c)/6  ≤  sqrt((a² + 2b² + 3c²)/6).\n\nStep 4: Transform into the desired form\n\n  Since both sides are nonnegative, we may square the inequality without changing its direction:\n\n      [(a + 2b + 3c)/6]²  ≤  ( (a² + 2b² + 3c²)/6 ).\n\n  Multiply both sides by 36 (which is positive), giving\n\n      (a + 2b + 3c)²  ≤  6·(a² + 2b² + 3c²).\n\n  Finally, divide both sides by (a² + 2b² + 3c²) (also positive) to isolate the original quotient:\n\n      (a + 2b + 3c)² / (a² + 2b² + 3c²)  ≤  6.\n\nThus the correct relation is “≤”.\n\nThe answer is (A) ≤",
+    "original_entry": {
+        "data_id": "712",
+        "problem": "Let $a, b, c \\in \\mathbb{R}^{+}$. Consider the following inequality:\n$$\n\\frac{(a+2 b+3 c)^{2}}{a^{2}+2 b^{2}+3 c^{2}} \\quad () \\quad 6 .\n$$\n\nDetermine the correct inequality relation to fill in the blank.\n\nOptions:\n\n(A) $\\leq$ \n\n(B) $\\geq$\n\n(C) $=$ \n\n(D) $<$\n\n(E) $>$\n\n(F) None of the above",
+        "type": "relation",
+        "data_split": "train",
+        "answer": "(A) $\\leq$",
+        "solution": [
+            "For $m_{1}=\\frac{1}{6}, m_{2}=\\frac{2}{6}, m_{3}=\\frac{3}{6}, n=3$ by the inequality\n$$\nM_{1}^{m}(a, b, c) \\leq M_{2}^{m}(a, b, c)\n$$\nwhich is true due to the weighted power mean inequality, we obtain\n$$\n\\frac{a+2 b+3 c}{6} \\leq \\sqrt{\\frac{a^{2}+2 b^{2}+3 c^{2}}{6}}, \\quad \\text { i.e. } \\quad \\frac{(a+2 b+3 c)^{2}}{a^{2}+2 b^{2}+3 c^{2}} \\leq 6\n$$ Therefore, the answer is (A) $\\leq$."
+        ],
+        "theorems": {
+            "Theorem 59": {
+                "Nickname": [
+                    "weighted power mean inequality"
+                ],
+                "Theorem": "Let $a=\\left(a_{1}, a_{2}, \\ldots, a_{n}\\right)$ be a sequence of positive real numbers, and let $m=\\left(m_{1}, m_{2}, \\ldots, m_{n}\\right)$ also be a sequence of positive real numbers such that $m_{1}+m_{2}+\\cdots+m_{n}=1$.\nThen for each $r \\leq s$ we have\n$$\nM_{r}^{m}(a) \\leq M_{s}^{m}(a)\n$$\ni.e.\n$$\n\\left(m_{1} a_{1}^{r}+m_{2} a_{2}^{r}+\\cdots+m_{n} a_{n}^{r}\\right)^{\\frac{1}{r}} \\leq\\left(m_{1} a_{1}^{s}+m_{2} a_{2}^{s}+\\cdots+m_{n} a_{n}^{s}\\right)^{\\frac{1}{s}}\n$$",
+                "Theorem_Category": "Inequality Between Means"
+            }
+        },
+        "choices": [
+            "(A) $\\leq$",
+            "(B) $\\geq$",
+            "(C) $=$",
+            "(D) $<$",
+            "(E) $>$",
+            "(F) None of the above"
+        ],
+        "difficulty": ""
+    }
+}

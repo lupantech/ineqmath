@@ -1,0 +1,37 @@
+{
+    "data_id": "730",
+    "type": "relation",
+    "problem": "Let $a, b, c$ be any real numbers. Consider the following inequality:\n$$\n\\sum\\left(1+a^{2}\\right)^{2}\\left(1+b^{2}\\right)^{2}(a-c)^{2}(b-c)^{2} \\quad () \\quad \\left(1+a^{2}\\right)\\left(1+b^{2}\\right)\\left(1+c^{2}\\right)(a-b)^{2}(b-c)^{2}(c-a)^{2}.\n$$\n\nDetermine the correct inequality relation to fill in the blank.\n\nOptions:\n\n(A) $\\leq$ \n\n(B) $\\geq$\n\n(C) $=$ \n\n(D) $<$\n\n(E) $>$\n\n(F) None of the above",
+    "current_solution": "The inequality can be also written as $\\sum \\frac{\\left(1+a^{2}\\right)\\left(1+b^{2}\\right)}{\\left(1+c^{2}\\right)(a-b)^{2}} \\geq 1$ (of course, we may assume that $a, b, c$ are distinct). Now, adding the inequalities\n\n$$\n\\frac{\\left(1+a^{2}\\right)\\left(1+b^{2}\\right)}{\\left(1+c^{2}\\right)(a-b)^{2}}+\\frac{\\left(1+b^{2}\\right)\\left(1+c^{2}\\right)}{\\left(1+a^{2}\\right)(b-c)^{2}} \\geq 2 \\frac{1+b^{2}}{|a-b||c-b|}\n$$\n\n(which can be found using the AM-GM Inequality) we deduce that\n\n$$\n\\sum \\frac{\\left(1+a^{2}\\right)\\left(1+b^{2}\\right)}{\\left(1+c^{2}\\right)(a-b)^{2}} \\geq \\sum \\frac{1+b^{2}}{|(b-a)(b-c)|}\n$$\n\nand so it is enough to prove that the last quantity is at least 1. But it follows from\n\n$$\n\\sum \\frac{1+b^{2}}{|(b-a)(b-c)|} \\geq\\left|\\sum \\frac{1+b^{2}}{(b-a)(b-c)}\\right|=1\n$$\n\nand the problem is solved. Therefore, the answer is (B) $\\geq$.",
+    "answer": "(B) $\\geq$",
+    "enhanced_solution": "We wish to prove that for all real numbers a,b,c (assumed distinct to avoid zero denominators), the following holds:\n\n  ∑₍cyc₎ (1 + a²)²(1 + b²)²(a – c)²(b – c)²   ≥   (1 + a²)(1 + b²)(1 + c²)\n                                    ·(a – b)²(b – c)²(c – a)².\n\n1.  Reduction by a common positive factor\n-----------------------------------------\nSince for any real x we have 1 + x² > 0 and for distinct a,b we have (a – b)² > 0, the product\n\n   D = (1 + a²)(1 + b²)(1 + c²)\n       · (a – b)²(b – c)²(c – a)²\n\nis strictly positive.  Dividing both sides of the given inequality by D (which does not change the direction of “≥”) yields the equivalent form\n\n   ∑₍cyc₎\n   { (1 + a²)²(1 + b²)²(a – c)²(b – c)² }\n   / D   ≥  1.\n\nEach term in the sum simplifies by canceling one factor of (1 + a²)(1 + b²) and the factors (a – c)²,(b – c)² against the corresponding ones in D (using (c – a)²=(a – c)²).  One obtains\n\n   𝑋_{ab}  :=  (1 + a²)(1 + b²)\n              ---------------------\n              (1 + c²)\n              (a – b)²\n\nand similarly for the cyclic permutations.  Thus the inequality becomes\n\n   X_{ab} + X_{bc} + X_{ca}  ≥  1.                                          (★)\n\n2.  Applying AM–GM to pairs of terms\n---------------------------------------\nBy the arithmetic–geometric mean inequality, for instance,\n\n   X_{ab} + X_{bc}\n   ≥  2 · √( X_{ab} · X_{bc} )\n   =  2 · √{\n          (1+a²)(1+b²)\n          (1+b²)(1+c²)\n        }\n        / √{\n          (1+c²)(1+a²)\n          (a–b)²(b–c)²\n        }\n   =  2·(1 + b²) / |(a – b)(b – c)|.\n\nBy cyclically permuting (a,b,c) in this argument, we obtain three such inequalities.  Adding them gives\n\n   2·(X_{ab} + X_{bc} + X_{ca})\n   ≥  2·∑₍cyc₎ (1 + b²) / |(b – a)(b – c)|\n\nand dividing by 2 yields\n\n   X_{ab} + X_{bc} + X_{ca}\n   ≥  ∑₍cyc₎  (1 + b²) / |(b – a)(b – c)|.                                  (★★)\n\nHence to prove (★) it suffices to show\n\n   S := ∑₍cyc₎  (1 + b²) / |(b – a)(b – c)|  ≥  1.\n\n3.  Concluding via a known algebraic identity\n------------------------------------------------\nFirst observe by the triangle inequality that\n\n   S  ≥  |  ∑₍cyc₎  (1 + b²) / [(b – a)(b – c)]  |.\n\nWe claim the signed sum inside the absolute value equals 1.  Equivalently,\n\n   ∑₍cyc₎  (1 + b²) / [(b – a)(b – c)]  =  1.\n\nThis identity can be seen most succinctly via Lagrange interpolation: the quadratic polynomial f(x)=1+x² is uniquely determined by its values at x=a,b,c.  Its Lagrange form is\n\n   f(x)  =  (1+a²) · (x – b)(x – c)/[(a – b)(a – c)]\n         + (1+b²) · (x – c)(x – a)/[(b – c)(b – a)]\n         + (1+c²) · (x – a)(x – b)/[(c – a)(c – b)].\n\nExtracting the coefficient of x² on both sides gives 1 on the left and\n\n   (1+a²)/[(a – b)(a – c)]  +  (1+b²)/[(b – c)(b – a)]  +  (1+c²)/[(c – a)(c – b)]\n\non the right.  Hence the sum of those three fractions is exactly 1.  Returning to S, we have\n\n   S  ≥  |1|  =  1.\n\nCombining this with (★★) and the reduction in step 1 shows the original inequality holds in the form “≥.”\n\nTherefore the correct choice is\n\nThe answer is (B) ≥",
+    "original_entry": {
+        "data_id": "730",
+        "problem": "Let $a, b, c$ be any real numbers. Consider the following inequality:\n$$\n\\sum\\left(1+a^{2}\\right)^{2}\\left(1+b^{2}\\right)^{2}(a-c)^{2}(b-c)^{2} \\quad () \\quad \\left(1+a^{2}\\right)\\left(1+b^{2}\\right)\\left(1+c^{2}\\right)(a-b)^{2}(b-c)^{2}(c-a)^{2}.\n$$\n\nDetermine the correct inequality relation to fill in the blank.\n\nOptions:\n\n(A) $\\leq$ \n\n(B) $\\geq$\n\n(C) $=$ \n\n(D) $<$\n\n(E) $>$\n\n(F) None of the above",
+        "type": "relation",
+        "data_split": "train",
+        "answer": "(B) $\\geq$",
+        "solution": [
+            "The inequality can be also written as $\\sum \\frac{\\left(1+a^{2}\\right)\\left(1+b^{2}\\right)}{\\left(1+c^{2}\\right)(a-b)^{2}} \\geq 1$ (of course, we may assume that $a, b, c$ are distinct). Now, adding the inequalities\n\n$$\n\\frac{\\left(1+a^{2}\\right)\\left(1+b^{2}\\right)}{\\left(1+c^{2}\\right)(a-b)^{2}}+\\frac{\\left(1+b^{2}\\right)\\left(1+c^{2}\\right)}{\\left(1+a^{2}\\right)(b-c)^{2}} \\geq 2 \\frac{1+b^{2}}{|a-b||c-b|}\n$$\n\n(which can be found using the AM-GM Inequality) we deduce that\n\n$$\n\\sum \\frac{\\left(1+a^{2}\\right)\\left(1+b^{2}\\right)}{\\left(1+c^{2}\\right)(a-b)^{2}} \\geq \\sum \\frac{1+b^{2}}{|(b-a)(b-c)|}\n$$\n\nand so it is enough to prove that the last quantity is at least 1. But it follows from\n\n$$\n\\sum \\frac{1+b^{2}}{|(b-a)(b-c)|} \\geq\\left|\\sum \\frac{1+b^{2}}{(b-a)(b-c)}\\right|=1\n$$\n\nand the problem is solved. Therefore, the answer is (B) $\\geq$."
+        ],
+        "theorems": {
+            "Theorem 2": {
+                "Nickname": [
+                    "am-gm (arithmetic mean-geometric mean) inequality",
+                    "am-gm"
+                ],
+                "Theorem": "If $a_{1}, a_{2}, \\ldots, a_{n}$ are nonnegative real numbers, then\n\n$$\n\\frac{1}{n} \\sum_{i=1}^{n} a_{i} \\geq\\left(a_{1} a_{2} \\ldots a_{n}\\right)^{\\frac{1}{n}}\n$$\n\nwith equality if and only if $a_{1}=a_{2}=\\ldots=a_{n}$. This inequality is a special case of the Power Mean Inequality.",
+                "Theorem_Category": "Inequality Between Means"
+            }
+        },
+        "choices": [
+            "(A) $\\leq$",
+            "(B) $\\geq$",
+            "(C) $=$",
+            "(D) $<$",
+            "(E) $>$",
+            "(F) None of the above"
+        ],
+        "difficulty": ""
+    }
+}

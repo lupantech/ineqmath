@@ -1,0 +1,35 @@
+{
+    "data_id": "123",
+    "type": "bound",
+    "problem": "Let $a, b, c \\in \\mathbb{R}^{+}$. Find the smallest constant $C$ such that the following inequality holds for all $a, b, c$:\n$$\nC\\left(a^{8}+b^{8}+c^{8}\\right) \\geq \\left(a^{3}+b^{3}+c^{3}\\right)\\left(a^{5}+b^{5}+c^{5}\\right)\n$$",
+    "current_solution": "Let $a \\geq b \\geq c$. Then $a^{3} \\geq b^{3} \\geq c^{3}$ and $a^{5} \\geq b^{5} \\geq c^{5}$.\nDue to Chebishev's inequality we have\n$$\n\\left(a^{3}+b^{3}+c^{3}\\right)\\left(a^{5}+b^{5}+c^{5}\\right) \\leq 3\\left(a^{8}+b^{8}+c^{8}\\right)\n$$\n\nEquality in Chebyshev's inequality holds when $a = b = c$, that is, when all variables are equal. In this case, both sides of the inequality are equal, and $C = 3$ is the smallest constant for which the inequality always holds.\n\nTherefore, the answer is $C = 3$.",
+    "answer": "$C = 3$",
+    "enhanced_solution": "Enhanced Solution:\n\n1. Restating the problem.\n   We are given positive real numbers $a,b,c>0$ and we seek the smallest constant $C$ such that the inequality\n   \\[\n     C\\bigl(a^{8}+b^{8}+c^{8}\\bigr)\\;\\ge\\;\\bigl(a^{3}+b^{3}+c^{3}\\bigr)\\,\\bigl(a^{5}+b^{5}+c^{5}\\bigr)\n   \\]\n   holds for all choices of $(a,b,c)$.  Our final goal is to show that the minimal such $C$ is $3$.\n\n2. Strategy: Chebyshev’s inequality.\n   We will apply Chebyshev’s inequality to the two sequences\n   \\[\n     (x_1,x_2,x_3)=(a^{3},b^{3},c^{3}),\n     \\quad\n     (y_1,y_2,y_3)=(a^{5},b^{5},c^{5}).\n   \\]\n   Recall the form of Chebyshev’s inequality for three real numbers in nonincreasing order:\n   if $x_1\\ge x_2\\ge x_3$ and $y_1\\ge y_2\\ge y_3$, then\n   \\[\n     \\frac{x_1y_1 + x_2y_2 + x_3y_3}{3}\n     \\;\\ge\\;\n     \\Bigl(\\frac{x_1 + x_2 + x_3}{3}\\Bigr)\n     \\Bigl(\\frac{y_1 + y_2 + y_3}{3}\\Bigr).\n   \\]\n\n3. Verifying the ordering hypotheses.\n   Without loss of generality, assume\n   \\[a\\ge b\\ge c>0.\\]\n   Then\n   \\[a^{3}\\ge b^{3}\\ge c^{3}\n     \\quad\\text{and}\\quad\n     a^{5}\\ge b^{5}\\ge c^{5},\n   \\]\n   because the function $t\\mapsto t^k$ is strictly increasing on $(0,\\infty)$ for any positive exponent $k$.\n\n4. Applying Chebyshev’s inequality.\n   Under these orderings we have\n   \\[\n     \\frac{a^{3}a^{5} + b^{3}b^{5} + c^{3}c^{5}}{3}\n     \\;\\ge\\;\n     \\Bigl(\\frac{a^{3}+b^{3}+c^{3}}{3}\\Bigr)\n     \\Bigl(\\frac{a^{5}+b^{5}+c^{5}}{3}\\Bigr).\n   \\]\n   Multiply both sides by $9$ to clear denominators:\n   \\[\n     3\\bigl(a^{8} + b^{8} + c^{8}\\bigr)\n     \\;\\ge\\;\n     \\bigl(a^{3}+b^{3}+c^{3}\\bigr)\\,\\bigl(a^{5}+b^{5}+c^{5}\\bigr).\n   \\]\n\n5. Deduction of the constant $C$.\n   The preceding inequality shows that for all $a,b,c>0$ one may take\n   \\[C=3\\] to guarantee\n   \\[C\\bigl(a^{8}+b^{8}+c^{8}\\bigr)\\ge \\bigl(a^{3}+b^{3}+c^{3}\\bigr)\\bigl(a^{5}+b^{5}+c^{5}\\bigr).\n   \\]\n\n6. Optimality of $C=3$.\n   To see that $3$ is the \\'smallest\\' valid constant, consider the case $a=b=c=t>0$.  Then\n   \\[\n     a^{3}+b^{3}+c^{3}=3t^{3},\n     \\quad\n     a^{5}+b^{5}+c^{5}=3t^{5},\n     \\quad\n     a^{8}+b^{8}+c^{8}=3t^{8}.\n   \\]\n   The inequality becomes\n   \\[\n     C\\cdot3t^{8}\\;\\ge\\;(3t^{3})(3t^{5})=9t^{8},\n   \\]\n   which simplifies to $3C\\ge9$, i.e.\n   \\[C\\ge3.\\]\n   Hence no constant smaller than $3$ can satisfy the desired inequality for all positive $a,b,c$.  This confirms that the minimal constant is indeed $3$.\n\nConclusion:\nThe answer is $C=3$",
+    "original_entry": {
+        "data_id": "123",
+        "problem": "Let $a, b, c \\in \\mathbb{R}^{+}$. Find the smallest constant $C$ such that the following inequality holds for all $a, b, c$:\n$$\nC\\left(a^{8}+b^{8}+c^{8}\\right) \\geq \\left(a^{3}+b^{3}+c^{3}\\right)\\left(a^{5}+b^{5}+c^{5}\\right)\n$$",
+        "type": "bound",
+        "data_split": "train",
+        "answer": "$$C = 3$$",
+        "solution": [
+            "Let $a \\geq b \\geq c$. Then $a^{3} \\geq b^{3} \\geq c^{3}$ and $a^{5} \\geq b^{5} \\geq c^{5}$.\nDue to Chebishev's inequality we have\n$$\n\\left(a^{3}+b^{3}+c^{3}\\right)\\left(a^{5}+b^{5}+c^{5}\\right) \\leq 3\\left(a^{8}+b^{8}+c^{8}\\right)\n$$\n\nEquality in Chebyshev's inequality holds when $a = b = c$, that is, when all variables are equal. In this case, both sides of the inequality are equal, and $C = 3$ is the smallest constant for which the inequality always holds.\n\nTherefore, the answer is $C = 3$."
+        ],
+        "theorems": {
+            "Theorem 30": {
+                "Nickname": [
+                    "surányi's inequality"
+                ],
+                "Theorem": "Let $a_{1}, a_{2}, \\ldots, a_{n}$ be non-negative real numbers, and let $n$ be a positive integer. Then\n$$\n\\begin{aligned}\n& (n-1)\\left(a_{1}^{n}+a_{2}^{n}+\\cdots+a_{n}^{n}\\right)+n a_{1} a_{2} \\cdots a_{n} \\\\\n& \\quad \\geq\\left(a_{1}+a_{2}+\\cdots+a_{n}\\right)\\left(a_{1}^{n-1}+a_{2}^{n-1}+\\cdots+a_{n}^{n-1}\\right)\n\\end{aligned}\n$$",
+                "Theorem_Category": "Suranyi's Inequality"
+            },
+            "Theorem 28": {
+                "Nickname": [
+                    "chebishev's inequality"
+                ],
+                "Theorem": "Let $a_{1} \\leq a_{2} \\leq \\cdots \\leq a_{n}$ and $b_{1} \\leq b_{2} \\leq$ $\\cdots \\leq b_{n}$ be real numbers. Then we have\n$$\n\\left(\\sum_{i=1}^{n} a_{i}\\right)\\left(\\sum_{i=1}^{n} b_{i}\\right) \\leq n \\sum_{i=1}^{n} a_{i} b_{i}\n$$\ni.e.\n$$\n\\left(a_{1}+a_{2}+\\cdots+a_{n}\\right)\\left(b_{1}+b_{2}+\\cdots+b_{n}\\right) \\leq n\\left(a_{1} b_{1}+a_{2} b_{2}+\\cdots+a_{n} b_{n}\\right)\n$$\n\nEquality occurs if and only if $a_{1}=a_{2}=\\cdots=a_{n}$ or $b_{1}=b_{2}=\\cdots=b_{n}$.",
+                "Theorem_Category": "Chebishev's Inequality"
+            }
+        },
+        "difficulty": ""
+    }
+}

@@ -63,7 +63,8 @@ Welcome to the official repository for the paper "[Solving Inequality Proofs wit
 - [🧪 Other experiments on IneqMath](#other-experiments-on-ineqmath)
   - [Taking Annotated Theorems as Hints](#taking-annotated-theorems-as-hints)
 - [📂 Data Curation](#data-curation)
-  - [Informal reformulation of inequality proving](#informal-reformulation-of-inequality-proving)
+  - [Informal Reformulation of Inequality Proving](#informal-reformulation-of-inequality-proving)
+  - [Training Data Enhancement](#training-data-enhancement)
 - [🤗 Dataset Overview](#dataset-overview)
 - [🧐 Fine-grained Informal Judges](#fine-grained-informal-judges)
 - [📈 Evaluation Results](#evaluation-results)
@@ -78,7 +79,8 @@ Welcome to the official repository for the paper "[Solving Inequality Proofs wit
 <a id="news"></a>
 ## 💥 News 
 
-- **[2025.08.17]** 🚀 Supercharge your IneqMath runs with our new improvement strategies—[Frequent Theorems as Hints](#frequent-theorems-as-hints), [Frequent Training Problems & Solutions as Hints](#frequent-training-problems-and-solutions-as-hints), and [Few-shot Evaluation](#few-shot-evaluation). Give them a try and let us know if there are other strategies you’d like to see!
+- **[2025.08.18]** 🎯 We've just released our novel **reformulation pipeline** that transforms inequality proofs into informal yet verifiable subtasks, automatically expanding IneqMath training data! Plus, our brand-new **training data enhancement scripts** are here to supercharge your model training. Check out our [Data Curation](#data-curation) section and start building better data and models today! 🚀✨
+- **[2025.08.17]** 🚀 Supercharge your IneqMath runs with our new improvement strategies—[Frequent Theorems as Hints](#frequent-theorems-as-hints), [Frequent Training Problems & Solutions as Hints](#frequent-training-problems-and-solutions-as-hints), and [Few-shot Evaluation](#few-shot-evaluation). Give them a try and let us know if there are other strategies you'd like to see!
 - **[2025.08.16]** 🚀 Updated **example scripts** across **all supported model families**—explore them [here](#supported-llm-engines)!
 - **[2025.08.14]** ✨ Released the **dev set evaluation scripts** and our **Final Answer Judge**—try them now! [Dev set evaluation](#evaluate-models-on-ineqmath-dev-set) | [Final Answer Judge](#evaluate-with-the-final-answer-judge).
 - **[2025.08.08]** 💥 **GPT-5 (medium, 30K)** 🥇 Sets New SOTA on IneqMath with overall accuracy **47.0%**! Read more on the [OpenAI Platform](https://openai.com/index/introducing-gpt-5/).
@@ -251,8 +253,8 @@ You can customize the max token limits by changing the `TOKENS` variable in the 
 
 If the dataset can't be loaded automatically, please download the JSON-formatted dataset manually by:
 ```shell
-mkdir ../data
-cd ../data
+mkdir -p ../data/json
+cd ../data/json
 wget https://huggingface.co/datasets/AI4Math/IneqMath/resolve/main/json/test.json
 ```
 
@@ -441,7 +443,7 @@ Then, you can find the model's answer accuracy in `results/training_theorems_as_
 <a id="data-curation"></a>
 ## 📂 Data Curation
 
-### Informal reformulation of inequality proving
+### Informal Reformulation of Inequality Proving
 
 In our [paper](https://arxiv.org/abs/2506.07927), we raise a novel **informal reformulation of inequality proving tasks**. By using this method, every inequality proving task can be converted into two **informal yet verifiable** subtasks: **bound estimation** and **relation prediction**. 
 
@@ -473,6 +475,39 @@ Open the `data_reformulation.sh` file and change the `INPUT_FILE` variable to th
 Then, you can find the reformulated data in the `reformulated_data/LABEL/reformulated_data.json` file where `LABEL` is the label you set in the `data_reformulation.sh` file.
 
 **We are excited to see more data generated from this pipeline as an extension of the IneqMath dataset! Please feel free to share your generated data with us!**
+
+### Training Data Enhancement
+
+Based on our experiments, **enhancing the solution of the training data with detailed reasoning steps can help train the model more effectively and efficiently**. Therefore, we provide the scripts to enhance the training data with detailed reasoning steps. Note that this is only one possible way of enhancement - we are excited to see more data enhancement approaches!
+
+**Step 1:** Please download the IneqMath training data first:
+
+```shell
+cd data/json
+wget https://huggingface.co/datasets/AI4Math/IneqMath/resolve/main/json/train.json
+```
+
+**Step 2:** Please change the directory to `data_curation/training_data_enhancement`:
+
+```bash
+cd ../../data_curation/training_data_enhancement
+```
+
+**Step 3:** Run the following script to enhance the training data with detailed reasoning steps:
+
+```bash
+./sft_data_generation.sh
+```
+
+Then, you can find the enhanced training data in the `enhanced_training_data/training_data/` directory. There are two files in the directory:
+
+- `enhanced_data_training_data.json`: The enhanced training data in `JSON` format that maintains the original structure of the training data, with the enhanced solution added as a new field `enhanced_solution`.
+- `sft_data_training_data.jsonl`: The enhanced training data in `JSONL` format that is ready for supervised fine-tuning on the platform such as [OpenAI](https://platform.openai.com/docs/guides/model-optimization#fine-tune-a-model).
+
+We provide the example of the enhanced 200 training data sampled from the IneqMath training data (`data/json/training_data_sampled_200.json`) [here](data_curation/training_data_enhancement/enhanced_training_data/training_data_sampled_200/). We also visualize the enhanced solution and the original solution for each problem in [this](data_curation/training_data_enhancement/enhanced_training_data/training_data_sampled_200/raw/) directory. (For example, the visualization of problem 1 is [here](data_curation/training_data_enhancement/enhanced_training_data/training_data_sampled_200/raw/1.md).)
+
+
+
 
 
 <a id="dataset-overview"></a>

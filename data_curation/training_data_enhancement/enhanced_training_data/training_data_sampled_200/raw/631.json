@@ -1,0 +1,34 @@
+{
+    "data_id": "631",
+    "type": "relation",
+    "problem": "Let $a, b, c \\in (-3, 3)$ such that \n$$\n\\frac{1}{3+a}+\\frac{1}{3+b}+\\frac{1}{3+c}=\\frac{1}{3-a}+\\frac{1}{3-b}+\\frac{1}{3-c}.\n$$\nConsider the following expressions:\n$$\n\\frac{1}{3+a}+\\frac{1}{3+b}+\\frac{1}{3+c} \\quad () \\quad 1.\n$$\nDetermine the correct inequality relation to fill in the blank.\n\nOptions:\n\n(A) $\\leq$ \n\n(B) $\\geq$\n\n(C) $=$ \n\n(D) $<$\n\n(E) $>$\n\n(F) None of the above",
+    "current_solution": "By the inequality $A M \\geq H M$ we have\n$$\n\\begin{equation*}\n((3+a)+(3+b)+(3+c))\\left(\\frac{1}{3+a}+\\frac{1}{3+b}+\\frac{1}{3+c}\\right) \\geq 9 \\tag{1}\n\\end{equation*}\n$$\nand\n$$\n\\begin{align*}\n& ((3-a)+(3-b)+(3-c))\\left(\\frac{1}{3-a}+\\frac{1}{3-b}+\\frac{1}{3-c}\\right) \\geq 9 \\\\\n& \\quad \\Leftrightarrow \\quad((3-a)+(3-b)+(3-c))\\left(\\frac{1}{3+a}+\\frac{1}{3+b}+\\frac{1}{3+c}\\right) \\geq 9 \\tag{2}\n\\end{align*}\n$$\n\nAfter adding (1) and (2) we obtain\n$$\n18\\left(\\frac{1}{3+a}+\\frac{1}{3+b}+\\frac{1}{3+c}\\right) \\geq 18, \\quad \\text { i.e. } \\quad \\frac{1}{3+a}+\\frac{1}{3+b}+\\frac{1}{3+c} \\geq 1\n$$ Therefore, the answer is (B) $\\geq$.",
+    "answer": "(B) $\\geq$",
+    "enhanced_solution": "Enhanced Solution:\n\nWe are given real numbers a, b, c in the open interval (–3, 3) satisfying\n    1/(3+a) + 1/(3+b) + 1/(3+c)\n  = 1/(3–a) + 1/(3–b) + 1/(3–c).\nWe wish to compare\n    S = 1/(3+a) + 1/(3+b) + 1/(3+c)\nwith 1, i.e. determine the correct inequality symbol in\n    S  (  )  1.\n\nOriginal approach: apply the AM–HM (arithmetic mean–harmonic mean) inequality to the triples (3+a, 3+b, 3+c) and (3–a, 3–b, 3–c), then use the given equality of reciprocals to relate the two inequalities, and finally combine to deduce the desired bound on S.\n\nStep 1.  Verify positivity so we may use AM–HM.\n  Since a, b, c ∈ (–3, 3), each of 3+a, 3+b, 3+c is in (0, 6), and likewise 3–a, 3–b, 3–c ∈ (0, 6).  Hence all six numbers are strictly positive.\n\nStep 2.  State the AM–HM inequality for three positives.\n  For any positive real numbers x, y, z,\n    (x + y + z)/3  ≥ 3/(1/x + 1/y + 1/z).\n  Equivalently,\n    (x + y + z)·(1/x + 1/y + 1/z)  ≥  9.\n\nStep 3.  Apply AM–HM to (3+a, 3+b, 3+c).\n  Setting x = 3+a, y = 3+b, z = 3+c, we obtain\n    [ (3+a) + (3+b) + (3+c ) ]·[ 1/(3+a) + 1/(3+b) + 1/(3+c) ]  ≥  9.\n  Simplify the sum of the first factors:\n    (3+a) + (3+b) + (3+c) = 9 + (a + b + c).\n  Thus\n    (9 + a + b + c)·S  ≥  9,            (I)\n  where we have written S = 1/(3+a) + 1/(3+b) + 1/(3+c).\n\nStep 4.  Apply AM–HM to (3–a, 3–b, 3–c).\n  Similarly, with x′ = 3–a, y′ = 3–b, z′ = 3–c, AM–HM gives\n    [ (3–a) + (3–b) + (3–c) ]·[ 1/(3–a) + 1/(3–b) + 1/(3–c) ]  ≥ 9.\n  Again sum the first factors:\n    (3–a) + (3–b) + (3–c) = 9 – (a + b + c).\n  Hence\n    [ 9 – (a + b + c) ]·[ 1/(3–a) + 1/(3–b) + 1/(3–c) ]  ≥  9.    (II)\n\nStep 5.  Use the given equality of reciprocals.\n  We know\n    1/(3+a) + 1/(3+b) + 1/(3+c)\n  = 1/(3–a) + 1/(3–b) + 1/(3–c).\n  In other words, both sums of reciprocals are equal to S.  Therefore in inequality (II) we may replace\n    1/(3–a) + 1/(3–b) + 1/(3–c)  by  S.\n  Thus (II) becomes\n    [ 9 – (a + b + c) ]·S  ≥  9.            (II′)\n\nStep 6.  Add inequalities (I) and (II′).\n  From (I): (9 + (a + b + c))·S  ≥  9,\n  From (II′): (9 – (a + b + c))·S  ≥  9.\n  Adding gives\n    [ (9 + (a + b + c)) + (9 – (a + b + c)) ]·S  ≥  9 + 9,\n    (9 + a + b + c + 9 – a – b – c)·S  ≥  18,\n    18·S  ≥  18.\n\nStep 7.  Conclude the desired inequality.\n  Since 18 > 0, we may divide both sides by 18, yielding\n    S  ≥  1.\n\nTherefore, the correct inequality relating S to 1 is S ≥ 1.  This corresponds to option (B).\n\nThe answer is (B) ≥",
+    "original_entry": {
+        "data_id": "631",
+        "problem": "Let $a, b, c \\in (-3, 3)$ such that \n$$\n\\frac{1}{3+a}+\\frac{1}{3+b}+\\frac{1}{3+c}=\\frac{1}{3-a}+\\frac{1}{3-b}+\\frac{1}{3-c}.\n$$\nConsider the following expressions:\n$$\n\\frac{1}{3+a}+\\frac{1}{3+b}+\\frac{1}{3+c} \\quad () \\quad 1.\n$$\nDetermine the correct inequality relation to fill in the blank.\n\nOptions:\n\n(A) $\\leq$ \n\n(B) $\\geq$\n\n(C) $=$ \n\n(D) $<$\n\n(E) $>$\n\n(F) None of the above",
+        "type": "relation",
+        "data_split": "train",
+        "answer": "(B) $\\geq$",
+        "solution": "By the inequality $A M \\geq H M$ we have\n$$\n\\begin{equation*}\n((3+a)+(3+b)+(3+c))\\left(\\frac{1}{3+a}+\\frac{1}{3+b}+\\frac{1}{3+c}\\right) \\geq 9 \\tag{1}\n\\end{equation*}\n$$\nand\n$$\n\\begin{align*}\n& ((3-a)+(3-b)+(3-c))\\left(\\frac{1}{3-a}+\\frac{1}{3-b}+\\frac{1}{3-c}\\right) \\geq 9 \\\\\n& \\quad \\Leftrightarrow \\quad((3-a)+(3-b)+(3-c))\\left(\\frac{1}{3+a}+\\frac{1}{3+b}+\\frac{1}{3+c}\\right) \\geq 9 \\tag{2}\n\\end{align*}\n$$\n\nAfter adding (1) and (2) we obtain\n$$\n18\\left(\\frac{1}{3+a}+\\frac{1}{3+b}+\\frac{1}{3+c}\\right) \\geq 18, \\quad \\text { i.e. } \\quad \\frac{1}{3+a}+\\frac{1}{3+b}+\\frac{1}{3+c} \\geq 1\n$$ Therefore, the answer is (B) $\\geq$.",
+        "theorems": {
+            "Theorem 35": {
+                "Nickname": [
+                    "mean inequalities"
+                ],
+                "Theorem": "Let $a_{1}, a_{2}, \\ldots, a_{n}$ be positive real numbers. The numbers\n$$\n\\begin{aligned}\n& Q M=\\sqrt{\\frac{a_{1}^{2}+a_{2}^{2}+\\cdots+a_{n}^{2}}{n}}, \\quad A M=\\frac{a_{1}+a_{2}+\\cdots+a_{n}}{n} \\\\\n& G M=\\sqrt[n]{a_{1} a_{2} \\cdots a_{n}} \\quad \\text { and } \\quad H M=\\frac{n}{\\frac{1}{a_{1}}+\\frac{1}{a_{2}}+\\cdots+\\frac{1}{a_{n}}}\n\\end{aligned}\n$$\nare called the quadratic, arithmetic, geometric and harmonic mean for the numbers $a_{1}, a_{2}, \\ldots, a_{n}$, respectively, and we have\n$$\nQ M \\geq A M \\geq G M \\geq H M\n$$\n\nEqualities occur if and only if $a_{1}=a_{2}=\\cdots=a_{n}$.",
+                "Theorem_Category": "Inequality Between Means"
+            }
+        },
+        "choices": [
+            "(A) $\\leq$",
+            "(B) $\\geq$",
+            "(C) $=$",
+            "(D) $<$",
+            "(E) $>$",
+            "(F) None of the above"
+        ],
+        "difficulty": ""
+    }
+}

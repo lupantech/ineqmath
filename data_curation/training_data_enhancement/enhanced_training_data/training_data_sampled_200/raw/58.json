@@ -1,0 +1,26 @@
+{
+    "data_id": "58",
+    "type": "bound",
+    "problem": "Let $a, b, c, d > 0$ be real numbers. Let $u = ab + ac + ad + bc + bd + cd$ and $v = abc + abd + acd + bcd$. Find the maximal constant $C$ such that the following inequality holds for all $a, b, c, d > 0$:\n$$\n2u^3 \\geq Cv^2\n$$",
+    "current_solution": "We have $p_{2}=\\frac{u}{\\binom{4}{2}}=\\frac{u}{6}$ and $p_{3}=\\frac{v}{\\binom{4}{3}}=\\frac{v}{4}$.\nBy Maclaurin's inequality we have\n$$\np_{2}^{\\frac{1}{2}} \\geq p_{3}^{\\frac{1}{3}} \\quad \\Leftrightarrow \\quad p_{2}^{3} \\geq p_{3}^{2} \\quad \\Leftrightarrow \\quad\\left(\\frac{u}{6}\\right)^{3} \\geq\\left(\\frac{v}{4}\\right)^{2} \\quad \\Leftrightarrow \\quad 2 u^{3} \\geq 27 v^{2}\n$$\n\nEquality holds when $a = b = c = d$, that is, all variables are equal. In this case, the inequality becomes an equality, and $C = 27$ is the maximal value for which the inequality always holds.\n\nTherefore, the answer is $C = 27$.",
+    "answer": "$C = 27$",
+    "enhanced_solution": "Enhanced Solution:\n\n1. Introduction and Notation\n   \n   We are given four positive real numbers a, b, c, d > 0, and we define the following symmetric sums:\n   \n   • u = ab + ac + ad + bc + bd + cd, the sum of all pairwise products.\n   • v = abc + abd + acd + bcd, the sum of all triple products.\n   \n   Our goal is to find the largest constant C such that the inequality\n   \n       2 u³ ≥ C v²\n   \n   holds for all positive a, b, c, d.\n\n2. Elementary Symmetric Means and Maclaurin’s Inequality\n\n   Let σ₂ and σ₃ denote the elementary symmetric sums of degree 2 and 3, so that\n      σ₂ = u  and  σ₃ = v.\n\n   Define the power means (or rather the elementary symmetric means) p₂ and p₃ by averaging over the number of terms:\n\n      p₂ = σ₂ / (number of 2‐element subsets of {a,b,c,d}) = u / 6,\n      p₃ = σ₃ / (number of 3‐element subsets of {a,b,c,d}) = v / 4.\n\n   Maclaurin’s inequality states that for a set of n positive numbers, the sequence of quantities\n\n      p_k = (σ_k) / (C(n, k))\n\n   is decreasing in k when passed through the appropriate root, i.e.\n\n      p₂^(1/2) ≥ p₃^(1/3)  for n = 4,   k = 2, 3.\n\n3. Applying Maclaurin’s Inequality\n\n   From p₂^(1/2) ≥ p₃^(1/3), we raise both sides to the 6th power (the least common multiple of 2 and 3) to eliminate the fractional exponents:\n\n      (p₂^(1/2))^6 ≥ (p₃^(1/3))^6\n      ⟹ p₂³ ≥ p₃².\n\n   Substituting p₂ = u/6 and p₃ = v/4 gives:\n\n      (u/6)³ ≥ (v/4)²\n      ⟹ u³ / 6³ ≥ v² / 4²\n      ⟹ u³ / 216 ≥ v² / 16\n      ⟹ 16 u³ ≥ 216 v²\n      ⟹ 2 u³ ≥ 27 v².\n\n   Thus we obtain the inequality in the desired form, with C = 27:\n\n      2 u³ ≥ 27 v².\n\n4. Sharpness and Equality Case\n\n   Maclaurin’s inequality attains equality precisely when all the variables are equal.  In our setting, equality occurs if and only if\n\n      a = b = c = d.\n\n   Substituting a = b = c = d into u and v:\n\n      u = 6 a²,   v = 4 a³,\n\n   and verifying the relation:\n\n      2 (6 a²)³ = 2 · 216 a⁶ = 432 a⁶,\n      27 (4 a³)² = 27 · 16 a⁶ = 432 a⁶.\n\n   Hence equality holds, confirming that C = 27 is the largest possible constant.\n\n5. Conclusion\n\n   We have shown by a direct application of Maclaurin’s inequality that for all positive a, b, c, d,\n\n      2 u³ ≥ 27 v²,\n\n   and that 27 is the maximal constant for which this inequality remains valid.  \n\nThe answer is $C=27$",
+    "original_entry": {
+        "data_id": "58",
+        "problem": "Let $a, b, c, d > 0$ be real numbers. Let $u = ab + ac + ad + bc + bd + cd$ and $v = abc + abd + acd + bcd$. Find the maximal constant $C$ such that the following inequality holds for all $a, b, c, d > 0$:\n$$\n2u^3 \\geq Cv^2\n$$",
+        "type": "bound",
+        "data_split": "train",
+        "answer": "$$C = 27$$",
+        "solution": "We have $p_{2}=\\frac{u}{\\binom{4}{2}}=\\frac{u}{6}$ and $p_{3}=\\frac{v}{\\binom{4}{3}}=\\frac{v}{4}$.\nBy Maclaurin's inequality we have\n$$\np_{2}^{\\frac{1}{2}} \\geq p_{3}^{\\frac{1}{3}} \\quad \\Leftrightarrow \\quad p_{2}^{3} \\geq p_{3}^{2} \\quad \\Leftrightarrow \\quad\\left(\\frac{u}{6}\\right)^{3} \\geq\\left(\\frac{v}{4}\\right)^{2} \\quad \\Leftrightarrow \\quad 2 u^{3} \\geq 27 v^{2}\n$$\n\nEquality holds when $a = b = c = d$, that is, all variables are equal. In this case, the inequality becomes an equality, and $C = 27$ is the maximal value for which the inequality always holds.\n\nTherefore, the answer is $C = 27$.",
+        "theorems": {
+            "Theorem 61": {
+                "Nickname": [
+                    "maclaurin's inequality"
+                ],
+                "Theorem": "Let $a_{1}, a_{2}, \\ldots, a_{n}>0$. Then\n$$\np_{1} \\geq p_{2}^{\\frac{1}{2}} \\geq \\cdots \\geq p_{k}^{\\frac{1}{k}} \\geq \\cdots \\geq p_{n}^{\\frac{1}{n}}\n$$\n\nEquality occurs if and only if $a_{1}=a_{2}=\\cdots=a_{n}$.",
+                "Theorem_Category": "Maclaurin's Inequality"
+            }
+        },
+        "difficulty": ""
+    }
+}

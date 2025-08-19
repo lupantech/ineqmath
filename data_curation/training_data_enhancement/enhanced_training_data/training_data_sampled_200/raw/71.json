@@ -1,0 +1,24 @@
+{
+    "data_id": "71",
+    "type": "bound",
+    "problem": "Let $a, b, c$ be the side lengths of a given triangle. Find the minimal constant $C$ such that the following inequality holds for all $a, b, c$ satisfying the triangle inequality:\n$$\na^{2}+b^{2}+c^{2} < C(a b+b c+c a)\n$$",
+    "current_solution": "Let $a=x+y, b=y+z, c=z+x, x, y, z>0$.\nThen we have\n$$\n\\begin{aligned}\n& (x+y)^{2}+(y+z)^{2}+(z+x)^{2} \\\\\n& \\quad<2((x+y)(y+z)+(y+z)(z+x)+(z+x)(x+y))\n\\end{aligned}\n$$\nor\n$$\nxy+yz+zx>0\n$$\nwhich is clearly true.\n\nEquality is approached as $x, y, z \\to 0$ (i.e., when the triangle becomes degenerate), but never actually achieved for positive $x, y, z$. Thus, $C = 2$ is the minimal constant for which the inequality always holds.\n\nTherefore, the answer is $C = 2$.",
+    "answer": "$C = 2$",
+    "enhanced_solution": "We want to show that for any triangle with side‐lengths a,b,c, the inequality\n  a² + b² + c² < C(ab + bc + ca)\nholds, and to determine the smallest such C.  \n\n1.  Ravi substitution (enforcing the triangle inequalities):  \n   Since a,b,c are sides of a triangle, we can write  \n     a = x + y,   b = y + z,   c = z + x,   \n   with x,y,z > 0.  \n\n2.  Express both sides of the desired inequality in terms of x,y,z.  \n   •  Left‐hand side:\n      a² + b² + c²  \n      = (x+y)² + (y+z)² + (z+x)²  \n      = [x² + 2xy + y²] + [y² + 2yz + z²] + [z² + 2zx + x²]  \n      = 2(x² + y² + z²) + 2(xy + yz + zx).\n\n   •  Right‐hand side for C=2:  \n      2(ab + bc + ca)  \n      = 2[(x+y)(y+z) + (y+z)(z+x) + (z+x)(x+y)].\n\n3.  Expand the sum of pairwise products:  \n   (x+y)(y+z) = x y + x z + y² + y z,\n   (y+z)(z+x) = y z + y x + z² + z x,\n   (z+x)(x+y) = z x + z y + x² + x y.\n   Summing these three gives\n     (x+y)(y+z)+(y+z)(z+x)+(z+x)(x+y)\n     = (x² + y² + z²) + 3(xy + yz + zx).\n\n   Hence\n     2(ab + bc + ca)\n     = 2[x² + y² + z² + 3(xy + yz + zx)]\n     = 2(x² + y² + z²) + 6(xy + yz + zx).\n\n4.  Compare RHS and LHS for C = 2:  \n   2(ab + bc + ca) − [a² + b² + c²]\n   = [2(x² + y² + z²) + 6(xy + yz + zx)]\n     − [2(x² + y² + z²) + 2(xy + yz + zx)]\n   = 4(xy + yz + zx).\n\n   Since x,y,z > 0, we have xy + yz + zx > 0, so  \n     2(ab + bc + ca) > a² + b² + c².  \n   This establishes the inequality with C = 2, and it is strict for every nondegenerate triangle.\n\n5.  Sharpness of C = 2:  \n   As the triangle approaches degeneracy (for example, let y,z → 0 with x fixed),  \n   one side approaches the sum of the other two, and the ratio\n     (a² + b² + c²)/(ab + bc + ca)\n   tends to 2.  Therefore no smaller constant C < 2 can work for all triangles.\n\nConclusion:  The smallest constant C for which  \n  a² + b² + c² < C(ab + bc + ca)  \nholds in every (nondegenerate) triangle is\n\nThe answer is $C=2$",
+    "original_entry": {
+        "data_id": "71",
+        "problem": "Let $a, b, c$ be the side lengths of a given triangle. Find the minimal constant $C$ such that the following inequality holds for all $a, b, c$ satisfying the triangle inequality:\n$$\na^{2}+b^{2}+c^{2} < C(a b+b c+c a)\n$$",
+        "type": "bound",
+        "data_split": "train",
+        "answer": "$$C = 2$$",
+        "solution": "Let $a=x+y, b=y+z, c=z+x, x, y, z>0$.\nThen we have\n$$\n\\begin{aligned}\n& (x+y)^{2}+(y+z)^{2}+(z+x)^{2} \\\\\n& \\quad<2((x+y)(y+z)+(y+z)(z+x)+(z+x)(x+y))\n\\end{aligned}\n$$\nor\n$$\nxy+yz+zx>0\n$$\nwhich is clearly true.\n\nEquality is approached as $x, y, z \\to 0$ (i.e., when the triangle becomes degenerate), but never actually achieved for positive $x, y, z$. Thus, $C = 2$ is the minimal constant for which the inequality always holds.\n\nTherefore, the answer is $C = 2$.",
+        "theorems": {
+            "Theorem 23": {
+                "Nickname": [],
+                "Theorem": "Let $a, b, c \\in \\mathbb{R}^{+}$, and let us denote\n$$\n\\begin{aligned}\nQ M & =\\sqrt{\\frac{a^{2}+b^{2}+c^{2}}{3}}, \\quad A M=\\frac{a+b+c}{3}, \\quad G M=\\sqrt[3]{a b c} \\text { and } \\\\\nH M & =\\frac{3}{\\frac{1}{a}+\\frac{1}{b}+\\frac{1}{c}}\n\\end{aligned}\n$$\n\nThen\n$$\nQ M \\geq A M \\geq G M \\geq H M\n$$\n\nEqualities occur if and only if $a=b=c$.",
+                "Theorem_Category": "Inequality Between Means"
+            }
+        },
+        "difficulty": ""
+    }
+}

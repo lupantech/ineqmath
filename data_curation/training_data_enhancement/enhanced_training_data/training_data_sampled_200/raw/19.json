@@ -1,0 +1,30 @@
+{
+    "data_id": "19",
+    "type": "bound",
+    "problem": "Let $a, b, c$ be positive real numbers. Find the maximal constant $C$ such that the following inequality holds for all $a, b, c \\in \\mathbb{R}^{+}$:\n$$\n\\frac{a^{3}}{b^{2}}+\\frac{b^{3}}{c^{2}}+\\frac{c^{3}}{a^{2}} \\geq C \\left( \\frac{a^{2}}{b}+\\frac{b^{2}}{c}+\\frac{c^{2}}{a} \\right)\n$$",
+    "current_solution": "By the Cauchy-Schwarz Inequality we have\n\n$$\n(a+b+c)\\left(\\frac{a^{3}}{b^{2}}+\\frac{b^{3}}{c^{2}}+\\frac{c^{3}}{a^{2}}\\right) \\geq\\left(\\frac{a^{2}}{b}+\\frac{b^{2}}{c}+\\frac{c^{2}}{a}\\right)^{2}\n$$\n\nso we only have to prove that\n\n$$\n\\frac{a^{2}}{b}+\\frac{b^{2}}{c}+\\frac{c^{2}}{a} \\geq a+b+c\n$$\n\nBut this follows immediately from the Cauchy-Schwarz Inequality.\n\nEquality holds when $a = b = c$, in which case both sides of the original inequality are equal. This gives the minimum value of the left side relative to the right, so $C = 1$ is the maximal constant for which the inequality always holds.\n\nTherefore, the answer is $C = 1$. ",
+    "answer": "$C = 1$",
+    "enhanced_solution": "Enhanced Solution:\n\nWe wish to determine the largest constant C for which the inequality\n  (1)    a^3/b^2 + b^3/c^2 + c^3/a^2   ≥   C · (a^2/b + b^2/c + c^2/a)\nholds for all positive real a,b,c.  We will show by a two‐step application of the Cauchy–Schwarz (Titu’s) lemma that C=1 is the maximal such constant.\n\nStep 1:  Reduce to a simpler comparison.\n----------------------------------------\nApply Cauchy–Schwarz in the form\n  (x1^2/u1 + x2^2/u2 + x3^2/u3)·(u1 + u2 + u3)  ≥  (x1 + x2 + x3)^2,\nwith the identifications\n  x1 = a^(3/2)/b ,  u1 = b ,\n  x2 = b^(3/2)/c ,  u2 = c ,\n  x3 = c^(3/2)/a ,  u3 = a.\nThen\n  x1^2/u1 + x2^2/u2 + x3^2/u3   =   a^3/b^2 + b^3/c^2 + c^3/a^2,\nand\n  u1 + u2 + u3   =   a + b + c,\nwhile\n  x1 + x2 + x3   =   a^2/b + b^2/c + c^2/a.\nHence Cauchy–Schwarz yields\n  (a^3/b^2 + b^3/c^2 + c^3/a^2)·(a + b + c)  ≥  (a^2/b + b^2/c + c^2/a)^2.\nDividing both sides by (a + b + c)>0 gives the equivalent inequality\n  (2)    a^3/b^2 + b^3/c^2 + c^3/a^2   ≥   (a^2/b + b^2/c + c^2/a)^2  ÷  (a + b + c).\n\nConsequently, to prove (1) it suffices to show\n  (a^2/b + b^2/c + c^2/a)^2  ÷  (a + b + c)   ≥   C · (a^2/b + b^2/c + c^2/a).\nSince the factor (a^2/b + b^2/c + c^2/a) is positive, this is equivalent to\n  (3)    a^2/b + b^2/c + c^2/a   ≥   C · (a + b + c).\n\nStep 2:  Establish the linear bound.\n-------------------------------------\nWe now apply Cauchy–Schwarz (Titu’s lemma) once more in the form\n  ∑(a^2/b)  ≥  (∑a)^2  ÷  (∑b).\nHere ∑a = a + b + c and ∑b = a + b + c, so\n  a^2/b + b^2/c + c^2/a   ≥   (a + b + c)^2 / (a + b + c)   =   a + b + c.\nComparing with (3), we see that the inequality holds with C=1.  Moreover, if we attempted any larger C>1, then for a=b=c the left‐side equals the right‐side exactly, preventing any strict improvement of C.\n\nEquality Case and Maximality:\nWhen a=b=c, all intermediate Cauchy–Schwarz applications become equalities, and both sides of the original inequality coincide.  Hence C=1 is attained and cannot be increased without violating the inequality in the equal‐variable case.\n\nConclusion:\nBy the above rigorous derivation, the largest constant C for which (1) holds for all positive a,b,c is C=1.\n\nThe answer is $C=1$",
+    "original_entry": {
+        "data_id": "19",
+        "problem": "Let $a, b, c$ be positive real numbers. Find the maximal constant $C$ such that the following inequality holds for all $a, b, c \\in \\mathbb{R}^{+}$:\n$$\n\\frac{a^{3}}{b^{2}}+\\frac{b^{3}}{c^{2}}+\\frac{c^{3}}{a^{2}} \\geq C \\left( \\frac{a^{2}}{b}+\\frac{b^{2}}{c}+\\frac{c^{2}}{a} \\right)\n$$",
+        "type": "bound",
+        "data_split": "train",
+        "answer": "$$C = 1$$",
+        "solution": [
+            "By the Cauchy-Schwarz Inequality we have\n\n$$\n(a+b+c)\\left(\\frac{a^{3}}{b^{2}}+\\frac{b^{3}}{c^{2}}+\\frac{c^{3}}{a^{2}}\\right) \\geq\\left(\\frac{a^{2}}{b}+\\frac{b^{2}}{c}+\\frac{c^{2}}{a}\\right)^{2}\n$$\n\nso we only have to prove that\n\n$$\n\\frac{a^{2}}{b}+\\frac{b^{2}}{c}+\\frac{c^{2}}{a} \\geq a+b+c\n$$\n\nBut this follows immediately from the Cauchy-Schwarz Inequality.\n\nEquality holds when $a = b = c$, in which case both sides of the original inequality are equal. This gives the minimum value of the left side relative to the right, so $C = 1$ is the maximal constant for which the inequality always holds.\n\nTherefore, the answer is $C = 1$. ",
+            "We have\n\n$$\n\\frac{a^{3}}{b^{2}} \\geq \\frac{a^{2}}{b}+a-b \\Leftrightarrow a^{3}+b^{3} \\geq a b(a+b) \\Leftrightarrow(a-b)^{2}(a+b) \\geq 0\n$$\n\nwhich is clearly true. Writing the analogous inequalities and adding them up gives\n\n$$\n\\frac{a^{3}}{b^{2}}+\\frac{b^{3}}{c^{2}}+\\frac{c^{3}}{a^{2}} \\geq \\frac{a^{2}}{b}+a-b+\\frac{b^{2}}{c}+b-c+\\frac{c^{2}}{a}+c-a=\\frac{a^{2}}{b}+\\frac{b^{2}}{c}+\\frac{c^{2}}{a}\n$$\n\nEquality holds when $a = b = c$, since then both sides are equal. This gives the minimum value of the left side relative to the right, so the maximal constant is $C = 1$.\n\nTherefore, the answer is $C = 1$."
+        ],
+        "theorems": {
+            "Theorem 5": {
+                "Nickname": [
+                    "cauchy-schwarz's inequality",
+                    "cauchy-schwarz"
+                ],
+                "Theorem": "For any real numbers $a_{1}, a_{2}, \\ldots, a_{n}$ and $b_{1}, b_{2}, \\ldots, b_{n}$\n\n$$\n\\begin{gathered}\n\\left(a_{1}^{2}+a_{2}^{2}+\\ldots+a_{n}^{2}\\right)\\left(b_{1}^{2}+b_{2}^{2}+\\ldots+b_{n}^{2}\\right) \\geq \\\\\n\\geq\\left(a_{1} b_{1}+a_{2} b_{2}+\\ldots+a_{n} b_{n}\\right)^{2}\n\\end{gathered}\n$$\n\nwith equality if and only if $a_{i}$ and $b_{i}$ are proportional, $i=1,2, \\ldots, n$.",
+                "Theorem_Category": "Cauchy-Schwarz Inequality"
+            }
+        },
+        "difficulty": ""
+    }
+}

@@ -1,0 +1,26 @@
+{
+    "data_id": "49",
+    "type": "bound",
+    "problem": "Let $a, b, c$ be real numbers. Find the largest constant $C$ such that the following inequality holds for all $a, b, c \\in \\mathbb{R}$:\n$$\n\\left(a^{2}+b^{2}+c^{2}\\right)^{2} \\geq C\\left(a^{3} b+b^{3} c+c^{3} a\\right)\n$$",
+    "current_solution": "By the well-known inequality $(x+y+z)^{2} \\geq 3(xy+yz+zx)$ for\n$$\nx = a^{2} + b c - a b, \\quad y = b^{2} + c a - b c, \\quad z = c^{2} + a b - c a\n$$\nwe obtain the required inequality.\n\nEquality holds when $a = b = c$, in which case both sides of the inequality are equal. This gives the maximum value of $C$ for which the inequality always holds, namely $C = 3$.\n\nTherefore, the answer is $C = 3$.",
+    "answer": "$C = 3$",
+    "enhanced_solution": "We wish to prove that for all real numbers a,b,c there holds\n\n  (a^2 + b^2 + c^2)^2  ≥  C · (a^3 b + b^3 c + c^3 a)\n\nand to determine the maximal constant C for which this inequality is valid.  The given solution proceeds by a classical application of the identity\n\n  (x + y + z)^2  ≥  3(xy + yz + zx),\n\nwhich itself is equivalent to the obvious nonnegativity of\n  (x−y)^2 + (y−z)^2 + (z−x)^2 ≥ 0.\n\nWe now follow exactly the same approach, but with full detail.\n\nStep 1:  Introduce the auxiliary variables\n\n  x = a^2 + bc − ab,\n  y = b^2 + ca − bc,\n  z = c^2 + ab − ca.\n\nStep 2:  Compute the sum x + y + z.\n\n  x + y + z\n  = (a^2 + bc − ab)\n  + (b^2 + ca − bc)\n  + (c^2 + ab − ca)\n  = a^2 + b^2 + c^2.\n\nThus\n  (x + y + z)^2 = (a^2 + b^2 + c^2)^2.\n\nStep 3:  Compute the pairwise products xy, yz, zx and sum them.\nWe expand each product and then combine like terms:\n\n  xy\n  = (a^2 + bc − ab)(b^2 + ca − bc)\n  = a^2 b^2   + a^3 c   − a^2 b c\n  + b^3 c     + b c^2 a − b^2 c^2\n  − a b^3     − a^2 b c + a b^2 c\n  = a^2b^2 + a^3c + b^3c + bc^2a + ab^2c − b^2c^2 − ab^3 − 2a^2bc.\n\n  Similarly,\n  yz\n  = (b^2 + ca − bc)(c^2 + ab − ca)\n  = b^2c^2 + ab^3 − b^2ca + c^3a + a^2bc − c^2a^2 − bc^3 − ab^2c + bc^2a,\n\n  zx\n  = (c^2 + ab − ca)(a^2 + bc − ab)\n  = a^2c^2 + a^3b − a^3c + bc^3 + ab^2c − bc^2a − abc^2 − a^2b^2 + a^2bc.\n\nAdding these three expansions term by term, one finds that every mixed term cancels except for\n\n  xy + yz + zx  =  a^3b + b^3c + c^3a.\n\nStep 4:  Invoke the basic quadratic inequality.\n\n  Since for all real x,y,z\n    (x + y + z)^2  ≥  3(xy + yz + zx),\n  we substitute our expressions for x + y + z and for xy + yz + zx:\n\n    (a^2 + b^2 + c^2)^2  =  (x + y + z)^2\n                         ≥  3·(xy + yz + zx)\n                         = 3·(a^3b + b^3c + c^3a).\n\nThus we have proved\n\n  (a^2 + b^2 + c^2)^2  ≥  3·(a^3b + b^3c + c^3a)\n\nfor all real a,b,c.\n\nStep 5:  Optimality of C=3.\n\n  Equality in (x + y + z)^2 ≥ 3(xy + yz + zx) occurs precisely when x = y = z.  In our notation that means\n    a^2 + bc − ab  =  b^2 + ca − bc  =  c^2 + ab − ca.\n  One checks at once that a = b = c satisfies these three equations.  Conversely, up to simultaneous sign–changes, the only way to force x=y=z is a=b=c.  Hence the constant C cannot be increased beyond 3 and still remain universally valid.\n\nTherefore the largest such constant is 3.\n\nThe answer is $C=3$",
+    "original_entry": {
+        "data_id": "49",
+        "problem": "Let $a, b, c$ be real numbers. Find the largest constant $C$ such that the following inequality holds for all $a, b, c \\in \\mathbb{R}$:\n$$\n\\left(a^{2}+b^{2}+c^{2}\\right)^{2} \\geq C\\left(a^{3} b+b^{3} c+c^{3} a\\right)\n$$",
+        "type": "bound",
+        "data_split": "train",
+        "answer": "$$C = 3$$",
+        "solution": "By the well-known inequality $(x+y+z)^{2} \\geq 3(xy+yz+zx)$ for\n$$\nx = a^{2} + b c - a b, \\quad y = b^{2} + c a - b c, \\quad z = c^{2} + a b - c a\n$$\nwe obtain the required inequality.\n\nEquality holds when $a = b = c$, in which case both sides of the inequality are equal. This gives the maximum value of $C$ for which the inequality always holds, namely $C = 3$.\n\nTherefore, the answer is $C = 3$.",
+        "theorems": {
+            "Theorem 11": {
+                "Nickname": [
+                    "cyclic sum"
+                ],
+                "Theorem": "Let $n$ be a positive integer. Given a function $f$ of $n$ variables, define the cyclic sum of variables $\\left(x_{1}, x_{2}, \\ldots, x_{n}\\right)$ as\n\n$$\n\\begin{gathered}\n\\sum_{c y c} f\\left(x_{1}, x_{3}, \\ldots, x_{n}\\right)=f\\left(x_{1}, x_{2}, \\ldots, x_{n}\\right)+f\\left(x_{2}, x_{3}, \\ldots, x_{n}, x_{1}\\right) \\\\\n+\\ldots+f\\left(a_{n}, a_{1}, a_{2}, \\ldots, a_{n-1}\\right)\n\\end{gathered}\n$$",
+                "Theorem_Category": "Cyclic Sum"
+            }
+        },
+        "difficulty": ""
+    }
+}

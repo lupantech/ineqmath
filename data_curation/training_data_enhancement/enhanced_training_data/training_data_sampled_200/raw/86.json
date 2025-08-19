@@ -1,0 +1,28 @@
+{
+    "data_id": "86",
+    "type": "bound",
+    "problem": "Let $a, b, c \\in \\mathbb{R}^{+}$. Determine the minimal constant $C$ such that the following inequality holds for all $a, b, c$:\n$$\n\\frac{(a+2b+3c)^{2}}{a^{2}+2b^{2}+3c^{2}} \\leq C.\n$$",
+    "current_solution": "For $m_{1}=\\frac{1}{6}, m_{2}=\\frac{2}{6}, m_{3}=\\frac{3}{6}, n=3$ by the inequality\n$$\nM_{1}^{m}(a, b, c) \\leq M_{2}^{m}(a, b, c)\n$$\nwhich is true due to the weighted power mean inequality, we obtain\n$$\n\\frac{a+2 b+3 c}{6} \\leq \\sqrt{\\frac{a^{2}+2 b^{2}+3 c^{2}}{6}}, \\quad \\text { i.e. } \\quad \\frac{(a+2 b+3 c)^{2}}{a^{2}+2 b^{2}+3 c^{2}} \\leq 6\n$$\n\nEquality holds when $a : b : c = 1 : 2 : 3$, that is, when $a = k$, $b = 2k$, $c = 3k$ for any $k > 0$. In this case, the expression attains its maximum value $C = 6$.\n\nTherefore, the answer is $C = 6$.",
+    "answer": "$C = 6$",
+    "enhanced_solution": "We wish to find the smallest constant C such that for all positive real numbers a,b,c one has\n  (a+2b+3c)²  / (a²+2b²+3c²)  ≤  C.\n\n1.  Introduce suitable weights.  Set\n     w₁ = 1,\n     w₂ = 2,\n     w₃ = 3,\n  and let W = w₁ + w₂ + w₃ = 6.  We will apply the weighted power‐mean inequality to the three numbers a, b, c with these weights.\n\n2.  State the weighted power‐mean inequality.  For any real exponents r < s and for any nonnegative weights wᵢ summing to W, one has\n     M_r^w(a,b,c)  ≤  M_s^w(a,b,c),\n  where\n     M_r^w(a,b,c)  =  ( (w₁·aʳ + w₂·bʳ + w₃·cʳ) / W )^(1/r),\n     M_s^w(a,b,c)  =  ( (w₁·aˢ + w₂·bˢ + w₃·cˢ) / W )^(1/s).  \n\n3.  Apply it with r = 1 and s = 2.  Then\n     M₁^w(a,b,c)  ≤  M₂^w(a,b,c).  \n  Concretely,\n     M₁^w(a,b,c)  =  (w₁·a + w₂·b + w₃·c)/W  =  (a + 2b + 3c)/6,\n     M₂^w(a,b,c)  =  [ (w₁·a² + w₂·b² + w₃·c²)/W ]^(1/2)\n                  =  sqrt( (a² + 2b² + 3c²)/6 ).\n  Hence\n     (a + 2b + 3c)/6  ≤  sqrt( (a² + 2b² + 3c²)/6 ).\n\n4.  Square both sides and clear denominators.  We obtain\n     [ (a + 2b + 3c)² / 36 ]  ≤  [ (a² + 2b² + 3c²) / 6 ],\n  so multiplying both sides by 36 gives\n     (a + 2b + 3c)²  ≤  6 · (a² + 2b² + 3c²).\n  Equivalently,\n     (a + 2b + 3c)² / (a² + 2b² + 3c²)  ≤  6.\n\n5.  Show that this bound is best possible.  We must exhibit a choice of (a,b,c) for which equality occurs.  The equality case in the weighted power‐mean inequality (for r < s) happens precisely when the three numbers a, b, c are all equal.  Thus set\n     a = b = c = k > 0.\n  Then\n     (a + 2b + 3c) = k + 2k + 3k = 6k,\n     a² + 2b² + 3c² = k² + 2k² + 3k² = 6k²,\n  and therefore\n     (a + 2b + 3c)² / (a² + 2b² + 3c²)  =  (6k)² / (6k²)  =  36k² / 6k²  =  6.\n  Hence the inequality cannot hold with any constant smaller than 6.\n\nCombining the two directions shows that the minimal constant C for which the inequality\n     (a + 2b + 3c)² / (a² + 2b² + 3c²)  ≤  C\nholds for all a,b,c>0 is exactly 6.\n\nThe answer is $C=6$",
+    "original_entry": {
+        "data_id": "86",
+        "problem": "Let $a, b, c \\in \\mathbb{R}^{+}$. Determine the minimal constant $C$ such that the following inequality holds for all $a, b, c$:\n$$\n\\frac{(a+2b+3c)^{2}}{a^{2}+2b^{2}+3c^{2}} \\leq C.\n$$",
+        "type": "bound",
+        "data_split": "train",
+        "answer": "$$C = 6$$",
+        "solution": [
+            "For $m_{1}=\\frac{1}{6}, m_{2}=\\frac{2}{6}, m_{3}=\\frac{3}{6}, n=3$ by the inequality\n$$\nM_{1}^{m}(a, b, c) \\leq M_{2}^{m}(a, b, c)\n$$\nwhich is true due to the weighted power mean inequality, we obtain\n$$\n\\frac{a+2 b+3 c}{6} \\leq \\sqrt{\\frac{a^{2}+2 b^{2}+3 c^{2}}{6}}, \\quad \\text { i.e. } \\quad \\frac{(a+2 b+3 c)^{2}}{a^{2}+2 b^{2}+3 c^{2}} \\leq 6\n$$\n\nEquality holds when $a : b : c = 1 : 2 : 3$, that is, when $a = k$, $b = 2k$, $c = 3k$ for any $k > 0$. In this case, the expression attains its maximum value $C = 6$.\n\nTherefore, the answer is $C = 6$."
+        ],
+        "theorems": {
+            "Theorem 59": {
+                "Nickname": [
+                    "weighted power mean inequality"
+                ],
+                "Theorem": "Let $a=\\left(a_{1}, a_{2}, \\ldots, a_{n}\\right)$ be a sequence of positive real numbers, and let $m=\\left(m_{1}, m_{2}, \\ldots, m_{n}\\right)$ also be a sequence of positive real numbers such that $m_{1}+m_{2}+\\cdots+m_{n}=1$.\nThen for each $r \\leq s$ we have\n$$\nM_{r}^{m}(a) \\leq M_{s}^{m}(a)\n$$\ni.e.\n$$\n\\left(m_{1} a_{1}^{r}+m_{2} a_{2}^{r}+\\cdots+m_{n} a_{n}^{r}\\right)^{\\frac{1}{r}} \\leq\\left(m_{1} a_{1}^{s}+m_{2} a_{2}^{s}+\\cdots+m_{n} a_{n}^{s}\\right)^{\\frac{1}{s}}\n$$",
+                "Theorem_Category": "Inequality Between Means"
+            }
+        },
+        "difficulty": ""
+    }
+}

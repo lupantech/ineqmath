@@ -1,0 +1,48 @@
+{
+    "data_id": "741",
+    "type": "relation",
+    "problem": "Let $a, b, c$ be positive real numbers. Consider the following inequality:\n$$\n\\frac{a^{2}+b^{2}}{a+b}+\\frac{b^{2}+c^{2}}{b+c}+\\frac{c^{2}+a^{2}}{c+a} \\quad () \\quad a+b+c .\n$$\n\nDetermine the correct inequality relation to fill in the blank.\n\nOptions:\n\n(A) $\\leq$ \n\n(B) $\\geq$\n\n(C) $=$ \n\n(D) $<$\n\n(E) $>$\n\n(F) None of the above",
+    "current_solution": "By the Cauchy-Schwarz inequality we have\n$$\n\\begin{aligned}\n& \\frac{a^{2}+b^{2}}{a+b}+\\frac{b^{2}+c^{2}}{b+c}+\\frac{c^{2}+a^{2}}{c+a} \\\\\n& \\quad=\\frac{a^{2}}{a+b}+\\frac{b^{2}}{b+c}+\\frac{c^{2}}{c+a}+\\frac{b^{2}}{a+b}+\\frac{c^{2}}{b+c}+\\frac{a^{2}}{c+a} \\\\\n& \\geq \\frac{(2(a+b+c))^{2}}{4(a+b+c)}=a+b+c\n\\end{aligned}\n$$ Therefore, the answer is (B) $\\geq$.",
+    "answer": "(B) $\\geq$",
+    "enhanced_solution": "Enhanced Solution:\n\nWe want to determine the correct relation between\n  S = \\frac{a^{2}+b^{2}}{a+b} + \\frac{b^{2}+c^{2}}{b+c} + \\frac{c^{2}+a^{2}}{c+a}\nand\n  T = a + b + c,\nwhere a, b, c are positive real numbers.\n\nStep 1: Decompose each term.\nObserve that for any positive a, b,\n  \\frac{a^{2} + b^{2}}{a + b}\n  = \\frac{a^{2}}{a + b} + \\frac{b^{2}}{a + b}.\nApplying this decomposition cyclically gives six positive summands:\n\n  S  = \\frac{a^{2}}{a + b} + \\frac{b^{2}}{b + c} + \\frac{c^{2}}{c + a}\n     + \\frac{b^{2}}{a + b} + \\frac{c^{2}}{b + c} + \\frac{a^{2}}{c + a}.\n\nStep 2: Prepare to apply the Engel (Titu) lemma.\nSince all denominators a + b, b + c, c + a are positive, we may use the inequality\n  \\displaystyle \\sum_{i=1}^{n} \\frac{x_i^2}{y_i}\n    \\ge \\frac{(\\sum_{i=1}^{n} x_i)^2}{\\sum_{i=1}^{n} y_i},\nvalid for any real x_i and positive y_i.\n\nHere we identify our six terms as follows:\n  Term 1: x_1 = a,  y_1 = a + b\n  Term 2: x_2 = b,  y_2 = b + c\n  Term 3: x_3 = c,  y_3 = c + a\n  Term 4: x_4 = b,  y_4 = a + b\n  Term 5: x_5 = c,  y_5 = b + c\n  Term 6: x_6 = a,  y_6 = c + a\n\nCompute the sums:\n  \\sum_{i=1}^{6} x_i = a + b + c + b + c + a = 2(a + b + c),\n  \\sum_{i=1}^{6} y_i = 2\\bigl[(a+b)+(b+c)+(c+a)\\bigr] = 4(a + b + c).\n\nBy the Engel lemma,\n  S = \\sum_{i=1}^{6} \\frac{x_i^2}{y_i}\n    \\ge \\frac{\\bigl(2(a + b + c)\\bigr)^2}{4(a + b + c)}\n    = \\frac{4(a + b + c)^2}{4(a + b + c)}\n    = a + b + c.\n\nThus we have shown\n  S \\ge a + b + c.\n\nStep 3: Conclusion and equality case.\nThe derived inequality is\n  \\frac{a^{2}+b^{2}}{a+b} + \\frac{b^{2}+c^{2}}{b+c} + \\frac{c^{2}+a^{2}}{c+a}\n    \\ge a + b + c.\nEquality in the Engel lemma occurs precisely when all ratios x_i/y_i are equal, which here forces\na = b = c.  Hence the inequality is sharp and attained exactly at a = b = c.\n\nTherefore, the correct relation is “\\ge”.\n\nThe answer is (B) ≥",
+    "original_entry": {
+        "data_id": "741",
+        "problem": "Let $a, b, c$ be positive real numbers. Consider the following inequality:\n$$\n\\frac{a^{2}+b^{2}}{a+b}+\\frac{b^{2}+c^{2}}{b+c}+\\frac{c^{2}+a^{2}}{c+a} \\quad () \\quad a+b+c .\n$$\n\nDetermine the correct inequality relation to fill in the blank.\n\nOptions:\n\n(A) $\\leq$ \n\n(B) $\\geq$\n\n(C) $=$ \n\n(D) $<$\n\n(E) $>$\n\n(F) None of the above",
+        "type": "relation",
+        "data_split": "train",
+        "answer": "(B) $\\geq$",
+        "solution": [
+            "By the Cauchy-Schwarz inequality we have\n$$\n\\begin{aligned}\n& \\frac{a^{2}+b^{2}}{a+b}+\\frac{b^{2}+c^{2}}{b+c}+\\frac{c^{2}+a^{2}}{c+a} \\\\\n& \\quad=\\frac{a^{2}}{a+b}+\\frac{b^{2}}{b+c}+\\frac{c^{2}}{c+a}+\\frac{b^{2}}{a+b}+\\frac{c^{2}}{b+c}+\\frac{a^{2}}{c+a} \\\\\n& \\geq \\frac{(2(a+b+c))^{2}}{4(a+b+c)}=a+b+c\n\\end{aligned}\n$$ Therefore, the answer is (B) $\\geq$."
+        ],
+        "theorems": {
+            "Theorem 30": {
+                "Nickname": [
+                    "surányi's inequality"
+                ],
+                "Theorem": "Let $a_{1}, a_{2}, \\ldots, a_{n}$ be non-negative real numbers, and let $n$ be a positive integer. Then\n$$\n\\begin{aligned}\n& (n-1)\\left(a_{1}^{n}+a_{2}^{n}+\\cdots+a_{n}^{n}\\right)+n a_{1} a_{2} \\cdots a_{n} \\\\\n& \\quad \\geq\\left(a_{1}+a_{2}+\\cdots+a_{n}\\right)\\left(a_{1}^{n-1}+a_{2}^{n-1}+\\cdots+a_{n}^{n-1}\\right)\n\\end{aligned}\n$$",
+                "Theorem_Category": "Suranyi's Inequality"
+            },
+            "Theorem 26": {
+                "Nickname": [
+                    "cauchy-schwarz inequality"
+                ],
+                "Theorem": "Let $a_{1}, a_{2}, \\ldots, a_{n}$ and $b_{1}, b_{2}$, $\\ldots, b_{n}$ be real numbers. Then we have\n$$\n\\left(\\sum_{i=1}^{n} a_{i}^{2}\\right)\\left(\\sum_{i=1}^{n} b_{i}^{2}\\right) \\geq\\left(\\sum_{i=1}^{n} a_{i} b_{i}\\right)^{2}\n$$\ni.e.\n$$\n\\left(a_{1}^{2}+a_{2}^{2}+\\cdots+a_{n}^{2}\\right)\\left(b_{1}^{2}+b_{2}^{2}+\\cdots+b_{n}^{2}\\right) \\geq\\left(a_{1} b_{1}+a_{2} b_{2}+\\cdots+a_{n} b_{n}\\right)^{2}\n$$\n\nEquality occurs if and only if the sequences $\\left(a_{1}, a_{2}, \\ldots, a_{n}\\right)$ and $\\left(b_{1}, b_{2}\\right.$, $\\ldots, b_{n}$ ) are proportional, i.e. $\\frac{a_{1}}{b_{1}}=\\frac{a_{2}}{b_{2}}=\\cdots=\\frac{a_{n}}{b_{n}}$.",
+                "Theorem_Category": "Cauchy-Schwarz Inequality"
+            },
+            "Theorem 29": {
+                "Nickname": [],
+                "Theorem": "Let $a_{1}, a_{2}, \\ldots, a_{n} ; b_{1}, b_{2}, \\ldots, b_{n}$ be real numbers such that $b_{1}, b_{2}, \\ldots, b_{n}>0$. Then\n$$\n\\frac{a_{1}^{2}}{b_{1}}+\\frac{a_{2}^{2}}{b_{2}}+\\cdots+\\frac{a_{n}^{2}}{b_{n}} \\geq \\frac{\\left(a_{1}+a_{2}+\\cdots+a_{n}\\right)^{2}}{b_{1}+b_{2}+\\cdots+b_{n}}\n$$\nwith equality if and only if $\\frac{a_{1}}{b_{1}}=\\frac{a_{2}}{b_{2}}=\\cdots=\\frac{a_{n}}{b_{n}}$.",
+                "Theorem_Category": "Cauchy-Schwarz Inequality"
+            }
+        },
+        "choices": [
+            "(A) $\\leq$",
+            "(B) $\\geq$",
+            "(C) $=$",
+            "(D) $<$",
+            "(E) $>$",
+            "(F) None of the above"
+        ],
+        "difficulty": ""
+    }
+}

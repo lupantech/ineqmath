@@ -1,0 +1,38 @@
+{
+    "data_id": "655",
+    "type": "relation",
+    "problem": "Let $a, b, c > 0$ such that $a b c = 1$. Consider the following expressions:\n$$\n(a+b)(b+c)(c+a) \\quad () \\quad 4(a+b+c-1)\n$$\nDetermine the correct inequality relation to fill in the blank.\n\nOptions:\n\n(A) $\\leq$ \n\n(B) $\\geq$\n\n(C) $=$ \n\n(D) $<$\n\n(E) $>$\n\n(F) None of the above",
+    "current_solution": "We will use the fact that $(a+b)(b+c)(c+a) \\geq \\frac{8}{9}(a+b+c)(a b+b c+c a)$. So, it is enough to prove that $\\frac{2}{9}(a b+b c+c a)+\\frac{1}{a+b+c} \\geq 1$. Using the AM-GM Inequality, we can write\n\n$$\n\\frac{2}{9}(a b+b c+c a)+\\frac{1}{a+b+c} \\geq 3 \\sqrt[3]{\\frac{(a b+b c+c a)^{2}}{81(a+b+c)}} \\geq 1\n$$\n\nbecause\n\n$$\n(a b+b c+c a)^{2} \\geq 3 a b c(a+b+c)=3(a+b+c)\n$$ Therefore, the answer is (B) $\\geq$.",
+    "answer": "(B) $\\geq$",
+    "enhanced_solution": "We are given positive real numbers a,b,c with abc=1 and wish to compare\n\n    (a+b)(b+c)(c+a)   and   4\\bigl(a+b+c-1\\bigr).\n\nOur goal is to show the correct inequality sign is “≥.”  We follow the same two–step strategy as in the original outline, but fill in all intermediate details and justifications.\n\n1.  **First lower bound for (a+b)(b+c)(c+a).**\n    \n    Let S=a+b+c and σ₂=ab+bc+ca.  A straightforward expansion gives\n\n        (a+b)(b+c)(c+a)\n        = (a+b+c)(ab+bc+ca) − abc\n        = S·σ₂ − 1,\n\n    since abc=1.  We now show\n\n        S·σ₂ − 1  ≥  (8/9)·S·σ₂.\n\n    Equivalently,\n\n        S·σ₂  ≥  9.\n\n    But by the AM–GM inequality on a,b,c:\n\n        S = a + b + c  ≥  3(abc)^{1/3} = 3·1^{1/3} = 3,\n\n    and likewise on the three products ab,bc,ca:\n\n        σ₂ = ab + bc + ca  ≥  3(abc)^{2/3} = 3·1^{2/3} = 3.\n\n    Therefore,\n\n        S·σ₂  ≥  3·3  = 9,\n\n    which completes the proof that\n\n        (a+b)(b+c)(c+a)  ≥  (8/9)·S·σ₂.\n\n2.  **Reduction to a simpler inequality.**\n\n    We now compare this bound with 4(S−1).  From\n\n        (a+b)(b+c)(c+a)\n        ≥ (8/9)·S·σ₂\n\n    it suffices to prove\n\n        (8/9)·S·σ₂  ≥  4(S − 1).\n\n    Divide both sides by 4 S>0 to rewrite this as\n\n        \\frac{2}{9}\\,σ₂ \\;+\n        \\;\\frac{1}{S}  \\;≥\\; 1.\n\n3.  **Verification of \\(2/9·σ₂ + 1/S ≥ 1\\) by AM–GM.**\n\n    Write the left–hand side as a sum of three nonnegative terms:\n\n        \\frac{2}{9}σ₂ + \\frac{1}{S}\n        = \\underbrace{\\frac{1}{9}σ₂}_{x}\n        + \\underbrace{\\frac{1}{9}σ₂}_{y}\n        + \\underbrace{\\frac{1}{S}}_{z}.\n\n    By the AM–GM inequality for three nonnegative numbers x,y,z,\n\n        (x + y + z)/3  ≥  (xyz)^{1/3}.\n\n    Hence\n\n        \\frac{2}{9}σ₂ + \\frac{1}{S}\n        = x + y + z\n        ≥ 3\\sqrt[3]{x·y·z}\n        = 3\\sqrt[3]{\\bigl(\\tfrac{1}{9}σ₂\\bigr)^2 · \\tfrac{1}{S}}\n        = 3\\sqrt[3]{\\frac{σ₂^2}{81S}}.\n\n    Finally, observe that by another application of AM–GM,\n\n        σ₂^2 = (ab + bc + ca)^2\n             ≥ 3·ab·bc·ca·(a+b+c)\n             = 3·1·S\n             = 3S.\n\n    Substituting into the cubic root gives\n\n        3\\sqrt[3]{\\frac{σ₂^2}{81S}}\n        ≥ 3\\sqrt[3]{\\frac{3S}{81S}}\n        = 3\\sqrt[3]{\\frac{1}{27}}\n        = 3·\\frac{1}{3}\n        = 1.\n\n    Thus we have shown\n\n        \\frac{2}{9}σ₂ + \\frac{1}{S}  ≥  1,\n\n    completing the chain\n\n        (a+b)(b+c)(c+a)\n        ≥ (8/9)·S·σ₂\n        ≥ 4(S−1).\n\nHence the required inequality is\n\n    (a+b)(b+c)(c+a)  ≥  4(a+b+c−1).\n\nAnswer: The answer is (B) ≥",
+    "original_entry": {
+        "data_id": "655",
+        "problem": "Let $a, b, c > 0$ such that $a b c = 1$. Consider the following expressions:\n$$\n(a+b)(b+c)(c+a) \\quad () \\quad 4(a+b+c-1)\n$$\nDetermine the correct inequality relation to fill in the blank.\n\nOptions:\n\n(A) $\\leq$ \n\n(B) $\\geq$\n\n(C) $=$ \n\n(D) $<$\n\n(E) $>$\n\n(F) None of the above",
+        "type": "relation",
+        "data_split": "train",
+        "answer": "(B) $\\geq$",
+        "solution": [
+            "We will use the fact that $(a+b)(b+c)(c+a) \\geq \\frac{8}{9}(a+b+c)(a b+b c+c a)$. So, it is enough to prove that $\\frac{2}{9}(a b+b c+c a)+\\frac{1}{a+b+c} \\geq 1$. Using the AM-GM Inequality, we can write\n\n$$\n\\frac{2}{9}(a b+b c+c a)+\\frac{1}{a+b+c} \\geq 3 \\sqrt[3]{\\frac{(a b+b c+c a)^{2}}{81(a+b+c)}} \\geq 1\n$$\n\nbecause\n\n$$\n(a b+b c+c a)^{2} \\geq 3 a b c(a+b+c)=3(a+b+c)\n$$ Therefore, the answer is (B) $\\geq$.",
+            "Using the identity $(a+b)(b+c)(c+a)=(a+b+c)(a b+b c+c a)-1$ we reduce the problem to the following one\n\n$$\na b+b c+c a+\\frac{3}{a+b+c} \\geq 4\n$$\n\nNow, we can apply the AM-GM Inequality in the following form\n\n$$\na b+b c+c a+\\frac{3}{a+b+c} \\geq 4 \\sqrt[4]{\\frac{(a b+b c+c a)^{3}}{9(a+b+c)}}\n$$\n\nAnd so it is enough to prove that\n\n$$\n(a b+b c+c a)^{3} \\geq 9(a+b+c)\n$$\n\nBut this is easy, because we clearly have $a b+b c+c a \\geq 3$ and $(a b+b c+c a)^{2} \\geq$ $3 a b c(a+b+c)=3(a+b+c)$. Therefore, the answer is (B) $\\geq$."
+        ],
+        "theorems": {
+            "Theorem 2": {
+                "Nickname": [
+                    "am-gm (arithmetic mean-geometric mean) inequality",
+                    "am-gm"
+                ],
+                "Theorem": "If $a_{1}, a_{2}, \\ldots, a_{n}$ are nonnegative real numbers, then\n\n$$\n\\frac{1}{n} \\sum_{i=1}^{n} a_{i} \\geq\\left(a_{1} a_{2} \\ldots a_{n}\\right)^{\\frac{1}{n}}\n$$\n\nwith equality if and only if $a_{1}=a_{2}=\\ldots=a_{n}$. This inequality is a special case of the Power Mean Inequality.",
+                "Theorem_Category": "Inequality Between Means"
+            }
+        },
+        "choices": [
+            "(A) $\\leq$",
+            "(B) $\\geq$",
+            "(C) $=$",
+            "(D) $<$",
+            "(E) $>$",
+            "(F) None of the above"
+        ],
+        "difficulty": ""
+    }
+}

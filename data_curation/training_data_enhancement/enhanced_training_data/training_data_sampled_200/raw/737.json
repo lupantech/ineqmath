@@ -1,0 +1,43 @@
+{
+    "data_id": "737",
+    "type": "relation",
+    "problem": "Let $a, b, c$ be positive real numbers. Consider the following inequality:\n$$\na^{2}+b^{2}+c^{2}+2 a b c+1 \\quad () \\quad 2(a b+b c+a c) .\n$$\n\nDetermine the correct inequality relation to fill in the blank.\n\nOptions:\n\n(A) $\\leq$ \n\n(B) $\\geq$\n\n(C) $=$ \n\n(D) $<$\n\n(E) $>$\n\n(F) None of the above",
+    "current_solution": "By Schur's inequality we deduce\n$$\n2(a b+b c+a c)-\\left(a^{2}+b^{2}+c^{2}\\right) \\leq \\frac{9 a b c}{a+b+c}\n$$\n\nSo it remains to prove that\n$$\n\\frac{9 a b c}{a+b+c} \\leq 2 a b c+1\n$$\n\nSince $A M \\geq G M$ we have\n$$\n2 a b c+1=a b c+a b c+1 \\geq 3 \\sqrt[3]{(a b c)^{2}}\n$$\n\nTherefore we only need to prove that $3 \\sqrt[3]{(a b c)^{2}} \\geq \\frac{9 a b c}{a+b+c}$, which is equivalent to $a+b+c \\geq 3 \\sqrt[3]{a b c}$, and clearly holds. Therefore, the answer is (B) $\\geq$.",
+    "answer": "(B) $\\geq$",
+    "enhanced_solution": "We want to determine the correct relation between\n\n  a² + b² + c² + 2 abc + 1    and    2(ab + bc + ca)\n\nfor arbitrary positive real numbers a, b, c.  Equivalently, we must decide whether\n\n  a² + b² + c² + 2 abc + 1   ⧣   2(ab + bc + ca)\n\nwith ⧣ one of ≤, ≥, =, <, >.\n\nStep 1.  Rewrite the inequality in an equivalent form.  We seek to show\n\n  a² + b² + c² + 2abc + 1   ≥   2(ab + bc + ca)\n\nor, upon bringing all terms to one side,\n\n  2(ab + bc + ca) − (a² + b² + c²)   ≤   2abc + 1.    (★)\n\nStep 2.  Bound the left–hand side of (★) by a multiple of abc using Schur’s inequality.  Recall the third‐degree (r = 1) Schur inequality:\n\n  a³ + b³ + c³ + 3abc   ≥   ∑ₛᵧₘ a²b,\n\nwhere ∑ₛᵧₘ a²b = a²b + a²c + b²a + b²c + c²a + c²b.\n\nMultiply both sides of this Schur inequality by 1 (nothing changes) and observe that\n\n  (a + b + c)(ab + bc + ca)\n  =  ∑ₛᵧₘ a²b   +   3abc,\n\nand\n\n  (a + b + c)(a² + b² + c²)\n  =  ∑ₛᵧₘ a²b   +   (a³ + b³ + c³).\n\nTherefore,\n\n  (a + b + c)\bigl[2(ab + bc + ca) − (a² + b² + c²)\bigr]\n  = 2·∑ₛᵧₘ a²b + 6abc    −   (∑ₛᵧₘ a²b + ∑a³)\n  = (∑ₛᵧₘ a²b − ∑a³) + 6abc.\n\nBy Schur we have ∑ₛᵧₘ a²b − ∑a³ ≤ 3abc.  Hence\n\n  (a + b + c)\bigl[2(ab + bc + ca) − (a² + b² + c²)\bigr]  ≤ 3abc + 6abc = 9abc.\n\nSince a + b + c > 0, we divide by (a + b + c) to obtain\n\n  2(ab + bc + ca) − (a² + b² + c²)    ≤    9abc/(a + b + c).    (1)\n\nStep 3.  It remains to prove that\n\n  9abc/(a + b + c)   ≤   2abc + 1.    (2)\n\nStep 4.  Apply the arithmetic–geometric mean inequality (AM–GM) to the three nonnegative numbers abc, abc, 1:\n\n  (abc + abc + 1)/3   ≥   (abc·abc·1)^{1/3}\n  ⇒  2abc + 1   ≥   3(abc)^{2/3}.\n\nThus the right‐hand side of (2) satisfies 2abc + 1 ≥ 3(abc)^{2/3}, so it suffices to show\n\n  3(abc)^{2/3}   ≥   9abc/(a + b + c)\n  ⇔   (abc)^{2/3}(a + b + c)   ≥   3abc\n  ⇔   a + b + c   ≥   3(abc)^{1/3},\n\nwhich is again a direct consequence of AM–GM on a, b, c.  Therefore (2) holds, and chaining (1) with (2) yields\n\n  2(ab + bc + ca) − (a² + b² + c²)   ≤   2abc + 1\n\nas required.  Equivalently,\n\n  a² + b² + c² + 2abc + 1   ≥   2(ab + bc + ca).\n\nHence the correct relation is “≥.”  The answer is (B) ≥.",
+    "original_entry": {
+        "data_id": "737",
+        "problem": "Let $a, b, c$ be positive real numbers. Consider the following inequality:\n$$\na^{2}+b^{2}+c^{2}+2 a b c+1 \\quad () \\quad 2(a b+b c+a c) .\n$$\n\nDetermine the correct inequality relation to fill in the blank.\n\nOptions:\n\n(A) $\\leq$ \n\n(B) $\\geq$\n\n(C) $=$ \n\n(D) $<$\n\n(E) $>$\n\n(F) None of the above",
+        "type": "relation",
+        "data_split": "train",
+        "answer": "(B) $\\geq$",
+        "solution": [
+            "By Schur's inequality we deduce\n$$\n2(a b+b c+a c)-\\left(a^{2}+b^{2}+c^{2}\\right) \\leq \\frac{9 a b c}{a+b+c}\n$$\n\nSo it remains to prove that\n$$\n\\frac{9 a b c}{a+b+c} \\leq 2 a b c+1\n$$\n\nSince $A M \\geq G M$ we have\n$$\n2 a b c+1=a b c+a b c+1 \\geq 3 \\sqrt[3]{(a b c)^{2}}\n$$\n\nTherefore we only need to prove that $3 \\sqrt[3]{(a b c)^{2}} \\geq \\frac{9 a b c}{a+b+c}$, which is equivalent to $a+b+c \\geq 3 \\sqrt[3]{a b c}$, and clearly holds. Therefore, the answer is (B) $\\geq$."
+        ],
+        "theorems": {
+            "Theorem 68": {
+                "Nickname": [
+                    "karamata's inequality"
+                ],
+                "Theorem": "Let $f: I \\rightarrow \\mathbb{R}$ be a convex function on the interval $I \\subseteq \\mathbb{R}$ and let $\\left(a_{i}\\right)_{i=1}^{n},\\left(b_{i}\\right)_{i=1}^{n}$, where $a_{i}, b_{i} \\in I, i=$ $1,2, \\ldots, n$, are two sequences, such that $\\left(a_{i}\\right) \\succ\\left(b_{i}\\right)$. Then\n$$\nf\\left(a_{1}\\right)+f\\left(a_{2}\\right)+\\cdots+f\\left(a_{n}\\right) \\geq f\\left(b_{1}\\right)+f\\left(b_{2}\\right)+\\cdots+f\\left(b_{n}\\right)\n$$",
+                "Theorem_Category": "Karamata's Inequality"
+            },
+            "Theorem 62": {
+                "Nickname": [
+                    "schur's inequality"
+                ],
+                "Theorem": "Let $\\alpha \\in \\mathbb{R}$ and $\\beta>0$. Then we have\n$$\nT[\\alpha+2 \\beta, 0,0]+T[\\alpha, \\beta, \\beta] \\geq 2 T[\\alpha+\\beta, \\beta, 0]\n$$",
+                "Theorem_Category": "Schur's Inequality"
+            }
+        },
+        "choices": [
+            "(A) $\\leq$",
+            "(B) $\\geq$",
+            "(C) $=$",
+            "(D) $<$",
+            "(E) $>$",
+            "(F) None of the above"
+        ],
+        "difficulty": ""
+    }
+}

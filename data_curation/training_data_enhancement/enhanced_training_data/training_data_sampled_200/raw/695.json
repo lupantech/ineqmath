@@ -1,0 +1,46 @@
+{
+    "data_id": "695",
+    "type": "relation",
+    "problem": "Let $a, b, c$ be positive real numbers such that $a+b+c=3$. Consider the following expressions:\n$$\n\\frac{a^{3}+2}{b+2}+\\frac{b^{3}+2}{c+2}+\\frac{c^{3}+2}{a+2} \\quad () \\quad 3\n$$\nDetermine the correct inequality relation to fill in the blank.\n\nOptions:\n\n(A) $\\leq$ \n\n(B) $\\geq$\n\n(C) $=$ \n\n(D) $<$\n\n(E) $>$\n\n(F) None of the above",
+    "current_solution": "By $A M \\geq G M$ we have\n$$\n\\frac{a^{3}+2}{b+2}=\\frac{a^{3}+1+1}{b+2} \\geq \\frac{3 \\sqrt[3]{a^{3} \\cdot 1 \\cdot 1}}{b+2}=\\frac{3 a}{b+2}\n$$\n\nSimilarly we get\n$$\n\\frac{b^{3}+2}{c+2} \\geq \\frac{3 b}{c+2} \\quad \\text { and } \\quad \\frac{c^{3}+2}{a+2} \\geq \\frac{3 c}{a+2}\n$$\n\nTherefore\n$$\n\\begin{equation*}\n\\frac{a^{3}+2}{b+2}+\\frac{b^{3}+2}{c+2}+\\frac{c^{3}+2}{a+2} \\geq 3\\left(\\frac{a}{b+2}+\\frac{b}{c+2}+\\frac{c}{a+2}\\right) \\tag{1}\n\\end{equation*}\n$$\n\nApplying the Cauchy-Schwarz inequality we obtain\n$$\n\\begin{align*}\n\\frac{a}{b+2}+\\frac{b}{c+2}+\\frac{c}{a+2} & =\\frac{a^{2}}{a(b+2)}+\\frac{b^{2}}{b(c+2)}+\\frac{c^{2}}{c(a+2)} \\\\\n& \\geq \\frac{(a+b+c)^{2}}{a(b+2)+b(c+2)+c(a+2)} \\\\\n& =\\frac{(a+b+c)^{2}}{a b+b c+c a+2(a+b+c)} \\tag{2}\n\\end{align*}\n$$\n\nSince $(a+b+c)^{2} \\geq 3(a b+b c+c a)$ we deduce that\n$$\n\\begin{equation*}\n\\frac{1}{a b+b c+c a} \\geq \\frac{3}{(a+b+c)^{2}} \\tag{3}\n\\end{equation*}\n$$\n\nFrom (2) and (3) we get\n$$\n\\begin{align*}\n\\frac{a}{b+2}+\\frac{b}{c+2}+\\frac{c}{a+2} & \\geq \\frac{(a+b+c)^{2}}{a b+b c+c a+2(a+b+c)} \\\\\n& \\geq \\frac{(a+b+c)^{2}}{(a+b+c)^{2} / 3+2(a+b+c)} \\\\\n& =\\frac{3(a+b+c)^{2}}{(a+b+c)^{2}+6(a+b+c)}=\\frac{3(a+b+c)}{(a+b+c)+6} \\tag{4}\n\\end{align*}\n$$\n\nFinally by (1), (4) and since $a+b+c=3$ we obtain\n$$\nA \\geq 3\\left(\\frac{a}{b+2}+\\frac{b}{c+2}+\\frac{c}{a+2}\\right) \\geq \\frac{9(a+b+c)}{(a+b+c)+6}=\\frac{27}{9}=3\n$$\nas required. Equality occurs iff $a=b=c=1$. Therefore, the answer is (B) $\\geq$.",
+    "answer": "(B) $\\geq$",
+    "enhanced_solution": "We wish to determine the correct inequality relation between\n\n    S = \\frac{a^{3} + 2}{b + 2} + \\frac{b^{3} + 2}{c + 2} + \\frac{c^{3} + 2}{a + 2}\n\nand the constant 3, under the constraint a, b, c > 0 and a + b + c = 3.\n\nStep 1.  Apply the AM–GM inequality to each numerator.\nFor each term, note that a³ + 2 = a³ + 1 + 1, and since b + 2 > 0, we may write\n\n    \\frac{a^{3} + 2}{b + 2} \n    = \\frac{a^{3} + 1 + 1}{b + 2} \n    \\ge  \\frac{3 \\sqrt[3]{a^{3} \\cdot 1 \\cdot 1}}{b + 2} \n    = \\frac{3a}{b + 2}.\n\nThe inequality holds because the arithmetic mean of three nonnegative terms is at least their geometric mean, and equality in AM–GM occurs precisely when a³ = 1 = 1, i.e. a = 1.  Similarly,\n\n    \\frac{b^{3} + 2}{c + 2} \\ge \\frac{3b}{c + 2},\n    \\quad\n    \\frac{c^{3} + 2}{a + 2} \\ge \\frac{3c}{a + 2}.\n\nSumming these three inequalities yields\n\n    (1)\\quad\n    S \\;=\\; \\sum_{\\mathrm{cyc}} \\frac{a^{3} + 2}{b + 2} \n    \\ge 3 \\sum_{\\mathrm{cyc}} \\frac{a}{b + 2}.\n\nStep 2.  Bound the sum \\sum a/(b+2) via Cauchy–Schwarz.\nObserve that for positive quantities we can write\n\n    \\frac{a}{b + 2} = \\frac{a^{2}}{a\\,(b + 2)},\n\nso by the Cauchy–Schwarz inequality,\n\n    \\sum_{\\mathrm{cyc}} \\frac{a^{2}}{a\\,(b + 2)}\n    \\ge \\frac{(a + b + c)^{2}}{\\sum_{\\mathrm{cyc}} a\\,(b + 2)}\n    = \\frac{(a + b + c)^{2}}{ab + bc + ca + 2(a + b + c)}.\n\nSince a + b + c = 3, this becomes\n\n    \\sum_{\\mathrm{cyc}} \\frac{a}{b + 2}\n    \\ge \\frac{3^{2}}{ab + bc + ca + 6}\n    = \\frac{9}{ab + bc + ca + 6}.\n\nStep 3.  Use the well-known inequality (a + b + c)² ≥ 3(ab + bc + ca).\nBecause a + b + c = 3, we get\n\n    ab + bc + ca \\le \\frac{(a + b + c)^{2}}{3} = 3.\n\nHence\n\n    ab + bc + ca + 6 \\le 3 + 6 = 9,\n\nwhich implies\n\n    \\frac{9}{ab + bc + ca + 6} \\ge \\frac{9}{9} = 1.\n\nTherefore,\n\n    \\sum_{\\mathrm{cyc}} \\frac{a}{b + 2} \\ge 1.\n\nStep 4.  Combine the estimates.\nFrom (1) we have\n\n    S \\ge 3 \\sum_{\\mathrm{cyc}} \\frac{a}{b + 2} \\ge 3 \\cdot 1 = 3.\n\nThus S ≥ 3, with equality exactly when all interim inequalities become equalities.  Checking each step shows that equality forces\n\na³ = 1, b³ = 1, c³ = 1 (from AM–GM), and ab + bc + ca = 3 (from (a + b + c)² = 3(ab + bc + ca)),\nwhich together imply a = b = c = 1.\n\nConclusion.  The required relation is “≥”.\n\nThe answer is (B) ≥",
+    "original_entry": {
+        "data_id": "695",
+        "problem": "Let $a, b, c$ be positive real numbers such that $a+b+c=3$. Consider the following expressions:\n$$\n\\frac{a^{3}+2}{b+2}+\\frac{b^{3}+2}{c+2}+\\frac{c^{3}+2}{a+2} \\quad () \\quad 3\n$$\nDetermine the correct inequality relation to fill in the blank.\n\nOptions:\n\n(A) $\\leq$ \n\n(B) $\\geq$\n\n(C) $=$ \n\n(D) $<$\n\n(E) $>$\n\n(F) None of the above",
+        "type": "relation",
+        "data_split": "train",
+        "answer": "(B) $\\geq$",
+        "solution": "By $A M \\geq G M$ we have\n$$\n\\frac{a^{3}+2}{b+2}=\\frac{a^{3}+1+1}{b+2} \\geq \\frac{3 \\sqrt[3]{a^{3} \\cdot 1 \\cdot 1}}{b+2}=\\frac{3 a}{b+2}\n$$\n\nSimilarly we get\n$$\n\\frac{b^{3}+2}{c+2} \\geq \\frac{3 b}{c+2} \\quad \\text { and } \\quad \\frac{c^{3}+2}{a+2} \\geq \\frac{3 c}{a+2}\n$$\n\nTherefore\n$$\n\\begin{equation*}\n\\frac{a^{3}+2}{b+2}+\\frac{b^{3}+2}{c+2}+\\frac{c^{3}+2}{a+2} \\geq 3\\left(\\frac{a}{b+2}+\\frac{b}{c+2}+\\frac{c}{a+2}\\right) \\tag{1}\n\\end{equation*}\n$$\n\nApplying the Cauchy-Schwarz inequality we obtain\n$$\n\\begin{align*}\n\\frac{a}{b+2}+\\frac{b}{c+2}+\\frac{c}{a+2} & =\\frac{a^{2}}{a(b+2)}+\\frac{b^{2}}{b(c+2)}+\\frac{c^{2}}{c(a+2)} \\\\\n& \\geq \\frac{(a+b+c)^{2}}{a(b+2)+b(c+2)+c(a+2)} \\\\\n& =\\frac{(a+b+c)^{2}}{a b+b c+c a+2(a+b+c)} \\tag{2}\n\\end{align*}\n$$\n\nSince $(a+b+c)^{2} \\geq 3(a b+b c+c a)$ we deduce that\n$$\n\\begin{equation*}\n\\frac{1}{a b+b c+c a} \\geq \\frac{3}{(a+b+c)^{2}} \\tag{3}\n\\end{equation*}\n$$\n\nFrom (2) and (3) we get\n$$\n\\begin{align*}\n\\frac{a}{b+2}+\\frac{b}{c+2}+\\frac{c}{a+2} & \\geq \\frac{(a+b+c)^{2}}{a b+b c+c a+2(a+b+c)} \\\\\n& \\geq \\frac{(a+b+c)^{2}}{(a+b+c)^{2} / 3+2(a+b+c)} \\\\\n& =\\frac{3(a+b+c)^{2}}{(a+b+c)^{2}+6(a+b+c)}=\\frac{3(a+b+c)}{(a+b+c)+6} \\tag{4}\n\\end{align*}\n$$\n\nFinally by (1), (4) and since $a+b+c=3$ we obtain\n$$\nA \\geq 3\\left(\\frac{a}{b+2}+\\frac{b}{c+2}+\\frac{c}{a+2}\\right) \\geq \\frac{9(a+b+c)}{(a+b+c)+6}=\\frac{27}{9}=3\n$$\nas required. Equality occurs iff $a=b=c=1$. Therefore, the answer is (B) $\\geq$.",
+        "theorems": {
+            "Theorem 26": {
+                "Nickname": [
+                    "cauchy-schwarz inequality"
+                ],
+                "Theorem": "Let $a_{1}, a_{2}, \\ldots, a_{n}$ and $b_{1}, b_{2}$, $\\ldots, b_{n}$ be real numbers. Then we have\n$$\n\\left(\\sum_{i=1}^{n} a_{i}^{2}\\right)\\left(\\sum_{i=1}^{n} b_{i}^{2}\\right) \\geq\\left(\\sum_{i=1}^{n} a_{i} b_{i}\\right)^{2}\n$$\ni.e.\n$$\n\\left(a_{1}^{2}+a_{2}^{2}+\\cdots+a_{n}^{2}\\right)\\left(b_{1}^{2}+b_{2}^{2}+\\cdots+b_{n}^{2}\\right) \\geq\\left(a_{1} b_{1}+a_{2} b_{2}+\\cdots+a_{n} b_{n}\\right)^{2}\n$$\n\nEquality occurs if and only if the sequences $\\left(a_{1}, a_{2}, \\ldots, a_{n}\\right)$ and $\\left(b_{1}, b_{2}\\right.$, $\\ldots, b_{n}$ ) are proportional, i.e. $\\frac{a_{1}}{b_{1}}=\\frac{a_{2}}{b_{2}}=\\cdots=\\frac{a_{n}}{b_{n}}$.",
+                "Theorem_Category": "Cauchy-Schwarz Inequality"
+            },
+            "Theorem 29": {
+                "Nickname": [],
+                "Theorem": "Let $a_{1}, a_{2}, \\ldots, a_{n} ; b_{1}, b_{2}, \\ldots, b_{n}$ be real numbers such that $b_{1}, b_{2}, \\ldots, b_{n}>0$. Then\n$$\n\\frac{a_{1}^{2}}{b_{1}}+\\frac{a_{2}^{2}}{b_{2}}+\\cdots+\\frac{a_{n}^{2}}{b_{n}} \\geq \\frac{\\left(a_{1}+a_{2}+\\cdots+a_{n}\\right)^{2}}{b_{1}+b_{2}+\\cdots+b_{n}}\n$$\nwith equality if and only if $\\frac{a_{1}}{b_{1}}=\\frac{a_{2}}{b_{2}}=\\cdots=\\frac{a_{n}}{b_{n}}$.",
+                "Theorem_Category": "Cauchy-Schwarz Inequality"
+            },
+            "Theorem 35": {
+                "Nickname": [
+                    "mean inequalities"
+                ],
+                "Theorem": "Let $a_{1}, a_{2}, \\ldots, a_{n}$ be positive real numbers. The numbers\n$$\n\\begin{aligned}\n& Q M=\\sqrt{\\frac{a_{1}^{2}+a_{2}^{2}+\\cdots+a_{n}^{2}}{n}}, \\quad A M=\\frac{a_{1}+a_{2}+\\cdots+a_{n}}{n} \\\\\n& G M=\\sqrt[n]{a_{1} a_{2} \\cdots a_{n}} \\quad \\text { and } \\quad H M=\\frac{n}{\\frac{1}{a_{1}}+\\frac{1}{a_{2}}+\\cdots+\\frac{1}{a_{n}}}\n\\end{aligned}\n$$\nare called the quadratic, arithmetic, geometric and harmonic mean for the numbers $a_{1}, a_{2}, \\ldots, a_{n}$, respectively, and we have\n$$\nQ M \\geq A M \\geq G M \\geq H M\n$$\n\nEqualities occur if and only if $a_{1}=a_{2}=\\cdots=a_{n}$.",
+                "Theorem_Category": "Inequality Between Means"
+            }
+        },
+        "choices": [
+            "(A) $\\leq$",
+            "(B) $\\geq$",
+            "(C) $=$",
+            "(D) $<$",
+            "(E) $>$",
+            "(F) None of the above"
+        ],
+        "difficulty": ""
+    }
+}

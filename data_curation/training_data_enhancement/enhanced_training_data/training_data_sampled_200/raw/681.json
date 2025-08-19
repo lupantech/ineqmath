@@ -1,0 +1,34 @@
+{
+    "data_id": "681",
+    "type": "relation",
+    "problem": "Let $a, b, c$ be real numbers such that $a^{3}+b^{3}+c^{3}-3 a b c=1$. Consider the following expressions:\n$$\na^{2}+b^{2}+c^{2} \\quad () \\quad 1 .\n$$\nDetermine the correct inequality relation to fill in the blank.\n\nOptions:\n\n(A) $\\leq$ \n\n(B) $\\geq$\n\n(C) $=$ \n\n(D) $<$\n\n(E) $>$\n\n(F) None of the above",
+    "current_solution": "Observe that\n$$\n\\begin{aligned}\n1 & =a^{3}+b^{3}+c^{3}-3 a b c=(a+b+c)\\left(a^{2}+b^{2}+c^{2}-a b-b c-c a\\right) \\\\\n& =\\frac{(a+b+c)}{2}\\left((a-b)^{2}+(b-c)^{2}+(c-a)^{2}\\right)\n\\end{aligned}\n$$\n\nSince $(a-b)^{2}+(b-c)^{2}+(c-a)^{2} \\geq 0$ we must have $a+b+c>0$.\nAccording to\n$$\n(a+b+c)\\left(a^{2}+b^{2}+c^{2}-a b-b c-c a\\right)=1\n$$\nwe deduce\n$$\n(a+b+c)\\left(a^{2}+b^{2}+c^{2}-\\frac{(a+b+c)^{2}-a^{2}-b^{2}-c^{2}}{2}\\right)=1\n$$\nand easily find\n$$\na^{2}+b^{2}+c^{2}=\\frac{1}{3}\\left((a+b+c)^{2}+\\frac{2}{a+b+c}\\right)\n$$\n\nSince $a+b+c>0$ we may use $A M \\geq G M$ as follows\n$$\na^{2}+b^{2}+c^{2}=\\frac{1}{3}\\left((a+b+c)^{2}+\\frac{1}{a+b+c}+\\frac{1}{a+b+c}\\right) \\geq 1\n$$\nas required.\nEquality occurs iff $a+b+c=1$. Therefore, the answer is (B) $\\geq$.",
+    "answer": "(B) $\\geq$",
+    "enhanced_solution": "Enhanced Solution:\n\nWe wish to determine the correct inequality relating a^2 + b^2 + c^2 to 1, given the constraint\na^3 + b^3 + c^3 − 3abc = 1.\n\nStep 1. Factor the left–hand side.  A well-known identity states\n\n  a^3 + b^3 + c^3 − 3abc = (a + b + c)\bigl(a^2 + b^2 + c^2 − ab − bc − ca\bigr).\n\nHence the condition can be rewritten as\n\n  (a + b + c)\bigl(a^2 + b^2 + c^2 − ab − bc − ca\bigr) = 1.    (1)\n\nStep 2. Express the second factor as a sum of squares.  Observe that\n\n  a^2 + b^2 + c^2 − ab − bc − ca\n    = ½\bigl[(a − b)^2 + (b − c)^2 + (c − a)^2\bigr]  ≥ 0.\n\nBecause the product in (1) equals +1, which is strictly positive, both factors must be positive.  In particular,\n\n  S := a + b + c > 0.                (2)\n\nStep 3. Solve for T = a^2 + b^2 + c^2 in terms of S.  Write\n\n  a^2 + b^2 + c^2 − ab − bc − ca = (3T − S^2)/2,\n\nso (1) becomes\n\n  S · ((3T − S^2)/2 ) = 1\n  ⟹ 3T − S^2 = 2/S\n  ⟹ T = (a^2 + b^2 + c^2) = (1/3)\bigl(S^2 + 2/S\bigr).    (3)\n\nStep 4. Apply the AM–GM inequality to the three positive numbers S^2, 1/S, 1/S.  Their arithmetic mean is at least their geometric mean:\n\n  (S^2 + 1/S + 1/S)/3 ≥ (S^2 · (1/S) · (1/S))^{1/3} = 1.\n\nHence from (3) we obtain\n\n  a^2 + b^2 + c^2 = (1/3)(S^2 + 2/S) ≥ 1.\n\nStep 5. Conclusion.  We have shown\n\n  a^2 + b^2 + c^2 ≥ 1\n\nfor every real triple (a,b,c) satisfying a^3 + b^3 + c^3 − 3abc = 1.  Therefore the correct relation is “greater than or equal to.”\n\nThe answer is (B) ≥",
+    "original_entry": {
+        "data_id": "681",
+        "problem": "Let $a, b, c$ be real numbers such that $a^{3}+b^{3}+c^{3}-3 a b c=1$. Consider the following expressions:\n$$\na^{2}+b^{2}+c^{2} \\quad () \\quad 1 .\n$$\nDetermine the correct inequality relation to fill in the blank.\n\nOptions:\n\n(A) $\\leq$ \n\n(B) $\\geq$\n\n(C) $=$ \n\n(D) $<$\n\n(E) $>$\n\n(F) None of the above",
+        "type": "relation",
+        "data_split": "train",
+        "answer": "(B) $\\geq$",
+        "solution": "Observe that\n$$\n\\begin{aligned}\n1 & =a^{3}+b^{3}+c^{3}-3 a b c=(a+b+c)\\left(a^{2}+b^{2}+c^{2}-a b-b c-c a\\right) \\\\\n& =\\frac{(a+b+c)}{2}\\left((a-b)^{2}+(b-c)^{2}+(c-a)^{2}\\right)\n\\end{aligned}\n$$\n\nSince $(a-b)^{2}+(b-c)^{2}+(c-a)^{2} \\geq 0$ we must have $a+b+c>0$.\nAccording to\n$$\n(a+b+c)\\left(a^{2}+b^{2}+c^{2}-a b-b c-c a\\right)=1\n$$\nwe deduce\n$$\n(a+b+c)\\left(a^{2}+b^{2}+c^{2}-\\frac{(a+b+c)^{2}-a^{2}-b^{2}-c^{2}}{2}\\right)=1\n$$\nand easily find\n$$\na^{2}+b^{2}+c^{2}=\\frac{1}{3}\\left((a+b+c)^{2}+\\frac{2}{a+b+c}\\right)\n$$\n\nSince $a+b+c>0$ we may use $A M \\geq G M$ as follows\n$$\na^{2}+b^{2}+c^{2}=\\frac{1}{3}\\left((a+b+c)^{2}+\\frac{1}{a+b+c}+\\frac{1}{a+b+c}\\right) \\geq 1\n$$\nas required.\nEquality occurs iff $a+b+c=1$. Therefore, the answer is (B) $\\geq$.",
+        "theorems": {
+            "Theorem 35": {
+                "Nickname": [
+                    "mean inequalities"
+                ],
+                "Theorem": "Let $a_{1}, a_{2}, \\ldots, a_{n}$ be positive real numbers. The numbers\n$$\n\\begin{aligned}\n& Q M=\\sqrt{\\frac{a_{1}^{2}+a_{2}^{2}+\\cdots+a_{n}^{2}}{n}}, \\quad A M=\\frac{a_{1}+a_{2}+\\cdots+a_{n}}{n} \\\\\n& G M=\\sqrt[n]{a_{1} a_{2} \\cdots a_{n}} \\quad \\text { and } \\quad H M=\\frac{n}{\\frac{1}{a_{1}}+\\frac{1}{a_{2}}+\\cdots+\\frac{1}{a_{n}}}\n\\end{aligned}\n$$\nare called the quadratic, arithmetic, geometric and harmonic mean for the numbers $a_{1}, a_{2}, \\ldots, a_{n}$, respectively, and we have\n$$\nQ M \\geq A M \\geq G M \\geq H M\n$$\n\nEqualities occur if and only if $a_{1}=a_{2}=\\cdots=a_{n}$.",
+                "Theorem_Category": "Inequality Between Means"
+            }
+        },
+        "choices": [
+            "(A) $\\leq$",
+            "(B) $\\geq$",
+            "(C) $=$",
+            "(D) $<$",
+            "(E) $>$",
+            "(F) None of the above"
+        ],
+        "difficulty": ""
+    }
+}

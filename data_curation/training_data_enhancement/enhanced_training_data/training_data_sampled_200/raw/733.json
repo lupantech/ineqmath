@@ -1,0 +1,43 @@
+{
+    "data_id": "733",
+    "type": "relation",
+    "problem": "Let $a, b, c$ be positive real numbers such that $a b c = 1$. Consider the following inequality:\n$$\n\\frac{a}{a+b^{4}+c^{4}}+\\frac{b}{b+c^{4}+a^{4}}+\\frac{c}{c+a^{4}+b^{4}} \\quad () \\quad 1 .\n$$\n\nDetermine the correct inequality relation to fill in the blank.\n\nOptions:\n\n(A) $\\leq$ \n\n(B) $\\geq$\n\n(C) $=$ \n\n(D) $<$\n\n(E) $>$\n\n(F) None of the above",
+    "current_solution": "By the Cauchy-Schwarz inequality we have\n$$\n\\frac{a}{a+b^{4}+c^{4}}=\\frac{a\\left(a^{3}+2\\right)}{\\left(a+b^{4}+c^{4}\\right)\\left(a^{3}+1+1\\right)} \\leq \\frac{a\\left(a^{3}+2\\right)}{\\left(a^{2}+b^{2}+c^{2}\\right)^{2}}\n$$\n\nSimilarly we get\n$$\n\\frac{b}{b+c^{4}+a^{4}} \\leq \\frac{b\\left(b^{3}+2\\right)}{\\left(a^{2}+b^{2}+c^{2}\\right)^{2}} \\quad \\text { and } \\quad \\frac{c}{c+a^{4}+b^{4}} \\leq \\frac{c\\left(c^{3}+2\\right)}{\\left(a^{2}+b^{2}+c^{2}\\right)^{2}}\n$$\n\nHence\n$$\n\\frac{a}{a+b^{4}+c^{4}}+\\frac{b}{b+c^{4}+a^{4}}+\\frac{c}{c+a^{4}+b^{4}} \\leq \\frac{a^{4}+b^{4}+c^{4}+2(a+b+c)}{\\left(a^{2}+b^{2}+c^{2}\\right)^{2}}\n$$\nand we need to prove that\n$$\n\\left(a^{2}+b^{2}+c^{2}\\right)^{2} \\geq a^{4}+b^{4}+c^{4}+2(a+b+c)\n$$\nwhich is equivalent to\n$$\na^{2} b^{2}+b^{2} c^{2}+c^{2} a^{2} \\geq a+b+c\n$$\n\nBy the well-known inequality $a^{2} b^{2}+b^{2} c^{2}+c^{2} a^{2} \\geq a b c(a+b+c)$ and $a b c=1$, we have\n$$\na^{2} b^{2}+b^{2} c^{2}+c^{2} a^{2} \\geq a b c(a+b+c)=a+b+c\n$$\nas required. Therefore, the answer is (A) $\\leq$.",
+    "answer": "(A) $\\leq$",
+    "enhanced_solution": "We wish to show that for any positive reals a,b,c with abc=1, the cyclic sum\n    S = a/(a + b^4 + c^4)  +  b/(b + c^4 + a^4)  +  c/(c + a^4 + b^4)\nsatisfies the inequality S ≤ 1.  We proceed in three main steps:\n\n1.  Apply Cauchy–Schwarz to each term.\n   Fix one term, say T = a/(a + b^4 + c^4).  Introduce the two vectors in ℝ^3:\n     U = (√a,  √(b^4),  √(c^4))\n     V = (√(a^3), 1, 1).\n   Then by the Cauchy–Schwarz inequality,\n     (U·V)²  ≤  ‖U‖² · ‖V‖².\n   Here\n     U·V  =  √a·√(a^3)  +  √(b^4)·1  +  √(c^4)·1\n           =  a^2 + b^2 + c^2,\n     ‖U‖² = a + b^4 + c^4,\n     ‖V‖² = a^3 + 1 + 1 = a^3 + 2.\n   Hence\n     (a^2 + b^2 + c^2)²  ≤  (a + b^4 + c^4)(a^3 + 2)\n   and consequently\n     1/(a + b^4 + c^4)  ≤  (a^3 + 2)/(a^2 + b^2 + c^2)².\n   Multiplying both sides by a>0 gives\n     a/(a + b^4 + c^4)  ≤  a·(a^3 + 2)/(a^2 + b^2 + c^2)².\n   The same argument, by cyclic permutation of (a,b,c), yields\n     b/(b + c^4 + a^4)  ≤  b·(b^3 + 2)/(a^2 + b^2 + c^2)²,\n     c/(c + a^4 + b^4)  ≤  c·(c^3 + 2)/(a^2 + b^2 + c^2)².\n\n2.  Sum the three estimates.\n   Adding the three upper bounds, we obtain\n     S  ≤  [a(a^3 + 2) + b(b^3 + 2) + c(c^3 + 2)]/(a^2 + b^2 + c^2)²\n        = [a^4 + b^4 + c^4  + 2(a + b + c)]/(a^2 + b^2 + c^2)².\n   Therefore the desired inequality S ≤ 1 is equivalent to\n     (a^4 + b^4 + c^4 + 2(a + b + c))  ≤  (a^2 + b^2 + c^2)².\n\n3.  Reduce to a known symmetric inequality.\n   Expand the right–hand side:\n     (a^2 + b^2 + c^2)²\n       = a^4 + b^4 + c^4  + 2(a^2b^2 + b^2c^2 + c^2a^2).\n   Thus the inequality becomes\n     a^4 + b^4 + c^4 + 2(a + b + c)\n     ≤  a^4 + b^4 + c^4 + 2(a^2b^2 + b^2c^2 + c^2a^2)\n   ⇔  a + b + c  ≤  a^2b^2 + b^2c^2 + c^2a^2.\n   But by the well-known fact that for positive a,b,c,\n     a^2b^2 + b^2c^2 + c^2a^2  ≥  abc (a + b + c),\n   and using abc=1, we conclude\n     a^2b^2 + b^2c^2 + c^2a^2  ≥  1·(a + b + c)  =  a + b + c.\n   This completes the proof that S ≤ 1.\n\nHence the correct relation is “≤”.\nThe answer is (A) ≤",
+    "original_entry": {
+        "data_id": "733",
+        "problem": "Let $a, b, c$ be positive real numbers such that $a b c = 1$. Consider the following inequality:\n$$\n\\frac{a}{a+b^{4}+c^{4}}+\\frac{b}{b+c^{4}+a^{4}}+\\frac{c}{c+a^{4}+b^{4}} \\quad () \\quad 1 .\n$$\n\nDetermine the correct inequality relation to fill in the blank.\n\nOptions:\n\n(A) $\\leq$ \n\n(B) $\\geq$\n\n(C) $=$ \n\n(D) $<$\n\n(E) $>$\n\n(F) None of the above",
+        "type": "relation",
+        "data_split": "train",
+        "answer": "(A) $\\leq$",
+        "solution": [
+            "By the Cauchy-Schwarz inequality we have\n$$\n\\frac{a}{a+b^{4}+c^{4}}=\\frac{a\\left(a^{3}+2\\right)}{\\left(a+b^{4}+c^{4}\\right)\\left(a^{3}+1+1\\right)} \\leq \\frac{a\\left(a^{3}+2\\right)}{\\left(a^{2}+b^{2}+c^{2}\\right)^{2}}\n$$\n\nSimilarly we get\n$$\n\\frac{b}{b+c^{4}+a^{4}} \\leq \\frac{b\\left(b^{3}+2\\right)}{\\left(a^{2}+b^{2}+c^{2}\\right)^{2}} \\quad \\text { and } \\quad \\frac{c}{c+a^{4}+b^{4}} \\leq \\frac{c\\left(c^{3}+2\\right)}{\\left(a^{2}+b^{2}+c^{2}\\right)^{2}}\n$$\n\nHence\n$$\n\\frac{a}{a+b^{4}+c^{4}}+\\frac{b}{b+c^{4}+a^{4}}+\\frac{c}{c+a^{4}+b^{4}} \\leq \\frac{a^{4}+b^{4}+c^{4}+2(a+b+c)}{\\left(a^{2}+b^{2}+c^{2}\\right)^{2}}\n$$\nand we need to prove that\n$$\n\\left(a^{2}+b^{2}+c^{2}\\right)^{2} \\geq a^{4}+b^{4}+c^{4}+2(a+b+c)\n$$\nwhich is equivalent to\n$$\na^{2} b^{2}+b^{2} c^{2}+c^{2} a^{2} \\geq a+b+c\n$$\n\nBy the well-known inequality $a^{2} b^{2}+b^{2} c^{2}+c^{2} a^{2} \\geq a b c(a+b+c)$ and $a b c=1$, we have\n$$\na^{2} b^{2}+b^{2} c^{2}+c^{2} a^{2} \\geq a b c(a+b+c)=a+b+c\n$$\nas required. Therefore, the answer is (A) $\\leq$."
+        ],
+        "theorems": {
+            "Theorem 30": {
+                "Nickname": [
+                    "surányi's inequality"
+                ],
+                "Theorem": "Let $a_{1}, a_{2}, \\ldots, a_{n}$ be non-negative real numbers, and let $n$ be a positive integer. Then\n$$\n\\begin{aligned}\n& (n-1)\\left(a_{1}^{n}+a_{2}^{n}+\\cdots+a_{n}^{n}\\right)+n a_{1} a_{2} \\cdots a_{n} \\\\\n& \\quad \\geq\\left(a_{1}+a_{2}+\\cdots+a_{n}\\right)\\left(a_{1}^{n-1}+a_{2}^{n-1}+\\cdots+a_{n}^{n-1}\\right)\n\\end{aligned}\n$$",
+                "Theorem_Category": "Suranyi's Inequality"
+            },
+            "Theorem 26": {
+                "Nickname": [
+                    "cauchy-schwarz inequality"
+                ],
+                "Theorem": "Let $a_{1}, a_{2}, \\ldots, a_{n}$ and $b_{1}, b_{2}$, $\\ldots, b_{n}$ be real numbers. Then we have\n$$\n\\left(\\sum_{i=1}^{n} a_{i}^{2}\\right)\\left(\\sum_{i=1}^{n} b_{i}^{2}\\right) \\geq\\left(\\sum_{i=1}^{n} a_{i} b_{i}\\right)^{2}\n$$\ni.e.\n$$\n\\left(a_{1}^{2}+a_{2}^{2}+\\cdots+a_{n}^{2}\\right)\\left(b_{1}^{2}+b_{2}^{2}+\\cdots+b_{n}^{2}\\right) \\geq\\left(a_{1} b_{1}+a_{2} b_{2}+\\cdots+a_{n} b_{n}\\right)^{2}\n$$\n\nEquality occurs if and only if the sequences $\\left(a_{1}, a_{2}, \\ldots, a_{n}\\right)$ and $\\left(b_{1}, b_{2}\\right.$, $\\ldots, b_{n}$ ) are proportional, i.e. $\\frac{a_{1}}{b_{1}}=\\frac{a_{2}}{b_{2}}=\\cdots=\\frac{a_{n}}{b_{n}}$.",
+                "Theorem_Category": "Cauchy-Schwarz Inequality"
+            }
+        },
+        "choices": [
+            "(A) $\\leq$",
+            "(B) $\\geq$",
+            "(C) $=$",
+            "(D) $<$",
+            "(E) $>$",
+            "(F) None of the above"
+        ],
+        "difficulty": ""
+    }
+}

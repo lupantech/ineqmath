@@ -1,0 +1,43 @@
+{
+    "data_id": "676",
+    "type": "relation",
+    "problem": "Let $a, b, c$ be positive real numbers such that $a + b + c = 1$. Consider the following expressions:\n$$\n(a+b)^{2}(1+2c)(2a+3c)(2b+3c) \\quad () \\quad 54abc\n$$\nDetermine the correct inequality relation to fill in the blank.\n\nOptions:\n\n(A) $\\leq$ \n\n(B) $\\geq$\n\n(C) $=$ \n\n(D) $<$\n\n(E) $>$\n\n(F) None of the above",
+    "current_solution": "The given inequality can be rewritten as follows\n$$\n(a+b)^{2}(1+2 c)\\left(2+3 \\frac{c}{a}\\right)\\left(2+3 \\frac{c}{b}\\right) \\geq 54 c\n$$\n\nBy the Cauchy-Schwarz inequality and $A M \\geq G M$ we have\n$$\n\\begin{aligned}\n\\left(2+3 \\frac{c}{a}\\right)\\left(2+3 \\frac{c}{b}\\right) & \\geq\\left(2+\\frac{3 c}{\\sqrt{a b}}\\right)^{2} \\geq\\left(2+\\frac{6 c}{a+b}\\right)^{2}=\\frac{(2(a+b)+6 c)^{2}}{(a+b)^{2}} \\\\\n& =\\frac{(2(1-c)+6 c)^{2}}{(a+b)^{2}}=\\frac{4(1+2 c)^{2}}{(a+b)^{2}}\n\\end{aligned}\n$$\n\nThen we have\n$$\n\\begin{aligned}\n(a+b)^{2}(1+2 c)\\left(2+3 \\frac{c}{a}\\right)\\left(2+3 \\frac{c}{b}\\right) & \\geq(a+b)^{2}(1+2 c) \\frac{4(1+2 c)^{2}}{(a+b)^{2}} \\\\\n& =4(1+2 c)^{3}\n\\end{aligned}\n$$\nand it remains to prove that\n$$\n4(1+2 c)^{3} \\geq 54 c, \\quad \\text { i.e. } \\quad(1+2 c)^{3} \\geq \\frac{27 c}{2}\n$$\n\nBy the $A M \\geq G M$ inequality we have\n$$\n(1+2 c)^{3}=\\left(\\frac{1}{2}+\\frac{1}{2}+2 c\\right)^{3} \\geq 27 \\cdot \\frac{1}{2} \\cdot \\frac{1}{2} \\cdot 2 c=\\frac{27 c}{2}\n$$\nas required.\nEquality occurs iff $a=b=\\frac{3}{8}, c=\\frac{1}{4}$. Therefore, the answer is (B) $\\geq$.",
+    "answer": "(B) $\\geq$",
+    "enhanced_solution": "We wish to determine the correct inequality sign in\n\n    (a+b)^{2}\n    (1+2c)\n    (2a+3c)\n    (2b+3c)\n    □\n    54abc\n\nunder the constraint a, b, c > 0 and a + b + c = 1.\n\nStep 1:  Rewrite the left-hand side in a form that isolates factors of a and b.\n\n    Observe that\n    2a + 3c = a·\\bigl(2 + \\frac{3c}{a}\\bigr),\n    2b + 3c = b·\\bigl(2 + \\frac{3c}{b}\\bigr).\n\n    Hence\n    (2a+3c)(2b+3c)\n      = a·b\n        ·\\Bigl(2 + \\frac{3c}{a}\\Bigr)\n        ·\\Bigl(2 + \\frac{3c}{b}\\Bigr).\n\n    Therefore the original product becomes\n\n    (a+b)^{2}(1+2c)(2a+3c)(2b+3c)\n      = (a+b)^{2}(1+2c)\n        ·a b\n        ·\\Bigl(2 + \\frac{3c}{a}\\Bigr)\n        ·\\Bigl(2 + \\frac{3c}{b}\\Bigr).\n\nStep 2:  Divide both sides of the desired inequality\n\n    (a+b)^{2}(1+2c)(2a+3c)(2b+3c)\n      □\n      54abc\n\nby the positive quantity a·b, and simplify.  We obtain the equivalent statement\n\n    (a+b)^{2}(1+2c)\n      ·\\Bigl(2 + \\frac{3c}{a}\\Bigr)\n      ·\\Bigl(2 + \\frac{3c}{b}\\Bigr)\n      □\n      54c.\n\nStep 3:  Apply the Cauchy–Schwarz inequality to the factors\n\n    \\Bigl(2 + \\frac{3c}{a}\\Bigr)\n    and\n    \\Bigl(2 + \\frac{3c}{b}\\Bigr).\n\n    By Cauchy–Schwarz,\n\n    \\Bigl(2 + \\frac{3c}{a}\\Bigr)\n    \\Bigl(2 + \\frac{3c}{b}\\Bigr)\n      ≥ \\Bigl(\\sqrt{2·2} + \\sqrt{\\frac{3c}{a} · \\frac{3c}{b}}\\Bigr)^{2}\n      = \\Bigl(2 + \\frac{3c}{\\sqrt{a b}}\\Bigr)^{2}.\n\nStep 4:  Relate √(ab) to (a+b).\n\n    By the arithmetic–geometric mean inequality (AM–GM),\n\n    \\sqrt{a b} ≤ \\frac{a + b}{2}\n    ⇒ \\frac{1}{\\sqrt{ab}} ≥ \\frac{2}{a+b}.\n\n    Hence\n\n    2 + \\frac{3c}{\\sqrt{ab}}\n      ≥ 2 + \\frac{3c · 2}{a+b}\n      = 2 + \\frac{6c}{a+b}.\n\n    Squaring (a monotonically increasing operation on [0,∞)) gives\n\n    \\Bigl(2 + \\frac{3c}{\\sqrt{ab}}\\Bigr)^{2}\n      ≥ \\Bigl(2 + \\frac{6c}{a+b}\\Bigr)^{2}.\n\nStep 5:  Express (2 + 6c/(a+b)) in terms of c alone.\n\n    Since a + b = 1 – c,\n\n    2 + \\frac{6c}{a+b}\n      = 2 + \\frac{6c}{1–c}\n      = \\frac{2(1–c) + 6c}{1–c}\n      = \\frac{2 + 4c}{1–c}\n      = \\frac{2(1 + 2c)}{a + b}.\n\n    Therefore\n\n    \\Bigl(2 + \\tfrac{6c}{a+b}\\Bigr)^{2}\n      = \\frac{4(1+2c)^{2}}{(a+b)^{2}}.\n\nStep 6:  Chain all inequalities.\n\n    (a+b)^{2}(1+2c)\n      ·\\Bigl(2 + \\tfrac{3c}{a}\\Bigr)\n      ·\\Bigl(2 + \\tfrac{3c}{b}\\Bigr)\n    ≥ (a+b)^{2}(1+2c)\n      ·\\frac{4(1+2c)^{2}}{(a+b)^{2}}\n    = 4(1+2c)^{3}.\n\n    It suffices now to show\n\n    4(1+2c)^{3} ≥ 54c,\n    i.e.\n    (1 + 2c)^{3} ≥ \\frac{54c}{4} = \\frac{27c}{2}.\n\nStep 7:  Final AM–GM to compare (1 + 2c)³ and 27c/2.\n\n    Write\n    1 + 2c = \\frac12 + \\frac12 + 2c.\n    By AM–GM on these three positive terms,\n\n      \\frac12 + \\frac12 + 2c\n      ≥ 3 \\sqrt[3]{\\tfrac12 · \\tfrac12 · 2c}\n      = 3 \\sqrt[3]{\\tfrac{c}{2}}.\n\n    Cubing both sides yields\n\n      (1 + 2c)^{3}\n      ≥ 27 · \\frac{c}{2}\n      = \\frac{27c}{2}.\n\n    Hence 4(1+2c)^{3} ≥ 54c, as required.\n\nStep 8:  Verify possibility of equality.\n\n    Each application of Cauchy–Schwarz and AM–GM becomes an equality exactly when its arguments are all equal:\n\n    •  In Cauchy–Schwarz:  2/ (3c/a) = 2/(3c/b) ⇒ a = b.\n    •  In the AM–GM for √(ab):  a = b.\n    •  In the final AM–GM:  1/2 = 2c ⇒ c = 1/4.\n\n    Together with a + b + c = 1 and a = b, we get\n    c = 1/4,\n    a + b = 3/4,\n    a = b = 3/8.\n\n    This shows the inequality holds with equality at (a,b,c) = (3/8,3/8,1/4).\n\nConclusion: All steps go in the “≥” direction, so the correct relation is “≥”.\n\nThe answer is (B) ≥",
+    "original_entry": {
+        "data_id": "676",
+        "problem": "Let $a, b, c$ be positive real numbers such that $a + b + c = 1$. Consider the following expressions:\n$$\n(a+b)^{2}(1+2c)(2a+3c)(2b+3c) \\quad () \\quad 54abc\n$$\nDetermine the correct inequality relation to fill in the blank.\n\nOptions:\n\n(A) $\\leq$ \n\n(B) $\\geq$\n\n(C) $=$ \n\n(D) $<$\n\n(E) $>$\n\n(F) None of the above",
+        "type": "relation",
+        "data_split": "train",
+        "answer": "(B) $\\geq$",
+        "solution": [
+            "The given inequality can be rewritten as follows\n$$\n(a+b)^{2}(1+2 c)\\left(2+3 \\frac{c}{a}\\right)\\left(2+3 \\frac{c}{b}\\right) \\geq 54 c\n$$\n\nBy the Cauchy-Schwarz inequality and $A M \\geq G M$ we have\n$$\n\\begin{aligned}\n\\left(2+3 \\frac{c}{a}\\right)\\left(2+3 \\frac{c}{b}\\right) & \\geq\\left(2+\\frac{3 c}{\\sqrt{a b}}\\right)^{2} \\geq\\left(2+\\frac{6 c}{a+b}\\right)^{2}=\\frac{(2(a+b)+6 c)^{2}}{(a+b)^{2}} \\\\\n& =\\frac{(2(1-c)+6 c)^{2}}{(a+b)^{2}}=\\frac{4(1+2 c)^{2}}{(a+b)^{2}}\n\\end{aligned}\n$$\n\nThen we have\n$$\n\\begin{aligned}\n(a+b)^{2}(1+2 c)\\left(2+3 \\frac{c}{a}\\right)\\left(2+3 \\frac{c}{b}\\right) & \\geq(a+b)^{2}(1+2 c) \\frac{4(1+2 c)^{2}}{(a+b)^{2}} \\\\\n& =4(1+2 c)^{3}\n\\end{aligned}\n$$\nand it remains to prove that\n$$\n4(1+2 c)^{3} \\geq 54 c, \\quad \\text { i.e. } \\quad(1+2 c)^{3} \\geq \\frac{27 c}{2}\n$$\n\nBy the $A M \\geq G M$ inequality we have\n$$\n(1+2 c)^{3}=\\left(\\frac{1}{2}+\\frac{1}{2}+2 c\\right)^{3} \\geq 27 \\cdot \\frac{1}{2} \\cdot \\frac{1}{2} \\cdot 2 c=\\frac{27 c}{2}\n$$\nas required.\nEquality occurs iff $a=b=\\frac{3}{8}, c=\\frac{1}{4}$. Therefore, the answer is (B) $\\geq$."
+        ],
+        "theorems": {
+            "Theorem 30": {
+                "Nickname": [
+                    "surányi's inequality"
+                ],
+                "Theorem": "Let $a_{1}, a_{2}, \\ldots, a_{n}$ be non-negative real numbers, and let $n$ be a positive integer. Then\n$$\n\\begin{aligned}\n& (n-1)\\left(a_{1}^{n}+a_{2}^{n}+\\cdots+a_{n}^{n}\\right)+n a_{1} a_{2} \\cdots a_{n} \\\\\n& \\quad \\geq\\left(a_{1}+a_{2}+\\cdots+a_{n}\\right)\\left(a_{1}^{n-1}+a_{2}^{n-1}+\\cdots+a_{n}^{n-1}\\right)\n\\end{aligned}\n$$",
+                "Theorem_Category": "Suranyi's Inequality"
+            },
+            "Theorem 26": {
+                "Nickname": [
+                    "cauchy-schwarz inequality"
+                ],
+                "Theorem": "Let $a_{1}, a_{2}, \\ldots, a_{n}$ and $b_{1}, b_{2}$, $\\ldots, b_{n}$ be real numbers. Then we have\n$$\n\\left(\\sum_{i=1}^{n} a_{i}^{2}\\right)\\left(\\sum_{i=1}^{n} b_{i}^{2}\\right) \\geq\\left(\\sum_{i=1}^{n} a_{i} b_{i}\\right)^{2}\n$$\ni.e.\n$$\n\\left(a_{1}^{2}+a_{2}^{2}+\\cdots+a_{n}^{2}\\right)\\left(b_{1}^{2}+b_{2}^{2}+\\cdots+b_{n}^{2}\\right) \\geq\\left(a_{1} b_{1}+a_{2} b_{2}+\\cdots+a_{n} b_{n}\\right)^{2}\n$$\n\nEquality occurs if and only if the sequences $\\left(a_{1}, a_{2}, \\ldots, a_{n}\\right)$ and $\\left(b_{1}, b_{2}\\right.$, $\\ldots, b_{n}$ ) are proportional, i.e. $\\frac{a_{1}}{b_{1}}=\\frac{a_{2}}{b_{2}}=\\cdots=\\frac{a_{n}}{b_{n}}$.",
+                "Theorem_Category": "Cauchy-Schwarz Inequality"
+            }
+        },
+        "choices": [
+            "(A) $\\leq$",
+            "(B) $\\geq$",
+            "(C) $=$",
+            "(D) $<$",
+            "(E) $>$",
+            "(F) None of the above"
+        ],
+        "difficulty": ""
+    }
+}

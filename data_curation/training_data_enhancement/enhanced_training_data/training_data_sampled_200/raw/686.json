@@ -1,0 +1,44 @@
+{
+    "data_id": "686",
+    "type": "relation",
+    "problem": "Let $a, b, c, d$ be non-negative real numbers. Consider the following inequality:\n$$\na^{4}+b^{4}+c^{4}+d^{4}+2 a b c d \\quad () \\quad a^{2} b^{2}+b^{2} c^{2}+c^{2} d^{2}+d^{2} a^{2}+a^{2} c^{2}+b^{2} d^{2} .\n$$\n\nDetermine the correct inequality relation to fill in the blank.\n\nOptions:\n\n(A) $\\leq$ \n\n(B) $\\geq$\n\n(C) $=$ \n\n(D) $<$\n\n(E) $>$\n\n(F) None of the above",
+    "current_solution": "Without loss of generality we may assume that $a \\geq b \\geq c \\geq d$.\n\nLet us denote\n$$\n\\begin{aligned}\nf(a, b, c, d)= & a^{4}+b^{4}+c^{4}+d^{4}+2 a b c d-a^{2} b^{2}-b^{2} c^{2}-c^{2} d^{2} \\\\\n& -d^{2} a^{2}-a^{2} c^{2}-b^{2} d^{2} \\\\\n= & a^{4}+b^{4}+c^{4}+d^{4}+2 a b c d-a^{2} c^{2}-b^{2} d^{2}-\\left(a^{2}+c^{2}\\right)\\left(b^{2}+d^{2}\\right)\n\\end{aligned}\n$$\n\nWe have\n$$\n\\begin{aligned}\n& f(a, b, c, d)-f(\\sqrt{a c}, b, \\sqrt{a c}, d) \\\\\n&= a^{4}+b^{4}+c^{4}+d^{4}+2 a b c d-a^{2} c^{2}-b^{2} d^{2}-\\left(a^{2}+c^{2}\\right)\\left(b^{2}+d^{2}\\right) \\\\\n&-\\left(a^{2} c^{2}+b^{4}+a^{2} c^{2}+d^{4}+2 a b c d-a^{2} c^{2}-b^{2} d^{2}-2 a c\\left(b^{2}+d^{2}\\right)\\right) \\\\\n&= a^{4}+c^{4}-2 a^{2} c^{2}-\\left(b^{2}+d^{2}\\right)\\left(a^{2}+c^{2}+2 a c\\right) \\\\\n&=\\left(a^{2}-c^{2}\\right)^{2}-\\left(b^{2}+d^{2}\\right)(a-c)^{2}=(a-c)^{2}\\left((a+c)^{2}-\\left(b^{2}+d^{2}\\right)\\right) \\geq 0\n\\end{aligned}\n$$\n\nThus\n$$\nf(a, b, c, d) \\geq f(\\sqrt{a c}, b, \\sqrt{a c}, d)\n$$\n\nBy the SMV theorem we only need to prove that $f(a, b, c, d) \\geq 0$, in the case when $a=b=c=t \\geq d$.\n\nWe have\n$f(t, t, t, d) \\geq 0 \\quad \\Leftrightarrow \\quad 3 t^{4}+d^{4}+2 t^{3} d \\geq 3 t^{4}+3 t^{2} d^{2} \\quad \\Leftrightarrow \\quad d^{4}+2 t^{3} d \\geq 3 t^{2} d^{2}$, which immediately follows from $A M \\geq G M$.\n\nEquality occurs iff $a=b=c=d$ or $a=b=c, d=0$ (up to permutation). Therefore, the answer is (B) $\\geq$.",
+    "answer": "(B) $\\geq$",
+    "enhanced_solution": "Solution.\n\nWe wish to determine which relation “()” makes the following true for all non-negative real numbers a,b,c,d:\n\n  a^4 + b^4 + c^4 + d^4 + 2abcd   ()   a^2b^2 + b^2c^2 + c^2d^2 + d^2a^2 + a^2c^2 + b^2d^2.\n\nWe will show that the correct sign is “≥.”  Our approach follows three main steps: (i) reduce by symmetry and ordering, (ii) apply a smoothing (or mixing-variables) argument, and (iii) verify the resulting two-variable case by AM–GM.\n\n1. Symmetry, ordering, and the function f.\n\n  (a) Observe that both sides of the inequality are symmetric in the variables a,b,c,d.  Hence, we may impose the ordering\n\n    a ≥ b ≥ c ≥ d ≥ 0,\n\n  without loss of generality.\n\n  (b) Define the function\n\n    f(a,b,c,d)\n      = [a^4 + b^4 + c^4 + d^4 + 2abcd]\n        −[a^2b^2 + b^2c^2 + c^2d^2 + d^2a^2 + a^2c^2 + b^2d^2].\n\n  Clearly, the original inequality is equivalent to f(a,b,c,d) ≥ 0.\n\n2. Smoothing (mixing-variables) on the pair (a,c).\n\n  We claim that replacing (a,c) by the two equal numbers (√(ac),√(ac)) does not decrease the value of f.  Concretely, set\n\n      x = √(ac),\n\n  and consider the difference\n\n      Δ = f(a,b,c,d) − f(x, b, x, d).\n\n  A direct expansion gives:\n\n    f(a,b,c,d)\n      = a^4 + b^4 + c^4 + d^4 + 2abcd\n        − [a^2c^2 + b^2d^2 + (a^2 + c^2)(b^2 + d^2)],\n\n    f(x,b,x,d)\n      = x^4 + b^4 + x^4 + d^4 + 2x^2bd\n        − [x^4 + b^2d^2 + 2x^2(b^2 + d^2)]\n      = 2x^4 + b^4 + d^4 + 2abcd\n        − [x^4 + b^2d^2 + 2x^2(b^2 + d^2)],\n\n  since x^2 = ac and x^4 = a^2c^2.  Subtracting, one finds after simplification:\n\n    Δ = (a^2 − c^2)^2 − (b^2 + d^2)(a − c)^2\n      = (a − c)^2[(a + c)^2 − (b^2 + d^2)].\n\n  Under the assumed ordering a ≥ b ≥ c ≥ d, we have a + c ≥ b + d ≥ √(b^2 + d^2), so\n\n      (a + c)^2 − (b^2 + d^2) ≥ 0,\n\n  and hence Δ ≥ 0.  Therefore,\n\n      f(a,b,c,d) ≥ f(√(ac), b, √(ac), d).\n\n  By symmetry, one similarly shows that smoothing the pair (b,d) to (√(bd),√(bd)) also does not decrease f.\n\n  By applying these two smoothing steps iteratively, we arrive at a quadruple of the form (t,t,t,d) with t = √(ac) = √(bd) and t ≥ d.  Since each step preserves the ordering f ≥ 0, it suffices to check the inequality f(t,t,t,d) ≥ 0.\n\n3. Verification in the case a = b = c = t ≥ d.\n\n  Substitute a = b = c = t and keep d arbitrary (0 ≤ d ≤ t).  Then\n\n    f(t,t,t,d)\n      = [3t^4 + d^4 + 2t·t·t·d]\n        − [3t^4 + 3t^2d^2]\n      = d^4 + 2t^3d − 3t^2d^2.\n\n  We must show\n\n      d^4 + 2t^3d ≥ 3t^2d^2.\n\n  Apply the Arithmetic Mean–Geometric Mean inequality to the three nonnegative terms {d^4, t^3d, t^3d}:\n\n      (d^4 + t^3d + t^3d)/3 ≥ (d^4 · t^3d · t^3d)^(1/3)\n                             = (t^6d^6)^(1/3)\n                             = t^2d^2.\n\n  Hence d^4 + 2t^3d ≥ 3t^2d^2, as required.  Equality holds when d^4 = t^3d = t^3d, i.e. d = t, or when one of the terms is zero, i.e. d = 0 (t nonzero).  These correspond to the cases a = b = c = d or a = b = c > d = 0 (up to permutation).\n\nConclusion.\n\nSince f(a,b,c,d) ≥ f(t,t,t,d) ≥ 0 for all nonnegative a ≥ b ≥ c ≥ d, we conclude\n\n  a^4 + b^4 + c^4 + d^4 + 2abcd ≥ a^2b^2 + b^2c^2 + c^2d^2 + d^2a^2 + a^2c^2 + b^2d^2\n\nfor all nonnegative a,b,c,d.  Therefore, the desired relation is “≥.”\n\nThe answer is (B) ≥",
+    "original_entry": {
+        "data_id": "686",
+        "problem": "Let $a, b, c, d$ be non-negative real numbers. Consider the following inequality:\n$$\na^{4}+b^{4}+c^{4}+d^{4}+2 a b c d \\quad () \\quad a^{2} b^{2}+b^{2} c^{2}+c^{2} d^{2}+d^{2} a^{2}+a^{2} c^{2}+b^{2} d^{2} .\n$$\n\nDetermine the correct inequality relation to fill in the blank.\n\nOptions:\n\n(A) $\\leq$ \n\n(B) $\\geq$\n\n(C) $=$ \n\n(D) $<$\n\n(E) $>$\n\n(F) None of the above",
+        "type": "relation",
+        "data_split": "train",
+        "answer": "(B) $\\geq$",
+        "solution": [
+            "Without loss of generality we may assume that $a \\geq b \\geq c \\geq d$.\n\nLet us denote\n$$\n\\begin{aligned}\nf(a, b, c, d)= & a^{4}+b^{4}+c^{4}+d^{4}+2 a b c d-a^{2} b^{2}-b^{2} c^{2}-c^{2} d^{2} \\\\\n& -d^{2} a^{2}-a^{2} c^{2}-b^{2} d^{2} \\\\\n= & a^{4}+b^{4}+c^{4}+d^{4}+2 a b c d-a^{2} c^{2}-b^{2} d^{2}-\\left(a^{2}+c^{2}\\right)\\left(b^{2}+d^{2}\\right)\n\\end{aligned}\n$$\n\nWe have\n$$\n\\begin{aligned}\n& f(a, b, c, d)-f(\\sqrt{a c}, b, \\sqrt{a c}, d) \\\\\n&= a^{4}+b^{4}+c^{4}+d^{4}+2 a b c d-a^{2} c^{2}-b^{2} d^{2}-\\left(a^{2}+c^{2}\\right)\\left(b^{2}+d^{2}\\right) \\\\\n&-\\left(a^{2} c^{2}+b^{4}+a^{2} c^{2}+d^{4}+2 a b c d-a^{2} c^{2}-b^{2} d^{2}-2 a c\\left(b^{2}+d^{2}\\right)\\right) \\\\\n&= a^{4}+c^{4}-2 a^{2} c^{2}-\\left(b^{2}+d^{2}\\right)\\left(a^{2}+c^{2}+2 a c\\right) \\\\\n&=\\left(a^{2}-c^{2}\\right)^{2}-\\left(b^{2}+d^{2}\\right)(a-c)^{2}=(a-c)^{2}\\left((a+c)^{2}-\\left(b^{2}+d^{2}\\right)\\right) \\geq 0\n\\end{aligned}\n$$\n\nThus\n$$\nf(a, b, c, d) \\geq f(\\sqrt{a c}, b, \\sqrt{a c}, d)\n$$\n\nBy the SMV theorem we only need to prove that $f(a, b, c, d) \\geq 0$, in the case when $a=b=c=t \\geq d$.\n\nWe have\n$f(t, t, t, d) \\geq 0 \\quad \\Leftrightarrow \\quad 3 t^{4}+d^{4}+2 t^{3} d \\geq 3 t^{4}+3 t^{2} d^{2} \\quad \\Leftrightarrow \\quad d^{4}+2 t^{3} d \\geq 3 t^{2} d^{2}$, which immediately follows from $A M \\geq G M$.\n\nEquality occurs iff $a=b=c=d$ or $a=b=c, d=0$ (up to permutation). Therefore, the answer is (B) $\\geq$."
+        ],
+        "theorems": {
+            "Theorem 20": {
+                "Nickname": [
+                    "turkevici's inequality",
+                    "turkevici"
+                ],
+                "Theorem": "For any positive real numbers $x, y, z, t$,\n\n$$\nx^{4}+y^{4}+z^{4}+t^{4}+2 x y z t \\geq x^{2} y^{2}+y^{2} z^{2}+z^{2} t^{2}+t^{2} x^{2}+x^{2} z^{2}+y^{2} t^{2}\n$$",
+                "Theorem_Category": "Turkevici's Inequality"
+            },
+            "Theorem 79": {
+                "Nickname": [
+                    "smv theorem"
+                ],
+                "Theorem": "Let $F: I \\subset \\mathbb{R}^{n} \\rightarrow \\mathbb{R}$ be a symmetric, continuous, function satisfying $F\\left(a_{1}, a_{2}, \\ldots, a_{n}\\right) \\geq F\\left(b_{1}, b_{2}, \\ldots, b_{n}\\right)$, where the sequence $\\left(b_{1}, b_{2}, \\ldots, b_{n}\\right)$ is a sequence obtained from the sequence $\\left(a_{1}, a_{2}, \\ldots, a_{n}\\right)$ by some predefined transformation ( $a \\Delta$-transformation).\nThen we have $F\\left(x_{1}, x_{2}, \\ldots, x_{n}\\right) \\geq F(x, x, \\ldots, x)$, with $x=\\frac{x_{1}+x_{2}+\\cdots+x_{n}}{n}$.",
+                "Theorem_Category": "SMV Theorem"
+            }
+        },
+        "choices": [
+            "(A) $\\leq$",
+            "(B) $\\geq$",
+            "(C) $=$",
+            "(D) $<$",
+            "(E) $>$",
+            "(F) None of the above"
+        ],
+        "difficulty": ""
+    }
+}

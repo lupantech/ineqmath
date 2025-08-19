@@ -1,0 +1,34 @@
+{
+    "data_id": "713",
+    "type": "relation",
+    "problem": "Let $a, b, c$ be the side lengths of a given triangle. Consider the following expressions:\n$$\n(a+b-c)(b+c-a)(c+a-b) \\quad () \\quad a b c\n$$\nDetermine the correct inequality relation to fill in the blank.\n\nOptions:\n\n(A) $\\leq$ \n\n(B) $\\geq$\n\n(C) $=$ \n\n(D) $<$\n\n(E) $>$\n\n(F) None of the above",
+    "current_solution": "We have\n$$\na^{2} \\geq a^{2}-(b-c)^{2}=(a+b-c)(a+c-b)\n$$\n\nAnalogously\n$$\nb^{2} \\geq(b+a-c)(b+c-a) \\quad \\text { and } \\quad c^{2} \\geq(c+a-b)(c+b-a)\n$$\n\nIf we multiply these inequalities we obtain\n$$\n\\begin{aligned}\n& a^{2} b^{2} c^{2} \\geq(a+b-c)^{2}(b+c-a)^{2}(c+a-b)^{2} \\\\\n& \\quad \\Leftrightarrow \\quad a b c \\geq(a+b-c)(b+c-a)(c+a-b)\n\\end{aligned}\n$$\n\nEquality holds if and only if $a=b=c$, i.e. the triangle is equilateral.2 After setting $a=x+y, b=y+z, c=z+x$, where $x, y, z>0$, the given inequality becomes\n$$\n(x+y)(y+z)(z+x) \\geq 8 x y z\n$$\n\nSince $A M \\geq G M$ we have\n$$\n(x+y)(y+z)(z+x) \\geq 2 \\sqrt{x y} \\cdot 2 \\sqrt{y z} \\cdot 2 \\sqrt{z x}=8 x y z\n$$\nas required. Equality occurs if and only if $x=y=z$ i.e. $a=b=c$. Therefore, the answer is (A) $\\leq$.",
+    "answer": "(A) $\\leq$",
+    "enhanced_solution": "Enhanced Solution:\n\nWe wish to compare the product of the three \"excess\" lengths\n    (a+b−c),\n    (b+c−a),\n    (c+a−b)\nwith the product a·b·c, under the assumption that a,b,c are the side-lengths of a (nondegenerate) triangle.  In particular, each of a+b−c, b+c−a, c+a−b is positive, and the statement to be determined is\n\n    (a+b−c)(b+c−a)(c+a−b)  □  a·b·c,\n\nwhere □ is one of ≤, ≥, =, <, >.\n\nWe present two complementary proofs, both concluding that the correct relation is\n\n    (a+b−c)(b+c−a)(c+a−b)  ≤  a·b·c,\n\nwith equality if and only if a=b=c (the equilateral case).\n\nProof 1 (Factorization and squares):\n\n1.  Observe the identity\n       (a+b−c)(a+c−b)\n    =  a² + a(b−b) + (b−c)(c−b)\n    =  a² −(b−c)².\n   Since (b−c)² ≥0 for all real b,c, we deduce\n       (a+b−c)(a+c−b)  =  a² −(b−c)²  ≤  a².\n   Equivalently,\n       a²  ≥  (a+b−c)(a+c−b).\n\n2.  By perfect symmetry of the roles of a,b,c, we similarly obtain\n       b²  ≥  (b+c−a)(b+a−c),\n       c²  ≥  (c+a−b)(c+b−a).\n\n3.  All factors on both sides of these three inequalities are nonnegative.  We multiply them together:\n       a²·b²·c²  ≥  (a+b−c)(a+c−b)·(b+c−a)(b+a−c)·(c+a−b)(c+b−a)\n                  =  [(a+b−c)(b+c−a)(c+a−b)]².\n\n4.  Taking nonnegative square roots of both sides gives\n       a·b·c  ≥  (a+b−c)(b+c−a)(c+a−b),\n   or equivalently\n       (a+b−c)(b+c−a)(c+a−b)  ≤  a·b·c.\n\n5.  Equality in each of the three original inequalities a² ≥ (a+b−c)(a+c−b), etc., forces (b−c)²=0, (c−a)²=0, (a−b)²=0 simultaneously, hence a=b=c.  Thus equality holds if and only if the triangle is equilateral.\n\nProof 2 (Substitution and AM–GM):\n\n1.  Since a,b,c form the sides of a triangle, one may set\n       a = x+y,\n       b = y+z,\n       c = z+x,\n   where x,y,z are positive real numbers.  Then\n       a+b−c = (x+y)+(y+z)−(z+x) = 2y,\n       b+c−a = 2z,\n       c+a−b = 2x.\n   Hence the left-hand product becomes\n       (a+b−c)(b+c−a)(c+a−b)  =  (2y)(2z)(2x)  =  8xyz.\n   Meanwhile,\n       a·b·c  =  (x+y)(y+z)(z+x).\n   The desired inequality is therefore\n       (x+y)(y+z)(z+x)  ≥  8xyz.\n\n2.  By the AM–GM inequality on each pair of positive numbers,\n       x+y  ≥  2√(xy),\n       y+z  ≥  2√(yz),\n       z+x  ≥  2√(zx).\n   Multiplying these three inequalities yields\n       (x+y)(y+z)(z+x)  ≥  2√(xy)·2√(yz)·2√(zx)\n                         =  8·√(x²y²z²)\n                         =  8xyz.\n   Hence\n       (a+b−c)(b+c−a)(c+a−b)  =  8xyz  ≤  (x+y)(y+z)(z+x)  =  a·b·c.\n\n3.  Equality in AM–GM holds exactly when x=y=z, which corresponds to a=b=c.  Thus again equality occurs only for the equilateral triangle.\n\nConclusion: In both proofs we arrive at the same inequality\n\n    (a+b−c)(b+c−a)(c+a−b)  ≤  a·b·c,\n\nwith equality if and only if a=b=c.  Therefore, among the given options, the correct choice is\n\nThe answer is (A) ≤",
+    "original_entry": {
+        "data_id": "713",
+        "problem": "Let $a, b, c$ be the side lengths of a given triangle. Consider the following expressions:\n$$\n(a+b-c)(b+c-a)(c+a-b) \\quad () \\quad a b c\n$$\nDetermine the correct inequality relation to fill in the blank.\n\nOptions:\n\n(A) $\\leq$ \n\n(B) $\\geq$\n\n(C) $=$ \n\n(D) $<$\n\n(E) $>$\n\n(F) None of the above",
+        "type": "relation",
+        "data_split": "train",
+        "answer": "(A) $\\leq$",
+        "solution": [
+            "We have\n$$\na^{2} \\geq a^{2}-(b-c)^{2}=(a+b-c)(a+c-b)\n$$\n\nAnalogously\n$$\nb^{2} \\geq(b+a-c)(b+c-a) \\quad \\text { and } \\quad c^{2} \\geq(c+a-b)(c+b-a)\n$$\n\nIf we multiply these inequalities we obtain\n$$\n\\begin{aligned}\n& a^{2} b^{2} c^{2} \\geq(a+b-c)^{2}(b+c-a)^{2}(c+a-b)^{2} \\\\\n& \\quad \\Leftrightarrow \\quad a b c \\geq(a+b-c)(b+c-a)(c+a-b)\n\\end{aligned}\n$$\n\nEquality holds if and only if $a=b=c$, i.e. the triangle is equilateral.2 After setting $a=x+y, b=y+z, c=z+x$, where $x, y, z>0$, the given inequality becomes\n$$\n(x+y)(y+z)(z+x) \\geq 8 x y z\n$$\n\nSince $A M \\geq G M$ we have\n$$\n(x+y)(y+z)(z+x) \\geq 2 \\sqrt{x y} \\cdot 2 \\sqrt{y z} \\cdot 2 \\sqrt{z x}=8 x y z\n$$\nas required. Equality occurs if and only if $x=y=z$ i.e. $a=b=c$. Therefore, the answer is (A) $\\leq$."
+        ],
+        "theorems": {
+            "Theorem 23": {
+                "Nickname": [],
+                "Theorem": "Let $a, b, c \\in \\mathbb{R}^{+}$, and let us denote\n$$\n\\begin{aligned}\nQ M & =\\sqrt{\\frac{a^{2}+b^{2}+c^{2}}{3}}, \\quad A M=\\frac{a+b+c}{3}, \\quad G M=\\sqrt[3]{a b c} \\text { and } \\\\\nH M & =\\frac{3}{\\frac{1}{a}+\\frac{1}{b}+\\frac{1}{c}}\n\\end{aligned}\n$$\n\nThen\n$$\nQ M \\geq A M \\geq G M \\geq H M\n$$\n\nEqualities occur if and only if $a=b=c$.",
+                "Theorem_Category": "Inequality Between Means"
+            }
+        },
+        "choices": [
+            "(A) $\\leq$",
+            "(B) $\\geq$",
+            "(C) $=$",
+            "(D) $<$",
+            "(E) $>$",
+            "(F) None of the above"
+        ],
+        "difficulty": ""
+    }
+}

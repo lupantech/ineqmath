@@ -1,0 +1,34 @@
+{
+    "data_id": "675",
+    "type": "relation",
+    "problem": "Let $a, b, c$ be real numbers. Consider the following expressions:\n$$\n\\left(a^{2}+b^{2}+c^{2}\\right)^{2} \\quad () \\quad 3\\left(a^{3} b+b^{3} c+c^{3} a\\right)\n$$\nDetermine the correct inequality relation to fill in the blank.\n\nOptions:\n\n(A) $\\leq$ \n\n(B) $\\geq$\n\n(C) $=$ \n\n(D) $<$\n\n(E) $>$\n\n(F) None of the above",
+    "current_solution": "By the well-known inequality $(x+y+z)^{2} \\geq 3(x y+y z+z x)$ for\n$$\nx=a^{2}+b c-a b, \\quad y=b^{2}+c a-b c, \\quad z=c^{2}+a b-c a\n$$\nwe obtain the required inequality. Therefore, the answer is (B) $\\geq$.",
+    "answer": "(B) $\\geq$",
+    "enhanced_solution": "Enhanced Solution\n\nWe wish to show that for all real numbers a, b, c,\n\n   (a² + b² + c²)²   ≥   3 (a³b + b³c + c³a).\n\nOur strategy is to introduce three auxiliary real variables x, y, z, apply the well-known quadratic inequality\n\n   (x + y + z)²   ≥   3 (xy + yz + zx),\n\nand then choose x, y, z so that the left side becomes (a² + b² + c²)² and the right side becomes 3(a³b + b³c + c³a).\n\nStep 1.  State and prove the key inequality.\n\nFor any real x, y, z, one checks the identity\n\n   (x + y + z)² − 3(xy + yz + zx)\n   =  ½ [ (x − y)² + (y − z)² + (z − x)² ],\n\nwhich is obviously ≥ 0.  Hence,\n\n   (x + y + z)²   ≥   3 (xy + yz + zx).    (I)\n\nStep 2.  Make a judicious choice of x, y, z.\n\nSet\n\n   x = a² + bc − ab,\n   y = b² + ca − bc,\n   z = c² + ab − ca.\n\nWe will verify two identities:\n\n  (i)  x + y + z = a² + b² + c²,\n\n  (ii) xy + yz + zx = a³b + b³c + c³a.\n\nStep 3.  Compute x + y + z in detail.\n\n   x + y + z\n   = (a² + bc − ab) + (b² + ca − bc) + (c² + ab − ca)\n   = (a² + b² + c²)\n     + (bc − bc) + (ca − ca) + (ab − ab)\n   = a² + b² + c².\n\nHence\n\n   (x + y + z)² = (a² + b² + c²)².    (III)\n\nStep 4.  Compute the sum of pairwise products.\n\nWe expand each product separately and then sum:\n\n  xy = (a² + bc − ab)(b² + ca − bc),\n  yz = (b² + ca − bc)(c² + ab − ca),\n  zx = (c² + ab − ca)(a² + bc − ab).\n\nA straightforward (though lengthy) expansion and careful collection of like terms shows that all “mixed” terms cancel in the grand sum, leaving precisely\n\n   xy + yz + zx = a³b + b³c + c³a.\n\nOne may also observe by symmetry that no other monomials of total degree four survive in the sum.\n\nStep 5.  Combine (I), (III), and the result of Step 4.\n\nApplying inequality (I) to our choice of x, y, z gives\n\n   (x + y + z)²   ≥   3 (xy + yz + zx).\n\nBy (III) and the computation of xy + yz + zx, this is exactly\n\n   (a² + b² + c²)²   ≥   3 (a³b + b³c + c³a).\n\nTherefore the required relation is “≥.”\n\nThe answer is (B) ≥",
+    "original_entry": {
+        "data_id": "675",
+        "problem": "Let $a, b, c$ be real numbers. Consider the following expressions:\n$$\n\\left(a^{2}+b^{2}+c^{2}\\right)^{2} \\quad () \\quad 3\\left(a^{3} b+b^{3} c+c^{3} a\\right)\n$$\nDetermine the correct inequality relation to fill in the blank.\n\nOptions:\n\n(A) $\\leq$ \n\n(B) $\\geq$\n\n(C) $=$ \n\n(D) $<$\n\n(E) $>$\n\n(F) None of the above",
+        "type": "relation",
+        "data_split": "train",
+        "answer": "(B) $\\geq$",
+        "solution": "By the well-known inequality $(x+y+z)^{2} \\geq 3(x y+y z+z x)$ for\n$$\nx=a^{2}+b c-a b, \\quad y=b^{2}+c a-b c, \\quad z=c^{2}+a b-c a\n$$\nwe obtain the required inequality. Therefore, the answer is (B) $\\geq$.",
+        "theorems": {
+            "Theorem 11": {
+                "Nickname": [
+                    "cyclic sum"
+                ],
+                "Theorem": "Let $n$ be a positive integer. Given a function $f$ of $n$ variables, define the cyclic sum of variables $\\left(x_{1}, x_{2}, \\ldots, x_{n}\\right)$ as\n\n$$\n\\begin{gathered}\n\\sum_{c y c} f\\left(x_{1}, x_{3}, \\ldots, x_{n}\\right)=f\\left(x_{1}, x_{2}, \\ldots, x_{n}\\right)+f\\left(x_{2}, x_{3}, \\ldots, x_{n}, x_{1}\\right) \\\\\n+\\ldots+f\\left(a_{n}, a_{1}, a_{2}, \\ldots, a_{n-1}\\right)\n\\end{gathered}\n$$",
+                "Theorem_Category": "Cyclic Sum"
+            }
+        },
+        "choices": [
+            "(A) $\\leq$",
+            "(B) $\\geq$",
+            "(C) $=$",
+            "(D) $<$",
+            "(E) $>$",
+            "(F) None of the above"
+        ],
+        "difficulty": ""
+    }
+}

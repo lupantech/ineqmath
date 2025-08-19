@@ -1,0 +1,35 @@
+{
+    "data_id": "753",
+    "type": "relation",
+    "problem": "Let $a, b, c$ and $x, y, z$ be positive real numbers. Consider the following inequality:\n$$\na(y+z)+b(z+x)+c(x+y) \\quad () \\quad 2 \\sqrt{(x y+y z+z x)(a b+b c+c a)} .\n$$\n\nDetermine the correct inequality relation to fill in the blank.\n\nOptions:\n\n(A) $\\leq$ \n\n(B) $\\geq$\n\n(C) $=$ \n\n(D) $<$\n\n(E) $>$\n\n(F) None of the above",
+    "current_solution": "Since the given inequality is homogenous we may assume that $x+y+$ $z=1$.\n\nNow the given inequality can be written as follows\n$$\n2 \\sqrt{(x y+y z+z x)(a b+b c+c a)}+a x+b y+c z \\leq a+b+c\n$$\n\nApplying the Cauch-Schwarz inequality twice we have\n$$\n\\begin{aligned}\na x & +b y+c z+2 \\sqrt{(x y+y z+z x)(a b+b c+c a)} \\\\\n& \\leq \\sqrt{a^{2}+b^{2}+c^{2}} \\cdot \\sqrt{x^{2}+y^{2}+z^{2}}+\\sqrt{2(x y+y z+z x)} \\cdot \\sqrt{2(a b+b c+c a)} \\\\\n& \\leq \\sqrt{a^{2}+b^{2}+c^{2}+2(a b+b c+c a)} \\cdot \\sqrt{x^{2}+y^{2}+z^{2}+2(x y+y z+z x)} \\\\\n& =a+b+c\n\\end{aligned}\n$$ Therefore, the answer is (B) $\\geq$.",
+    "answer": "(B) $\\geq$",
+    "enhanced_solution": "We wish to determine the correct inequality relation in\n\n  a(y+z)+b(z+x)+c(x+y)   ()   2\\,\\sqrt{(xy+yz+zx)\\,(ab+bc+ca)},\n\nwhere a,b,c and x,y,z are positive real numbers. We shall show step by step that\n\n  a(y+z)+b(z+x)+c(x+y) \\;\\ge\\; 2\\,\\sqrt{(xy+yz+zx)\\,(ab+bc+ca)}.\n\nThroughout, we preserve the original approach: use homogeneity to normalize, rewrite the inequality, and then apply the Cauchy–Schwarz inequality twice.\n\n1. Homogeneity and normalization\n--------------------------------\nObserve that if we replace (x,y,z) by (t x,t y,t z) for some t>0, then the left-hand side (LHS)\n\n  LHS = a(y+z)+b(z+x)+c(x+y)\n\nscales by t (each term like a·y becomes a·(t y)=t·(a y)), while the right-hand side (RHS)\n\n  RHS = 2\\,\\sqrt{(xy+yz+zx)\\,(ab+bc+ca)}\n\ninvolves \\sqrt{xy+yz+zx} which also scales by t, so the whole inequality is homogeneous of degree 1 in (x,y,z). Therefore we may impose the normalization\n\n  x + y + z = 1\n\nto simplify the algebra without loss of generality.\n\n2. Rewriting the inequality under x+y+z=1\n-------------------------------------------\nUnder the condition x+y+z=1, we have\n\n  y+z = 1 - x,\n  z+x = 1 - y,\n  x+y = 1 - z.\n\nHence the left-hand side becomes\n\n  a(y+z)+b(z+x)+c(x+y)\n    = a(1-x) + b(1-y) + c(1-z)\n    = (a+b+c) - (a x + b y + c z).\n\nThus the original inequality\n\n  a(y+z)+b(z+x)+c(x+y) \\;\\ge\\; 2\\,\\sqrt{(xy+yz+zx)\\,(ab+bc+ca)}\n\nis equivalent to\n\n  (a+b+c) - (a x + b y + c z)\n    \\;\\ge\\; 2\\,\\sqrt{(xy+yz+zx)\\,(ab+bc+ca)},\n\nor, after bringing the negative term to the right,\n\n  a x + b y + c z\n    + 2\\,\\sqrt{(xy+yz+zx)\\,(ab+bc+ca)}\n    \\;\\le\\; a + b + c.\n\nWe now prove this last inequality.\n\n3. First application of Cauchy–Schwarz to a x + b y + c z\n--------------------------------------------------------\nBy the Cauchy–Schwarz inequality in \\(\\mathbb{R}^3\\),\n\n  (a x + b y + c z)\n    \\le \\sqrt{a^2 + b^2 + c^2}\\;\\sqrt{x^2 + y^2 + z^2}.\n\nHence\n\n  a x + b y + c z\n    \\;\\le\\; \\sqrt{a^2 + b^2 + c^2}\\;\\sqrt{x^2 + y^2 + z^2}.\n\n4. Second application of Cauchy–Schwarz to 2√((xy+yz+zx)(ab+bc+ca))\n----------------------------------------------------------------\nNote that\n\n  2\\,\\sqrt{(xy+yz+zx)\\,(ab+bc+ca)}\n    = \\sqrt{2(xy+yz+zx)}\\;\\sqrt{2(ab+bc+ca)}.\n\nAgain by Cauchy–Schwarz,\n\n  \\sqrt{2(xy+yz+zx)}\\;\\sqrt{2(ab+bc+ca)}\n    \\le \\sqrt{\\bigl(a^2+b^2+c^2 + 2(ab+bc+ca)\\bigr)}\\;\n            \\sqrt{\\bigl(x^2+y^2+z^2 + 2(xy+yz+zx)\\bigr)}.\n\n5. Combining the two estimates\n------------------------------\nSumming the two bounds, we obtain\n\n  a x + b y + c z\n    + 2\\,\\sqrt{(xy+yz+zx)(ab+bc+ca)}\n  \\le \\sqrt{a^2 + b^2 + c^2}\\;\\sqrt{x^2 + y^2 + z^2}\n       + \\sqrt{2(xy+yz+zx)}\\;\\sqrt{2(ab+bc+ca)}\n  \\le \\sqrt{a^2 + b^2 + c^2 + 2(ab+bc+ca)}\\;\n         \\sqrt{x^2 + y^2 + z^2 + 2(xy+yz+zx)}.\n\nBut under x+y+z=1,\n\n  x^2 + y^2 + z^2 + 2(xy+yz+zx) = (x+y+z)^2 = 1^2 = 1,\n  a^2 + b^2 + c^2 + 2(ab+bc+ca) = (a+b+c)^2.\n\nHence the right-most product simplifies to\n\n  \\sqrt{(a+b+c)^2}\\;\\sqrt{1}\n    = (a+b+c)\\cdot 1 = a+b+c.\n\nTherefore we conclude\n\n  a x + b y + c z\n    + 2\\,\\sqrt{(xy+yz+zx)(ab+bc+ca)}\n    \\le a+b+c,\n\nwhich is exactly the rearranged form of the original inequality. This completes the proof that\n\n  a(y+z)+b(z+x)+c(x+y)\n    \\ge 2\\,\\sqrt{(xy+yz+zx)\\,(ab+bc+ca)}.\n\nAnswer:\nThe answer is (B) ≥",
+    "original_entry": {
+        "data_id": "753",
+        "problem": "Let $a, b, c$ and $x, y, z$ be positive real numbers. Consider the following inequality:\n$$\na(y+z)+b(z+x)+c(x+y) \\quad () \\quad 2 \\sqrt{(x y+y z+z x)(a b+b c+c a)} .\n$$\n\nDetermine the correct inequality relation to fill in the blank.\n\nOptions:\n\n(A) $\\leq$ \n\n(B) $\\geq$\n\n(C) $=$ \n\n(D) $<$\n\n(E) $>$\n\n(F) None of the above",
+        "type": "relation",
+        "data_split": "train",
+        "answer": "(B) $\\geq$",
+        "solution": "Since the given inequality is homogenous we may assume that $x+y+$ $z=1$.\n\nNow the given inequality can be written as follows\n$$\n2 \\sqrt{(x y+y z+z x)(a b+b c+c a)}+a x+b y+c z \\leq a+b+c\n$$\n\nApplying the Cauch-Schwarz inequality twice we have\n$$\n\\begin{aligned}\na x & +b y+c z+2 \\sqrt{(x y+y z+z x)(a b+b c+c a)} \\\\\n& \\leq \\sqrt{a^{2}+b^{2}+c^{2}} \\cdot \\sqrt{x^{2}+y^{2}+z^{2}}+\\sqrt{2(x y+y z+z x)} \\cdot \\sqrt{2(a b+b c+c a)} \\\\\n& \\leq \\sqrt{a^{2}+b^{2}+c^{2}+2(a b+b c+c a)} \\cdot \\sqrt{x^{2}+y^{2}+z^{2}+2(x y+y z+z x)} \\\\\n& =a+b+c\n\\end{aligned}\n$$ Therefore, the answer is (B) $\\geq$.",
+        "theorems": {
+            "Theorem 5": {
+                "Nickname": [
+                    "cauchy-schwarz's inequality",
+                    "cauchy-schwarz"
+                ],
+                "Theorem": "For any real numbers $a_{1}, a_{2}, \\ldots, a_{n}$ and $b_{1}, b_{2}, \\ldots, b_{n}$\n\n$$\n\\begin{gathered}\n\\left(a_{1}^{2}+a_{2}^{2}+\\ldots+a_{n}^{2}\\right)\\left(b_{1}^{2}+b_{2}^{2}+\\ldots+b_{n}^{2}\\right) \\geq \\\\\n\\geq\\left(a_{1} b_{1}+a_{2} b_{2}+\\ldots+a_{n} b_{n}\\right)^{2}\n\\end{gathered}\n$$\n\nwith equality if and only if $a_{i}$ and $b_{i}$ are proportional, $i=1,2, \\ldots, n$.",
+                "Theorem_Category": "Cauchy-Schwarz Inequality"
+            }
+        },
+        "choices": [
+            "(A) $\\leq$",
+            "(B) $\\geq$",
+            "(C) $=$",
+            "(D) $<$",
+            "(E) $>$",
+            "(F) None of the above"
+        ],
+        "difficulty": ""
+    }
+}

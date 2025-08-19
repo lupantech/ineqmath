@@ -1,0 +1,35 @@
+{
+    "data_id": "9",
+    "type": "bound",
+    "problem": "Let $a, b, c \\in \\mathbb{R}^{+}$. Find the largest constant $C$ such that the following inequality holds for all $a, b, c \\in \\mathbb{R}^{+}$:\n$$\na^{4}+b^{4}+c^{4} \\geq C \\cdot a b c (a+b+c)\n$$",
+    "current_solution": "We have\n$$\n\\begin{aligned}\na^{4} & +b^{4}+c^{4} \\geq a b c(a+b+c) \\\\\n& \\Leftrightarrow \\quad a^{4}+b^{4}+c^{4} \\geq a^{2} b c+b^{2} a c+c^{2} a b \\\\\n& \\Leftrightarrow \\quad \\frac{T[4,0,0]}{2} \\geq \\frac{T[2,1,1]}{2}\n\\end{aligned}\n$$\ni.e.\n$$\nT[4,0,0] \\geq T[2,1,1]\n$$\nwhich is true according to Muirhead's theorem.\n\nEquality holds when $a = b = c$, since then both sides are equal: $a^4 + b^4 + c^4 = 3a^4$ and $abc(a+b+c) = a^3 \\cdot 3a = 3a^4$. This gives the minimum value of the left side, so $C = 1$ is the largest constant for which the inequality always holds.\n\nTherefore, the answer is $C = 1$.",
+    "answer": "$C = 1$",
+    "enhanced_solution": "Enhanced Solution:\n\n1. Restating the problem.  We wish to determine the largest real constant C such that for all positive real numbers a,b,c the inequality\n\n    a^4 + b^4 + c^4  ≥  C · a b c (a + b + c)\n\nholds.\n\n2. Symmetric‐sum notation.  Define the following symmetric sums over variables a,b,c:\n\n   •  S_{4,0,0} :=  a^4 + b^4 + c^4,\n   •  S_{2,1,1} :=  a^2 b c + a b^2 c + a b c^2.\n\nThen the inequality to prove becomes\n\n   S_{4,0,0}  ≥  C · S_{2,1,1}.\n\n3. Determining the optimal constant.  \n   (a)  First, we show that C=1 works.  We must prove for all a,b,c>0:\n\n       a^4 + b^4 + c^4  ≥  1 · (a^2 b c + a b^2 c + a b c^2),\n\n       i.e.  S_{4,0,0}  ≥  S_{2,1,1}.\n\n   (b)  Application of Muirhead’s inequality.  Observe the exponent 3‐tuples:\n\n       (4,0,0)  and  (2,1,1).\n\n       Since (4,0,0) majorizes (2,1,1)—because 4 ≥ 2, and 4+0 ≥ 2+1—Muirhead’s theorem implies\n\n       S_{4,0,0}  ≥  S_{2,1,1}\n\n       for all positive a,b,c.  Hence the inequality holds with C=1.\n\n4. Sharpness of the constant.  To see that no larger C>1 can work, consider the special case a=b=c=t>0.  Then\n\n   LHS  =  t^4 + t^4 + t^4  =  3 t^4,\n   RHS  =  C · [t·t·t·(t+t+t)]  =  C · (t^3 · 3t)  =  3 C t^4.\n\n   The inequality 3 t^4 ≥ 3 C t^4 holds for all t>0 if and only if C ≤ 1.  Thus C=1 is the largest possible constant.\n\n5. Conclusion.  The optimal constant is\n\n   The answer is $C=1$",
+    "original_entry": {
+        "data_id": "9",
+        "problem": "Let $a, b, c \\in \\mathbb{R}^{+}$. Find the largest constant $C$ such that the following inequality holds for all $a, b, c \\in \\mathbb{R}^{+}$:\n$$\na^{4}+b^{4}+c^{4} \\geq C \\cdot a b c (a+b+c)\n$$",
+        "type": "bound",
+        "data_split": "train",
+        "answer": "$$C = 1$$",
+        "solution": [
+            "We have\n$$\n\\begin{aligned}\na^{4} & +b^{4}+c^{4} \\geq a b c(a+b+c) \\\\\n& \\Leftrightarrow \\quad a^{4}+b^{4}+c^{4} \\geq a^{2} b c+b^{2} a c+c^{2} a b \\\\\n& \\Leftrightarrow \\quad \\frac{T[4,0,0]}{2} \\geq \\frac{T[2,1,1]}{2}\n\\end{aligned}\n$$\ni.e.\n$$\nT[4,0,0] \\geq T[2,1,1]\n$$\nwhich is true according to Muirhead's theorem.\n\nEquality holds when $a = b = c$, since then both sides are equal: $a^4 + b^4 + c^4 = 3a^4$ and $abc(a+b+c) = a^3 \\cdot 3a = 3a^4$. This gives the minimum value of the left side, so $C = 1$ is the largest constant for which the inequality always holds.\n\nTherefore, the answer is $C = 1$."
+        ],
+        "theorems": {
+            "Theorem 68": {
+                "Nickname": [
+                    "karamata's inequality"
+                ],
+                "Theorem": "Let $f: I \\rightarrow \\mathbb{R}$ be a convex function on the interval $I \\subseteq \\mathbb{R}$ and let $\\left(a_{i}\\right)_{i=1}^{n},\\left(b_{i}\\right)_{i=1}^{n}$, where $a_{i}, b_{i} \\in I, i=$ $1,2, \\ldots, n$, are two sequences, such that $\\left(a_{i}\\right) \\succ\\left(b_{i}\\right)$. Then\n$$\nf\\left(a_{1}\\right)+f\\left(a_{2}\\right)+\\cdots+f\\left(a_{n}\\right) \\geq f\\left(b_{1}\\right)+f\\left(b_{2}\\right)+\\cdots+f\\left(b_{n}\\right)\n$$",
+                "Theorem_Category": "Karamata's Inequality"
+            },
+            "Theorem 66": {
+                "Nickname": [
+                    "muirhead's theorem"
+                ],
+                "Theorem": "Let $x_{1}, x_{2}, \\ldots, x_{n}$ be a sequence of non-negative real numbers and let $\\left(\\alpha_{i}\\right)$ and $\\left(\\beta_{i}\\right)$ be sequences of positive real numbers such that $\\left(\\beta_{i}\\right) \\prec\\left(\\alpha_{i}\\right)$. Then\n$$\nT\\left[\\beta_{i}\\right] \\leq T\\left[\\alpha_{i}\\right]\n$$\n\nEquality occurs iff $\\left(\\alpha_{i}\\right)=\\left(\\beta_{i}\\right)$ or $x_{1}=x_{2}=\\cdots=x_{n}$.",
+                "Theorem_Category": "Muirhead's Inequality"
+            }
+        },
+        "difficulty": ""
+    }
+}

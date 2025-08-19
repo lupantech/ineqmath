@@ -1,0 +1,36 @@
+{
+    "data_id": "678",
+    "type": "relation",
+    "problem": "Let $k \\in \\mathbb{N}$, and $a_{1}, a_{2}, \\ldots, a_{n}$ be positive real numbers such that $a_{1} + a_{2} + \\cdots + a_{n} = 1$. Consider the following expressions:\n$$\na_{1}^{-k} + a_{2}^{-k} + \\cdots + a_{n}^{-k} \\quad () \\quad n^{k+1}\n$$\nDetermine the correct inequality relation to fill in the blank.\n\nOptions:\n\n(A) $\\leq$ \n\n(B) $\\geq$\n\n(C) $=$ \n\n(D) $<$\n\n(E) $>$\n\n(F) None of the above",
+    "current_solution": "Since $A M \\geq G M$ we have\n$$\n\\sqrt[n]{a_{1} a_{2} \\cdots a_{n}} \\leq \\frac{a_{1}+a_{2}+\\cdots+a_{n}}{n}=\\frac{1}{n}\n$$\nor\n$$\nn \\leq \\sqrt[n]{\\frac{1}{a_{1}} \\frac{1}{a_{2}} \\cdots \\frac{1}{a_{n}}}\n$$\n\nHence\n$$\nn^{k} \\leq \\sqrt[n]{a_{1}^{-k} a_{2}^{-k} \\cdots a_{n}^{-k}} \\leq \\frac{a_{1}^{-k}+a_{2}^{-k}+\\cdots+a_{n}^{-k}}{n}\n$$\ni.e.\n$$\na_{1}^{-k}+a_{2}^{-k}+\\cdots+a_{n}^{-k} \\geq n^{k+1}\n$$\nas required. Therefore, the answer is (B) $\\geq$.",
+    "answer": "(B) $\\geq$",
+    "enhanced_solution": "Enhanced Detailed Solution:\n\nWe are given positive real numbers a₁, a₂, …, aₙ satisfying\n  a₁ + a₂ + ⋯ + aₙ = 1,\nand a fixed positive integer k ∈ ℕ.  We wish to compare\n  S = a₁⁻ᵏ + a₂⁻ᵏ + ⋯ + aₙ⁻ᵏ\nwith\n  nᵏ⁺¹.\n\nWe will use the classical Arithmetic Mean–Geometric Mean (AM–GM) inequality twice, while keeping track of every logical step.\n\nStep 1: Apply AM–GM to the numbers a₁, a₂, …, aₙ.\n\n  By AM–GM, for n positive numbers x₁,…,xₙ we have\n    (x₁⋯xₙ)^{1/n} ≤ (x₁ + ⋯ + xₙ)/n.\n  Here we set xᵢ = aᵢ, so\n    (a₁a₂⋯aₙ)^{1/n} ≤ (a₁ + a₂ + ⋯ + aₙ)/n = 1/n.\n  Raising both sides to the nᵗʰ power yields\n    a₁a₂⋯aₙ ≤ n⁻ⁿ.\n\nStep 2: Pass to reciprocals.\n\n  Since each aᵢ > 0, we can invert the inequality\n    a₁a₂⋯aₙ ≤ n⁻ⁿ\n  to get\n    (1/a₁)(1/a₂)⋯(1/aₙ) ≥ nⁿ.\n\nStep 3: Incorporate the exponent k.\n\n  Raise the product of reciprocals to the kᵗʰ power:\n    [(1/a₁)(1/a₂)⋯(1/aₙ)]ᵏ ≥ (nⁿ)ᵏ = nⁿᵏ.\n  Equivalently,\n    (a₁⁻ᵏ)(a₂⁻ᵏ)⋯(aₙ⁻ᵏ) ≥ nⁿᵏ.\n\nStep 4: Compute the geometric mean of the terms aᵢ⁻ᵏ.\n\n  The geometric mean G of the n terms a₁⁻ᵏ, …, aₙ⁻ᵏ is\n    G = [(a₁⁻ᵏ)(a₂⁻ᵏ)⋯(aₙ⁻ᵏ)]^{1/n}.\n  From the inequality above,\n    G ≥ (nⁿᵏ)^{1/n} = nᵏ.\n\nStep 5: Apply AM–GM a second time to the numbers a₁⁻ᵏ, …, aₙ⁻ᵏ.\n\n  By AM–GM,\n    (a₁⁻ᵏ + a₂⁻ᵏ + ⋯ + aₙ⁻ᵏ)/n ≥ G.\n  Combining with G ≥ nᵏ gives\n    (a₁⁻ᵏ + a₂⁻ᵏ + ⋯ + aₙ⁻ᵏ)/n ≥ nᵏ.\n  Multiply both sides by n:\n    a₁⁻ᵏ + a₂⁻ᵏ + ⋯ + aₙ⁻ᵏ ≥ n·nᵏ = n^{k+1}.\n\nConclusion:\n\nWe have rigorously shown that\n  a₁⁻ᵏ + a₂⁻ᵏ + ⋯ + aₙ⁻ᵏ ≥ n^{k+1}.\nTherefore, the correct inequality relation is “greater than or equal to.”\n\nThe answer is (B) ≥",
+    "original_entry": {
+        "data_id": "678",
+        "problem": "Let $k \\in \\mathbb{N}$, and $a_{1}, a_{2}, \\ldots, a_{n}$ be positive real numbers such that $a_{1} + a_{2} + \\cdots + a_{n} = 1$. Consider the following expressions:\n$$\na_{1}^{-k} + a_{2}^{-k} + \\cdots + a_{n}^{-k} \\quad () \\quad n^{k+1}\n$$\nDetermine the correct inequality relation to fill in the blank.\n\nOptions:\n\n(A) $\\leq$ \n\n(B) $\\geq$\n\n(C) $=$ \n\n(D) $<$\n\n(E) $>$\n\n(F) None of the above",
+        "type": "relation",
+        "data_split": "train",
+        "answer": "(B) $\\geq$",
+        "solution": [
+            "Since $A M \\geq G M$ we have\n$$\n\\sqrt[n]{a_{1} a_{2} \\cdots a_{n}} \\leq \\frac{a_{1}+a_{2}+\\cdots+a_{n}}{n}=\\frac{1}{n}\n$$\nor\n$$\nn \\leq \\sqrt[n]{\\frac{1}{a_{1}} \\frac{1}{a_{2}} \\cdots \\frac{1}{a_{n}}}\n$$\n\nHence\n$$\nn^{k} \\leq \\sqrt[n]{a_{1}^{-k} a_{2}^{-k} \\cdots a_{n}^{-k}} \\leq \\frac{a_{1}^{-k}+a_{2}^{-k}+\\cdots+a_{n}^{-k}}{n}\n$$\ni.e.\n$$\na_{1}^{-k}+a_{2}^{-k}+\\cdots+a_{n}^{-k} \\geq n^{k+1}\n$$\nas required. Therefore, the answer is (B) $\\geq$."
+        ],
+        "theorems": {
+            "Theorem 35": {
+                "Nickname": [
+                    "mean inequalities"
+                ],
+                "Theorem": "Let $a_{1}, a_{2}, \\ldots, a_{n}$ be positive real numbers. The numbers\n$$\n\\begin{aligned}\n& Q M=\\sqrt{\\frac{a_{1}^{2}+a_{2}^{2}+\\cdots+a_{n}^{2}}{n}}, \\quad A M=\\frac{a_{1}+a_{2}+\\cdots+a_{n}}{n} \\\\\n& G M=\\sqrt[n]{a_{1} a_{2} \\cdots a_{n}} \\quad \\text { and } \\quad H M=\\frac{n}{\\frac{1}{a_{1}}+\\frac{1}{a_{2}}+\\cdots+\\frac{1}{a_{n}}}\n\\end{aligned}\n$$\nare called the quadratic, arithmetic, geometric and harmonic mean for the numbers $a_{1}, a_{2}, \\ldots, a_{n}$, respectively, and we have\n$$\nQ M \\geq A M \\geq G M \\geq H M\n$$\n\nEqualities occur if and only if $a_{1}=a_{2}=\\cdots=a_{n}$.",
+                "Theorem_Category": "Inequality Between Means"
+            }
+        },
+        "choices": [
+            "(A) $\\leq$",
+            "(B) $\\geq$",
+            "(C) $=$",
+            "(D) $<$",
+            "(E) $>$",
+            "(F) None of the above"
+        ],
+        "difficulty": ""
+    }
+}

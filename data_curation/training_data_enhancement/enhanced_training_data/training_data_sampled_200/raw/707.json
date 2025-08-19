@@ -1,0 +1,36 @@
+{
+    "data_id": "707",
+    "type": "relation",
+    "problem": "Let $\\alpha_{i}>0, i=1,2, \\ldots, n$, be real numbers such that $\\alpha_{1}+\\alpha_{2}+\\cdots+\\alpha_{n}=1$. Consider the following expressions:\n$$\n\\alpha_{1}^{\\alpha_{1}} \\alpha_{2}^{\\alpha_{2}} \\cdots \\alpha_{n}^{\\alpha_{n}} \\quad () \\quad \\frac{1}{n}\n$$\nDetermine the correct inequality relation to fill in the blank.\n\nOptions:\n\n(A) $\\leq$ \n\n(B) $\\geq$\n\n(C) $=$ \n\n(D) $<$\n\n(E) $>$\n\n(F) None of the above",
+    "current_solution": "If we take $a_{i}=\\frac{1}{\\alpha_{i}}, i=1,2, \\ldots, n$, by the Weighted $A M-G M$ inequality we get\n$$\n\\frac{1}{\\alpha_{1}^{\\alpha_{1}}} \\frac{1}{\\alpha_{2}^{\\alpha_{2}}} \\cdots \\frac{1}{\\alpha_{n}^{\\alpha_{n}}} \\leq \\frac{1}{\\alpha_{1}} \\alpha_{1}+\\frac{1}{\\alpha_{2}} \\alpha_{2}+\\cdots+\\frac{1}{\\alpha_{n}} \\alpha_{n}=n\n$$\ni.e.\n$$\n\\frac{1}{n} \\leq \\alpha_{1}^{\\alpha_{1}} \\alpha_{2}^{\\alpha_{2}} \\cdots \\alpha_{n}^{\\alpha_{n}}\n$$ Therefore, the answer is (B) $\\geq$.",
+    "answer": "(B) $\\geq$",
+    "enhanced_solution": "Solution Enhancement:\n\nWe are given positive real numbers α₁,α₂,…,αₙ satisfying\n  α₁ + α₂ + ⋯ + αₙ = 1,\nand we wish to compare the quantity\n  P = α₁^{α₁} · α₂^{α₂} · ⋯ · αₙ^{αₙ}\nwith 1/n.\n\nStep 1. Introduction of auxiliary variables\n-------------------------------------------\nDefine for each i = 1,2,…,n the positive number\n  a_i = 1/α_i.\nSince each α_i > 0, these reciprocals a_i are well defined and satisfy a_i > 0.\n\nStep 2. Application of the weighted AM–GM inequality\n-----------------------------------------------------\nRecall the Weighted Arithmetic Mean–Geometric Mean (AM–GM) inequality:\nIf x₁, x₂, …, xₙ > 0 and weights w₁, w₂, …, wₙ satisfy w_i ≥ 0 and w₁ + ⋯ + wₙ = 1,\nthen\n  x₁^{w₁}·x₂^{w₂}·…·xₙ^{wₙ} ≤ w₁ x₁ + w₂ x₂ + … + wₙ xₙ.\n\nWe now apply this inequality with:\n  • x_i = a_i = 1/α_i,\n  • weight w_i = α_i,  for i=1,2,…,n.\nNotice that indeed each weight α_i ≥ 0 and their sum is α₁+⋯+αₙ = 1.\n\nBy weighted AM–GM we have\n  (1/α₁)^{α₁} · (1/α₂)^{α₂} · … · (1/αₙ)^{αₙ}\n    ≤ α₁·(1/α₁) + α₂·(1/α₂) + ⋯ + αₙ·(1/αₙ).\n\nStep 3. Evaluation of the arithmetic mean side\n----------------------------------------------\nOn the right-hand side,\n  α_i · (1/α_i) = 1\nfor each i, so summing over i = 1,…,n gives\n  α₁·(1/α₁) + ⋯ + αₙ·(1/αₙ) = 1 + 1 + ⋯ + 1 = n.\nTherefore,\n  (1/α₁)^{α₁} · … · (1/αₙ)^{αₙ} ≤ n.\n\nStep 4. Rewriting in terms of P and inverting\n----------------------------------------------\nObserve that\n  (1/α_i)^{α_i} = 1 / (α_i^{α_i}),\nso the product on the left is\n  (1/α₁)^{α₁} · … · (1/αₙ)^{αₙ} = 1 ⁄ [α₁^{α₁} · … · αₙ^{αₙ}] = 1/P.\nHence the inequality becomes\n  1/P ≤ n.\nMultiplying both sides by the positive quantity P yields\n  1 ≤ n·P,\nor equivalently\n  P ≥ 1/n.\n\nConclusion\n----------\nWe have shown\n  α₁^{α₁} · α₂^{α₂} · … · αₙ^{αₙ} ≥ 1/n.\nThus the correct inequality relation is “≥”.\n\nThe answer is (B) ≥",
+    "original_entry": {
+        "data_id": "707",
+        "problem": "Let $\\alpha_{i}>0, i=1,2, \\ldots, n$, be real numbers such that $\\alpha_{1}+\\alpha_{2}+\\cdots+\\alpha_{n}=1$. Consider the following expressions:\n$$\n\\alpha_{1}^{\\alpha_{1}} \\alpha_{2}^{\\alpha_{2}} \\cdots \\alpha_{n}^{\\alpha_{n}} \\quad () \\quad \\frac{1}{n}\n$$\nDetermine the correct inequality relation to fill in the blank.\n\nOptions:\n\n(A) $\\leq$ \n\n(B) $\\geq$\n\n(C) $=$ \n\n(D) $<$\n\n(E) $>$\n\n(F) None of the above",
+        "type": "relation",
+        "data_split": "train",
+        "answer": "(B) $\\geq$",
+        "solution": [
+            "If we take $a_{i}=\\frac{1}{\\alpha_{i}}, i=1,2, \\ldots, n$, by the Weighted $A M-G M$ inequality we get\n$$\n\\frac{1}{\\alpha_{1}^{\\alpha_{1}}} \\frac{1}{\\alpha_{2}^{\\alpha_{2}}} \\cdots \\frac{1}{\\alpha_{n}^{\\alpha_{n}}} \\leq \\frac{1}{\\alpha_{1}} \\alpha_{1}+\\frac{1}{\\alpha_{2}} \\alpha_{2}+\\cdots+\\frac{1}{\\alpha_{n}} \\alpha_{n}=n\n$$\ni.e.\n$$\n\\frac{1}{n} \\leq \\alpha_{1}^{\\alpha_{1}} \\alpha_{2}^{\\alpha_{2}} \\cdots \\alpha_{n}^{\\alpha_{n}}\n$$ Therefore, the answer is (B) $\\geq$."
+        ],
+        "theorems": {
+            "Theorem 43": {
+                "Nickname": [
+                    "weighted $a m-g m$ inequality"
+                ],
+                "Theorem": "Let $a_{i} \\in(0, \\infty), i=1,2, \\ldots, n$, and $\\alpha_{i} \\in[0,1], i=1,2, \\ldots, n$, be such that $\\alpha_{1}+\\alpha_{2}+\\cdots+\\alpha_{n}=1$.\nThen\n$$\n\\begin{equation*}\na_{1}^{\\alpha_{1}} a_{2}^{\\alpha_{2}} \\cdots a_{n}^{\\alpha_{n}} \\leq a_{1} \\alpha_{1}+a_{2} \\alpha_{2}+\\cdots+a_{n} \\alpha_{n} \\tag{7.9}\n\\end{equation*}\n$$",
+                "Theorem_Category": "Inequality Between Means"
+            }
+        },
+        "choices": [
+            "(A) $\\leq$",
+            "(B) $\\geq$",
+            "(C) $=$",
+            "(D) $<$",
+            "(E) $>$",
+            "(F) None of the above"
+        ],
+        "difficulty": ""
+    }
+}

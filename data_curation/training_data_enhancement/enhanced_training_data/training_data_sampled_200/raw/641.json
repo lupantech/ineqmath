@@ -1,0 +1,44 @@
+{
+    "data_id": "641",
+    "type": "relation",
+    "problem": "Let $n > 2$ and let $x_{1}, x_{2}, \\ldots, x_{n} > 0$ add up to 1. Consider the following inequality:\n$$\n\\prod_{i=1}^{n}\\left(1+\\frac{1}{x_{i}}\\right) \\quad () \\quad \\prod_{i=1}^{n}\\left(\\frac{n-x_{i}}{1-x_{i}}\\right)\n$$\n\nDetermine the correct inequality relation to fill in the blank.\n\nOptions:\n\n(A) $\\leq$ \n\n(B) $\\geq$\n\n(C) $=$ \n\n(D) $<$\n\n(E) $>$\n\n(F) None of the above",
+    "current_solution": "The most natural idea is to use the fact that\n\n$$\n\\frac{n-x_{i}}{1-x_{i}}=1+\\frac{n-1}{x_{1}+x_{2}+\\cdots+x_{i-1}+x_{i+1}+\\cdots+x_{n}}\n$$\n\nThus, we have\n\n$$\n\\prod_{i=1}^{n}\\left(\\frac{n-x_{i}}{1-x_{i}}\\right) \\leq \\prod_{i=1}^{n}\\left(1+\\frac{1}{\\sqrt[n-1]{x_{1} x_{2} \\ldots x_{i-1} x_{i+1} \\ldots x_{n}}}\\right)\n$$\n\nand we have to prove the inequality\n\n$$\n\\prod_{i=1}^{n}\\left(1+\\frac{1}{x_{i}}\\right) \\geq \\prod_{i=1}^{n}\\left(1+\\frac{1}{\\sqrt[n-1]{x_{1} x_{2} \\ldots x_{i-1} x_{i+1} \\ldots x_{n}}}\\right)\n$$\n\nBut this one is not very hard, because it follows immediately by multiplying the inequalities\n\n$$\n\\prod_{j \\neq i}\\left(1+\\frac{1}{x_{j}}\\right) \\geq\\left(1+\\sqrt[n-1]{\\prod_{j \\neq i} \\frac{1}{x_{j}}}\\right)^{n-1}\n$$\n\nobtained from Huygens Inequality. Therefore, the answer is (B) $\\geq$.",
+    "answer": "(B) $\\geq$",
+    "enhanced_solution": "We wish to compare the two products\n\n  P:=\\prod_{i=1}^{n}\\bigl(1+\\tfrac1{x_i}\\bigr)\n  \\quad\\text{and}\\quad\n  Q:=\\prod_{i=1}^{n}\\bigl(\\tfrac{n-x_i}{1-x_i}\\bigr),\n\nwhere x_1+⋯+x_n=1 and each x_i>0.  We claim P\\ge Q.\n\nStep 1.  Rewrite each factor of Q in a suggestive form.  Since\n\n  n-x_i = (x_1+⋯+x_n) + (n-1) - x_i = (1-x_i)+(n-1),\n\nwe have for each i\n\n  \\frac{n-x_i}{1-x_i}\n  =1+\\frac{n-1}{1-x_i}\n  =1+\\frac{n-1}{\\sum_{j\\ne i}x_j}.\n\nHence\n\n  Q\n  =\\prod_{i=1}^n\\Bigl(1+\\frac{n-1}{\\sum_{j\\ne i}x_j}\\Bigr).\n\nStep 2.  Bound these factors by AM–GM.  For each fixed i, the arithmetic–geometric mean inequality on the n-1 positive numbers \\{x_j:j\\ne i\\} gives\n\n  \\sum_{j\\ne i}x_j\n  \\ge(n-1)\\Bigl(\\prod_{j\\ne i}x_j\\Bigr)^{1/(n-1)}\n  \\quad\\Longrightarrow\\quad\n  \\frac{n-1}{\\sum_{j\\ne i}x_j}\\le\\frac1{\\bigl(\\prod_{j\\ne i}x_j\\bigr)^{1/(n-1)}}.\n\nThus\n\n  \\frac{n-x_i}{1-x_i}\n  =1+\\frac{n-1}{\\sum_{j\\ne i}x_j}\n  \\le1+\\frac1{\\bigl(\\prod_{j\\ne i}x_j\\bigr)^{1/(n-1)}}.\n\nTaking the product over i=1,…,n gives the chain of inequalities\n\n  Q\n  \\le\\prod_{i=1}^n\\Bigl(1+\\frac1{(\\prod_{j\\ne i}x_j)^{1/(n-1)}}\\Bigr).\n\nTo conclude P\\ge Q it now suffices to prove\n\n  \\prod_{i=1}^n\\Bigl(1+\\frac1{x_i}\\Bigr)\n  \\ge\\prod_{i=1}^n\\Bigl(1+\\frac1{(\\prod_{j\\ne i}x_j)^{1/(n-1)}}\\Bigr).\n\nStep 3.  A symmetric ‘‘Huygens-type’’ lemma.  \n\nLemma.  For any m positive numbers a_1,…,a_m,\n\n  \\prod_{k=1}^m(1+a_k)\n  \\ge\\Bigl(1+\\bigl(a_1a_2\\cdots a_m\\bigr)^{1/m}\\Bigr)^m.\n\nProof of lemma (via Maclaurin’s inequalities).  Write the left–hand side in its expanded form\n\n  \\prod_{k=1}^m(1+a_k)\n  =\\sum_{r=0}^m e_r,\n\nwhere e_r is the rth elementary symmetric sum of a_1,…,a_m.  Maclaurin’s inequality asserts\n\n  e_r\\ge\\binom mr\\bigl(a_1a_2\\cdots a_m\\bigr)^{r/m},\n\nfor each r=0,1,…,m.  Summing these gives exactly\n\n  \\sum_{r=0}^m e_r\\ge\\sum_{r=0}^m\\binom mr\\bigl(a_1\\cdots a_m\\bigr)^{r/m}\n  =\\bigl(1+\\sqrt[m]{a_1\\cdots a_m}\\bigr)^m,\n\nestablishing the lemma.\n\nStep 4.  Apply the lemma with m=n-1 and a_k=1/x_j (j\\ne i).  For each i,\n\n  \\prod_{j\\ne i}\\Bigl(1+\\frac1{x_j}\\Bigr)\n  \\ge\\Bigl(1+\\bigl(\\prod_{j\\ne i}\\tfrac1{x_j}\\bigr)^{1/(n-1)}\\Bigr)^{n-1}.\n\nMultiply these n inequalities, one for each i=1,…,n.  On the left one obtains\n\n  \\prod_{i=1}^n\\prod_{j\\ne i}\\Bigl(1+\\frac1{x_j}\\Bigr)\n  =\\Bigl(\\prod_{k=1}^n(1+\\tfrac1{x_k})\\Bigr)^{n-1},\n\nand on the right\n\n  \\prod_{i=1}^n\\Bigl(1+\\bigl(\\prod_{j\\ne i}\\tfrac1{x_j}\\bigr)^{1/(n-1)}\\Bigr)^{n-1}\n  =\\Bigl(\\prod_{i=1}^n\\bigl(1+\\tfrac1{(\\prod_{j\\ne i}x_j)^{1/(n-1)}}\\bigr)\\Bigr)^{n-1}.\n\nTaking (n−1)th roots yields exactly\n\n  \\prod_{k=1}^n\\Bigl(1+\\tfrac1{x_k}\\Bigr)\n  \\ge\\prod_{i=1}^n\\Bigl(1+\\tfrac1{(\\prod_{j\\ne i}x_j)^{1/(n-1)}}\\Bigr),\n\nwhich completes the proof that P\\ge Q.\n\nAnswer.  The answer is (B) ≥",
+    "original_entry": {
+        "data_id": "641",
+        "problem": "Let $n > 2$ and let $x_{1}, x_{2}, \\ldots, x_{n} > 0$ add up to 1. Consider the following inequality:\n$$\n\\prod_{i=1}^{n}\\left(1+\\frac{1}{x_{i}}\\right) \\quad () \\quad \\prod_{i=1}^{n}\\left(\\frac{n-x_{i}}{1-x_{i}}\\right)\n$$\n\nDetermine the correct inequality relation to fill in the blank.\n\nOptions:\n\n(A) $\\leq$ \n\n(B) $\\geq$\n\n(C) $=$ \n\n(D) $<$\n\n(E) $>$\n\n(F) None of the above",
+        "type": "relation",
+        "data_split": "train",
+        "answer": "(B) $\\geq$",
+        "solution": [
+            "The most natural idea is to use the fact that\n\n$$\n\\frac{n-x_{i}}{1-x_{i}}=1+\\frac{n-1}{x_{1}+x_{2}+\\cdots+x_{i-1}+x_{i+1}+\\cdots+x_{n}}\n$$\n\nThus, we have\n\n$$\n\\prod_{i=1}^{n}\\left(\\frac{n-x_{i}}{1-x_{i}}\\right) \\leq \\prod_{i=1}^{n}\\left(1+\\frac{1}{\\sqrt[n-1]{x_{1} x_{2} \\ldots x_{i-1} x_{i+1} \\ldots x_{n}}}\\right)\n$$\n\nand we have to prove the inequality\n\n$$\n\\prod_{i=1}^{n}\\left(1+\\frac{1}{x_{i}}\\right) \\geq \\prod_{i=1}^{n}\\left(1+\\frac{1}{\\sqrt[n-1]{x_{1} x_{2} \\ldots x_{i-1} x_{i+1} \\ldots x_{n}}}\\right)\n$$\n\nBut this one is not very hard, because it follows immediately by multiplying the inequalities\n\n$$\n\\prod_{j \\neq i}\\left(1+\\frac{1}{x_{j}}\\right) \\geq\\left(1+\\sqrt[n-1]{\\prod_{j \\neq i} \\frac{1}{x_{j}}}\\right)^{n-1}\n$$\n\nobtained from Huygens Inequality. Therefore, the answer is (B) $\\geq$.",
+            "We will prove even more, that\n\n$$\n\\prod_{i=1}^{n}\\left(1+\\frac{1}{x_{i}}\\right) \\geq\\left(\\frac{n^{2}-1}{n}\\right)^{n} \\cdot \\prod_{i=1}^{n} \\frac{1}{1-x_{i}}\n$$\n\nIt is clear that this inequality is stronger than the initial one. First, let us prove that\n\n$$\n\\prod_{i=1}^{n} \\frac{1+x_{i}}{1-x_{i}} \\geq\\left(\\frac{n+1}{n-1}\\right)^{n}\n$$\n\nThis follows from Jensen's Inequality for the convex function $f(x)=\\ln (1+x)-$ $\\ln (1-x)$. So, it suffices to prove that\n\n$$\n\\frac{\\left(\\frac{n+1}{n-1}\\right)^{n}}{\\prod_{i=1}^{n} x_{i}} \\cdot \\prod_{i=1}^{n}\\left(1-x_{i}\\right)^{2} \\geq\\left(\\frac{n^{2}-1}{n}\\right)^{n}\n$$\n\nBut a quick look shows that this is exactly the inequality proved in the solution of the problem 121. Therefore, the answer is (B) $\\geq$."
+        ],
+        "theorems": {
+            "Theorem 13": {
+                "Nickname": [
+                    "huygens inequality"
+                ],
+                "Theorem": "If $p_{1}, p_{2}, \\ldots, p_{n}, a_{1}, a_{2}, \\ldots, a_{n}, b_{1}, b_{2}, \\ldots, b_{n}$ are positive real numbers with $p_{1}+p_{2}+\\ldots+p_{n}=1$, then\n\n$$\n\\prod_{i=1}^{n}\\left(a_{i}+b_{i}\\right)^{p_{i}} \\geq \\prod_{i=1}^{n} a_{i}^{p_{i}}+\\prod_{i=1}^{n} b_{i}^{p_{i}}\n$$",
+                "Theorem_Category": "Huygens Inequality"
+            },
+            "Theorem 40": {
+                "Nickname": [
+                    "jensen's inequality"
+                ],
+                "Theorem": "Let $f:(a, b) \\rightarrow \\mathbb{R}$ be a convex function on the interval $(a, b)$. Let $n \\in \\mathbb{N}$ and $\\alpha_{1}, \\alpha_{2}, \\ldots, \\alpha_{n} \\in(0,1)$ be real numbers such that $\\alpha_{1}+\\alpha_{2}+\\cdots+\\alpha_{n}=1$. Then for any $x_{1}, x_{2}, \\ldots, x_{n} \\in(a, b)$ we have\n$$\nf\\left(\\sum_{i=1}^{n} \\alpha_{i} x_{i}\\right) \\leq \\sum_{i=1}^{n} \\alpha_{i} f\\left(x_{i}\\right)\n$$\ni.e.\n$$\n\\begin{equation*}\nf\\left(\\alpha_{1} x_{1}+\\alpha_{2} x_{2}+\\cdots+\\alpha_{n} x_{n}\\right) \\leq \\alpha_{1} f\\left(x_{1}\\right)+\\alpha_{2} f\\left(x_{2}\\right)+\\cdots+\\alpha_{n} f\\left(x_{n}\\right) \\tag{7.2}\n\\end{equation*}\n$$",
+                "Theorem_Category": "Convexity, Jensen's Inequality"
+            }
+        },
+        "choices": [
+            "(A) $\\leq$",
+            "(B) $\\geq$",
+            "(C) $=$",
+            "(D) $<$",
+            "(E) $>$",
+            "(F) None of the above"
+        ],
+        "difficulty": ""
+    }
+}

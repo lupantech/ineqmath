@@ -1,0 +1,35 @@
+{
+    "data_id": "76",
+    "type": "bound",
+    "problem": "Let $a, b \\in \\mathbb{R}^{+}$. Find the smallest constant $C$ such that the following inequality holds for all $a, b \\in \\mathbb{R}^{+}$:\n$$\nC(a^3 + b^3) \\geq (a + b)^3\n$$",
+    "current_solution": "The function $f(x)=x^{3}$ is convex on $(0,+\\infty)$, thus from Jensen's inequality it follows that\n$$\n\\left(\\frac{a+b}{2}\\right)^{3} \\leq \\frac{a^{3}+b^{3}}{2} \\Leftrightarrow 4\\left(a^{3}+b^{3}\\right) \\geq(a+b)^{3}\n$$\n\nEquality holds when $a = b$, since then $a^3 + b^3 = 2a^3$ and $(a + b)^3 = (2a)^3 = 8a^3$, so $4(a^3 + b^3) = 8a^3 = (a + b)^3$. This gives the minimum value of $C$, so $C = 4$ is the smallest constant for which the inequality always holds.\n\nTherefore, the answer is $C = 4$.",
+    "answer": "$C = 4$",
+    "enhanced_solution": "Enhanced Solution:\n\n1. Definition of the function and verification of convexity\n   Let φ: (0, +∞) → ℝ be defined by φ(x) = x³.  We compute its second derivative:\n      φ′(x) = 3x²,\n      φ″(x) = 6x.\n   Since x > 0 on the domain (0, +∞), we have φ″(x) = 6x > 0 for all x > 0.  Therefore φ is strictly convex on (0, +∞).\n\n2. Application of Jensen’s inequality\n   For any convex function φ and any weights λ₁, λ₂ ≥ 0 with λ₁ + λ₂ = 1, Jensen’s inequality states\n      φ(λ₁ a + λ₂ b) ≤ λ₁ φ(a) + λ₂ φ(b).\n   Take λ₁ = λ₂ = 1/2.  Then λ₁ a + λ₂ b = (a + b)/2, and Jensen gives\n      φ((a + b)/2) ≤ (1/2) φ(a) + (1/2) φ(b)\n   or explicitly\n      ((a + b)/2)³ ≤ (a³ + b³)/2.\n\n3. Algebraic rearrangement to the desired form\n   Multiply both sides of ((a + b)/2)³ ≤ (a³ + b³)/2 by 8 to clear the denominator:  \n      8 · ((a + b)/2)³ ≤ 8 · ((a³ + b³)/2)\n      ⇒ (a + b)³ ≤ 4 (a³ + b³).\n   Thus for all a, b > 0 one has\n      4 (a³ + b³) ≥ (a + b)³.\n   In other words, the inequality C (a³ + b³) ≥ (a + b)³ holds with C = 4.\n\n4. Sharpness and minimality of the constant\n   To see that 4 is the smallest possible constant C, we check the equality case in Jensen’s inequality.  Equality holds if and only if a = b (since φ is strictly convex).  When a = b, say a = b = t > 0, both sides become:\n      Left side:  4 (t³ + t³) = 8 t³,\n      Right side: (t + t)³ = (2t)³ = 8 t³.\n   Hence C cannot be taken smaller than 4 without violating the inequality for a = b.\n\n5. Conclusion\n   Combining existence (C = 4 works) and minimality (no smaller C works), we conclude that the smallest constant is C = 4.\n\nThe answer is $C=4$",
+    "original_entry": {
+        "data_id": "76",
+        "problem": "Let $a, b \\in \\mathbb{R}^{+}$. Find the smallest constant $C$ such that the following inequality holds for all $a, b \\in \\mathbb{R}^{+}$:\n$$\nC(a^3 + b^3) \\geq (a + b)^3\n$$",
+        "type": "bound",
+        "data_split": "train",
+        "answer": "$$C = 4$$",
+        "solution": [
+            "The function $f(x)=x^{3}$ is convex on $(0,+\\infty)$, thus from Jensen's inequality it follows that\n$$\n\\left(\\frac{a+b}{2}\\right)^{3} \\leq \\frac{a^{3}+b^{3}}{2} \\Leftrightarrow 4\\left(a^{3}+b^{3}\\right) \\geq(a+b)^{3}\n$$\n\nEquality holds when $a = b$, since then $a^3 + b^3 = 2a^3$ and $(a + b)^3 = (2a)^3 = 8a^3$, so $4(a^3 + b^3) = 8a^3 = (a + b)^3$. This gives the minimum value of $C$, so $C = 4$ is the smallest constant for which the inequality always holds.\n\nTherefore, the answer is $C = 4$."
+        ],
+        "theorems": {
+            "Theorem 43": {
+                "Nickname": [
+                    "weighted $a m-g m$ inequality"
+                ],
+                "Theorem": "Let $a_{i} \\in(0, \\infty), i=1,2, \\ldots, n$, and $\\alpha_{i} \\in[0,1], i=1,2, \\ldots, n$, be such that $\\alpha_{1}+\\alpha_{2}+\\cdots+\\alpha_{n}=1$.\nThen\n$$\n\\begin{equation*}\na_{1}^{\\alpha_{1}} a_{2}^{\\alpha_{2}} \\cdots a_{n}^{\\alpha_{n}} \\leq a_{1} \\alpha_{1}+a_{2} \\alpha_{2}+\\cdots+a_{n} \\alpha_{n} \\tag{7.9}\n\\end{equation*}\n$$",
+                "Theorem_Category": "Inequality Between Means"
+            },
+            "Theorem 40": {
+                "Nickname": [
+                    "jensen's inequality"
+                ],
+                "Theorem": "Let $f:(a, b) \\rightarrow \\mathbb{R}$ be a convex function on the interval $(a, b)$. Let $n \\in \\mathbb{N}$ and $\\alpha_{1}, \\alpha_{2}, \\ldots, \\alpha_{n} \\in(0,1)$ be real numbers such that $\\alpha_{1}+\\alpha_{2}+\\cdots+\\alpha_{n}=1$. Then for any $x_{1}, x_{2}, \\ldots, x_{n} \\in(a, b)$ we have\n$$\nf\\left(\\sum_{i=1}^{n} \\alpha_{i} x_{i}\\right) \\leq \\sum_{i=1}^{n} \\alpha_{i} f\\left(x_{i}\\right)\n$$\ni.e.\n$$\n\\begin{equation*}\nf\\left(\\alpha_{1} x_{1}+\\alpha_{2} x_{2}+\\cdots+\\alpha_{n} x_{n}\\right) \\leq \\alpha_{1} f\\left(x_{1}\\right)+\\alpha_{2} f\\left(x_{2}\\right)+\\cdots+\\alpha_{n} f\\left(x_{n}\\right) \\tag{7.2}\n\\end{equation*}\n$$",
+                "Theorem_Category": "Convexity, Jensen's Inequality"
+            }
+        },
+        "difficulty": ""
+    }
+}
