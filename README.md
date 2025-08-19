@@ -680,11 +680,11 @@ The copyright of the images and the questions belongs to the original authors. A
 If you use the <b><span style="color:#103756;">Ineq</span><span style="color:#D03C36;">Math</span></b> dataset in your work, please kindly cite the paper using this BibTeX:
 
 ```
-@article{jiayi2025solving,
-    author = {Jiayi, Sheng and Luna, Lyu and Jikai, Jin and Tony, Xia and Alex, Gu and James, Zou and Pan, Lu},
-    title = {Solving Inequality Proofs with Large Language Models},
-    journal = {arXiv preprint arXiv:2506.07927},
-    year = {2025}
+@article{sheng2025solving,
+  title={Solving Inequality Proofs with Large Language Models},
+  author={Sheng, Jiayi and Lyu, Luna and Jin, Jikai and Xia, Tony and Gu, Alex and Zou, James and Lu, Pan},
+  journal={arXiv preprint arXiv:2506.07927},
+  year={2025}
 }
 ```
 
