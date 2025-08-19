@@ -79,7 +79,7 @@ Welcome to the official repository for the paper "[Solving Inequality Proofs wit
 <a id="news"></a>
 ## 💥 News 
 
-- **[2025.08.18]** 🎯 We've just released our novel **reformulation pipeline** that transforms inequality proofs into **informal yet verifiable subtasks**, automatically expanding IneqMath training data! Plus, our brand-new **training data enhancement scripts** are here to supercharge your model training. Check out our [Data Curation](#data-curation) section and start building better data and models today! ✨
+- **[2025.08.18]** 🎯 We've just released our novel **reformulation pipeline** that transforms inequality proofs into **informal yet verifiable subtasks**. Plus, our brand-new **training data enhancement scripts** are here to supercharge your model training. Check out our [Data Curation](#data-curation) section and start building better data and models today! ✨
 - **[2025.08.17]** 🚀 Supercharge your IneqMath runs with our new improvement strategies—[Frequent Theorems as Hints](#frequent-theorems-as-hints), [Frequent Training Problems & Solutions as Hints](#frequent-training-problems-and-solutions-as-hints), and [Few-shot Evaluation](#few-shot-evaluation). Give them a try and let us know if there are other strategies you'd like to see!
 - **[2025.08.16]** 🚀 Updated **example scripts** across **all supported model families**—explore them [here](#supported-llm-engines)!
 - **[2025.08.14]** ✨ Released the **dev set evaluation scripts** and our **Final Answer Judge**—try them now! [Dev set evaluation](#evaluate-models-on-ineqmath-dev-set) | [Final Answer Judge](#evaluate-with-the-final-answer-judge).
@@ -249,7 +249,7 @@ To run other supported models, see the [Supported LLM Engines](#supported-llm-en
 ./run_test_data_openai.sh
 ```
 
-You can customize the max token limits by changing the `TOKENS` variable in the script files. For example, to set a 30000 max tokens limit, modify `TOKENS=30000` in the script before running.
+You can customize the max token limits by changing the `TOKENS` variable in the script files. For example, to set a 30,000 max tokens limit, modify `TOKENS=30000` in the script before running.
 
 If the dataset can't be loaded automatically, please download the JSON-formatted dataset manually by:
 ```shell
@@ -261,7 +261,7 @@ wget https://huggingface.co/datasets/AI4Math/IneqMath/resolve/main/json/test.jso
 Then, you can find the model's output in `results/models_results_test_data/MODEL-LABEL/scores.json`, where `MODEL-LABEL` is the label of the model consisting of the model name and the max tokens budget. For example, the `MODEL-LABEL` for `gpt-4o-mini` with a 10K max tokens limit would be `gpt-4o-mini_tokens_10000`.
 
 
-To evaluate your model's output and obtain the answer accuracy and step-wise accuracy reported in our paper, please submit your outputs to the [leaderboard](https://huggingface.co/spaces/AI4Math/IneqMath-Leaderboard). See [the leaderboard submission instruction](#submit-the-results-to-the-leaderboard) for more details.
+To evaluate your model's output and obtain the answer accuracy and step-wise accuracy reported in our paper, please submit your outputs to the [leaderboard](https://huggingface.co/spaces/AI4Math/IneqMath-Leaderboard). See [the leaderboard submission instructions](#submit-the-results-to-the-leaderboard) for more details.
 
 
 ### Evaluate Models on <b><span style="color:#103756;">Ineq</span><span style="color:#D03C36;">Math</span></b> Dev Set
@@ -273,11 +273,11 @@ To run the supported models, see the [Supported LLM Engines](#supported-llm-engi
 ./run_dev_data_openai.sh
 ```
 
-You can customize the max token limits by changing the `TOKENS` variable in the script files. For example, to set a 30000 max tokens limit, modify `TOKENS=30000` in the script before running.
+You can customize the max token limits by changing the `TOKENS` variable in the script files. For example, to set a 30,000 max tokens limit, modify `TOKENS=30000` in the script before running.
 
 You can then find the answer accuracy in `results/models_results_dev_data/MODEL-LABEL/scores.json`, where `MODEL-LABEL` is the label of the model consisting of the model name and the max tokens budget. For example, the `MODEL-LABEL` for `gpt-4o-mini` with a 10K max tokens limit would be `gpt-4o-mini_tokens_10000`.
 
-To further evaluate your model's output and obtain the step-wise accuracy reported in our paper, please submit your generated file `results/models_results_dev_data/MODEL-LABEL/results.json` to the [Dev set evaluation platform](https://huggingface.co/spaces/AI4Math/IneqMath-Dev-Evaluation). See [the leaderboard submission instruction](#submit-the-results-to-the-leaderboard) for more details. 
+To further evaluate your model's output and obtain the step-wise accuracy reported in our paper, please submit your generated file `results/models_results_dev_data/MODEL-LABEL/results.json` to the [Dev set evaluation platform](https://huggingface.co/spaces/AI4Math/IneqMath-Dev-Evaluation). See [the leaderboard submission instructions](#submit-the-results-to-the-leaderboard) for more details. 
 
 ### Evaluate with the Final Answer Judge
 
@@ -309,7 +309,7 @@ The score will be saved as `../../results/models_results_dev_data/gpt-4o-mini_to
 ### Submit the Results to the Leaderboard
 🏆 The leaderboard for the <b><span style="color:#103756;">Ineq</span><span style="color:#D03C36;">Math</span></b> is available [here](https://huggingface.co/spaces/AI4Math/IneqMath-Leaderboard).
 
-To submit the results to the leaderboard, please follow the follwing instructions: 
+To submit the results to the leaderboard, please follow the following instructions: 
 
 - If you run the model by our scripts, you can upload the generated `results.json` of the model to the corresponding section (test/dev) of the leaderboard.
 
@@ -360,21 +360,21 @@ cd strategies/frequent_theorem_as_hints
 
 If you want to run other models from the [supported model family](#supported-llm-engines), you could substitute or add the model engine name in `ENGINES` of the example scripts, and then run it.
 
-You can customize the max token limits and the number of most frequent theorems by changing the `TOKENS` and `THEOREM_NUM` variables in the script files. For example, to set a 30000 max tokens limit and 3 most frequent theorems, modify `TOKENS=30000` and `THEOREM_NUM=3` in the script before running.
+You can customize the max token limits and the number of most frequent theorems by changing the `TOKENS` and `THEOREM_NUM` variables in the script files. For example, to set a 30,000 max tokens limit and 3 most frequent theorems, modify `TOKENS=30000` and `THEOREM_NUM=3` in the script before running.
 
 Then, you can find the model's output in `results/frequent_theorems_as_hints_results_dev_data/MODEL-LABEL/results.json` or `results/frequent_theorems_as_hints_results_test_data/MODEL-LABEL/results.json`, where `MODEL-LABEL` is the label of the model consisting of the *model name*, the *max tokens budget* and the *number of most frequent theorems*. For example, the `MODEL-LABEL` for `gpt-4o-mini` with a 10K max tokens limit and 3 most frequent theorems would be `gpt-4o-mini_tokens_10000_theorem_num_3`.
 
 <details>
 <summary><b>Results examples and evaluation instructions</b></summary>
 
-We have provided the results generated by `gpt-4o-mini` with 3 most frequent theorems as hints and 10000 max tokens limit [here](results/frequent_theorems_as_hints_results_test_data/gpt-4o-mini_tokens_10000_theorem_num_3/results.json). We also visualize the query and response pairs in markdown format [here](results/frequent_theorems_as_hints_results_test_data/gpt-4o-mini_tokens_10000_theorem_num_3/raw) for each problem. (For example, [problem 1](results/frequent_theorems_as_hints_results_test_data/gpt-4o-mini_tokens_10000_theorem_num_3/raw/1.md))
+We have provided the results generated by `gpt-4o-mini` with 3 most frequent theorems as hints and 10,000 max tokens limit [here](results/frequent_theorems_as_hints_results_test_data/gpt-4o-mini_tokens_10000_theorem_num_3/results.json). We also visualize the query and response pairs in markdown format [here](results/frequent_theorems_as_hints_results_test_data/gpt-4o-mini_tokens_10000_theorem_num_3/raw) for each problem. (For example, [problem 1](results/frequent_theorems_as_hints_results_test_data/gpt-4o-mini_tokens_10000_theorem_num_3/raw/1.md))
 
-To evaluate your model's output and obtain the answer accuracy and step-wise accuracy reported in our paper, please submit your outputs to the [leaderboard](https://huggingface.co/spaces/AI4Math/IneqMath-Leaderboard). See [the leaderboard submission instruction](#submit-the-results-to-the-leaderboard) for more details.
+To evaluate your model's output and obtain the answer accuracy and step-wise accuracy reported in our paper, please submit your outputs to the [leaderboard](https://huggingface.co/spaces/AI4Math/IneqMath-Leaderboard). See [the leaderboard submission instructions](#submit-the-results-to-the-leaderboard) for more details.
 
 </details>
 
 ### Frequent Training Problems and Solutions as Hints
-As shown in our [paper](https://arxiv.org/abs/2506.07927), providing **top-k most frequent training problems and their solutions** can also  improve the performance of LLMs on the <b><span style="color:#103756;">Ineq</span><span style="color:#D03C36;">Math</span></b> dataset. Therefore, we provide the scripts to **evaluate LLMs with top-k most frequent training problems and solutions as hints**.
+As shown in our [paper](https://arxiv.org/abs/2506.07927), providing **top-k most frequent training problems and their solutions** can also improve the performance of LLMs on the <b><span style="color:#103756;">Ineq</span><span style="color:#D03C36;">Math</span></b> dataset. Therefore, we provide the scripts to **evaluate LLMs with top-k most frequent training problems and solutions as hints**.
 
 
 Please change the directory to `strategies/frequent_solution_as_hints` and run the following script to evaluate LLMs with top-k most frequent training problems and solutions as hints.
@@ -386,16 +386,16 @@ cd strategies/frequent_solution_as_hints
 
 If you want to run other models from the [supported model family](#supported-llm-engines), you could substitute or add the model engine name in `ENGINES` of the example scripts, and then run it.
 
-You can customize the max token limits and the number of most frequent training problems and solutions by changing the `TOKENS` and `SOLUTION_NUM` variables in the script files. For example, to set a 30000 max tokens limit and 3 most frequent training problems and solutions, modify `TOKENS=30000` and `SOLUTION_NUM=3` in the script before running.
+You can customize the max token limits and the number of most frequent training problems and solutions by changing the `TOKENS` and `SOLUTION_NUM` variables in the script files. For example, to set a 30,000 max tokens limit and 3 most frequent training problems and solutions, modify `TOKENS=30000` and `SOLUTION_NUM=3` in the script before running.
 
 Then, you can find the model's output in `results/frequent_solution_as_hints_results_dev_data/MODEL-LABEL/results.json` or `results/frequent_solution_as_hints_results_test_data/MODEL-LABEL/results.json`, where `MODEL-LABEL` is the label of the model consisting of the *model name*, the *max tokens budget* and the *number of most frequent training problems and solutions*. For example, the `MODEL-LABEL` for `gpt-4o-mini` with a 10K max tokens limit and 3 most frequent training problems and solutions would be `gpt-4o-mini_tokens_10000_solution_num_3`.
 
 <details>
 <summary><b>Results examples and evaluation instructions</b></summary>
 
-We have provided the results generated by `gpt-4o-mini` with 3 most frequent training problems and solutions as hints and 10000 max tokens limit [here](results/frequent_solution_as_hints_results_test_data/gpt-4o-mini_tokens_10000_solution_num_3/results.json). We also visualize the query and response pairs in markdown format [here](results/frequent_solution_as_hints_results_test_data/gpt-4o-mini_tokens_10000_solution_num_3/raw) for each problem. (For example, [problem 1](results/frequent_solution_as_hints_results_test_data/gpt-4o-mini_tokens_10000_solution_num_3/raw/1.md))
+We have provided the results generated by `gpt-4o-mini` with 3 most frequent training problems and solutions as hints and 10,000 max tokens limit [here](results/frequent_solution_as_hints_results_test_data/gpt-4o-mini_tokens_10000_solution_num_3/results.json). We also visualize the query and response pairs in markdown format [here](results/frequent_solution_as_hints_results_test_data/gpt-4o-mini_tokens_10000_solution_num_3/raw) for each problem. (For example, [problem 1](results/frequent_solution_as_hints_results_test_data/gpt-4o-mini_tokens_10000_solution_num_3/raw/1.md))
 
-To evaluate your model's output and obtain the answer accuracy and step-wise accuracy reported in our paper, please submit your outputs to the [leaderboard](https://huggingface.co/spaces/AI4Math/IneqMath-Leaderboard). See [the leaderboard submission instruction](#submit-the-results-to-the-leaderboard) for more details.
+To evaluate your model's output and obtain the answer accuracy and step-wise accuracy reported in our paper, please submit your outputs to the [leaderboard](https://huggingface.co/spaces/AI4Math/IneqMath-Leaderboard). See [the leaderboard submission instructions](#submit-the-results-to-the-leaderboard) for more details.
 
 </details>
 
@@ -410,16 +410,16 @@ cd strategies/few_shots
 ```
 
 If you want to run other models from the [supported model family](#supported-llm-engines), you could substitute or add the model engine name in `ENGINES` of the example scripts, and then run it.
-You can customize the max token limits and the number of few-shot examples by changing the `TOKENS` and `SHOT_NUM` variables in the script files. For example, to set a 30000 max tokens limit and 3-shot examples, modify `TOKENS=30000` and `SHOT_NUM=3` in the script before running.
+You can customize the max token limits and the number of few-shot examples by changing the `TOKENS` and `SHOT_NUM` variables in the script files. For example, to set a 30,000 max tokens limit and 3-shot examples, modify `TOKENS=30000` and `SHOT_NUM=3` in the script before running.
 
 Then, you can find the model's output in `results/few_shot_results_dev_data/MODEL-LABEL/results.json` or `results/few_shot_results_test_data/MODEL-LABEL/results.json`, where `MODEL-LABEL` is the label of the model consisting of the *model name*, the *max tokens budget* and the *number of few-shot examples*. For example, the `MODEL-LABEL` for `gpt-4o-mini` with a 10K max tokens limit and 3-shot examples would be `gpt-4o-mini_tokens_10000_shot_num_3`.
 
 <details>
 <summary><b>Results examples and evaluation instructions</b></summary>
 
-We have provided the results generated by `gpt-4o-mini` with 3-shot examples and 10000 max tokens limit [here](results/few_shot_results_test_data/gpt-4o-mini_tokens_10000_shot_num_3/results.json). We also visualize the query and response pairs in markdown format [here](results/few_shot_results_test_data/gpt-4o-mini_tokens_10000_shot_num_3/raw) for each problem. (For example, [problem 1](results/few_shot_results_test_data/gpt-4o-mini_tokens_10000_shot_num_3/raw/1.md))
+We have provided the results generated by `gpt-4o-mini` with 3-shot examples and 10,000 max tokens limit [here](results/few_shot_results_test_data/gpt-4o-mini_tokens_10000_shot_num_3/results.json). We also visualize the query and response pairs in markdown format [here](results/few_shot_results_test_data/gpt-4o-mini_tokens_10000_shot_num_3/raw) for each problem. (For example, [problem 1](results/few_shot_results_test_data/gpt-4o-mini_tokens_10000_shot_num_3/raw/1.md))
 
-To evaluate your model's output and obtain the answer accuracy and step-wise accuracy reported in our paper, please submit your outputs to the [leaderboard](https://huggingface.co/spaces/AI4Math/IneqMath-Leaderboard). See [the leaderboard submission instruction](#submit-the-results-to-the-leaderboard) for more details.
+To evaluate your model's output and obtain the answer accuracy and step-wise accuracy reported in our paper, please submit your outputs to the [leaderboard](https://huggingface.co/spaces/AI4Math/IneqMath-Leaderboard). See [the leaderboard submission instructions](#submit-the-results-to-the-leaderboard) for more details.
 
 </details>
 
@@ -464,7 +464,7 @@ Please see the [example file](data_curation/data_reformulation/data/numina_sampl
 ```bash
 cd data_curation/data_reformulation
 ```
-Open the `data_reformulation.sh` file and change the `INPUT_FILE` variable to the path of the inequality proving dataset you prepared and set the `LABEL` variable to your customize label of the dataset. For example, if you want to generate the reformulated data from the example file [data/numina_sampled_example.json](data_curation/data_reformulation/data/numina_sampled_example.json), you can set the `INPUT_FILE` variable to `./data/numina_sampled_example.json` and the `LABEL` variable to `numina_sampled_example`. 
+Open the `data_reformulation.sh` file and change the `INPUT_FILE` variable to the path of the inequality proving dataset you prepared and set the `LABEL` variable to your customized label of the dataset. For example, if you want to generate the reformulated data from the example file [data/numina_sampled_example.json](data_curation/data_reformulation/data/numina_sampled_example.json), you can set the `INPUT_FILE` variable to `./data/numina_sampled_example.json` and the `LABEL` variable to `numina_sampled_example`. 
 
 **Step 3:** Run the following script to generate the reformulated data:
 
@@ -472,7 +472,7 @@ Open the `data_reformulation.sh` file and change the `INPUT_FILE` variable to th
 ./data_reformulation.sh
 ```
 
-Then, you can find the reformulated data in the `reformulated_data/LABEL/reformulated_data.json` file where `LABEL` is the label you set in the `data_reformulation.sh` file.
+Then, you can find the reformulated data in the `reformulated_data/LABEL/reformulated_data.json` file, where `LABEL` is the label you set in the `data_reformulation.sh` file.
 
 **We are excited to see more data generated from this pipeline as an extension of the IneqMath dataset! Please feel free to share your generated data with us!**
 
