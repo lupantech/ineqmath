@@ -128,7 +128,7 @@ def clean_answer(answer):
             answer = f'${answer}$'
     return answer
 
-def process_single_problem(llm_engine, problem):
+def process_single_problem(llm_engine, problem, solution):
     """
     Process a single problem by transforming it into a bound prediction problem
     """
@@ -145,7 +145,7 @@ def process_single_problem(llm_engine, problem):
         'conclusion': transformed.conclusion,
         'rephrased_problem': transformed.rephrased_problem,
         'answer': processed_answer,
-        'solution': f"{transformed.analysis}\n\n{transformed.conclusion}\n\n{transformed.rephrased_problem}"
+        'solution': solution
     }
 
 def create_markdown_content(original_problem, transformed_data):
@@ -207,6 +207,7 @@ def process_entry(llm_engine, entry, entry_index, individual_files_dir):
     # Extract required fields - assuming the structure has a 'problem' field
     problem = entry.get('problem', entry.get('text', ''))
     entry_id = entry.get('id', entry.get('data_id', f"entry_{entry_index}"))
+    solution = entry.get('solution', '')
     
     # Skip if problem is missing
     if not problem:
@@ -232,7 +233,7 @@ def process_entry(llm_engine, entry, entry_index, individual_files_dir):
     
     try:
         # Transform the problem
-        transformed_data = process_single_problem(llm_engine, problem)
+        transformed_data = process_single_problem(llm_engine, problem, solution)
         
         if transformed_data is None:
             print(f"Failed to transform entry {entry_index + 1} (ID: {entry_id})")
