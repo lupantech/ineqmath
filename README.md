@@ -55,13 +55,13 @@ Welcome to the official repository for the paper "[Solving Inequality Proofs wit
   - [Evaluate Models on IneqMath Dev Set](#evaluate-models-on-ineqmath-dev-set)
   - [Evaluate with the Final Answer Judge](#evaluate-with-the-final-answer-judge)
   - [Submit the Results to the Leaderboard](#submit-the-results-to-the-leaderboard)
-  - [Supported LLM Engines](#supported-llm-engines)
 - [🎯 Strategies on IneqMath](#strategies-on-ineqmath)
   - [Frequent Theorems as Hints](#frequent-theorems-as-hints)
   - [Frequent Training Problems and Solutions as Hints](#frequent-training-problems-and-solutions-as-hints)
   - [Few-shot Evaluation](#few-shot-evaluation)
 - [🧪 Other experiments on IneqMath](#other-experiments-on-ineqmath)
   - [Taking Annotated Theorems as Hints](#taking-annotated-theorems-as-hints)
+- [🤖 Supported LLM Engines](#supported-llm-engines)
 - [📂 Data Curation](#data-curation)
   - [Informal Reformulation of Inequality Proving](#informal-reformulation-of-inequality-proving)
   - [Training Data Enhancement](#training-data-enhancement)
@@ -325,24 +325,6 @@ To submit the results to the leaderboard, please follow the following instructio
 }
 ```
 
-### Supported LLM Engines
-
-We support a broad range of LLM engines, including OpenAI family, Anthropic family, Gemini family, DeepSeek family, Grok family, vLLM family, and more.
-
-| Model Family   | Engines | Official Model List |&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Example Scripts &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|
-|----------------|----------------------|--------------------|----------------|
-| OpenAI         | `gpt-5`, `gpt-5-mini`,`gpt-5-nano`, `o4-mini`, `o3`, `o3-mini`, `o3-pro`, `o1`, `o1-pro`, `gpt-4.1`, `gpt-4.1-mini`, `gpt-4o`, `gpt-4o-mini`, `gpt-4-turbo` etc. | [OpenAI Models](https://platform.openai.com/docs/models) | [Test](models/scripts/run_test_data_openai.sh) / [Dev](models/scripts/run_dev_data_openai.sh) |
-| Anthropic      | `claude-opus-4-20250514`,`claude-sonnet-4-20250514`, `claude-3-7-sonnet-20250219`, `claude-3-5-sonnet-20240620`, `claude-3-5-sonnet-20241022`, `claude-3-5-haiku-20241022`, `claude-3-opus-20240229`, `claude-3-haiku-20240307` | [Anthropic Models](https://docs.anthropic.com/en/docs/about-claude/models/all-models) | [Test](scripts/run_test_data_anthropic.sh) / [Dev](scripts/run_dev_data_anthropic.sh) |
-| Gemini         | `gemini-2.5-pro`, `gemini-2.5-pro-preview-06-05`, `gemini-2.5-pro-preview-05-06`, `gemini-2.5-flash`, `gemini-2.5-flash-preview-05-20`, `gemini-2.5-flash-lite-preview-06-17` etc. | [Gemini Models](https://ai.google.dev/gemini-api/docs/models) | [Test](scripts/run_test_data_gemini.sh) / [Dev](scripts/run_dev_data_gemini.sh) |
-| DeepSeek       | `deepseek-chat`, `deepseek-reasoner`| [DeepSeek Models](https://api-docs.deepseek.com/quick_start/pricing) | [Test](scripts/run_test_data_deepseek.sh) / [Dev](scripts/run_dev_data_deepseek.sh) |
-| Grok           | `grok-4-0709`, `grok-3`, `grok-3-mini` etc. | [Grok Models](https://docs.x.ai/docs/models#models-and-pricing) | [Test](scripts/run_test_data_grok.sh) / [Dev](scripts/run_dev_data_grok.sh) |
-| TogetherAI     | `meta-llama/Llama-4-Scout-17B-16E-Instruct`, `Qwen/QwQ-32B`, `Qwen/Qwen2-VL-72B-Instruct` etc. | [TogetherAI Models](https://api.together.ai/models) | [Test](scripts/run_test_data_together.sh) / [Dev](scripts/run_dev_data_together.sh) |
-| vLLM           | Various vLLM-supported models, for example, `Qwen3-4B` and `QwQ-32B`. You can also use local checkpoint models for customization and local inference. | [vLLM Models](https://docs.vllm.ai/en/latest/models/supported_models.html) | [Test](scripts/run_test_data_vllm.sh) / [Dev](scripts/run_dev_data_vllm.sh) |
-
-
-> Note: If you want to run other models from the supported model family, you could substitute or add the model engine name in `ENGINES` of the example scripts, and then run it. If you are using TogetherAI models, please ensure you have the prefix 'together-' in the model string, for example, `together-meta-llama/Llama-4-Scout-17B-16E-Instruct` for model `meta-llama/Llama-4-Scout-17B-16E-Instruct`. For other custom engines, you can edit the [factory.py](https://github.com/lupantech/ineqmath/blob/main/models/engines/factory.py) file and add its interface file to add support for your engine. Your pull request will be warmly welcomed!
-
-
 <a id="strategies-on-ineqmath"></a>
 ## 🎯 Strategies on IneqMath
 In this section, we provide some potential improvement strategies mentioned in our paper to improve the performance of your model on the <b><span style="color:#103756;">Ineq</span><span style="color:#D03C36;">Math</span></b> dataset.
@@ -439,6 +421,23 @@ cd experiments/training_theorem_as_hints
 
 Then, you can find the model's answer accuracy in `results/training_theorems_as_hints_results_train_data/MODEL-LABEL/scores.json`, where `MODEL-LABEL` is the label of the model consisting of the *model name*, the *max tokens budget*. For example, the `MODEL-LABEL` for `gpt-4o-mini` with a 10K max tokens limit would be `gpt-4o-mini_tokens_10000`.
 
+<a id="supported-llm-engines"></a>
+## Supported LLM Engines
+
+We support a broad range of LLM engines, including OpenAI family, Anthropic family, Gemini family, DeepSeek family, Grok family, vLLM family, and more.
+
+| Model Family   | Engines | Official Model List |&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Example Scripts &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|
+|----------------|----------------------|--------------------|----------------|
+| OpenAI         | `gpt-5`, `gpt-5-mini`,`gpt-5-nano`, `o4-mini`, `o3`, `o3-mini`, `o3-pro`, `o1`, `o1-pro`, `gpt-4.1`, `gpt-4.1-mini`, `gpt-4o`, `gpt-4o-mini`, `gpt-4-turbo` etc. | [OpenAI Models](https://platform.openai.com/docs/models) | [Test](models/scripts/run_test_data_openai.sh) / [Dev](models/scripts/run_dev_data_openai.sh) |
+| Anthropic      | `claude-opus-4-20250514`,`claude-sonnet-4-20250514`, `claude-3-7-sonnet-20250219`, `claude-3-5-sonnet-20240620`, `claude-3-5-sonnet-20241022`, `claude-3-5-haiku-20241022`, `claude-3-opus-20240229`, `claude-3-haiku-20240307` | [Anthropic Models](https://docs.anthropic.com/en/docs/about-claude/models/all-models) | [Test](scripts/run_test_data_anthropic.sh) / [Dev](scripts/run_dev_data_anthropic.sh) |
+| Gemini         | `gemini-2.5-pro`, `gemini-2.5-pro-preview-06-05`, `gemini-2.5-pro-preview-05-06`, `gemini-2.5-flash`, `gemini-2.5-flash-preview-05-20`, `gemini-2.5-flash-lite-preview-06-17` etc. | [Gemini Models](https://ai.google.dev/gemini-api/docs/models) | [Test](scripts/run_test_data_gemini.sh) / [Dev](scripts/run_dev_data_gemini.sh) |
+| DeepSeek       | `deepseek-chat`, `deepseek-reasoner`| [DeepSeek Models](https://api-docs.deepseek.com/quick_start/pricing) | [Test](scripts/run_test_data_deepseek.sh) / [Dev](scripts/run_dev_data_deepseek.sh) |
+| Grok           | `grok-4-0709`, `grok-3`, `grok-3-mini` etc. | [Grok Models](https://docs.x.ai/docs/models#models-and-pricing) | [Test](scripts/run_test_data_grok.sh) / [Dev](scripts/run_dev_data_grok.sh) |
+| TogetherAI     | `meta-llama/Llama-4-Scout-17B-16E-Instruct`, `Qwen/QwQ-32B`, `Qwen/Qwen2-VL-72B-Instruct` etc. | [TogetherAI Models](https://api.together.ai/models) | [Test](scripts/run_test_data_together.sh) / [Dev](scripts/run_dev_data_together.sh) |
+| vLLM           | Various vLLM-supported models, for example, `Qwen3-4B` and `QwQ-32B`. You can also use local checkpoint models for customization and local inference. | [vLLM Models](https://docs.vllm.ai/en/latest/models/supported_models.html) | [Test](scripts/run_test_data_vllm.sh) / [Dev](scripts/run_dev_data_vllm.sh) |
+
+
+> Note: If you want to run other models from the supported model family, you could substitute or add the model engine name in `ENGINES` of the example scripts, and then run it. If you are using TogetherAI models, please ensure you have the prefix 'together-' in the model string, for example, `together-meta-llama/Llama-4-Scout-17B-16E-Instruct` for model `meta-llama/Llama-4-Scout-17B-16E-Instruct`. For other custom engines, you can edit the [factory.py](https://github.com/lupantech/ineqmath/blob/main/models/engines/factory.py) file and add its interface file to add support for your engine. Your pull request will be warmly welcomed!
 
 <a id="data-curation"></a>
 ## 📂 Data Curation
