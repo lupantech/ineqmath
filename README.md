@@ -79,7 +79,7 @@ Welcome to the official repository for the paper "[Solving Inequality Proofs wit
 <a id="news"></a>
 ## 💥 News 
 
-- **[2025.08.18]** 🎯 We've just released our novel **reformulation pipeline** that transforms inequality proofs into informal yet verifiable subtasks, automatically expanding IneqMath training data! Plus, our brand-new **training data enhancement scripts** are here to supercharge your model training. Check out our [Data Curation](#data-curation) section and start building better data and models today! 🚀✨
+- **[2025.08.18]** 🎯 We've just released our novel **reformulation pipeline** that transforms inequality proofs into **informal yet verifiable subtasks**, automatically expanding IneqMath training data! Plus, our brand-new **training data enhancement scripts** are here to supercharge your model training. Check out our [Data Curation](#data-curation) section and start building better data and models today! ✨
 - **[2025.08.17]** 🚀 Supercharge your IneqMath runs with our new improvement strategies—[Frequent Theorems as Hints](#frequent-theorems-as-hints), [Frequent Training Problems & Solutions as Hints](#frequent-training-problems-and-solutions-as-hints), and [Few-shot Evaluation](#few-shot-evaluation). Give them a try and let us know if there are other strategies you'd like to see!
 - **[2025.08.16]** 🚀 Updated **example scripts** across **all supported model families**—explore them [here](#supported-llm-engines)!
 - **[2025.08.14]** ✨ Released the **dev set evaluation scripts** and our **Final Answer Judge**—try them now! [Dev set evaluation](#evaluate-models-on-ineqmath-dev-set) | [Final Answer Judge](#evaluate-with-the-final-answer-judge).
