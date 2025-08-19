@@ -37,7 +37,7 @@
 <!-- This is the code repository for the paper [Solving Inequality Proofs with Large Language Models](https://arxiv.org/abs/2506.07927). -->
 
 
-Welcome to the official repository for the paper "[Solving Inequality Proofs with Large Language Models](https://arxiv.org/abs/2506.07927)". With this toolkit you can **evaluate your own models** on our benchmark, **plug in our improvement strategies** to boost performance, **reproduce the paper's experiments** end-to-end, and **train more effectively** with our data. Dive in and push the frontier of inequality and mathematics reasoning with us! 🚀
+Welcome to the official repository for the paper "[Solving Inequality Proofs with Large Language Models](https://arxiv.org/abs/2506.07927)". With this toolkit you can **evaluate your own models** on our benchmark, **plug in our improvement strategies** to boost performance, **reproduce the paper's experiments** end-to-end, and **train more effectively** with our data. **Dive in and push the frontier of inequality and mathematics reasoning with us!** 🚀
 
 
 

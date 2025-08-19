@@ -1,0 +1,112 @@
+[
+  {
+    "problem": "Let $x$ be a positive number, and $n$ an integer greater than 1. Prove that\n\n$$\n\\frac{x^{n-1}-1}{n-1} \\leq \\frac{x^{n}-1}{n}\n$$",
+    "solution": "Solution. Multiply both sides of the inequality to be proven by $n(n-1)$. This is an equivalent transformation of the inequality since $n>1$. After rearrangement, we can factorize:\n\n$$\n0 \\leq -n x^{n-1} + n x^{n} - x^{n} + 1 = (x-1)\\left[n x^{n-1} - \\left(1 + x^{1} + x^{2} + \\ldots + x^{n-1}\\right)\\right]\n$$\n\nIf $x \\geq 1$, then $x-1 \\geq 0$, and $x^{0}, x^{1}, x^{2}, \\ldots, x^{n-1} \\leq x^{n-1}$, so\n\n$$\n\\left(1 + x^{1} + x^{2} + \\ldots + x^{n-1}\\right) \\leq n \\cdot x^{n-1}\n$$\n\nthus $n x^{n-1} - \\left(1 + x^{1} + x^{2} + \\ldots + x^{n-1}\\right) \\geq 0$, which means in this case\n\n$$\n0 \\leq (x-1)\\left[n x^{n-1} - \\left(1 + x^{1} + x^{2} + \\ldots + x^{n-1}\\right)\\right]\n$$\n\nIf $0 < x < 1$, then $x-1 < 0$, and $x^{0}, x^{1}, x^{2}, \\ldots, x^{n-1} \\geq x^{n-1}$, so\n\n$$\n1 + x^{1} + x^{2} + \\ldots + x^{n-1} \\geq n \\cdot x^{n-1}\n$$\n\nthus $n x^{n-1} - \\left(1 + x^{1} + x^{2} + \\ldots + x^{n-1}\\right) \\leq 0$, which means in this case as well\n\n$$\n0 \\leq (x-1)\\left[n x^{n-1} - \\left(1 + x^{1} + x^{2} + \\ldots + x^{n-1}\\right)\\right]\n$$\n\nThus, we have proven the inequality in all cases.",
+    "answer": "proof",
+    "problem_type": "Inequalities",
+    "question_type": "proof",
+    "problem_is_valid": "Yes",
+    "solution_is_valid": "Yes",
+    "source": "olympiads",
+    "synthetic": false
+  },
+  {
+    "problem": "$\\underline{\\text { Cengeroov B.A. }}$\n\nProve that for all $x \\in\\left(0 ; \\frac{\\pi}{2}\\right)$ when $n>m$, where $n, m$ are natural numbers, the inequality\n\n$$\n2\\left|\\sin ^{n} x-\\cos ^{n} x\\right| \\leq 3\\left|\\sin ^{m} x-\\cos ^{m} x\\right|\n$$\n\nholds.",
+    "solution": "The first solution. It is sufficient to prove this inequality for $0 < x < \\frac{\\pi}{4}$. Indeed, bringing to a common denominator, we obtain the inequality\nwhich is obvious. Therefore, the inequality reduces to the cases $n=3, m=1$ and $n=2, m=1$. Let's prove them:\n\n$\\cos 3 x - \\sin 3 x = (\\cos x - \\sin x)(1 + \\sin x \\cos x) \\leq \\frac{3}{2}(\\cos x - \\sin x)$,\n\nsince $\\cos x \\sin x = \\frac{1}{2} \\sin 2 x \\leq \\frac{1}{5}$;\n\n$$\n\\cos ^{2} x - \\sin ^{2} x = (\\cos x - \\sin x)(\\cos x + \\sin x) \\leq \\frac{3}{2}(\\cos x - \\sin x)\n$$\n\nbecause $\\sin x + \\cos x = \\sqrt{2} \\sin \\left(x + \\frac{\\pi}{4}\\right) \\leq \\frac{3}{2}$.\n\nThe second solution. Again, it is sufficient to prove the inequality for $0 < x < \\frac{\\pi}{4}$. Consider the function $f(y) = \\cos^y x - \\sin^y x$. We have $f(0) = 0, f(y) > 0$ for $y > 0, f(y) \\rightarrow 0$ as $y \\rightarrow \\infty$. Further,\n\n$$\nf^{\\prime}(y) = \\cos ^{y} x \\ln \\cos x - \\sin ^{y} \\ln \\sin x = \\cos ^{y} x \\left(\\ln \\cos x - \\operatorname{tg}^{y} x \\ln \\sin x\\right)\n$$\n\nso $f^{\\prime}(y)$ has a unique root for $y > 0$, since the function $g(y) = \\operatorname{tg}^{y} x$ is monotonic. From $f(2) = f(2) \\left(\\cos ^{2} x + \\sin ^{2} x\\right) = f(4)$ it follows that $f^{\\prime}(2) > 0, f^{\\prime}(4) < 0$. For $m \\geq 3$ we obtain the inequality\n\n$$\n\\left|\\sin ^{n} x - \\cos ^{n} x\\right| \\leq \\left|\\sin ^{m} x - \\cos ^{m} x\\right|\n$$\n\nIf $m \\leq 2$, then from the relations $f(1) \\leq f(2) \\leq f(3) \\geq f(n)$ for $n > 3$ it is sufficient to prove the inequality $3 f(1) \\geq 2 f(3)$, which follows from $\\sin x \\cos x = \\frac{\\sin 2 x}{2} \\leq \\frac{1}{2}$, since $f(3) = f(1)(1 + \\sin x \\cos x) \\leq \\frac{3}{2} f(1)$.\n\nSubmit a comment",
+    "answer": "proof",
+    "problem_type": "Inequalities",
+    "question_type": "proof",
+    "problem_is_valid": "Yes",
+    "solution_is_valid": "Yes",
+    "source": "olympiads",
+    "synthetic": false
+  },
+  {
+    "problem": "308*. Prove that $n a_{1} a_{2} \\ldots a_{n} \\leqslant a_{1}^{n}+a_{2}^{n}+\\ldots+a_{n}^{n}$, where $n-$ is a natural number, $a_{i}$-positive numbers.[^8]\n\n84",
+    "solution": "Instruction. $\\quad a_{1} \\cdot a_{2} \\ldots a_{n}=\\sqrt[n]{a_{1}^{n} \\cdot a_{2}^{n} \\ldots a_{n}^{n}} \\leqslant \\frac{a_{1}^{n}+a_{2}^{n}+\\ldots+a_{n}^{n}}{n}$.\n\nThe equality sign holds when $a_{1}=a_{2}=\\ldots=a_{n}=a$.\n\nNote. From this problem, it follows that twice the product of two positive numbers is not greater than the sum of their squares, three times the product of three positive numbers is not greater than the sum of their cubes, and so on.",
+    "answer": "proof",
+    "problem_type": "Inequalities",
+    "question_type": "proof",
+    "problem_is_valid": "Yes",
+    "solution_is_valid": "Yes",
+    "source": "olympiads",
+    "synthetic": false
+  },
+  {
+    "problem": "Let $a, b, c>0$, show that\n\n$$\n\\frac{a}{b+c}+\\frac{b}{a+c}+\\frac{c}{a+b} \\geqslant \\frac{3}{2}\n$$\n\n(Nesbitt's Inequality)",
+    "solution": "Without restriction, suppose $a \\geqslant b \\geqslant c$. By applying the rearrangement inequality twice:\n\n$$\n\\begin{aligned}\n& \\frac{c}{a+b}+\\frac{b}{a+c}+\\frac{a}{c+b} \\geqslant \\frac{b}{a+b}+\\frac{a}{a+c}+\\frac{c}{c+b} \\\\\n& \\frac{c}{a+b}+\\frac{b}{a+c}+\\frac{a}{c+b} \\geqslant \\frac{a}{a+b}+\\frac{c}{a+c}+\\frac{b}{c+b}\n\\end{aligned}\n$$\n\nIt then suffices to add the two inequalities to obtain the desired formula.",
+    "answer": "proof",
+    "problem_type": "Inequalities",
+    "question_type": "proof",
+    "problem_is_valid": "Yes",
+    "solution_is_valid": "Yes",
+    "source": "olympiads",
+    "synthetic": false
+  },
+  {
+    "problem": "3 $x \\geq-1, n-$ natural number. Prove that $(1+x)^{n} \\geq 1+n x$.\n\n#",
+    "solution": "We will prove the inequality by induction on $n$.\n\nBase case. When $n=1$, the inequality becomes an equality.\n\nInductive step. Suppose it has already been proven that $(1+x)^{n} \\geq 1+n x$. Then $(1+x)^{n+1} \\geq(1+n x)(1+x)=1+n x+x+n x^{2} \\geq 1$ $+(n+1) x$.",
+    "answer": "proof",
+    "problem_type": "Inequalities",
+    "question_type": "proof",
+    "problem_is_valid": "Yes",
+    "solution_is_valid": "Yes",
+    "source": "olympiads",
+    "synthetic": false
+  },
+  {
+    "problem": "Exercise 8. Let $\\left(x_{n}\\right)_{n \\geqslant 1}$ be the sequence of real numbers satisfying $x_{1}=\\sqrt{2}$ and for all integers $k \\geqslant 1$, $x_{k+1}=x_{k}+\\frac{1}{x_{k}}$. Show that\n\n$$\n\\frac{x_{1}^{2}}{2 x_{1} x_{2}-1}+\\frac{x_{2}^{2}}{2 x_{2} x_{3}-1}+\\ldots+\\frac{x_{2020}^{2}}{2 x_{2020} x_{2021}-1}+\\frac{x_{2021}^{2}}{2 x_{2021} x_{2022}-1}>\\frac{2021^{2}}{x_{2021}^{2}+\\frac{1}{x_{2021}^{2}}}\n$$",
+    "solution": "Solution to Exercise 8 Let's first note that the sequence is strictly positive by immediate induction. In particular, for any integer $k \\geqslant 0, x_{k+1}>x_{k}$, so the sequence is strictly increasing. Thus $2 x_{i} x_{i+1}-1 \\geqslant 2 x_{1}^{2}-1>0$ and the fractions are well defined.\n\nLet's try to simplify the given expression using the recurrence relation. This can be rewritten (by multiplying both sides by $x_{k}$) as $x_{k} x_{k+1}=x_{k}^{2}+1$, or $2 x_{k} x_{k+1}-1=2 x_{k}^{2}+1$. Therefore, we have:\n\n$$\n\\frac{x_{1}^{2}}{2 x_{1} x_{2}-1}+\\frac{x_{2}^{2}}{2 x_{2} x_{3}-1}+\\ldots+\\frac{x_{2021}^{2}}{2 x_{2021} x_{2022}-1}=\\frac{x_{1}^{2}}{2 x_{1}^{2}+1}+\\frac{x_{2}^{2}}{2 x_{2}^{2}+1}+\\ldots+\\frac{x_{2021}^{2}}{2 x_{2021}^{2}+1}\n$$\n\nTo obtain the desired inequality, due to the $2021^{2}$ in the numerator, we would like to use the \"bad student's inequality.\" For this, we need each fraction to have a numerator of 1, so we arrange to achieve this:\n\n$$\n\\frac{x_{1}^{2}}{2 x_{1} x_{2}-1}+\\frac{x_{2}^{2}}{2 x_{2} x_{3}-1}+\\ldots+\\frac{x_{2021}^{2}}{2 x_{2021} x_{2022}-1}=\\frac{1}{2+1 / x_{1}^{2}}+\\frac{1}{2+1 / x_{2}^{2}}+\\ldots+\\frac{1}{2+1 / x_{2021}^{2}}\n$$\n\nBy the \"bad student's inequality,\"\n\n$$\n\\frac{1}{2+1 / x_{1}^{2}}+\\frac{1}{2+1 / x_{2}^{2}}+\\ldots+\\frac{1}{2+1 / x_{2021}^{2}}>\\frac{2021^{2}}{2 \\times 2021+x_{1}^{-2}+\\cdots+x_{2021}^{-2}}\n$$\n\nThe inequality is strict: if it were not, there would exist a real number $t>0$ such that $t\\left(2+1 / x_{1}^{2}\\right)=1$ and $t\\left(2+1 / x_{2}^{2}\\right)=1$ by the equality case of the \"bad student's inequality.\" We would then have $t \\neq 0$ and $2+1 / x_{1}^{2}=2+1 / x_{2}^{2}$, so $x_{1}^{2}=x_{2}^{2}$. Since the sequence is positive, we get $x_{1}=x_{2}$, but this contradicts the fact that the sequence $\\left(x_{k}\\right)$ is strictly increasing. The inequality is indeed strict.\n\nNow, to obtain the desired inequality, we need to relate $x_{2021}^{2}+\\frac{1}{x_{2021}^{2}}$ and\n\n$$\n2 \\times 2021+\\frac{1}{x_{1}^{2}}+\\cdots+\\frac{1}{x_{2021}^{2}}\n$$\n\nIf these two quantities were equal, we would have the desired result.\n\nTo obtain terms of the form $\\frac{1}{x_{k}^{2}}$, we square the relation given in the statement: for all $k$ between 1 and 2020, we have that\n\n$$\nx_{k+1}^{2}=\\left(x_{k}+\\frac{1}{x_{k}}\\right)^{2}=x_{k}^{2}+2+\\frac{1}{x_{k}^{2}}\n$$\n\nThus, we have $x_{\\mathrm{k}+1}^{2}-x_{\\mathrm{k}}^{2}=2+\\frac{1}{x_{k}^{2}}$\n\nBy summing these inequalities for $k$ between 1 and 2020, we get that:\n\n$$\nx_{2021}^{2}-x_{1}^{2}=x_{2021}^{2}-x_{2020}^{2}+\\cdots+x_{2}^{2}-x_{1}^{2}=2+\\frac{1}{x_{2020}^{2}}+\\cdots+2+\\frac{1}{x_{1}^{2}}=2 \\times 2020+\\frac{1}{x_{1}^{2}}+\\cdots+\\frac{1}{x_{2020}^{2}}\n$$\n\nIn particular, since $x_{1}^{2}=\\sqrt{2}^{2}=2$, we get that:\n\n$$\nx_{2021}^{2}+\\frac{1}{x_{2021}^{2}}=2+\\frac{1}{x_{2021}^{2}}+2 \\times 2020+\\frac{1}{x_{1}^{2}}+\\cdots+\\frac{1}{x_{2020}^{2}}=2 \\times 2021+\\frac{1}{x_{1}^{2}}+\\cdots+\\frac{1}{x_{2021}^{2}}\n$$\n\nwhich gives the desired result.\n\nComment from the graders: The exercise is generally well done by the few students who submitted it. However, one should not go too fast: one must be careful to have positive quantities for the \"bad student's inequality,\" and be careful about the equality case, which is quite subtle.",
+    "answer": "proof",
+    "problem_type": "Inequalities",
+    "question_type": "proof",
+    "problem_is_valid": "Yes",
+    "solution_is_valid": "Yes",
+    "source": "olympiads",
+    "synthetic": false
+  },
+  {
+    "problem": "13.10. Prove the inequality between the arithmetic mean and the geometric mean for $n$ positive numbers: $\\left(a_{1} a_{2} \\ldots a_{n}\\right)^{1 / n} \\leqslant\\left(a_{1}+\\ldots+a_{n}\\right) / n$, with equality holding if and only if $a_{1}=\\ldots=a_{n}$.",
+    "solution": "13.10. First, we will prove the required inequality for numbers of the form \\( n=2^{m} \\) by induction on \\( m \\). For \\( m=1 \\), it follows from the fact that \\( a-2 \\sqrt{a b}+b=(\\sqrt{a}-\\sqrt{b})^{2} \\geqslant 0 \\); equality is achieved only if \\( a=b \\). Suppose the required inequality is proven for \\( m \\), and we will prove it for \\( m+1 \\). Clearly, \\( a_{k} a_{k+2^{m}} \\leqslant\\left(\\left(a_{k}+a_{k+2^{m}}\\right) / 2\\right)^{2} \\). Therefore,\n\n\\[\n\\left(a_{1} a_{2} \\ldots a_{2^{m+1}}\\right)^{1 / 2^{m+1}} \\leqslant\\left(b_{1} b_{2} \\ldots b_{2^{m}}\\right)^{1 / 2^{m}}\n\\]\n\nwhere \\( b_{k}=\\left(a_{k}+a_{k+2^{m}}\\right) / 2 \\), and by the induction hypothesis,\n\n\\[\n\\left(b_{1} \\ldots b_{2^{m}}\\right)^{1 / 2^{m}} \\leqslant \\frac{1}{2^{m}}\\left(b_{1}+\\ldots+b_{2^{m}}\\right)=\\frac{1}{2^{m+1}}\\left(a_{1}+\\ldots+a_{2^{m+1}}\\right)\n\\]\n\nNow let \\( n \\) be any number. Then \\( n<2^{m} \\) for some \\( m \\). Set \\( a_{n+1}=\\ldots=a_{2^{m}}=\\left(a_{1}+\\ldots+a_{n}\\right) / n=A \\). Clearly, \\( \\left(a_{1}+\\ldots+a_{n}\\right)+ \\left(a_{n+1}+\\ldots+a_{2^{m}}\\right)=n A+\\left(2^{m}-n\\right) A=2^{m} A \\) and \\( a_{1} \\ldots a_{2^{m}}=a_{1} \\ldots a_{n} \\cdot A^{2^{m}-n} \\). Therefore, \\( a_{1} \\ldots a_{n} \\cdot A^{2^{m}-n} \\leqslant\\left(2^{m} A / 2^{m}\\right)^{2^{m}}=A^{2^{m}} \\), i.e., \\( a_{1} \\ldots a_{n} \\leqslant A^{n} \\); equality is achieved only if \\( a_{1}=\\ldots=a_{n} \\).",
+    "answer": "proof",
+    "problem_type": "Inequalities",
+    "question_type": "proof",
+    "problem_is_valid": "Yes",
+    "solution_is_valid": "Yes",
+    "source": "olympiads",
+    "synthetic": false
+  },
+  {
+    "problem": "Four. (50 points) Let $x_{i} \\geqslant 0(i=1,2, \\cdots, n-1)$, and $\\sum_{k=1}^{n-1} \\sqrt[5]{x_{k}^{6}}=\\frac{2}{n(n-1)}$. Denote $\\sum_{k=1}^{n-1} x_{k}=S, x_{0}=0$. Prove:\n$$\n\\sum_{k=1}^{n-1}\\left(\\prod_{l=1}^{k}\\left(S-\\sum_{i=0}^{l-1} x_{i}\\right)\\right)^{\\frac{2}{k}}<\\frac{\\mathrm{e}}{\\mathrm{C}_{n}^{2}} .\n$$",
+    "solution": "Let $a_{l}=S-\\sum_{i=0}^{l-1} x_{i}$,\n$$\nb_{l}=\\frac{(l+1)^{l}}{l^{l-1}}=l\\left(1+\\frac{1}{l}\\right)^{l}(l=1,2, \\cdots, n-1) \\text {. }\n$$\n\nFrom $\\ln (1+x) \\leqslant x \\Rightarrow(1+x)^{\\frac{1}{x}} \\leqslant \\mathrm{e} \\Rightarrow b_{l} \\leqslant l \\mathrm{e}$.\nFrom $b_{1} b_{2} \\cdots b_{l}=\\frac{2^{1}}{1^{0}} \\cdot \\frac{3^{2}}{2^{1}} \\cdots \\cdots \\frac{(l+1)^{l}}{l^{l-1}}=(l+1)^{l}$\n$\\Rightarrow\\left(\\prod_{l=1}^{k} a_{l}^{2}\\right)^{\\frac{1}{k}}=\\left(\\prod_{l=1}^{k} a_{l}^{2}\\right)^{\\frac{1}{k}} \\frac{1}{k+1}\\left((k+1)^{k}\\right)^{\\frac{1}{k}}$\n$=\\frac{1}{k+1}\\left(\\prod_{l=1}^{k} a_{l}^{2} b_{l}\\right)^{\\frac{1}{k}}$\n$$\n\\begin{aligned}\n& 2 \\sum_{1 \\leqslant k<l \\leqslant n-1} k x_{k} x_{l} \\\\\n= & \\sum_{k=1}^{n-1} k x_{k}^{2}+2 \\sum_{1 \\leqslant k<l \\leqslant n-1} k x_{k} x_{l} \\\\\n< & \\sum_{k=1}^{n-1} k x_{k}^{2}+2 \\sum_{1 \\leqslant k<l \\leqslant n-1} \\sqrt{k l} x_{k} x_{l} \\\\\n= & \\left(\\sum_{k=1}^{n-1} \\sqrt{k} x_{k}\\right)^{2} .\n\\end{aligned}\n$$\n$$\n\\begin{aligned}\n& \\leqslant \\frac{1}{k(k+1)} \\sum_{l=1}^{k} a_{l}^{2} b_{l}=\\left(\\frac{1}{k}-\\frac{1}{k+1}\\right) \\sum_{l=1}^{k} a_{l}^{2} b_{l} \\\\\n\\Rightarrow & \\sum_{k=1}^{n-1}\\left(\\prod_{l=1}^{k} a_{l}^{2}\\right)^{\\frac{1}{k}} \\\\\n& \\leqslant \\sum_{k=1}^{n-1}\\left(\\left(\\frac{1}{k}-\\frac{1}{k+1}\\right) \\sum_{l=1}^{k} a_{l}^{2} b_{l}\\right) \\\\\n& \\xlongequal{\\text { Abel }} \\sum_{l=1}^{n-1}\\left(\\frac{1}{l}-\\frac{1}{n}\\right) a_{l}^{2} b_{l} \\\\\n& <\\sum_{l=1}^{n-1} a_{l}^{2} \\frac{b_{l}}{l} \\leqslant \\mathrm{e} \\sum_{l=1}^{n-1} a_{l}^{2} .\n\\end{aligned}\n$$\n\nAlso, $a_{l}=S-\\sum_{i=0}^{l-1} x_{i}=x_{l}+x_{l+1}+\\cdots+x_{n-1}$, then\n$$\n\\begin{aligned}\n\\sum_{l=1}^{n-1} & a_{l}^{2}=\\sum_{l=1}^{n-1}\\left(x_{l}+x_{l+1}+\\cdots+x_{n-1}\\right)^{2} \\\\\n= & \\left(x_{1}+x_{2}+\\cdots+x_{n-1}\\right)^{2}+ \\\\\n& \\left(x_{2}+x_{3}+\\cdots+x_{n-1}\\right)^{2}+\\cdots+ \\\\\n& \\left(x_{n-2}+x_{n-1}\\right)^{2}+x_{n-1}^{2} \\\\\n= & x_{1}^{2}+2 x_{2}^{2}+3 x_{3}^{2}+\\cdots+(n-1) x_{n-1}^{2}+\n\\end{aligned}\n$$\n$$\n\\begin{aligned}\n& 2 \\sum_{1 \\leqslant k<l \\leqslant n-1} k x_{k} x_{l} \\\\\n= & \\sum_{k=1}^{n-1} k x_{k}^{2}+2 \\sum_{1 \\leqslant k<1 \\leqslant n-1} k x_{k} x_{l} \\\\\n< & \\sum_{k=1}^{n-1} k x_{k}^{2}+2 \\sum_{1 \\leqslant k<l \\leqslant n-1} \\sqrt{k l} x_{k} x_{l} \\\\\n= & \\left(\\sum_{k=1}^{n-1} \\sqrt{k} x_{k}\\right)^{2} .\n\\end{aligned}\n$$\n\nBy Hölder's inequality,\n$$\n\\begin{array}{l}\n\\left(\\sum_{k=1}^{n-1} \\sqrt{k} x_{k}\\right)^{2} \\\\\n\\leqslant\\left(\\left(\\left(\\sum_{k=1}^{n-1}(\\sqrt{k})^{6}\\right)^{\\frac{1}{6}}\\right)^{2}\\left(\\sum_{k=1}^{n-1} k^{\\frac{6}{5}} x\\right)^{\\frac{5}{6}}\\right)^{2} \\\\\n=\\left(\\left(\\left(\\sum_{k=1}^{n-1} k^{3}\\right)^{\\frac{1}{6}}\\right)^{2}\\left(\\frac{2}{n(n-1)}\\right)^{\\frac{5}{6}}\\right)^{2} \\\\\n=\\frac{2}{n(n-1)} . \\\\\n\\text { Therefore, } \\sum_{k=1}^{n-1}\\left(\\prod_{l=1}^{k}\\left(S-\\sum_{i=0}^{l-1} x_{i}\\right)\\right)^{\\frac{2}{k}} \\\\\n<\\frac{2 \\mathrm{e}}{n(n-1)}=\\frac{\\mathrm{e}}{\\mathrm{C}_{n}^{2}} .\n\\end{array}\n$$\n(Wang Yongxi, Shanxi University Affiliated High School, 030006)",
+    "answer": "\\frac{\\mathrm{e}}{\\mathrm{C}_{n}^{2}}",
+    "problem_type": "Inequalities",
+    "question_type": "proof",
+    "problem_is_valid": "Yes",
+    "solution_is_valid": "Yes",
+    "source": "olympiads",
+    "synthetic": false
+  },
+  {
+    "problem": "9.7. The numbers $a, b, c$ and $d$ are such that $a^{2}+b^{2}+c^{2}+d^{2}=4$. Prove that $(2+a)(2+b) \\geqslant c d$.",
+    "solution": "Solution. By the inequality of means, we have\n\n$$\nc d \\leqslant|c d|=\\sqrt{c^{2} d^{2}} \\leqslant \\frac{c^{2}+d^{2}}{2}=\\frac{4-a^{2}-b^{2}}{2}\n$$\n\nTherefore, it is sufficient to show that\n\n$$\n(2+a)(2+b) \\geqslant \\frac{4-a^{2}-b^{2}}{2}\n$$\n\nMove everything to the left side, multiply by 2, and expand the brackets. We obtain the equivalent inequality\n\n$$\n4+4 a+4 b+2 a b+a^{2}+b^{2} \\geqslant 0\n$$\n\nThe left side of the last inequality can be rewritten as\n\n$$\n4+4(a+b)+(a+b)^{2}=(2+a+b)^{2}\n$$\n\nwhich means this expression is non-negative, as required to prove.\n\nRemark. As can be easily seen from the solution, equality is achieved if and only if $a+b=-2$ and $c=d$. Therefore, in any correct solution that does not involve case analysis, for the described sets of $a, b, c$, $d$, all intermediate inequalities must turn into equalities.\n\nComment. The problem is solved under the assumption that the numbers $a, b, c, d$ are non-negative - 0 points.",
+    "answer": "proof",
+    "problem_type": "Inequalities",
+    "question_type": "proof",
+    "problem_is_valid": "Yes",
+    "solution_is_valid": "Yes",
+    "source": "olympiads",
+    "synthetic": false
+  },
+  {
+    "problem": "4. (SWE) Let $a_{1}, a_{2}, \\ldots, a_{n}, \\ldots$ be a sequence of real numbers such that $0 \\leq a_{n} \\leq 1$ and $a_{n}-2 a_{n+1}+a_{n+2} \\geq 0$ for $n=1,2,3, \\ldots$. Prove that $0 \\leq(n+1)\\left(a_{n}-a_{n+1}\\right) \\leq 2$ for $n=1,2,3, \\ldots$",
+    "solution": "4. Put $\\Delta a_{n}=a_{n}-a_{n+1}$. By the imposed condition, $\\Delta a_{n}>\\Delta x_{n+1}$. Suppose that for some $n, \\Delta a_{n}<0$ : Then for each $k \\geq n, \\Delta a_{k}<\\Delta a_{n}$; hence $a_{n}-a_{n+m}=\\Delta a_{n}+\\cdots+\\Delta a_{n+m-1}<m \\Delta a_{n}$. Thus for sufficiently large $m$ it holds that $a_{n}-a_{n+m}<-1$, which is impossible. This proves the first part of the inequality.\nNext one observes that\n$$\nn \\geq \\sum_{k=1}^{n} a_{k}=n a_{n+1}+\\sum_{k=1}^{n} k \\Delta a_{k} \\geq(1+2+\\cdots+n) \\Delta a_{n}=\\frac{n(n+1)}{2} \\Delta a_{n} \\text {. }\n$$\n\nHence $(n+1) \\Delta a_{n} \\leq 2$.",
+    "answer": "proof",
+    "problem_type": "Inequalities",
+    "question_type": "proof",
+    "problem_is_valid": "Yes",
+    "solution_is_valid": "Yes",
+    "source": "olympiads",
+    "synthetic": false
+  }
+]
