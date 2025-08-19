@@ -447,7 +447,7 @@ In our [paper](https://arxiv.org/abs/2506.07927), we raise a novel **informal re
 
 Now, we release our **automatic reformulation pipeline** which can generate more training data for IneqMath from existing inequality proving datasets efficiently. Here is the step-by-step guide to run the pipeline:
 
-1. Prepare for the inequality proving dataset. The dataset should be a `*.json` file with list of problems. Each problem should be a dictionary with the following keys:
+**Step 1:** Prepare for the inequality proving dataset. The dataset should be a `*.json` file with list of problems. Each problem should be a dictionary with the following keys:
 
 ```
 {
@@ -457,14 +457,14 @@ Now, we release our **automatic reformulation pipeline** which can generate more
 ```
 Please see the [example file](data_curation/data_reformulation/data/numina_sampled_example.json) which is sampled from [AI-MO/NuminaMath-1.5](https://huggingface.co/datasets/AI-MO/NuminaMath-1.5) for reference.
 
-2. Please change the directory to `data_curation/data_reformulation`:
+**Step 2:** Please change the directory to `data_curation/data_reformulation`:
 
 ```bash
 cd data_curation/data_reformulation
 ```
 Open the `data_reformulation.sh` file and change the `INPUT_FILE` variable to the path of the inequality proving dataset you prepared and set the `LABEL` variable to your customize label of the dataset. For example, if you want to generate the reformulated data from the example file [data/numina_sampled_example.json](data_curation/data_reformulation/data/numina_sampled_example.json), you can set the `INPUT_FILE` variable to `./data/numina_sampled_example.json` and the `LABEL` variable to `numina_sampled_example`. 
 
-3. Run the following script to generate the reformulated data:
+**Step 3:** Run the following script to generate the reformulated data:
 
 ```bash
 ./data_reformulation.sh
