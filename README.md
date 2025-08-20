@@ -508,8 +508,8 @@ cd ../../data_curation/training_data_enhancement
 
 Then, you can find the enhanced training data in the `enhanced_training_data/training_data/` directory. There are two files in the directory:
 
-- `enhanced_data_training_data.json`: The enhanced training data in `JSON` format that maintains the original structure of the training data, with the enhanced solution added as a new field `enhanced_solution`.
-- `sft_data_training_data.jsonl`: The enhanced training data in `JSONL` format that is ready for supervised fine-tuning on the platform such as [OpenAI](https://platform.openai.com/docs/guides/model-optimization#fine-tune-a-model).
+- `enhanced_data_training_data.json`: The enhanced training data in `JSON` format that maintains the original structure of the training data, with the enhanced solution added as a new field `enhanced_solution`. Please see the [example](data_curation/training_data_enhancement/enhanced_training_data/training_data_sampled_200/enhanced_data_training_data_sampled_200.json).
+- `sft_data_training_data.jsonl`: The enhanced training data in `JSONL` format that is ready for supervised fine-tuning on the platform such as [OpenAI](https://platform.openai.com/docs/guides/model-optimization#fine-tune-a-model). Please see the [example](data_curation/training_data_enhancement/enhanced_training_data/training_data_sampled_200/sft_data_training_data_sampled_200.jsonl).
 
 We provide the example of the enhanced 200 training data sampled from the IneqMath training data (`data/json/training_data_sampled_200.json`) [here](data_curation/training_data_enhancement/enhanced_training_data/training_data_sampled_200/). We also visualize the enhanced solution and the original solution for each problem in [this](data_curation/training_data_enhancement/enhanced_training_data/training_data_sampled_200/raw/) directory. (For example, the visualization of problem 1 is [here](data_curation/training_data_enhancement/enhanced_training_data/training_data_sampled_200/raw/1.md).)
 
