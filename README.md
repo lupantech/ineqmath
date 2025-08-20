@@ -267,9 +267,8 @@ To evaluate your model's output and obtain the answer accuracy and step-wise acc
 
 We also provide scripts to evaluate models on the **dev set** in **zero-shot settings**. In addition, we include our **Final Answer Judge** to compute answer accuracy, helping you tune your models more effectively.
 
-To run the supported models, see the [Supported LLM Engines](#supported-llm-engines) section for details and **dev example scripts**. For example, to run the OpenAI‑family models on the dev set, run the dev example script `run_dev_data_openai.sh`:
+To run the supported models, see the [Supported LLM Engines](#supported-llm-engines) section for details and **dev example scripts**. For example, to run the OpenAI‑family models on the dev set, run the dev example script `run_dev_data_openai.sh` in the `scripts` directory:
 ```bash
-cd scripts
 ./run_dev_data_openai.sh
 ```
 
@@ -281,7 +280,7 @@ cd ../data/json
 wget https://huggingface.co/datasets/AI4Math/IneqMath/resolve/main/json/dev.json
 ```
 
-You can then find the answer accuracy in `results/models_results_dev_data/MODEL-LABEL/scores.json`, where `MODEL-LABEL` is the label of the model consisting of the model name and the max tokens budget. For example, the `MODEL-LABEL` for `gpt-4o-mini` with a 10K max tokens limit would be `gpt-4o-mini_tokens_10000`.
+You can then find the answer accuracy in `results/models_results_dev_data/MODEL-LABEL/scores.json` and model's output in `results/models_results_dev_data/MODEL-LABEL/results.json`, where `MODEL-LABEL` is the label of the model consisting of the model name and the max tokens budget. For example, the `MODEL-LABEL` for `gpt-4o-mini` with a 10K max tokens limit would be `gpt-4o-mini_tokens_10000`.
 
 To further evaluate your model's output and obtain the step-wise accuracy reported in our paper, please submit your generated file `results/models_results_dev_data/MODEL-LABEL/results.json` to the [Dev set evaluation platform](https://huggingface.co/spaces/AI4Math/IneqMath-Dev-Evaluation). See [the leaderboard submission instructions](#submit-the-results-to-the-leaderboard) for more details. 
 
@@ -295,8 +294,8 @@ Then, run:
 ```sh
 python compute_score.py \
   --direct_input \
-  --results_file YOUR_RESULTS_FILE \
   --use_cache \
+  --results_file YOUR_RESULTS_FILE
 ```
 Replace `YOUR_RESULTS_FILE` with the path to the `results.json` file for which you want to compute answer accuracy.
 
@@ -305,8 +304,8 @@ For example, to evaluate the results file `../../results/models_results_dev_data
 ```sh
 python compute_score.py \
   --direct_input \
-  --results_file ../../results/models_results_dev_data/gpt-4o-mini_tokens_10000/results.json\
-  --use_cache 
+  --use_cache \
+  --results_file ../../results/models_results_dev_data/gpt-4o-mini_tokens_10000/results.json
 ```
 
 The score will be saved as `../../results/models_results_dev_data/gpt-4o-mini_tokens_10000/scores.json` in the same directory as `results.json`. 
