@@ -476,7 +476,7 @@ Open the `data_reformulation.sh` file and change the `INPUT_FILE` variable to th
 **Step 3:** Run the following script to generate the reformulated data:
 
 ```bash
-./data_reformulation.sh
+./task_reformulation.sh
 ```
 
 Then, you can find the reformulated data in the `reformulated_data/LABEL/reformulated_data.json` file, where `LABEL` is the label you set in the `data_reformulation.sh` file.
