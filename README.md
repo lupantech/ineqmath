@@ -308,13 +308,13 @@ python compute_score.py \
   --results_file ../../results/models_results_dev_data/gpt-4o-mini_tokens_10000/results.json
 ```
 
-The score will be saved as `../../results/models_results_dev_data/gpt-4o-mini_tokens_10000/scores.json` in the same directory as `results.json`. 
+The score will be saved as `../../results/models_results_dev_data/gpt-4o-mini_tokens_10000/scores.json` in the same directory as `--results_file`. 
 
 
 ### Submit the Results to the Leaderboard
 🏆 The leaderboard for the <b><span style="color:#103756;">Ineq</span><span style="color:#D03C36;">Math</span></b> is available [here](https://huggingface.co/spaces/AI4Math/IneqMath-Leaderboard).
 
-To submit the results to the leaderboard, please follow the following instructions: 
+To submit the results to the leaderboard, and get the answer accuracy and step-wise accuracy reported in our paper, please follow the following instructions: 
 
 - If you run the model by our scripts, you can upload the generated `results.json` of the model to the corresponding section (test/dev) of the leaderboard.
 
@@ -332,13 +332,13 @@ To submit the results to the leaderboard, please follow the following instructio
 
 <a id="strategies-on-ineqmath"></a>
 ## 🎯 Strategies on IneqMath
-In this section, we provide some potential improvement strategies mentioned in our paper to improve the performance of your model on the <b><span style="color:#103756;">Ineq</span><span style="color:#D03C36;">Math</span></b> dataset.
+In this section, we provide some potential improvement strategies mentioned in our paper to help you improve the performance of your model on the <b><span style="color:#103756;">Ineq</span><span style="color:#D03C36;">Math</span></b> dataset.
 
 ### Frequent Theorems as Hints
 As shown in our [paper](https://arxiv.org/abs/2506.07927), providing **top-k most frequent
-theorems** can significantly improve the performance of LLMs on the <b><span style="color:#103756;">Ineq</span><span style="color:#D03C36;">Math</span></b> dataset. Therefore, we provide the scripts to **evaluate LLMs with top-k most frequent theorems as hints**.
+theorems** can significantly improve the performance of LLMs on the <b><span style="color:#103756;">Ineq</span><span style="color:#D03C36;">Math</span></b> dataset. Therefore, we provide the scripts to **evaluate LLMs with top-k most frequent theorems as hints** on both **test and dev set.**
 
-Please change the directory to `strategies/frequent_theorem_as_hints` and run the following script to evaluate LLMs with top-k most frequent theorems as hints.
+Please change the directory to `strategies/frequent_theorem_as_hints` and run the following script to evaluate LLMs with top-k most frequent theorems as hints on test or dev set.
 ```bash
 cd strategies/frequent_theorem_as_hints
 ./run_test_data_no_vllm.sh # or ./run_dev_data_no_vllm.sh # This is for non-vLLM models.
@@ -361,10 +361,10 @@ To evaluate your model's output and obtain the answer accuracy and step-wise acc
 </details>
 
 ### Frequent Training Problems and Solutions as Hints
-As shown in our [paper](https://arxiv.org/abs/2506.07927), providing **top-k most frequent training problems and their solutions** can also improve the performance of LLMs on the <b><span style="color:#103756;">Ineq</span><span style="color:#D03C36;">Math</span></b> dataset. Therefore, we provide the scripts to **evaluate LLMs with top-k most frequent training problems and solutions as hints**.
+As shown in our [paper](https://arxiv.org/abs/2506.07927), providing **top-k most frequent training problems and their solutions** can also improve the performance of LLMs on the <b><span style="color:#103756;">Ineq</span><span style="color:#D03C36;">Math</span></b> dataset. Therefore, we provide the scripts to **evaluate LLMs with top-k most frequent training problems and solutions as hints** on both **test and dev set.**
 
 
-Please change the directory to `strategies/frequent_solution_as_hints` and run the following script to evaluate LLMs with top-k most frequent training problems and solutions as hints.
+Please change the directory to `strategies/frequent_solution_as_hints` and run the following script to evaluate LLMs with top-k most frequent training problems and solutions as hints on test or dev set.
 ```bash
 cd strategies/frequent_solution_as_hints
 ./run_test_data_no_vllm.sh # or ./run_dev_data_no_vllm.sh # This is for non-vLLM models.
@@ -387,9 +387,9 @@ To evaluate your model's output and obtain the answer accuracy and step-wise acc
 </details>
 
 ### Few-shot Evaluation
-To further evaluate models on the <b><span style="color:#103756;">Ineq</span><span style="color:#D03C36;">Math</span></b> dataset, we provide the scripts to **evaluate LLMs with few-shot settings**. 
+To further evaluate models on the <b><span style="color:#103756;">Ineq</span><span style="color:#D03C36;">Math</span></b> dataset, we provide the scripts to **evaluate LLMs with few-shot settings** on both **test and dev set.**
 
-Please change the directory to `strategies/few_shots` and run the following script to evaluate LLMs with few-shot settings.
+Please change the directory to `strategies/few_shots` and run the following script to evaluate LLMs with few-shot settings on test or dev set.
 ```bash
 cd strategies/few_shots
 ./run_test_data_no_vllm.sh # or ./run_dev_data_no_vllm.sh # This is for non-vLLM models.
