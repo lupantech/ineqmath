@@ -397,7 +397,10 @@ cd strategies/few_shots
 ```
 
 If you want to run other models from the [supported model family](#supported-llm-engines), you could substitute or add the model engine name in `ENGINES` of the example scripts, and then run it.
-You can customize the max token limits and the number of few-shot examples by changing the `TOKENS` and `SHOT_NUM` variables in the script files. For example, to set a 30,000 max tokens limit and 3-shot examples, modify `TOKENS=30000` and `SHOT_NUM=3` in the script before running.
+
+For the few-shot examples, you can customize it in [`data/json/few_shot_examples.json`](data/json/few_shot_examples.json).
+
+You can also customize the max token limits and the number of few-shot examples by changing the `TOKENS` and `SHOT_NUM` variables in the script files. For example, to set a 30,000 max tokens limit and 3-shot examples, modify `TOKENS=30000` and `SHOT_NUM=3` in the script before running.
 
 Then, you can find the model's output in `results/few_shot_results_dev_data/MODEL-LABEL/results.json` or `results/few_shot_results_test_data/MODEL-LABEL/results.json`, where `MODEL-LABEL` is the label of the model consisting of the *model name*, the *max tokens budget* and the *number of few-shot examples*. For example, the `MODEL-LABEL` for `gpt-4o-mini` with a 10K max tokens limit and 3-shot examples would be `gpt-4o-mini_tokens_10000_shot_num_3`.
 

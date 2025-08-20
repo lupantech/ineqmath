@@ -262,7 +262,7 @@ def parse_arguments():
     parser.add_argument("--max_workers", type=int, default=1)
     parser.add_argument("--vllm_config_path", type=str, default=None, help="Path to VLLM config file.")
     parser.add_argument("--solution_num", type=int, default=0, help="Number of solutions to include as hints. 0 means no solutions.")
-    parser.add_argument("--solution_file_path", type=str, default='../../data/json/few_shot_solution_set.json', help="Path to the solution set file.")
+    parser.add_argument("--solution_file_path", type=str, default='../../data/json/few_shot_examples.json', help="Path to the solution set file.")
     return parser.parse_args()
 
 if __name__ == "__main__":
