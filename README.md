@@ -244,7 +244,7 @@ Run `run_test_data_proprietary_all.sh`, `run_test_data_open_source_all.sh`, and 
 ./run_test_data_gemma.sh
 ```
 
-To run other supported models, see the [Supported LLM Engines](#supported-llm-engines) section for details and example scripts. For example, to run the OpenAI‑family models, run:
+To run other supported models, see the [Supported LLM Engines](#supported-llm-engines) section for details and **example scripts**. For example, to run the OpenAI‑family models, run the example script `run_test_data_openai.sh`:
 ```bash
 ./run_test_data_openai.sh
 ```
@@ -253,7 +253,6 @@ You can customize the max token limits by changing the `TOKENS` variable in the 
 
 If the dataset can't be loaded automatically, please download the JSON-formatted dataset manually by:
 ```shell
-mkdir -p ../data/json
 cd ../data/json
 wget https://huggingface.co/datasets/AI4Math/IneqMath/resolve/main/json/test.json
 ```
@@ -268,12 +267,19 @@ To evaluate your model's output and obtain the answer accuracy and step-wise acc
 
 We also provide scripts to evaluate models on the **dev set** in **zero-shot settings**. In addition, we include our **Final Answer Judge** to compute answer accuracy, helping you tune your models more effectively.
 
-To run the supported models, see the [Supported LLM Engines](#supported-llm-engines) section for details and dev example scripts. For example, to run the OpenAI‑family models on the dev set, run:
+To run the supported models, see the [Supported LLM Engines](#supported-llm-engines) section for details and **dev example scripts**. For example, to run the OpenAI‑family models on the dev set, run the dev example script `run_dev_data_openai.sh`:
 ```bash
+cd scripts
 ./run_dev_data_openai.sh
 ```
 
 You can customize the max token limits by changing the `TOKENS` variable in the script files. For example, to set a 30,000 max tokens limit, modify `TOKENS=30000` in the script before running.
+
+If the dataset can't be loaded automatically, please download the JSON-formatted dataset manually by:
+```shell
+cd ../data/json
+wget https://huggingface.co/datasets/AI4Math/IneqMath/resolve/main/json/dev.json
+```
 
 You can then find the answer accuracy in `results/models_results_dev_data/MODEL-LABEL/scores.json`, where `MODEL-LABEL` is the label of the model consisting of the model name and the max tokens budget. For example, the `MODEL-LABEL` for `gpt-4o-mini` with a 10K max tokens limit would be `gpt-4o-mini_tokens_10000`.
 
