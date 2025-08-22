@@ -85,6 +85,7 @@ class ChatDeepseek(EngineLM, CachedEngine):
                     {"role": "user", "content": prompt},
                 ],
                 temperature=temperature,
+                max_tokens=max_tokens,
                 top_p=top_p,
             )
             response = response.choices[0].message.content
