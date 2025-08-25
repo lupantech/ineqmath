@@ -1,6 +1,6 @@
 ############## Configurations ###############
 ENGINES=(
-    "deepseek-chat"
+    # "deepseek-chat"
     "deepseek-reasoner"
     # You can add more models here
 )
