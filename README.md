@@ -86,7 +86,7 @@ Welcome to the official repository for the paper "[Solving Inequality Proofs wit
 - **[2025.08.08]** 💥 **GPT-5 (medium, 30K)** 🥇 Sets New SOTA on IneqMath with overall accuracy **47.0%**! Read more on the [OpenAI Platform](https://openai.com/index/introducing-gpt-5/).
 - **[2025.07.25]** ✨ Released our **dev set evaluation platform** to help you fine-tune models more effectively! Get started: [Dev set evaluation platform](https://huggingface.co/spaces/AI4Math/IneqMath-Dev-Evaluation).
 - **[2025.07.19]** 📄 Added support for vLLM. You can now use any vLLM-supported models and your local checkpoint models. Check out the [example scripts](#supported-llm-engines) for more details.
-- **[2025.07.18]** 🎉 Our paper has been accepted to the [2nd AI for Math Workshop](https://sites.google.com/view/ai4mathworkshopicml2025/accepted-papers?authuser=0) at ICML 2025—read the [paper](https://openreview.net/forum?id=cB9eZUINSh#discussion) and view the [poster](assets/icml_poster.pdf)!
+- **[2025.07.18]** 🎉 Our paper has been accepted to the [2nd AI for Math Workshop](https://sites.google.com/view/ai4mathworkshopicml2025/accepted-papers?authuser=0) at ICML 2025—read the [paper](https://openreview.net/forum?id=cB9eZUINSh#discussion) and view the [poster](assets/others/icml_poster.pdf)!
 - **[2025.06.16]** 💥 o3-pro (40K) 🥇 Sets New SOTA on IneqMath with overall accuracy 46.0%! Read more on the [OpenAI Platform](https://platform.openai.com/docs/models/o3-pro?ref=blog.roboflow.com).
 - **[2025.06.11]** Our work is featured by [Pan Lu](https://x.com/lupantech) on [Twitter](https://x.com/lupantech/status/1932866286427779586)!
 - **[2025.06.09]** Our paper is now accessible at https://arxiv.org/abs/2506.07927.
